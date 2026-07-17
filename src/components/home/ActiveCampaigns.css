@@ -1,0 +1,231 @@
+.active-campaigns {
+  background: linear-gradient(to right, var(--navy), var(--primary-dark));
+  color: var(--white);
+  padding: 60px 0;
+  position: relative;
+  border-radius: 20px;
+  margin: 0 20px 60px;
+  box-shadow: var(--shadow-xl);
+}
+
+.active-campaigns__container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.active-campaigns__inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.nav-btn {
+  background: var(--white);
+  color: var(--navy);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast);
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+}
+
+.nav-btn.prev {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.nav-btn.prev:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.nav-btn.next {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.nav-btn.next:hover {
+  transform: translateX(50%) scale(1.05);
+}
+
+
+.active-campaigns__featured {
+  flex: 0 0 320px;
+  padding-right: 40px;
+}
+
+.featured-appeal__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fbbf24;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.featured-appeal__tag .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #fbbf24;
+  border-radius: 50%;
+}
+
+.featured-appeal__title {
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.featured-appeal__desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.btn-white {
+  background: var(--white);
+  color: var(--primary-blue);
+  border-color: var(--white);
+}
+
+.btn-white:hover {
+  background: var(--off-white);
+  color: var(--primary-dark);
+}
+
+.active-campaigns__divider {
+  width: 1px;
+  height: 150px;
+  background-color: rgba(255,255,255,0.2);
+  margin: 0 20px;
+}
+
+.active-campaigns__grid {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.campaign-card {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.campaign-card:hover {
+  transform: translateY(-5px);
+}
+
+.campaign-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.icon-blue { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+.icon-gold { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+.icon-cyan { background: rgba(6, 182, 212, 0.2); color: #22d3ee; }
+.icon-red { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+.campaign-title {
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.campaign-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.4;
+}
+
+.campaign-active-bar {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+  .active-campaigns__inner {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .active-campaigns__featured {
+    flex: none;
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .featured-appeal__tag {
+    justify-content: center;
+  }
+
+  .active-campaigns__divider {
+    width: 100%;
+    height: 1px;
+    margin: 0 0 30px 0;
+  }
+
+  .active-campaigns__grid {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .campaign-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .active-campaigns {
+    margin: 0 10px 40px;
+    border-radius: 12px;
+  }
+  
+  .nav-btn {
+    display: none;
+  }
+  
+  .active-campaigns__grid {
+    flex-direction: column;
+  }
+  
+  .campaign-card {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,78 @@
+.transparency-report {
+  background-color: #f8fafc;
+}
+
+.transparency-report__inner {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 60px 40px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+}
+
+.section-tag--blue {
+  color: var(--primary-blue);
+  border-color: transparent;
+  background: rgba(0, 71, 171, 0.1);
+}
+
+.donations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.donation-card {
+  text-align: center;
+}
+
+.donation-card__img {
+  height: 220px;
+  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+  background-color: var(--gray-200);
+  margin-bottom: 24px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid var(--primary-blue);
+}
+
+.bg-gaza-card { background-color: #94a3b8; }
+.bg-water-card { background-color: #64748b; }
+.bg-zakat-card { background-color: #475569; }
+
+.donation-card__content h3 {
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.donation-card__content p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  margin-bottom: 24px;
+  padding: 0 10px;
+  min-height: 44px;
+}
+
+.btn-full {
+  width: 100%;
+  max-width: 200px;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 992px) {
+  .donations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .transparency-report__inner {
+    padding: 40px 20px;
+  }
+  .donations-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
