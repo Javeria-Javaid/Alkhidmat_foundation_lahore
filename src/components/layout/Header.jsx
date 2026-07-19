@@ -1,36 +1,37 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/weblogo.png';
 import './Header.css';
 
 const navItems = [
-  { label: 'Home', href: '#' },
+  { label: 'Home', href: '/' },
   {
     label: 'Where We Work',
     href: '#',
     children: [
-      { label: 'Palestine Emergency Appeal', href: '#', icon: '🕊️' },
-      { label: 'BanoQabil', href: '#', icon: '💻' },
-      { label: 'Orphan Care Program', href: '#', icon: '🤝' },
-      { label: 'Clean Water Program', href: '#', icon: '💧' },
-      { label: 'Community Services', href: '#', icon: '🏘️' },
-      { label: 'Disaster Management', href: '#', icon: '🚨' },
-      { label: 'Health Services', href: '#', icon: '🏥' },
-      { label: 'Education Program', href: '#', icon: '📚' },
+      { label: 'Palestine Emergency Appeal', href: '#' },
+      { label: 'BanoQabil', href: '#' },
+      { label: 'Orphan Care Program', href: '#' },
+      { label: 'Clean Water Program', href: '#' },
+      { label: 'Community Services', href: '#' },
+      { label: 'Disaster Management', href: '#' },
+      { label: 'Health Services', href: '#' },
+      { label: 'Education Program', href: '#' },
     ],
   },
-  { label: 'About Us', href: '#' },
+  { label: 'About Us', href: '/about' },
   {
     label: 'Get Involved',
     href: '#',
     children: [
-      { label: 'Campaigns', href: '#', icon: '📢' },
-      { label: 'Ways to Donate', href: '#', icon: '❤️' },
-      { label: 'Careers', href: '#', icon: '💼' },
-      { label: 'Events', href: '#', icon: '📅' },
+      { label: 'Campaigns', href: '#' },
+      { label: 'Ways to Donate', href: '#' },
+      { label: 'Careers', href: '#' },
+      { label: 'Events', href: '#' },
     ],
   },
   { label: 'News & Media', href: '#' },
-  { label: 'Contact Us', href: '#' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 function Header() {
@@ -96,9 +97,9 @@ function Header() {
       {/* Main Navigation */}
       <nav className="header__nav" ref={dropdownRef}>
         <div className="container header__nav-inner">
-          <a href="#" className="header__logo">
+          <Link to="/" className="header__logo">
             <img src={logo} alt="Alkhidmat Foundation Lahore" />
-          </a>
+          </Link>
 
           <ul className="header__menu">
             {navItems.map((item, index) => (
@@ -108,8 +109,8 @@ function Header() {
                 onMouseEnter={() => item.children && setActiveDropdown(index)}
                 onMouseLeave={() => item.children && setActiveDropdown(null)}
               >
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className="header__menu-link"
                   onClick={(e) => {
                     if (item.children) {
@@ -122,7 +123,7 @@ function Header() {
                   {item.children && (
                     <svg className="header__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                   )}
-                </a>
+                </Link>
                 {item.children && activeDropdown === index && (
                   <div className="header__dropdown">
                     <div className="header__dropdown-inner">
@@ -133,11 +134,10 @@ function Header() {
                       <ul className="header__dropdown-list">
                         {item.children.map((child) => (
                           <li key={child.label}>
-                            <a href={child.href} className="header__dropdown-link">
-                              <span className="header__dropdown-icon">{child.icon}</span>
+                            <Link to={child.href} className="header__dropdown-link">
                               <span>{child.label}</span>
                               <svg className="header__dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -149,13 +149,13 @@ function Header() {
           </ul>
 
           <div className="header__actions">
-            <a href="#" className="btn btn-primary header__donate-btn">
+            <Link to="/#donate-section" className="btn btn-primary header__donate-btn">
               Donate Now
-            </a>
-            <a href="#" className="btn btn-outline header__appointment-btn">
+            </Link>
+            <Link to="/contact" className="btn btn-outline header__appointment-btn">
               Appointment
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -197,10 +197,9 @@ function Header() {
                   <ul className="header__mobile-submenu">
                     {item.children.map((child) => (
                       <li key={child.label}>
-                        <a href={child.href} className="header__mobile-sublink" onClick={() => setMobileMenuOpen(false)}>
-                          <span className="header__dropdown-icon">{child.icon}</span>
+                        <Link to={child.href} className="header__mobile-sublink" onClick={() => setMobileMenuOpen(false)}>
                           {child.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -209,12 +208,12 @@ function Header() {
             ))}
           </ul>
           <div className="header__mobile-actions">
-            <a href="#" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+            <Link to="/#donate-section" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
               Donate Now
-            </a>
-            <a href="#" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
-              Appointment 📅
-            </a>
+            </Link>
+            <Link to="/contact" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
+              Appointment
+            </Link>
           </div>
         </div>
       </div>

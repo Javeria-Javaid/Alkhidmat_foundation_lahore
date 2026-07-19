@@ -1,128 +1,25 @@
 .impact-statistics {
-  background-color: #f8fafc;
-}
-
-.mb-5 {
-  margin-bottom: 3rem;
-}
-
-.impact-statistics__cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.impact-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 30px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--gray-100);
-}
-
-.impact-card__header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.impact-card__icon-wrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bg-blue-100 { background-color: #e0e7ff; }
-.text-blue-600 { color: #2563eb; }
-.bg-gray-800 { background-color: #1f2937; }
-.text-gray-800 { color: #1f2937; }
-
-.impact-card__title {
-  font-size: 1.25rem;
-  color: var(--primary-blue);
-  font-weight: 700;
-  margin: 0;
-}
-
-.impact-card__title.text-gray-800 {
-  color: #1f2937;
-}
-
-.impact-card__list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.impact-card__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-  border: 1px solid var(--gray-100);
-  border-radius: var(--radius-md);
   background-color: var(--white);
+  padding: 80px 0;
 }
 
-.impact-card__item-left {
+.impact-image-wrapper {
   display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.impact-card__item-icon {
-  font-size: 1.25rem;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: var(--off-white);
-  border-radius: 50%;
+  align-items: center;
+  margin-top: 40px;
 }
 
-.impact-card__item-label {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  font-weight: 500;
+.impact-stats-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  display: block;
 }
 
-.impact-card__badge {
-  background-color: #eff6ff;
-  color: #2563eb;
-  padding: 6px 16px;
-  border-radius: var(--radius-full);
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.impact-card__badge.bg-gray-100 {
-  background-color: #f3f4f6;
-  color: #1f2937;
-}
-
-@media (max-width: 992px) {
-  .impact-statistics__cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  .impact-card {
-    padding: 20px;
-  }
-  
-  .impact-card__item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  
-  .impact-card__badge {
-    align-self: flex-end;
+@media (max-width: 768px) {
+  .impact-statistics {
+    padding: 60px 0;
   }
 }
