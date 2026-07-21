@@ -13,9 +13,16 @@ function HeroBanner({ campaign }) {
         <div className="hero-banner__content">
           
           <h1 className="hero-banner__title" key={`title-${campaign.id}`}>
-            {campaign.heroHeadingPrefix}
-            <span className="text-primary">{campaign.heroHighlight}</span>
-            {campaign.heroHeadingSuffix}
+            <span className="hero-banner__title-desktop">
+              {campaign.heroHeadingPrefix.replace('\n', ' ')}
+              <span className="text-primary">{campaign.heroHighlight}</span>
+              {campaign.heroHeadingSuffix}
+            </span>
+            <span className="hero-banner__title-mobile">
+              {campaign.heroHeadingPrefix}
+              <span className="text-primary">{campaign.heroHighlight}</span>
+              {campaign.heroHeadingSuffix}
+            </span>
           </h1>
           
           <p className="hero-banner__desc" key={`desc-${campaign.id}`}>
