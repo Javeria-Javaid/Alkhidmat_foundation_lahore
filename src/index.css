@@ -2,7 +2,7 @@
 
 :root {
   /* Brand Colors */
-  --primary-blue: #0047AB;
+  --primary-blue: #0254a4;
   --primary-dark: #003080;
   --primary-darker: #001f5c;
   --primary-light: #1a6bdb;
@@ -32,6 +32,7 @@
   --red-light: #fee2e2;
   --orange: #f59e0b;
   --orange-light: #fef3c7;
+  --accent-yellow: #ffc107;
 
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

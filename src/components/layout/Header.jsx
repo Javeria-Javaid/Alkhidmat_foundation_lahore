@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/weblogo.png';
 import './Header.css';
+import { programs } from '../../data/programs';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -9,14 +10,7 @@ const navItems = [
     label: 'Where We Work',
     href: '#',
     children: [
-      { label: 'Palestine Emergency Appeal', href: '#' },
-      { label: 'BanoQabil', href: '#' },
-      { label: 'Orphan Care Program', href: '#' },
-      { label: 'Clean Water Program', href: '#' },
-      { label: 'Community Services', href: '#' },
-      { label: 'Disaster Management', href: '#' },
-      { label: 'Health Services', href: '#' },
-      { label: 'Education Program', href: '#' },
+      ...programs,
     ],
   },
   { label: 'About Us', href: '/about' },

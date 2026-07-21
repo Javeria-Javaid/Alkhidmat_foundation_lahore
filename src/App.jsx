@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import PalestineEmergencyAppeal from './pages/PalestineEmergencyAppeal';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/programs/palestine-emergency-appeal" element={<PalestineEmergencyAppeal />} />
       </Routes>
       <Footer />
     </div>

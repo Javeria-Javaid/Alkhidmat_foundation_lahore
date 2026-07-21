@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '../../assets/weblogo.png';
 import './Footer.css';
+import { Link } from 'react-router-dom';
+import { programs } from '../../data/programs';
 
 function Footer() {
   return (
@@ -79,14 +81,7 @@ function Footer() {
           <div className="footer__col">
             <h4>Our Programs</h4>
             <ul className="footer__links">
-              <li><a href="#">Palestine Emergency Appeal</a></li>
-              <li><a href="#">BanoQabil</a></li>
-              <li><a href="#">Orphan Care Program</a></li>
-              <li><a href="#">Clean Water Program</a></li>
-              <li><a href="#">Community Services</a></li>
-              <li><a href="#">Disaster Management</a></li>
-              <li><a href="#">Health Services</a></li>
-              <li><a href="#">Education Program</a></li>
+              {programs.map((program) => <li key={program.label}><Link to={program.href}>{program.label}</Link></li>)}
             </ul>
           </div>
 

@@ -136,6 +136,16 @@ function SuccessStories() {
                   <a href="#" className="link-arrow">Donate Now &rarr;</a>
                </div>
             </div>
+
+            <div className="cause-card cause-card--dark">
+               <div className="cause-card__bg bg-education"></div>
+               <div className="cause-card__content">
+                  <div className="cause-icon icon-yellow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+                  <h3>Education Support</h3>
+                  <p>Providing quality education and resources to underprivileged children.</p>
+                  <a href="#" className="link-arrow">Donate Now &rarr;</a>
+               </div>
+            </div>
             
           </div>
         </div>
