@@ -9,7 +9,7 @@
   background: #061c3f; /* Dark navy blue */
   border-radius: 24px;
   box-shadow: 0 25px 50px -12px rgba(6, 28, 63, 0.4);
-  padding: 40px;
+  padding: 30px;
   display: flex;
   gap: 40px;
   align-items: center;
@@ -127,58 +127,115 @@
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--white);
+  color: #F8FAFC !important;  /* Guaranteed white on dark navy */
+  letter-spacing: 0.01em;
 }
 
+/* ─── INPUT WRAPPER: the styled shell ───────────────────────────────────────
+   The wrapper owns the border, background, and radius.
+   Icon and input are both flex children — they can NEVER overlap.
+──────────────────────────────────────────────────────────────────────────── */
 .input-wrapper {
-  position: relative;
+  position: relative;                /* icon is absolute inside this */
   display: flex;
   align-items: center;
+  height: 50px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  background: #FFFFFF;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  /* NO overflow:hidden — that was creating the visible input-box left edge */
 }
 
-.input-icon {
-  position: absolute;
-  left: 16px;
-  color: var(--slate-500, #64748b);
+.input-wrapper:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
 }
 
+/* ─── ICON: absolutely positioned over the wrapper ──────────────────────
+   Floats over the single white box — no element boundaries, no dividers.
+───────────────────────────────────────────────────────────────────── */
+.input-wrapper .input-icon {
+  position: absolute !important;
+  left: 18px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 18px !important;
+  height: 18px !important;
+  color: #64748B !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  flex-shrink: 0 !important;
+}
+
+/* ─── INPUT & SELECT: fills full wrapper, padded past 52px reserved icon zone ─ */
+.donation-form .input-wrapper input,
+.donation-form .input-wrapper select,
+.donation-panel .input-wrapper input,
+.donation-panel .input-wrapper select,
 .input-wrapper input,
 .input-wrapper select {
-  width: 100%;
-  padding: 14px 16px 14px 44px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  font-family: var(--font-primary);
-  font-size: 0.95rem;
-  color: var(--navy);
-  background: var(--white);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-  appearance: none;
-  -webkit-appearance: none;
+  width: 100% !important;
+  height: 100% !important;
+  /* Reserved 52px icon area + 20px clear space = 72px left padding */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-right: 16px !important;
+  padding-left: 72px !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #1e293b !important;
+  font-size: 0.9rem !important;
+  font-family: var(--font-primary) !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
 }
 
-/* Select-specific: extra right padding for the arrow */
+/* Reset any browser defaults that re-add a border/background */
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  outline: none !important;
+  box-shadow: none !important;  /* focus ring is on the wrapper via :focus-within */
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Placeholder — soft, professional neutral */
+.input-wrapper input::placeholder {
+  color: #9CA3AF !important;
+  opacity: 1 !important;
+}
+
+/* Select options (OS-native dropdown) */
+.input-wrapper select option {
+  background: #061c3f !important;
+  color: #e2e8f0 !important;
+}
+
+/* Select text color — dark navy on white background */
+.donation-form .select-wrapper select,
+.donation-panel .select-wrapper select,
 .select-wrapper select {
-  padding-right: 44px;
-  cursor: pointer;
+  padding-left: 72px !important;
+  padding-right: 40px !important; /* room for the custom arrow */
+  cursor: pointer !important;
+  color: #1e293b !important;
 }
 
-/* Custom dropdown arrow */
+/* Custom dropdown chevron — still absolute inside .input-wrapper */
 .select-arrow {
   position: absolute;
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: var(--primary-blue);
+  color: #64748B;
   flex-shrink: 0;
-}
-
-.input-wrapper input:focus,
-.input-wrapper select:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  width: 16px;
+  height: 16px;
 }
 
 .form-actions {

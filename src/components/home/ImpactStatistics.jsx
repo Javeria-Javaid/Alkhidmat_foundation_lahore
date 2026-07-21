@@ -18,9 +18,9 @@ function ImpactStatistics() {
             src={impactStatsImg}
             alt="Alkhidmat Foundation Impact Statistics"
             className="impact-stats-img"
-            width="1200"
-            height="600"
-            style={{ width: '100%', height: 'auto', aspectRatio: '2/1' }}
+            width="1712"
+            height="716"
+            loading="lazy"
           />
         </div>
       </div>
