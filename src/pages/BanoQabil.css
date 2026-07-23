@@ -1,0 +1,731 @@
+.banoqabil-page {
+  background-color: var(--white);
+}
+
+/* 1. Hero Section */
+.bq-hero {
+  background: linear-gradient(to right, #0a1128 0%, #1e3a8a 100%);
+  color: var(--white);
+  padding: 80px 0 140px; /* Extra padding at bottom for stats strip */
+  position: relative;
+  overflow: hidden;
+}
+
+.bq-hero__content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.bq-hero__left {
+  flex: 1.2;
+}
+
+.bq-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.bq-hero__badge svg {
+  color: #ffc107;
+  width: 16px;
+  height: 16px;
+}
+
+.bq-hero__title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+.text-highlight {
+  color: #ffc107;
+}
+
+.bq-hero__desc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.bq-hero__actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-outline--light {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--white);
+}
+.btn-outline--light:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bq-hero__right {
+  flex: 1;
+  position: relative;
+}
+
+.bq-hero__image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.3s ease;
+}
+
+.bq-hero__image-wrapper:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.bq-hero__img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.bq-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(2, 84, 164, 0.3), transparent);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.bq-hero__decorative-box {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border: 4px solid #ffc107;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Statistics Strip */
+.bq-stats {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+  z-index: 10;
+}
+
+.bq-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.bq-stat-item:not(:last-child) {
+  border-right: 1px solid var(--gray-200);
+  margin-right: 24px;
+}
+
+.bq-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(2, 84, 164, 0.1);
+  color: #0254a4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bq-stat-icon svg { width: 24px; height: 24px; }
+
+.bq-stat-text strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.bq-stat-text span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* 2. About BanoQabil */
+.bq-about {
+  padding-top: 120px; /* Space for overlapping stats */
+}
+
+.bq-about__inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.bq-about__visual {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.bq-about__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 84, 164, 0.2);
+}
+
+.bq-about__img {
+  width: 100%;
+  display: block;
+}
+
+.bq-about__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background: var(--primary-blue, #0254a4);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(2, 84, 164, 0.5);
+  transition: transform 0.3s ease;
+}
+.bq-about__play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.bq-about__content {
+  flex: 1;
+}
+
+.bq-about__desc {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.bq-features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+  list-style: none;
+  padding: 0;
+}
+
+.bq-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.bq-features-list li svg {
+  color: var(--primary-blue, #0254a4);
+}
+
+
+/* 3. Popular Courses */
+.bq-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.bq-course-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.bq-course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-blue, #0254a4);
+}
+
+.bq-course-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: rgba(2, 84, 164, 0.05);
+  color: var(--primary-blue, #0254a4);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.bq-course-card:hover .bq-course-icon {
+  background: var(--primary-blue, #0254a4);
+  color: var(--white);
+}
+
+.bq-course-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.bq-course-card h3 {
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.bq-course-card p {
+  color: var(--text-body);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* 4. Admission Process Timeline */
+.bq-process {
+  background: var(--white);
+}
+
+.bq-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 40px;
+}
+
+.bq-timeline::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: var(--gray-200);
+  z-index: 0;
+  border-top: 2px dashed rgba(2, 84, 164, 0.3);
+}
+
+.bq-step {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+.bq-step__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--white);
+  border: 2px solid var(--primary-blue, #0254a4);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue, #0254a4);
+  transition: all 0.3s ease;
+}
+
+.bq-step:hover .bq-step__icon {
+  background: var(--primary-blue, #0254a4);
+  color: var(--white);
+  box-shadow: 0 0 0 6px rgba(2, 84, 164, 0.1);
+}
+
+.bq-step__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.bq-step__number {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.bq-step h4 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.bq-step p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+/* 5. Why Choose BanoQabil */
+.bq-why-choose {
+  background-color: var(--primary-blue, #0254a4);
+  background-image: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.08) 0%, transparent 40%),
+                    radial-gradient(circle at 0% 100%, rgba(255,255,255,0.05) 0%, transparent 40%);
+}
+
+.bq-why-choose .section-tag--yellow {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.bq-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.bq-why-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  color: var(--white);
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-align: center;
+}
+
+.bq-why-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.bq-why-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.bq-why-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.bq-why-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.bq-why-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* 6. Contact Section */
+.bq-contact__inner {
+  display: flex;
+  gap: 60px;
+}
+
+.bq-contact__info {
+  flex: 1;
+}
+
+.bq-contact__desc {
+  margin-bottom: 40px;
+  color: var(--text-body);
+}
+
+.bq-contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bq-contact__item {
+  display: flex;
+  gap: 16px;
+}
+
+.bq-contact__item-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(2, 84, 164, 0.1);
+  color: var(--primary-blue, #0254a4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bq-contact__item-icon svg { width: 24px; height: 24px; }
+
+.bq-contact__item strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.bq-contact__item p {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.bq-contact__form {
+  flex: 1;
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-100);
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: all 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-blue, #0254a4);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(2, 84, 164, 0.1);
+}
+
+.form-alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-alert--error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.form-alert--success {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+
+/* 7. CTA Banner */
+.bq-cta-banner {
+  background: linear-gradient(135deg, #0254a4 0%, #059669 100%);
+  padding: 60px 0;
+  color: var(--white);
+}
+
+.bq-cta-banner__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bq-cta-banner__content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.bq-cta-banner__icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bq-cta-banner__icon svg { width: 40px; height: 40px; }
+
+.bq-cta-banner__content h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.bq-cta-banner__content p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.bq-cta-banner__actions {
+  display: flex;
+  gap: 16px;
+}
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .bq-hero__content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .bq-hero__actions {
+    justify-content: center;
+  }
+  
+  .bq-hero__desc {
+    margin: 0 auto 40px;
+  }
+  
+  .bq-stats {
+    flex-wrap: wrap;
+    bottom: -80px;
+  }
+  
+  .bq-stat-item {
+    flex: 1 1 40%;
+    margin-bottom: 16px;
+    border-right: none !important;
+  }
+  
+  .bq-about {
+    padding-top: 160px;
+  }
+  
+  .bq-about__inner {
+    flex-direction: column;
+  }
+  
+  .bq-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bq-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bq-contact__inner {
+    flex-direction: column;
+  }
+  
+  .bq-cta-banner__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+  
+  .bq-cta-banner__content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .bq-hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .bq-features-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .bq-courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bq-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .bq-timeline::before {
+    top: 0;
+    left: 42px;
+    right: auto;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    border-top: none;
+    border-left: 2px dashed rgba(2, 84, 164, 0.3);
+  }
+  
+  .bq-step {
+    display: flex;
+    text-align: left;
+    margin-bottom: 32px;
+    padding: 0;
+  }
+  
+  .bq-step__icon {
+    margin: 0 24px 0 0;
+    flex-shrink: 0;
+  }
+  
+  .bq-why-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bq-hero__actions,
+  .bq-cta-banner__actions {
+    flex-direction: column;
+  }
+}
