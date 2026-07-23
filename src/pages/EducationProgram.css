@@ -1,0 +1,756 @@
+/* ============================================================
+   EDUCATION PROGRAM PAGE
+   ============================================================ */
+
+/* ── Hero ── */
+.ep-hero {
+  background: white;
+  padding: 48px 0 0;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.ep-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left */
+.ep-hero__left { padding-bottom: 48px; }
+
+.ep-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #0254a4;
+  background: #e8f0fb;
+  border: 1px solid #c5d9f5;
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+
+.ep-hero__title {
+  font-size: clamp(1.75rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.ep-hero__title--blue { color: #0254a4; }
+
+.ep-hero__desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
+.ep-hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.ep-hero__stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ep-hero__stat-icon {
+  width: 36px;
+  height: 36px;
+  color: #0254a4;
+  flex-shrink: 0;
+}
+
+.ep-hero__stat-icon svg { width: 100%; height: 100%; }
+
+.ep-hero__stat strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.ep-hero__stat span {
+  display: block;
+  font-size: 0.72rem;
+  color: #64748b;
+  line-height: 1.3;
+  margin-top: 3px;
+  white-space: pre-line;
+}
+
+/* Right */
+.ep-hero__right {
+  position: relative;
+}
+
+.ep-hero__dots {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  display: grid;
+  grid-template-columns: repeat(4, 10px);
+  gap: 8px;
+  z-index: 0;
+}
+
+.ep-hero__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c5d9f5;
+  display: block;
+}
+
+.ep-hero__img-wrap {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(2,84,164,0.12);
+}
+
+.ep-hero__img-wrap img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Donation Widget */
+.ep-hero__widget {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  border: 1px solid #e8f0fb;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.ep-hero__widget-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ep-hero__widget-icon {
+  width: 44px;
+  height: 44px;
+  background: #e8f0fb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ep-hero__widget-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 2px !important;
+}
+
+.ep-hero__widget-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0 !important;
+}
+
+.ep-hero__amounts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.ep-hero__amount-btn {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 9px 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ep-hero__amount-btn:hover {
+  border-color: #0254a4;
+  color: #0254a4;
+}
+
+.ep-hero__amount-btn--active {
+  background: #0254a4;
+  border-color: #0254a4;
+  color: white;
+}
+
+.ep-hero__donate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #16a34a;
+  color: white;
+  border-radius: 8px;
+  padding: 13px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.ep-hero__donate-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.ep-hero__secure {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #64748b;
+  justify-content: center;
+  margin: 0 !important;
+}
+
+/* ── Info Cards Section ── */
+.ep-cards { background: #f8fafc; }
+
+.ep-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ep-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.ep-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.ep-card--blue { border-top-color: #0254a4; }
+.ep-card--green { border-top-color: #16a34a; }
+.ep-card--purple { border-top-color: #7c3aed; }
+
+.ep-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ep-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ep-card__icon--blue { background: #e8f0fb; color: #0254a4; }
+.ep-card__icon--green { background: #f0fdf4; color: #16a34a; }
+.ep-card__icon--purple { background: #f5f3ff; color: #7c3aed; }
+
+.ep-card__header h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.ep-card > p {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.ep-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ep-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ep-card__list-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+.ep-card__list-icon svg { width: 100%; height: 100%; }
+
+.ep-card__list span {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ep-card__list strong {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.ep-card__list em {
+  font-size: 0.76rem;
+  font-style: normal;
+  color: #64748b;
+}
+
+.ep-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #0254a4;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.ep-card__link:hover { gap: 10px; }
+
+/* ── Video + Success Stories ── */
+.ep-stories {
+  background: #0d1b33;
+  padding: 64px 0;
+}
+
+.ep-stories__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* Video Card */
+.ep-stories__video-col { position: relative; }
+
+.ep-stories__video-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.ep-stories__video-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  opacity: 0.55;
+  display: block;
+}
+
+.ep-stories__video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+}
+
+.ep-stories__quote {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  font-style: normal;
+}
+
+.ep-stories__play {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+  margin-bottom: 16px;
+}
+
+.ep-stories__play:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.1);
+}
+
+.ep-stories__quote-sub {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  margin: 0 !important;
+}
+
+.ep-stories__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  padding: 10px 16px;
+}
+
+.ep-stories__controls-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.ep-stories__controls-bar button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.ep-stories__progress {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+}
+
+.ep-stories__progress-fill {
+  width: 35%;
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Right: Stories */
+.ep-stories__right {}
+
+.ep-stories__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.ep-stories__header h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.ep-stories__header p {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0 !important;
+}
+
+.ep-stories__nav {
+  display: flex;
+  gap: 8px;
+}
+
+.ep-stories__nav button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ep-stories__nav button:hover { background: rgba(255,255,255,0.2); }
+
+.ep-stories__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ep-stories__card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+}
+
+.ep-stories__card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.ep-stories__card-avatar {
+  flex-shrink: 0;
+}
+
+.ep-stories__avatar-placeholder {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0254a4, #0e6fd8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+}
+
+.ep-stories__card-body { flex: 1; }
+
+.ep-stories__card-body h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.ep-stories__card-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 6px !important;
+}
+
+.ep-stories__card-scholarship { margin-bottom: 4px !important; }
+
+.ep-stories__card-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #16a34a;
+  background: rgba(22,163,74,0.15);
+  border: 1px solid rgba(22,163,74,0.3);
+  border-radius: 100px;
+  padding: 2px 10px;
+}
+
+.ep-stories__card-program {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 8px !important;
+}
+
+.ep-stories__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #60b0ff;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.ep-stories__card-link:hover { gap: 8px; }
+
+/* ── Donation Panel ── */
+.ep-donate {
+  background: #0e1f4d;
+  padding: 64px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ep-donate__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.ep-donate__bg-icons {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0.04;
+  font-size: 3rem;
+  pointer-events: none;
+}
+
+.ep-donate__text {
+  margin-bottom: 40px;
+}
+
+.ep-donate__text h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.ep-donate__text p {
+  font-size: 0.93rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+}
+
+.ep-donate__amounts {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.ep-donate__amount-btn {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+  min-width: 120px;
+}
+
+.ep-donate__amount-btn:hover {
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.12);
+}
+
+.ep-donate__amount-btn--active {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.ep-donate__amount-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.ep-donate__amount-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 3px;
+}
+
+.ep-donate__amount-btn--active .ep-donate__amount-sub {
+  color: rgba(255,255,255,0.85);
+}
+
+.ep-donate__cta {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.ep-donate__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #16a34a;
+  color: white;
+  border-radius: 10px;
+  padding: 16px 40px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.ep-donate__btn:hover {
+  background: #15803d;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(22,163,74,0.4);
+}
+
+.ep-donate__badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.ep-donate__badges span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ep-donate__badge-sep { color: rgba(255,255,255,0.3); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .ep-hero__inner { grid-template-columns: 1fr; }
+  .ep-hero__right { display: flex; flex-direction: column; }
+  .ep-hero__stats { grid-template-columns: repeat(2, 1fr); }
+  .ep-cards__grid { grid-template-columns: 1fr; }
+  .ep-stories__inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .ep-hero { padding: 32px 0 0; }
+  .ep-hero__stats { grid-template-columns: repeat(2, 1fr); }
+  .ep-donate__amounts { gap: 8px; }
+  .ep-donate__amount-btn { min-width: 90px; padding: 10px 12px; }
+  .ep-stories__cards { gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .ep-hero__stats { grid-template-columns: repeat(2, 1fr); }
+  .ep-hero__amounts { grid-template-columns: repeat(2, 1fr); }
+  .ep-donate__amounts { flex-direction: column; align-items: stretch; }
+  .ep-donate__amount-btn { min-width: auto; }
+}

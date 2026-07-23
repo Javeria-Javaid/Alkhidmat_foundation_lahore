@@ -7,6 +7,9 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import PalestineEmergencyAppeal from './pages/PalestineEmergencyAppeal';
 import BanoQabil from './pages/BanoQabil';
+import CleanWater from './pages/CleanWater';
+import DisasterManagement from './pages/DisasterManagement';
+import EducationProgram from './pages/EducationProgram';
 import './App.css';
 
 function App() {
@@ -19,6 +22,9 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/programs/palestine-emergency-appeal" element={<PalestineEmergencyAppeal />} />
         <Route path="/programs/banoqabil" element={<BanoQabil />} />
+        <Route path="/programs/clean-water" element={<CleanWater />} />
+        <Route path="/programs/disaster-management" element={<DisasterManagement />} />
+        <Route path="/programs/education" element={<EducationProgram />} />
       </Routes>
       <Footer />
     </div>

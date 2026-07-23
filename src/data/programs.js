@@ -12,10 +12,10 @@ export const programs = [
   { label: 'Palestine Emergency Appeal', href: '/programs/palestine-emergency-appeal', image: palestineImg, description: 'Urgent humanitarian assistance for families affected by the crisis in Palestine.' },
   { label: 'Bano Qabil', href: '/programs/banoqabil', image: banoqabilImg, description: 'Skills and opportunities that help young people build independent futures.' },
   { label: 'Orphan Care', href: '#', image: orphanImg, description: 'Care, protection and support for children who have lost a parent.' },
-  { label: 'Clean Water', href: '#', image: cleanWaterImg, description: 'Safe water, sanitation and hygiene for healthier communities.' },
+  { label: 'Clean Water', href: '/programs/clean-water', image: cleanWaterImg, description: 'Safe water, sanitation and hygiene for healthier communities.' },
   { label: 'Community Services', href: '#', image: communityImg, description: 'Local welfare initiatives that strengthen families and neighborhoods.' },
-  { label: 'Disaster Management', href: '#', image: disasterImg, description: 'Rapid response, relief and recovery when emergencies strike.' },
+  { label: 'Disaster Management', href: '/programs/disaster-management', image: disasterImg, description: 'Rapid response, relief and recovery when emergencies strike.' },
   { label: 'Health', href: '#', image: healthImg, description: 'Accessible healthcare and medical support for communities in need.' },
-  { label: 'Education', href: '#', image: educationImg, description: 'Education and scholarships that open doors to a brighter future.' },
+  { label: 'Education', href: '/programs/education', image: educationImg, description: 'Education and scholarships that open doors to a brighter future.' },
   { label: 'Mawakhat', href: '#', image: mawakhatImg, description: 'Interest-free financial support for families and small businesses.' },
 ];
