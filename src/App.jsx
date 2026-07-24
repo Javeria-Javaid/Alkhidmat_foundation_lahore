@@ -10,6 +10,9 @@ import BanoQabil from './pages/BanoQabil';
 import CleanWater from './pages/CleanWater';
 import DisasterManagement from './pages/DisasterManagement';
 import EducationProgram from './pages/EducationProgram';
+import CommunityServices from './pages/CommunityServices';
+import Healthcare from './pages/Healthcare';
+import Mawakhat from './pages/Mawakhat';
 import './App.css';
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
         <Route path="/programs/clean-water" element={<CleanWater />} />
         <Route path="/programs/disaster-management" element={<DisasterManagement />} />
         <Route path="/programs/education" element={<EducationProgram />} />
+        <Route path="/programs/community-services" element={<CommunityServices />} />
+        <Route path="/programs/healthcare" element={<Healthcare />} />
+        <Route path="/programs/mawakhat" element={<Mawakhat />} />
       </Routes>
       <Footer />
     </div>

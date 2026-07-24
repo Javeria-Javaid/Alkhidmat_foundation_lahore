@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Mawakhat.css';
 import {
   mawakhatFloatingStats,
@@ -25,16 +24,9 @@ function Mawakhat() {
 
       {/* ── 1. HERO ── */}
       <section className="mw-hero" aria-label="Mawakhat Program Hero">
-        <div className="mw-hero__bg">
-          <img src={heroManImg} alt="Elderly man supported by Mawakhat program" className="mw-hero__man-img" />
-          <div className="mw-hero__overlay" />
-        </div>
-
         <div className="container mw-hero__inner">
           <div className="mw-hero__content">
-            <span className="mw-hero__badge">
-              MAWAKHAT PROGRAM
-            </span>
+            <span className="mw-hero__badge">MAWAKHAT PROGRAM</span>
             <h1 className="mw-hero__title">
               Restoring Dignity.<br />
               <span className="mw-hero__title--blue">Rebuilding Lives.</span>
@@ -44,18 +36,36 @@ function Mawakhat() {
             </p>
             <div className="mw-hero__actions">
               <a href="#donate-panel" className="btn mw-hero__btn-primary">
-                Donate for Mawakhat ♡
+                Donate for Mawakhat
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
               </a>
               <a href="#about" className="btn mw-hero__btn-outline">
-                How You Can Help →
+                How You Can Help
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
               </a>
             </div>
+          </div>
+
+          <div className="mw-hero__visual" aria-hidden="true">
+            <img src={heroManImg} alt="" className="mw-hero__man-img" />
           </div>
 
           {/* Right Floating Donation Widget */}
           <div className="mw-hero__widget">
             <div className="mw-hero__widget-header">
-              <span className="mw-hero__widget-icon">🤲</span>
+              <span className="mw-hero__widget-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0254a4" strokeWidth="2" width="28" height="28">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </span>
               <div>
                 <h3>Support Our Cause</h3>
                 <p>Your support can bring shelter, food and care to those who have no one.</p>
@@ -63,8 +73,8 @@ function Mawakhat() {
             </div>
 
             <div className="mw-hero__widget-dropdown">
-              <label>I want to support</label>
-              <select>
+              <label htmlFor="mw-support-type">I want to support</label>
+              <select id="mw-support-type" defaultValue="Provide Food">
                 <option>Provide Food</option>
                 <option>Provide Shelter</option>
                 <option>Provide Clothing</option>
@@ -73,9 +83,10 @@ function Mawakhat() {
             </div>
 
             <div className="mw-hero__widget-amounts">
-              {['PKR 500', 'PKR 1,000', 'PKR 2,500', 'PKR 5,000', 'Other'].map((amt) => (
+              {['PKR 500', 'PKR 1,000', 'PKR 2,500', 'PKR 5,000'].map((amt) => (
                 <button
                   key={amt}
+                  type="button"
                   className={`mw-widget-amt ${selectedWidgetAmount === amt ? 'mw-widget-amt--active' : ''}`}
                   onClick={() => setSelectedWidgetAmount(amt)}
                 >
@@ -84,10 +95,22 @@ function Mawakhat() {
               ))}
             </div>
 
+            <div className="mw-hero__widget-other">
+              <input type="text" placeholder="Other Amount" aria-label="Other donation amount" />
+            </div>
+
             <a href="#donate-panel" className="mw-hero__widget-btn">
-              Donate Now ♡
+              Donate Now
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
             </a>
-            <p className="mw-hero__policy">🔒 100% Donation Policy</p>
+            <p className="mw-hero__policy">
+              <svg viewBox="0 0 24 24" fill="#16a34a" width="14" height="14" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              100% Donation Policy
+            </p>
           </div>
         </div>
       </section>
@@ -118,7 +141,7 @@ function Mawakhat() {
             <div className="mw-about__img-wrap">
               <img src={centerImg} alt="Alkhidmat Mawakhat Centre building" />
               <button className="mw-about__play" aria-label="Play Mawakhat documentary">
-                <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+                <svg viewBox="0 0 24 24" fill="#0254a4" width="28" height="28">
                   <polygon points="5,3 19,12 5,21" />
                 </svg>
               </button>
@@ -146,8 +169,10 @@ function Mawakhat() {
             {mawakhatServices.map((service) => (
               <div className="mw-services__card" key={service.id}>
                 <div className="mw-services__icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
+                <div className="mw-services__body">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -166,7 +191,11 @@ function Mawakhat() {
               From major cities to small towns, Alkhidmat Mawakhat centers are a source of warmth, care, and dignity for thousands.
             </p>
             <a href="#all-centres" className="btn mw-map__btn">
-              View All Centres →
+              View All Centres
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
             </a>
           </div>
 
@@ -175,9 +204,8 @@ function Mawakhat() {
               <h3>Pakistan Coverage</h3>
             </div>
             <div className="mw-map__card-body">
-              {/* Map SVG representation */}
               <div className="mw-map__svg-wrap">
-                <svg viewBox="0 0 350 320" className="mw-map__svg">
+                <svg viewBox="0 0 350 320" className="mw-map__svg" aria-hidden="true">
                   <path
                     d="M120,30 L160,20 L210,35 L250,25 L280,55 L300,90 L310,130
                        L330,150 L340,190 L330,220 L320,250 L300,270 L270,300
@@ -187,7 +215,6 @@ function Mawakhat() {
                     stroke="rgba(255,255,255,0.25)"
                     strokeWidth="1.5"
                   />
-                  {/* Pin glowing dots */}
                   {[
                     { x: 210, y: 70 },
                     { x: 160, y: 120 },
@@ -202,11 +229,10 @@ function Mawakhat() {
                 </svg>
               </div>
 
-              {/* Province list side */}
               <div className="mw-map__province-list">
                 {mawakhatProvinces.map((prov) => (
                   <div className="mw-map__province-item" key={prov.name}>
-                    <span className="mw-province__pin">📍</span>
+                    <span className="mw-province__pin" aria-hidden="true">📍</span>
                     <div>
                       <strong>{prov.name}</strong>
                       <span>{prov.count}</span>
@@ -228,23 +254,33 @@ function Mawakhat() {
               <h2 id="stories-heading">Stories of Change</h2>
             </div>
             <a href="#more-stories" className="btn mw-stories__btn-link">
-              View More Stories →
+              View More Stories
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
             </a>
           </div>
 
           <div className="mw-stories__grid">
             {mawakhatStories.map((story, i) => (
-              <div className="mw-stories__card" key={story.id}>
+              <article className="mw-stories__card" key={story.id}>
                 <div className="mw-stories__img-wrap">
                   <img src={storyImages[i]} alt={story.title} />
-                  <span className="mw-stories__badge">{story.tag}</span>
+                  <div className="mw-stories__overlay">
+                    <span className="mw-stories__badge">{story.tag}</span>
+                    <h3>{story.title}</h3>
+                    <p>{story.desc}</p>
+                    <a href="#read" className="mw-stories__read-link">
+                      Read Story
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-                <div className="mw-stories__body">
-                  <h3>{story.title}</h3>
-                  <p>{story.desc}</p>
-                  <a href="#read" className="mw-stories__read-link">Read Story →</a>
-                </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -270,6 +306,7 @@ function Mawakhat() {
                 {mawakhatDonationAmounts.map((item) => (
                   <button
                     key={item.amount}
+                    type="button"
                     className={`mw-panel-amt ${selectedPanelAmount === item.amount ? 'mw-panel-amt--active' : ''}`}
                     onClick={() => setSelectedPanelAmount(item.amount)}
                   >
@@ -279,8 +316,11 @@ function Mawakhat() {
                 ))}
               </div>
 
-              <button className="mw-donate-panel__submit-btn">
-                Donate Now for Mawakhat ♡
+              <button type="button" className="mw-donate-panel__submit-btn">
+                Donate Now for Mawakhat
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
               </button>
             </div>
           </div>
