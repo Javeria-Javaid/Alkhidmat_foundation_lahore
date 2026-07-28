@@ -1,21 +1,20 @@
 .transparency-report {
-  background-color: #f8fafc;
+  background-color: #0254a4;
 }
 
 .transparency-report__inner {
-  background: #1a2235;
-  border-radius: var(--radius-lg);
-  padding: 60px 40px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid #1a2235;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
 }
 
-.transparency-report__inner .section-title,
-.transparency-report__inner .section-subtitle {
+.transparency-report .section-title,
+.transparency-report .section-subtitle {
   color: var(--white);
 }
 
-.transparency-report__inner .section-subtitle {
+.transparency-report .section-subtitle {
   opacity: 0.9;
 }
 
@@ -87,9 +86,6 @@
 }
 
 @media (max-width: 768px) {
-  .transparency-report__inner {
-    padding: 40px 20px;
-  }
   .donations-grid {
     grid-template-columns: 1fr;
     gap: 40px;
