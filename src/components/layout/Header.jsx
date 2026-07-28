@@ -128,10 +128,26 @@ function Header() {
                       <ul className="header__dropdown-list">
                         {item.children.map((child) => (
                           <li key={child.label}>
-                            <Link to={child.href} className="header__dropdown-link">
-                              <span>{child.label}</span>
-                              <svg className="header__dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                            </Link>
+                            {child.isExternal ? (
+                              <a
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="header__dropdown-link"
+                              >
+                                <span>{child.label}</span>
+                                <svg className="header__dropdown-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                  <polyline points="15 3 21 3 21 9"/>
+                                  <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                              </a>
+                            ) : (
+                              <Link to={child.href} className="header__dropdown-link">
+                                <span>{child.label}</span>
+                                <svg className="header__dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                              </Link>
+                            )}
                           </li>
                         ))}
                       </ul>

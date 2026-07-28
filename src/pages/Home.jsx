@@ -6,7 +6,6 @@ import SuccessStories from '../components/home/SuccessStories';
 import LatestNews from '../components/home/LatestNews';
 import TransparencyReport from '../components/home/TransparencyReport';
 import Partners from '../components/home/Partners';
-import Newsletter from '../components/home/Newsletter';
 
 function Home() {
   return (
@@ -18,7 +17,6 @@ function Home() {
       <LatestNews />
       <TransparencyReport />
       <Partners />
-      <Newsletter />
     </main>
   );
 }

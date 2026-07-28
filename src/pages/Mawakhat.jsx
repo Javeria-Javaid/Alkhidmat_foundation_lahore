@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Mawakhat.css';
+import ProgramHero from '../components/shared/ProgramHero';
 import {
   mawakhatFloatingStats,
   mawakhatServices,
@@ -16,123 +17,32 @@ import story3Img from '../assets/akfl-3.jpeg';
 const storyImages = [story1Img, story2Img, story3Img];
 
 function Mawakhat() {
-  const [selectedWidgetAmount, setSelectedWidgetAmount] = useState('PKR 1,000');
   const [selectedPanelAmount, setSelectedPanelAmount] = useState('PKR 1,000');
 
   return (
     <main className="mw-page">
 
-      {/* ── 1. HERO ── */}
-      <section className="mw-hero" aria-label="Mawakhat Program Hero">
-        <div className="container mw-hero__inner">
-          <div className="mw-hero__content">
-            <span className="mw-hero__badge">MAWAKHAT PROGRAM</span>
-            <h1 className="mw-hero__title">
-              Restoring Dignity.<br />
-              <span className="mw-hero__title--blue">Rebuilding Lives.</span>
-            </h1>
-            <p className="mw-hero__desc">
-              Alkhidmat Mawakhat is a year-round welfare program dedicated to rehabilitating the homeless and less privileged through shelter, food, clothing, and medical care across Pakistan.
-            </p>
-            <div className="mw-hero__actions">
-              <a href="#donate-panel" className="btn mw-hero__btn-primary">
-                Donate for Mawakhat
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-              </a>
-              <a href="#about" className="btn mw-hero__btn-outline">
-                How You Can Help
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div className="mw-hero__visual" aria-hidden="true">
-            <img src={heroManImg} alt="" className="mw-hero__man-img" />
-          </div>
-
-          {/* Right Floating Donation Widget */}
-          <div className="mw-hero__widget">
-            <div className="mw-hero__widget-header">
-              <span className="mw-hero__widget-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#0254a4" strokeWidth="2" width="28" height="28">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-              </span>
-              <div>
-                <h3>Support Our Cause</h3>
-                <p>Your support can bring shelter, food and care to those who have no one.</p>
-              </div>
-            </div>
-
-            <div className="mw-hero__widget-dropdown">
-              <label htmlFor="mw-support-type">I want to support</label>
-              <select id="mw-support-type" defaultValue="Provide Food">
-                <option>Provide Food</option>
-                <option>Provide Shelter</option>
-                <option>Provide Clothing</option>
-                <option>Provide Medical Care</option>
-              </select>
-            </div>
-
-            <div className="mw-hero__widget-amounts">
-              {['PKR 500', 'PKR 1,000', 'PKR 2,500', 'PKR 5,000'].map((amt) => (
-                <button
-                  key={amt}
-                  type="button"
-                  className={`mw-widget-amt ${selectedWidgetAmount === amt ? 'mw-widget-amt--active' : ''}`}
-                  onClick={() => setSelectedWidgetAmount(amt)}
-                >
-                  {amt}
-                </button>
-              ))}
-            </div>
-
-            <div className="mw-hero__widget-other">
-              <input type="text" placeholder="Other Amount" aria-label="Other donation amount" />
-            </div>
-
-            <a href="#donate-panel" className="mw-hero__widget-btn">
-              Donate Now
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </a>
-            <p className="mw-hero__policy">
-              <svg viewBox="0 0 24 24" fill="#16a34a" width="14" height="14" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              100% Donation Policy
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. FLOATING STATS BAR ── */}
-      <section className="mw-stats" aria-label="Mawakhat Statistics">
-        <div className="container">
-          <div className="mw-stats__card">
-            <div className="mw-stats__grid">
-              {mawakhatFloatingStats.map((stat) => (
-                <div className="mw-stats__item" key={stat.label}>
-                  <div className="mw-stats__icon">{stat.icon}</div>
-                  <div>
-                    <strong className="mw-stats__value">{stat.value}</strong>
-                    <span className="mw-stats__label">{stat.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── 1. MASTER HERO SECTION ── */}
+      <ProgramHero
+        badge="MAWAKHAT PROGRAM"
+        titleMain="Restoring Dignity."
+        titleHighlight="Rebuilding Lives."
+        description="Alkhidmat Mawakhat is a year-round welfare program dedicated to rehabilitating the homeless and less privileged through shelter, food, clothing, and medical care across Pakistan."
+        primaryCtaText="Donate for Mawakhat"
+        secondaryCtaText="How You Can Help"
+        primaryCtaHref="#donate-panel"
+        secondaryCtaHref="#about"
+        heroImage={heroManImg}
+        widgetTitle="Support Our Cause"
+        widgetSubtitle="Your support can bring shelter, food and care to those who have no one."
+        supportOptions={[
+          'Provide Food',
+          'Provide Shelter',
+          'Provide Clothing',
+          'Provide Medical Care',
+        ]}
+        stats={mawakhatFloatingStats.map(s => ({ icon: s.icon, value: s.value, label: s.label }))}
+      />
 
       {/* ── 3. ABOUT MAWAKHAT ── */}
       <section id="about" className="mw-about section" aria-labelledby="about-heading">

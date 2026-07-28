@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './CommunityServices.css';
+import ProgramHero from '../components/shared/ProgramHero';
 import {
   communityHeroStats,
   communityServicesList,
   communityImpactStats,
   communityFaqs,
 } from '../data/communityServicesData';
-import heroImg from '../assets/akfl-1-new.png';
+import heroImg from '../assets/community_services_program.png';
 import aboutImg from '../assets/akfl-2-new.png';
 import videoThumb from '../assets/akfl-3.jpeg';
 
@@ -27,82 +28,27 @@ function CommunityServices() {
   return (
     <main className="cs-page">
 
-      {/* ── 1. HERO ── */}
-      <section className="cs-hero" aria-label="Community Services Hero">
-        <div className="cs-hero__bg">
-          <img src={heroImg} alt="Community services distribution" className="cs-hero__left-img" />
-          <div className="cs-hero__overlay" />
-        </div>
-        <div className="container cs-hero__inner">
-          <div className="cs-hero__content">
-            <span className="cs-hero__badge">
-              COMMUNITY SERVICES
-            </span>
-            <h1 className="cs-hero__title">
-              Community<br />
-              <span className="cs-hero__title--green">Services</span>
-            </h1>
-            <p className="cs-hero__desc">
-              Building stronger communities through humanitarian support, healthcare, education and social welfare programs that improve lives across Pakistan.
-            </p>
-            <div className="cs-hero__actions">
-              <a href="#assistance-form" className="btn cs-hero__btn-primary">
-                Apply Now
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
-              <Link to="/contact" className="btn cs-hero__btn-outline">
-                Contact Us
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </Link>
-            </div>
-          </div>
-
-          {/* Right side floating support card */}
-          <div className="cs-hero__card">
-            <div className="cs-hero__card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="32" height="32">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              </svg>
-            </div>
-            <h3>Need Community<br />Support?</h3>
-            <p>We are here to help you and your family.</p>
-            <a href="#assistance-form" className="cs-hero__card-btn">
-              Apply Now
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. FLOATING STATS BAR ── */}
-      <section className="cs-stats" aria-label="Community Statistics">
-        <div className="container">
-          <div className="cs-stats__card">
-            <div className="cs-stats__grid">
-              {communityHeroStats.map((stat) => (
-                <div className="cs-stats__item" key={stat.id}>
-                  <div className="cs-stats__icon">{stat.icon}</div>
-                  <div>
-                    <strong className="cs-stats__value">{stat.value}</strong>
-                    <span className="cs-stats__label">{stat.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── 1. MASTER HERO SECTION ── */}
+      <ProgramHero
+        badge="COMMUNITY SERVICES"
+        titleMain="Empowering Communities."
+        titleHighlight="Rebuilding Lives."
+        description="Building stronger communities through humanitarian support, healthcare, education and social welfare programs that improve lives across Pakistan."
+        primaryCtaText="Donate for Community Services"
+        secondaryCtaText="Apply for Assistance"
+        primaryCtaHref="#donate-section"
+        secondaryCtaHref="#assistance-form"
+        heroImage={heroImg}
+        widgetTitle="Support Community Welfare"
+        widgetSubtitle="Your donation supports winter relief packages, masjid construction, wedding support boxes, and wheelchairs."
+        supportOptions={[
+          'Winter Blanket Package',
+          'Shadi wedding box',
+          'Wheelchair Donation',
+          'Masjid Construction Fund',
+        ]}
+        stats={communityHeroStats.map(s => ({ icon: s.icon, value: s.value, label: s.label }))}
+      />
 
       {/* ── 3. ABOUT SECTION ── */}
       <section className="cs-about section" aria-labelledby="about-heading">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Healthcare.css';
+import ProgramHero from '../components/shared/ProgramHero';
 import {
   healthcareHeroStats,
   healthcareImpactCounters,
@@ -41,48 +42,27 @@ function Healthcare() {
   return (
     <main className="hc-page">
 
-      {/* ── 1. HERO ── */}
-      <section className="hc-hero" aria-label="Healthcare Hero">
-        <div className="container hc-hero__inner">
-          <div className="hc-hero__content">
-            <h1 className="hc-hero__title">
-              Delivering Quality<br />
-              <span className="hc-hero__title--highlight">Healthcare with Compassion</span>
-            </h1>
-            <p className="hc-hero__desc">
-              Alkhidmat Foundation Pakistan is committed to providing accessible and compassionate healthcare services to millions across Pakistan.
-            </p>
-            <div className="hc-hero__actions">
-              <a href="#donate-banner" className="btn hc-hero__btn-primary">
-                Support Healthcare
-              </a>
-              <a href="#video-highlights" className="btn hc-hero__btn-outline">
-                Watch Our Impact
-              </a>
-            </div>
-          </div>
-          <div className="hc-hero__visual">
-            <div className="hc-hero__img-wrap">
-              <img src={heroDoctorImg} alt="Doctor with young patient" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. HERO STATS BAR ── */}
-      <section className="hc-stats" aria-label="Healthcare Stats">
-        <div className="container">
-          <div className="hc-stats__grid">
-            {healthcareHeroStats.map((stat) => (
-              <div className="hc-stats__card" key={stat.id}>
-                <div className="hc-stats__icon-bg" aria-hidden="true" />
-                <strong className="hc-stats__value">{stat.value}</strong>
-                <span className="hc-stats__label">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── 1. MASTER HERO SECTION ── */}
+      <ProgramHero
+        badge="HEALTH SERVICES"
+        titleMain="Delivering Quality."
+        titleHighlight="Healthcare with Compassion."
+        description="Alkhidmat Foundation Pakistan is committed to providing accessible, high-quality, and compassionate healthcare services, diagnostic centers, and hospitals to millions across Pakistan."
+        primaryCtaText="Support Healthcare"
+        secondaryCtaText="Watch Our Impact"
+        primaryCtaHref="#donate-banner"
+        secondaryCtaHref="#video-highlights"
+        heroImage={heroDoctorImg}
+        widgetTitle="Support Medical Care"
+        widgetSubtitle="Your donation sponsors medical expenses, hospital operations, free clinics, and medicine."
+        supportOptions={[
+          'Sponsor a Medical Camp',
+          'Support Mother & Child Care',
+          'Sponsor a Free Clinic',
+          'General Healthcare Fund',
+        ]}
+        stats={healthcareHeroStats.map(s => ({ icon: null, value: s.value, label: s.label }))}
+      />
 
       {/* ── 3. MISSION & IMPACT ── */}
       <section className="hc-mission section" aria-labelledby="mission-heading">

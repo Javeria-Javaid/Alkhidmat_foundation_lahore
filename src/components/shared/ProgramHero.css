@@ -1,0 +1,340 @@
+/* ============================================================
+   PROGRAM HERO MASTER DESIGN STANDARD (Shared Component)
+   ============================================================ */
+
+.mw-hero {
+  position: relative;
+  min-height: 480px;
+  background: linear-gradient(135deg, #e8f4fd 0%, #f0f7ff 45%, #f8fafc 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.mw-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr 300px;
+  align-items: center;
+  gap: 24px;
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.mw-hero__content {
+  max-width: 480px;
+  color: #0f172a;
+}
+
+.mw-hero__badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0254a4;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.mw-hero__title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  color: #0a2a5e;
+  line-height: 1.12;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.mw-hero__title--blue { color: #0254a4; }
+
+.mw-hero__desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.mw-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.mw-hero__btn-primary,
+.mw-hero__btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.mw-hero__btn-primary {
+  background: #0254a4;
+  color: white;
+  border: 2px solid #0254a4;
+}
+
+.mw-hero__btn-primary:hover {
+  background: #003080;
+  border-color: #003080;
+}
+
+.mw-hero__btn-outline {
+  background: white;
+  color: #0254a4;
+  border: 2px solid #0254a4;
+}
+
+.mw-hero__btn-outline:hover {
+  background: #f0f5ff;
+}
+
+.mw-hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.mw-hero__man-img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Floating Widget */
+.mw-hero__widget {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 16px 48px rgba(2, 84, 164, 0.15);
+  border: 1px solid #e8f0fb;
+}
+
+.mw-hero__widget-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.mw-hero__widget-icon {
+  width: 44px;
+  height: 44px;
+  background: #e8f0fb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mw-hero__widget-header h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.mw-hero__widget-header p {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.mw-hero__widget-dropdown {
+  margin-bottom: 14px;
+}
+
+.mw-hero__widget-dropdown label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.mw-hero__widget-dropdown select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  outline: none;
+  background: white;
+}
+
+.mw-hero__widget-dropdown select:focus {
+  border-color: #0254a4;
+}
+
+.mw-hero__widget-amounts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mw-widget-amt {
+  padding: 10px 8px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mw-widget-amt--active {
+  background: #0254a4;
+  color: white;
+  border-color: #0254a4;
+}
+
+.mw-hero__widget-other input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+  outline: none;
+}
+
+.mw-hero__widget-other input:focus {
+  border-color: #0254a4;
+}
+
+.mw-hero__widget-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: #16a34a;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+}
+
+.mw-hero__widget-btn:hover {
+  background: #15803d;
+}
+
+.mw-hero__policy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ── Floating Stats Bar ── */
+.mw-stats {
+  background: white;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  margin-top: -20px;
+}
+
+.mw-stats__card {
+  background: white;
+  box-shadow: 0 4px 32px rgba(2, 84, 164, 0.1);
+  border-radius: 16px;
+  padding: 28px 32px;
+  border: 1px solid #e8f0fb;
+}
+
+.mw-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.mw-stats__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mw-stats__icon {
+  width: 36px;
+  height: 36px;
+  color: #0254a4;
+  flex-shrink: 0;
+}
+
+.mw-stats__icon svg { width: 100%; height: 100%; }
+
+.mw-stats__value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.mw-stats__label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .mw-hero__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mw-hero__widget {
+    grid-column: 1 / -1;
+    max-width: 420px;
+  }
+
+  .mw-hero__visual {
+    order: 2;
+  }
+}
+
+@media (max-width: 992px) {
+  .mw-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .mw-hero__visual {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mw-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mw-hero__btn-primary,
+  .mw-hero__btn-outline {
+    justify-content: center;
+    width: 100%;
+  }
+}

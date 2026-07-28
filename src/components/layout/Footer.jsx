@@ -81,7 +81,17 @@ function Footer() {
           <div className="footer__col">
             <h4>Our Programs</h4>
             <ul className="footer__links">
-              {programs.map((program) => <li key={program.label}><Link to={program.href}>{program.label}</Link></li>)}
+              {programs.map((program) => (
+                <li key={program.label}>
+                  {program.isExternal ? (
+                    <a href={program.href} target="_blank" rel="noopener noreferrer">
+                      {program.label} <span style={{ fontSize: '0.75rem', opacity: 0.8 }}>↗</span>
+                    </a>
+                  ) : (
+                    <Link to={program.href}>{program.label}</Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 

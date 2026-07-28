@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './CleanWater.css';
+import ProgramHero from '../components/shared/ProgramHero';
 import { cleanWaterStats, waterServices, impactTableData, projectLocations } from '../data/cleanWaterData';
-import waterImg from '../assets/wash_img.png';
-import heroChildImg from '../assets/akfl-2.jpeg';
+import waterImg from '../assets/wash_program.png';
 
 function CleanWater() {
   const [playVideo, setPlayVideo] = useState(false);
@@ -11,72 +11,27 @@ function CleanWater() {
   return (
     <main className="cw-page">
 
-      {/* ── 1. HERO ── */}
-      <section className="cw-hero" aria-label="Clean Water Program Hero">
-        <div className="cw-hero__bg">
-          <img src={heroChildImg} alt="Child with clean water" className="cw-hero__left-img" />
-          <div className="cw-hero__overlay" />
-        </div>
-        <div className="container cw-hero__inner">
-          <nav className="cw-breadcrumb" aria-label="Breadcrumb">
-            <Link to="/">Home</Link>
-            <span className="cw-breadcrumb__sep">›</span>
-            <Link to="#">Our Programs</Link>
-            <span className="cw-breadcrumb__sep">›</span>
-            <span>Clean Water Program</span>
-          </nav>
-          <div className="cw-hero__content">
-            <p className="cw-hero__pretitle">Alkhidmat</p>
-            <h1 className="cw-hero__title">
-              CLEAN WATER<br />
-              <span className="cw-hero__title--accent">PROGRAM</span>
-            </h1>
-            <p className="cw-hero__desc">
-              Ensuring access to clean and safe drinking water for every community. We build sustainable water solutions that bring health, hope, and dignity to thousands.
-            </p>
-          </div>
-          <div className="cw-hero__icon-wrap" aria-hidden="true">
-            <div className="cw-hero__icon">
-              <svg viewBox="0 0 64 64" fill="none">
-                <path d="M32 4L8 24v36h48V24L32 4z" fill="rgba(255,255,255,0.15)" stroke="white" strokeWidth="2"/>
-                <path d="M26 60V40h12v20" stroke="white" strokeWidth="2"/>
-                <path d="M20 36c0-6.627 12-18 12-18s12 11.373 12 18a12 12 0 01-24 0z" fill="white" fillOpacity="0.3" stroke="white" strokeWidth="1.5"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. STATS BAR ── */}
-      <section className="cw-stats" aria-label="Program Statistics">
-        <div className="container">
-          <div className="cw-stats__card">
-            <div className="cw-stats__grid">
-              {cleanWaterStats.slice(0, 6).map((stat) => (
-                <div className="cw-stats__item" key={stat.id}>
-                  <div className="cw-stats__icon">{stat.icon}</div>
-                  <div>
-                    <strong className="cw-stats__value">{stat.value}</strong>
-                    <span className="cw-stats__label">{stat.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="cw-stats__grid cw-stats__grid--bottom">
-              {cleanWaterStats.slice(6).map((stat) => (
-                <div className="cw-stats__item" key={stat.id}>
-                  <div className="cw-stats__icon">{stat.icon}</div>
-                  <div>
-                    <strong className="cw-stats__value">{stat.value}</strong>
-                    <span className="cw-stats__label">{stat.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* ── 1. MASTER HERO SECTION ── */}
+      <ProgramHero
+        badge="CLEAN WATER PROGRAM"
+        titleMain="Pure Water."
+        titleHighlight="Healthy Communities."
+        description="Ensuring access to clean and safe drinking water for every community. We build sustainable water filtration plants, hand pumps, and solar wells that bring health, hope, and dignity to thousands."
+        primaryCtaText="Donate for Clean Water"
+        secondaryCtaText="Our Water Projects"
+        primaryCtaHref="#donate-section"
+        secondaryCtaHref="#about-clean-water"
+        heroImage={waterImg}
+        widgetTitle="Provide Clean Water"
+        widgetSubtitle="Your donation installs water filtration plants and hand pumps in water-scarce regions."
+        supportOptions={[
+          'Water Filtration Plant',
+          'Submersible Water Pump',
+          'Community Hand Pump',
+          'Solar Water Well',
+        ]}
+        stats={cleanWaterStats.slice(0, 5).map(s => ({ icon: s.icon, value: s.value, label: s.label }))}
+      />
       {/* ── 3. ABOUT SECTION ── */}
       <section className="cw-about section" aria-labelledby="about-heading">
         <div className="container cw-about__inner">

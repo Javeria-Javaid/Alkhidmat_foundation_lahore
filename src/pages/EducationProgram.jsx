@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './EducationProgram.css';
+import ProgramHero from '../components/shared/ProgramHero';
 import {
   educationHeroStats,
   donationAmounts,
@@ -14,105 +15,32 @@ import studentImg from '../assets/education_program.png';
 import graduateImg from '../assets/akfl-1.jpeg';
 
 function EducationProgram() {
-  const [selectedAmount, setSelectedAmount] = useState(5000);
   const [panelAmount, setPanelAmount] = useState(5000);
 
   return (
     <main className="ep-page">
 
-      {/* ── 1. HERO ── */}
-      <section className="ep-hero" aria-label="Education Program Hero">
-        <div className="container ep-hero__inner">
-
-          {/* Left Content */}
-          <div className="ep-hero__left">
-            <span className="ep-hero__badge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-              </svg>
-              EDUCATION PROGRAM
-            </span>
-            <h1 className="ep-hero__title">
-              Illuminating Minds.<br />
-              <span className="ep-hero__title--blue">Breaking<br />Generational<br />Poverty Cycles.</span>
-            </h1>
-            <p className="ep-hero__desc">
-              We believe every child deserves quality education, skills, and opportunities to build a better future for themselves, their families, and their communities.
-            </p>
-
-            {/* Stats Row */}
-            <div className="ep-hero__stats">
-              {educationHeroStats.map((stat) => (
-                <div className="ep-hero__stat" key={stat.label}>
-                  <div className="ep-hero__stat-icon">{stat.icon}</div>
-                  <div>
-                    <strong>{stat.value}</strong>
-                    <span>{stat.label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Image + Donation Widget */}
-          <div className="ep-hero__right">
-            {/* Decorative dots */}
-            <div className="ep-hero__dots" aria-hidden="true">
-              {[...Array(12)].map((_, i) => (
-                <span key={i} className="ep-hero__dot" />
-              ))}
-            </div>
-            <div className="ep-hero__img-wrap">
-              <img src={studentImg} alt="Students in classroom" />
-            </div>
-
-            {/* Donation Widget */}
-            <div className="ep-hero__widget" role="complementary" aria-label="Donation widget">
-              <div className="ep-hero__widget-header">
-                <div className="ep-hero__widget-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#0254a4" strokeWidth="2" width="22" height="22">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                  </svg>
-                </div>
-                <div>
-                  <p className="ep-hero__widget-title">Support a Child's Education</p>
-                  <p className="ep-hero__widget-sub">Your support can change a life forever.</p>
-                </div>
-              </div>
-
-              <div className="ep-hero__amounts">
-                {donationAmounts.map((amt) => (
-                  <button
-                    key={amt.value}
-                    className={`ep-hero__amount-btn ${selectedAmount === amt.value ? 'ep-hero__amount-btn--active' : ''}`}
-                    onClick={() => setSelectedAmount(amt.value)}
-                    aria-pressed={selectedAmount === amt.value}
-                  >
-                    {amt.label}
-                  </button>
-                ))}
-              </div>
-
-              <a href="#donate" className="ep-hero__donate-btn">
-                Donate Now
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
-              <p className="ep-hero__secure">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" width="13" height="13">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
-                100% Secure Donation
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── 1. MASTER HERO SECTION ── */}
+      <ProgramHero
+        badge="EDUCATION PROGRAM"
+        titleMain="Illuminating Minds."
+        titleHighlight="Breaking Poverty Cycles."
+        description="We believe every child deserves quality education, skills, and opportunities to build a better future for themselves, their families, and their communities."
+        primaryCtaText="Donate for Education"
+        secondaryCtaText="Learn More"
+        primaryCtaHref="#donate"
+        secondaryCtaHref="#about-education"
+        heroImage={studentImg}
+        widgetTitle="Support a Child's Education"
+        widgetSubtitle="Your support helps cover schooling tuition, uniform, bags, books and vocational training."
+        supportOptions={[
+          'Sponsor a Student (School)',
+          'Sponsor a College Student',
+          'Sponsor a Vocational Student',
+          'General Education Fund',
+        ]}
+        stats={educationHeroStats.map(s => ({ icon: s.icon, value: s.value, label: s.label }))}
+      />
 
       {/* ── 2. THREE INFO CARDS ── */}
       <section className="ep-cards section" aria-label="Education program areas">

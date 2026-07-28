@@ -5,8 +5,7 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
-import PalestineEmergencyAppeal from './pages/PalestineEmergencyAppeal';
-import BanoQabil from './pages/BanoQabil';
+import OrphanCare from './pages/OrphanCare';
 import CleanWater from './pages/CleanWater';
 import DisasterManagement from './pages/DisasterManagement';
 import EducationProgram from './pages/EducationProgram';
@@ -23,8 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/programs/palestine-emergency-appeal" element={<PalestineEmergencyAppeal />} />
-        <Route path="/programs/banoqabil" element={<BanoQabil />} />
+        <Route path="/programs/orphan-care" element={<OrphanCare />} />
         <Route path="/programs/clean-water" element={<CleanWater />} />
         <Route path="/programs/disaster-management" element={<DisasterManagement />} />
         <Route path="/programs/education" element={<EducationProgram />} />
