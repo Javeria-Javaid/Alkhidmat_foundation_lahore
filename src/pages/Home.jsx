@@ -12,8 +12,8 @@ function Home() {
     <main>
       <CampaignHeroSection />
       <ImpactStatistics />
-      <FeaturedPrograms />
       <SuccessStories />
+      <FeaturedPrograms />
       <LatestNews />
       <TransparencyReport />
       <Partners />

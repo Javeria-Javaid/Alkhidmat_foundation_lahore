@@ -7,6 +7,14 @@ function CampaignHeroSection() {
   const [activeCampaignIndex, setActiveCampaignIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  // Preload all hero background images once
+  useEffect(() => {
+    campaigns.forEach((campaign) => {
+      const img = new Image();
+      img.src = campaign.backgroundImage;
+    });
+  }, []);
+
   // Auto-rotate campaigns
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -31,7 +39,7 @@ function CampaignHeroSection() {
 
   return (
     <div className="campaign-hero-section">
-      <HeroBanner campaign={activeCampaign} />
+      <HeroBanner campaign={activeCampaign} campaigns={campaigns} />
       <DonationPanel 
         activeCampaign={activeCampaign} 
         campaigns={campaigns}

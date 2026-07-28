@@ -2,6 +2,10 @@ import rebuildGazaImg from '../assets/rebuild_gaza.png';
 import zakatImg from '../assets/heroimg.png';
 import washImg from '../assets/wash_img.png';
 import emergencyImg from '../assets/serve_humanity.png';
+import heroBgRebuildGaza from '../assets/hero-bg-rebuild-gaza.png';
+import heroBgZakat from '../assets/hero-bg-zakat.png';
+import heroBgWash from '../assets/hero-bg-wash.png';
+import heroBgEmergency from '../assets/hero-bg-emergency-relief.png';
 
 export const campaigns = [
   {
@@ -13,6 +17,7 @@ export const campaigns = [
     heroHeadingSuffix: " TOMORROW",
     heroDescription: "Support vulnerable families affected by the Gaza crisis through food, shelter, healthcare, and emergency humanitarian assistance.",
     image: rebuildGazaImg,
+    backgroundImage: heroBgRebuildGaza,
     donationTitle: "Rebuild Gaza",
     donationDescription: "Supporting families with food, shelter and medical aid.",
     formCause: "Gaza Emergency",
@@ -27,6 +32,7 @@ export const campaigns = [
     heroHeadingSuffix: " & DIGNITY",
     heroDescription: "Fulfill your Zakat obligation and help provide sustainable support, healthcare, education, and essential assistance to deserving families.",
     image: zakatImg,
+    backgroundImage: heroBgZakat,
     donationTitle: "Zakat",
     donationDescription: "Empowering deserving families through your Zakat.",
     formCause: "Zakat",
@@ -41,6 +47,7 @@ export const campaigns = [
     heroHeadingSuffix: " FUTURES",
     heroDescription: "Help communities gain access to safe drinking water, sanitation, and sustainable hygiene solutions.",
     image: washImg,
+    backgroundImage: heroBgWash,
     donationTitle: "WASH",
     donationDescription: "Providing clean water and promoting hygiene for healthier communities.",
     formCause: "WASH",
@@ -55,6 +62,7 @@ export const campaigns = [
     heroHeadingSuffix: "",
     heroDescription: "Support rapid humanitarian response for families affected by disasters, displacement, and unexpected emergencies.",
     image: emergencyImg,
+    backgroundImage: heroBgEmergency,
     donationTitle: "Emergency Relief",
     donationDescription: "Responding quickly to save lives and support families in times of crisis.",
     formCause: "Emergency Relief",
