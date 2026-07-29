@@ -18,6 +18,8 @@ const navItems = [
     label: 'Get Involved',
     href: '#',
     children: [
+      { label: 'Donate Now', href: '/#donate-section' },
+      { label: 'Volunteer', href: '/#volunteer-section' },
       { label: 'Campaigns', href: '#' },
       { label: 'Ways to Donate', href: '#' },
       { label: 'Careers', href: '/career' },
@@ -121,10 +123,6 @@ function Header() {
                 {item.children && activeDropdown === index && (
                   <div className="header__dropdown">
                     <div className="header__dropdown-inner">
-                      <div className="header__dropdown-header">
-                        <h4>{item.label === 'Where We Work' ? 'All Programs' : item.label}</h4>
-                        <p>{item.label === 'Where We Work' ? 'Our core humanitarian and welfare programs.' : 'Be a part of change and make an impact.'}</p>
-                      </div>
                       <ul className="header__dropdown-list">
                         {item.children.map((child) => (
                           <li key={child.label}>

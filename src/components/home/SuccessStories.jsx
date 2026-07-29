@@ -7,7 +7,7 @@ function SuccessStories() {
     <section className="success-stories">
       
       {/* Volunteer Section */}
-      <div className="volunteer-section">
+      <div className="volunteer-section" id="volunteer-section">
         <div className="container volunteer-section__inner">
           <div className="volunteer-section__content">
             <span className="section-tag section-tag--white">MOBILIZING COMMUNITIES</span>

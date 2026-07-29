@@ -18,32 +18,46 @@ function FeaturedPrograms() {
           {programs.map((program, index) => {
             const cardContent = (
               <>
-                <div className="program-card__content">
-                  <span
-                    className="program-card__status"
-                    style={{
-                      color: program.isExternal ? '#d97706' : (index === 0 ? '#0254a4' : 'var(--primary-blue)'),
-                      borderColor: program.isExternal ? '#f59e0b' : (index === 0 ? '#0254a4' : 'var(--primary-blue)'),
-                    }}
-                  >
-                    {program.isExternal ? 'OFFICIAL WEBSITE ↗' : 'ACTIVE PROGRAM'}
-                  </span>
-                  <h3 className="program-card__title">
-                    {program.label}
-                    {program.isExternal && (
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginLeft: '6px', verticalAlign: 'middle' }}>
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                        <polyline points="15 3 21 3 21 9"/>
-                        <line x1="10" y1="14" x2="21" y2="3"/>
-                      </svg>
-                    )}
-                  </h3>
+                <div className="program-card__header">
+                  <div className="program-card__header-left">
+                    <span className="program-card__tag">{program.tag}</span>
+                  </div>
+                  <div className="program-card__arrow-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+
+                <div className="program-card__image-container">
+                  <img src={program.image} alt={program.label} className="program-card__img" />
+                  <span className="program-card__badge">{program.badgeText || 'ALKHIDMAT HUMANITARIAN AID'}</span>
+                </div>
+
+                <div className="program-card__body">
+                  <h3 className="program-card__title">{program.label}</h3>
                   <p className="program-card__desc">{program.description}</p>
                 </div>
-                <div className="program-card__visual">
-                  <div className="program-card__image-wrapper" style={{ borderTopColor: index === 0 ? '#ffc107' : 'var(--primary-blue)' }}>
-                    <img src={program.image} alt={program.label} className="program-card__img" />
+
+                <div className="program-card__footer">
+                  <div className="program-card__stats">
+                    <span className="program-card__stat-val">{program.statValue || '15K+'}</span>
+                    <span className="program-card__stat-lbl">{program.statLabel || 'Beneficiaries'}</span>
                   </div>
+                  <Link 
+                    to="/#donate-section" 
+                    className="program-card__donate-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const element = document.getElementById('donate-section');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    Donate
+                  </Link>
                 </div>
               </>
             );

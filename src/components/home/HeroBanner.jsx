@@ -1,5 +1,4 @@
 import React from 'react';
-import DonationPanel from './DonationPanel';
 import './HeroBanner.css';
 
 function HeroBanner({ campaign, campaigns, onCampaignChange }) {
@@ -72,15 +71,6 @@ function HeroBanner({ campaign, campaigns, onCampaignChange }) {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* RIGHT COLUMN: Compact Donation Form */}
-          <div className="hero-banner__right">
-            <DonationPanel
-              activeCampaign={campaign}
-              campaigns={campaigns}
-              onCampaignChange={onCampaignChange}
-            />
           </div>
         </div>
       </div>
