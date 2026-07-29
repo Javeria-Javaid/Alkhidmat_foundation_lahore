@@ -113,7 +113,7 @@ function Footer() {
               <li><a href="#">Campaigns</a></li>
               <li><a href="#">Ways to Donate</a></li>
               <li><a href="#">Volunteer With Us</a></li>
-              <li><a href="#">Careers</a></li>
+              <li><Link to="/career">Careers</Link></li>
               <li><a href="#">Events</a></li>
             </ul>
           </div>
