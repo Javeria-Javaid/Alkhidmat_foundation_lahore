@@ -12,6 +12,7 @@ import EducationProgram from './pages/EducationProgram';
 import CommunityServices from './pages/CommunityServices';
 import Healthcare from './pages/Healthcare';
 import Mawakhat from './pages/Mawakhat';
+import Donate from './pages/Donate';
 import Career from './pages/Career';
 import './App.css';
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/programs/community-services" element={<CommunityServices />} />
         <Route path="/programs/healthcare" element={<Healthcare />} />
         <Route path="/programs/mawakhat" element={<Mawakhat />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="/career" element={<Career />} />
       </Routes>
       <Footer />
