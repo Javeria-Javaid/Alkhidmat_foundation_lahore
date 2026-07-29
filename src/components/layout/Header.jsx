@@ -20,7 +20,7 @@ const navItems = [
     children: [
       { label: 'Campaigns', href: '#' },
       { label: 'Ways to Donate', href: '#' },
-      { label: 'Careers', href: '#' },
+      { label: 'Careers', href: '/career' },
       { label: 'Events', href: '#' },
       { label: 'Donate Now', href: '/donate' },
     ],

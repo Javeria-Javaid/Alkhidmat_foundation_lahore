@@ -1,300 +1,251 @@
-.donation-section {
+/* ============================================================
+   HERO DONATION WIDGET — Program Hero design language
+   ============================================================ */
+
+.hero-donation-widget {
   position: relative;
-  z-index: 20;
-  background-color: var(--off-white); /* seamless transition */
+  background: white;
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 16px 48px rgba(2, 84, 164, 0.15);
+  border: 1px solid #e8f0fb;
+  margin-top: 40px;
+  animation: heroWidgetFadeIn 0.5s ease-out forwards;
 }
 
-.donation-panel-wrapper {
-  padding: 60px 0;
+@keyframes heroWidgetFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.donation-panel {
-  background: #061c3f; /* Dark navy blue */
-  border-radius: 24px;
-  box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.15); /* Softer shadow */
-  padding: 40px; /* Increased padding */
+.hero-donation-widget__nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
-  gap: 40px;
-  align-items: center;
-  transition: box-shadow var(--transition-base);
+  gap: 8px;
 }
 
-.donation-panel:hover {
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.2);
-}
-
-/* NAV ARROWS */
-.nav-arrow {
-  width: 48px;
-  height: 48px;
-  background: var(--white);
-  color: #061c3f;
+.hero-donation-widget__arrow {
+  width: 36px;
+  height: 36px;
+  background: #f8fafc;
+  color: #0254a4;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1.5px solid #e2e8f0;
   cursor: pointer;
-  flex-shrink: 0;
-  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
-.nav-arrow:hover {
+.hero-donation-widget__arrow:hover {
+  background: #0254a4;
+  color: white;
+  border-color: #0254a4;
   transform: scale(1.05);
-  background: #f1f5f9;
 }
 
-/* LEFT CONTEXT PANEL */
-.donation-panel__context {
-  flex: 0 0 300px;
+.hero-donation-widget__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-right: 90px;
   animation: fadeIn 0.4s ease-out forwards;
 }
 
-.appeal-tag {
+.hero-donation-widget__icon {
+  width: 48px;
+  height: 48px;
+  background: #e8f0fb;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #fbbf24; /* Yellow */
-  letter-spacing: 1px;
-  margin-bottom: 16px;
-  text-transform: uppercase;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.yellow-dot {
+.hero-donation-widget__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #0254a4;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.hero-donation-widget__badge-dot {
   width: 6px;
   height: 6px;
   background-color: #fbbf24;
   border-radius: 50%;
 }
 
-.donation-panel__title {
-  font-size: 1.8rem;
-  color: var(--white);
-  margin-bottom: 12px;
+.hero-donation-widget__title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
   line-height: 1.2;
 }
 
-.donation-panel__desc {
-  font-size: 0.95rem;
-  color: #cbd5e1;
-  margin-bottom: 24px;
-  line-height: 1.5;
+.hero-donation-widget__subtitle {
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
 }
 
-.donation-panel__badges {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.hero-donation-widget__alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
 }
 
-.badge-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #e2e8f0;
+.hero-donation-widget__alert--error {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
 }
 
-.badge-item svg {
-  color: #60a5fa; /* light blue */
+.hero-donation-widget__alert--success {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
 }
 
-/* DIVIDER */
-.donation-panel__divider {
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* RIGHT FORM PANEL */
-.donation-panel__form-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.donation-form {
+/* ── Form ── */
+.hero-donation-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
   margin-bottom: 20px;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 24px;
-}
-
-.form-group {
+.hero-donation-form__group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-.form-group label {
-  font-size: 0.85rem;
+.hero-donation-form__group label {
+  font-size: 0.78rem;
   font-weight: 600;
-  color: #F8FAFC !important;  /* Guaranteed white on dark navy */
-  letter-spacing: 0.01em;
+  color: #64748b;
 }
 
-/* ─── INPUT WRAPPER: the styled shell ───────────────────────────────────────
-   The wrapper owns the border, background, and radius.
-   Icon and input are both flex children — they can NEVER overlap.
-──────────────────────────────────────────────────────────────────────────── */
-.input-wrapper {
-  position: relative;                /* icon is absolute inside this */
+.hero-donation-form__input-wrap {
+  position: relative;
   display: flex;
   align-items: center;
-  height: 50px;
-  border-radius: 10px;
+  height: 52px;
+  border-radius: 8px;
   border: 1.5px solid #e2e8f0;
-  background: #FFFFFF;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  /* NO overflow:hidden — that was creating the visible input-box left edge */
+  background: #f8fafc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.input-wrapper:focus-within {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+.hero-donation-form__input-wrap:focus-within {
+  border-color: #0254a4;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(2, 84, 164, 0.1);
 }
 
-/* ─── ICON: absolutely positioned over the wrapper ──────────────────────
-   Floats over the single white box — no element boundaries, no dividers.
-───────────────────────────────────────────────────────────────────── */
-.input-wrapper .input-icon {
-  position: absolute !important;
-  left: 18px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  width: 18px !important;
-  height: 18px !important;
-  color: #64748B !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
-  flex-shrink: 0 !important;
+.hero-donation-form__input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+  z-index: 2;
 }
 
-/* ─── INPUT & SELECT: fills full wrapper, padded past 52px reserved icon zone ─ */
-.donation-form .input-wrapper input,
-.donation-form .input-wrapper select,
-.donation-panel .input-wrapper input,
-.donation-panel .input-wrapper select,
-.input-wrapper input,
-.input-wrapper select {
-  width: 100% !important;
-  height: 100% !important;
-  /* Reserved 52px icon area + 20px clear space = 72px left padding */
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  padding-right: 16px !important;
-  padding-left: 72px !important;
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  color: #1e293b !important;
-  font-size: 0.9rem !important;
-  font-family: var(--font-primary) !important;
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  line-height: 1 !important;
-  box-shadow: none !important;
+.hero-donation-form__input-wrap input,
+.hero-donation-form__input-wrap select {
+  width: 100%;
+  height: 100%;
+  padding: 0 16px 0 48px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #1e293b;
+  font-size: 0.9rem;
+  font-family: var(--font-primary);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-/* Reset any browser defaults that re-add a border/background */
-.input-wrapper input:focus,
-.input-wrapper select:focus {
-  outline: none !important;
-  box-shadow: none !important;  /* focus ring is on the wrapper via :focus-within */
-  background: transparent !important;
-  border: none !important;
+.hero-donation-form__input-wrap--select select {
+  padding-right: 40px;
+  cursor: pointer;
 }
 
-/* Placeholder — soft, professional neutral */
-.input-wrapper input::placeholder {
-  color: #9CA3AF !important;
-  opacity: 1 !important;
+.hero-donation-form__input-wrap input::placeholder {
+  color: #94a3b8;
 }
 
-/* Select options (OS-native dropdown) */
-.input-wrapper select option {
-  background: #061c3f !important;
-  color: #e2e8f0 !important;
-}
-
-/* Select text color — dark navy on white background */
-.donation-form .select-wrapper select,
-.donation-panel .select-wrapper select,
-.select-wrapper select {
-  padding-left: 72px !important;
-  padding-right: 40px !important; /* room for the custom arrow */
-  cursor: pointer !important;
-  color: #1e293b !important;
-}
-
-/* Custom dropdown chevron — still absolute inside .input-wrapper */
-.select-arrow {
+.hero-donation-form__select-arrow {
   position: absolute;
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: #64748B;
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  color: #64748b;
 }
 
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-donate {
-  background: var(--white);
-  color: #061c3f;
-  border: none;
-  padding: 14px 32px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1.05rem;
+.hero-donation-form__btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  width: 100%;
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color var(--transition-fast);
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.btn-donate:hover {
-  background: #f1f5f9;
+.hero-donation-form__btn:hover {
+  background: #15803d;
+  transform: translateY(-1px);
 }
 
-.heart-icon {
-  font-size: 1.1rem;
-}
-
-/* TRUST STRIP */
-.trust-strip {
+/* ── Trust strip ── */
+.hero-donation-widget__trust {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 18px;
+  margin-top: 18px;
+  border-top: 1px solid #e8f0fb;
 }
 
-.trust-item {
+.hero-donation-widget__trust-item {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  color: #94a3b8;
+  color: #64748b;
 }
 
-.trust-item svg {
-  color: #60a5fa;
+.hero-donation-widget__trust-item svg {
+  color: #0254a4;
 }
 
 @keyframes fadeIn {
@@ -302,71 +253,40 @@
   to { opacity: 1; }
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .donation-panel {
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .donation-panel__context {
-    flex: auto;
-  }
-  
-  .donation-panel__divider {
-    display: none;
-  }
-  
-  .nav-arrow {
-    display: none; /* Hide arrows on smaller screens since dropdown is available */
-  }
-}
-
+/* ── Responsive ── */
 @media (max-width: 768px) {
-  .donation-panel-wrapper {
-    padding: 40px 15px;
+  .hero-donation-widget {
+    padding: 24px 20px;
+    margin-top: 32px;
   }
-  
-  .donation-panel {
-    padding: 24px;
+
+  .hero-donation-widget__header {
+    padding-right: 0;
+    flex-direction: column;
   }
-  
-  .form-grid {
+
+  .hero-donation-widget__nav {
+    position: static;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+
+  .hero-donation-form__grid {
     grid-template-columns: 1fr;
   }
-  
-  .btn-donate {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .trust-strip {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+
+  .hero-donation-widget__trust {
+    gap: 12px;
   }
 }
 
-/* FORM ALERTS */
-.form-alert {
-  padding: 14px 16px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+@media (max-width: 480px) {
+  .hero-donation-widget {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
 
-.form-alert--error {
-  background-color: rgba(239, 68, 68, 0.1);
-  color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.form-alert--success {
-  background-color: rgba(16, 185, 129, 0.1);
-  color: #6ee7b7;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  .hero-donation-form__input-wrap {
+    height: 48px;
+  }
 }
