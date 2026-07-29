@@ -1,49 +1,49 @@
 import React, { useState, useEffect } from 'react';
 import HeroBanner from './HeroBanner';
-import DonationPanel from './DonationPanel';
 import { campaigns } from '../../data/campaigns';
+import './CampaignHeroSection.css';
 
 function CampaignHeroSection() {
   const [activeCampaignIndex, setActiveCampaignIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Preload all hero background images once
   useEffect(() => {
     campaigns.forEach((campaign) => {
       const img = new Image();
       img.src = campaign.backgroundImage;
     });
+    campaigns.forEach((campaign) => {
+      const img = new Image();
+      img.src = campaign.image;
+    });
   }, []);
 
-  // Auto-rotate campaigns
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
       setActiveCampaignIndex((prevIndex) => (prevIndex + 1) % campaigns.length);
-    }, 7000); // 7 seconds
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
-  // Handle manual campaign selection from donation form
   const handleCampaignChange = (campaignId) => {
     const newIndex = campaigns.findIndex(c => c.id === campaignId);
     if (newIndex !== -1) {
       setActiveCampaignIndex(newIndex);
-      setIsAutoPlaying(false); // Pause auto-rotation on manual interaction
+      setIsAutoPlaying(false);
     }
   };
 
   const activeCampaign = campaigns[activeCampaignIndex];
 
   return (
-    <div className="campaign-hero-section">
-      <HeroBanner campaign={activeCampaign} campaigns={campaigns} />
-      <DonationPanel 
-        activeCampaign={activeCampaign} 
+    <div className="campaign-hero-section" id="donate-section">
+      <HeroBanner
+        campaign={activeCampaign}
         campaigns={campaigns}
-        onCampaignChange={handleCampaignChange} 
+        onCampaignChange={handleCampaignChange}
       />
     </div>
   );

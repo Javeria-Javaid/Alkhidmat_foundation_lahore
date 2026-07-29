@@ -7,12 +7,15 @@ import SuccessStories from '../components/home/SuccessStories';
 import LatestNews from '../components/home/LatestNews';
 import TransparencyReport from '../components/home/TransparencyReport';
 import Partners from '../components/home/Partners';
+import './Home.css';
 
 function Home() {
   return (
     <main>
-      <CampaignHeroSection />
-      <ProgramsSlider />
+      <div className="home-hero-area">
+        <CampaignHeroSection />
+        <ProgramsSlider />
+      </div>
       <ImpactStatistics />
       <SuccessStories />
       <FeaturedPrograms />
