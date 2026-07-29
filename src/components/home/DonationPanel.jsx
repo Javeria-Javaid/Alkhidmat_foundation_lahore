@@ -63,7 +63,8 @@ function DonationPanel({ activeCampaign, campaigns, onCampaignChange }) {
   };
 
   return (
-    <div className="donation-panel-wrapper container" id="donate-section">
+
+      <div className="donation-panel-wrapper container">
       <div className="donation-panel">
         
         {/* LEFT NAV ARROW */}
@@ -175,7 +176,8 @@ function DonationPanel({ activeCampaign, campaigns, onCampaignChange }) {
         </button>
 
       </div>
-    </div>
+      </div>
+
   );
 }
 
