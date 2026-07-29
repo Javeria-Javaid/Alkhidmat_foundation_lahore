@@ -119,13 +119,11 @@
   line-height: 1.15;
   letter-spacing: -1px;
   margin-bottom: 20px;
+  color: #ffffff !important;
 }
 
 .donate-hero__highlight {
-  display: block;
-  background: linear-gradient(90deg, #60a5fa, #34d399);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff !important;
 }
 
 .donate-hero__subtitle {
@@ -1379,45 +1377,6 @@
   color: var(--donate-text-muted);
 }
 
-/* 10. TRANSPARENCY SECTION */
-.pipeline-flow {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
-  align-items: center;
-}
-
-.pipeline-node {
-  background: #ffffff;
-  border: 1px solid var(--donate-gray-border);
-  border-radius: var(--donate-radius-md);
-  padding: 24px 16px;
-  text-align: center;
-  box-shadow: var(--donate-shadow-sm);
-}
-
-.node-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--donate-primary-light);
-  color: var(--donate-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 12px;
-}
-
-.pipeline-node h4 {
-  font-size: 15px;
-  font-weight: 800;
-  margin-bottom: 4px;
-}
-
-.pipeline-node p {
-  font-size: 12px;
-  color: var(--donate-text-muted);
-}
 
 /* 11. PROGRAMMES GRID */
 .programmes-grid {
@@ -1544,6 +1503,7 @@
   font-size: 42px;
   font-weight: 900;
   margin-bottom: 16px;
+  color: #ffffff !important;
 }
 
 .donate-final-cta p {

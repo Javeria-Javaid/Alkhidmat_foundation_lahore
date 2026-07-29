@@ -156,7 +156,8 @@ function Donate() {
           </div>
 
           <h1 className="donate-hero__title">
-            Donate Now <span className="donate-hero__highlight">Create Hope</span>
+            Donate Now<br/>
+            <span className="donate-hero__highlight">Create Hope</span>
           </h1>
 
           <p className="donate-hero__subtitle">
@@ -967,60 +968,6 @@ function Donate() {
                   Donate PKR {impactCalculatorOptions[selectedImpactIndex].amountPKR.toLocaleString()} {donationFrequency === 'monthly' ? '/ Month' : 'Now'} <ArrowRight size={18} />
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. WHERE YOUR MONEY GOES (TRANSPARENCY INFOGRAPHIC) */}
-      <section className="donate-section transparency-section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-subtitle">100% Financial Accountability</span>
-            <h2 className="section-title">Where Your Money Goes</h2>
-            <p className="section-description">Our transparent 6-step lifecycle ensures every rupee is audited, tracked, and delivered.</p>
-          </div>
-
-          <div className="pipeline-flow">
-            <div className="pipeline-node">
-              <div className="node-icon"><DollarSign size={24} /></div>
-              <h4>1. Donation</h4>
-              <p>Securely processed via SSL gateway or bank.</p>
-            </div>
-            <div className="pipeline-connector"></div>
-
-            <div className="pipeline-node">
-              <div className="node-icon"><ShieldCheck size={24} /></div>
-              <h4>2. Verification</h4>
-              <p>Zakat vs Sadaqah account tagging & auditing.</p>
-            </div>
-            <div className="pipeline-connector"></div>
-
-            <div className="pipeline-node">
-              <div className="node-icon"><FileCheck2 size={24} /></div>
-              <h4>3. Allocation</h4>
-              <p>Assigned directly to ground project budget.</p>
-            </div>
-            <div className="pipeline-connector"></div>
-
-            <div className="pipeline-node">
-              <div className="node-icon"><Zap size={24} /></div>
-              <h4>4. Programme</h4>
-              <p>Mobilization by 100k+ field volunteers.</p>
-            </div>
-            <div className="pipeline-connector"></div>
-
-            <div className="pipeline-node">
-              <div className="node-icon"><Heart size={24} /></div>
-              <h4>5. Beneficiaries</h4>
-              <p>Direct aid received with dignity & receipt.</p>
-            </div>
-            <div className="pipeline-connector"></div>
-
-            <div className="pipeline-node">
-              <div className="node-icon"><Award size={24} /></div>
-              <h4>6. Impact Report</h4>
-              <p>Annual audit published (D-U-N-S: 64-579-3014).</p>
             </div>
           </div>
         </div>
