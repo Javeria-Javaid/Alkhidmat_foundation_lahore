@@ -21,7 +21,7 @@ const navItems = [
       { label: 'Campaigns', href: '#' },
       { label: 'Ways to Donate', href: '#' },
       { label: 'Careers', href: '/career' },
-      { label: 'Events', href: '#' },
+      { label: 'Events & Community Activities', href: '/events-community-activities' },
     ],
   },
   { label: 'News & Media', href: '#' },
