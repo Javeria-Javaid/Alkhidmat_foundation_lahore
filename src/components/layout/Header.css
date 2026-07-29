@@ -110,13 +110,14 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 14px;
+  padding: 8px 12px;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-dark);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   position: relative;
+  white-space: nowrap;
 }
 
 .header__menu-link:hover,
@@ -224,11 +225,12 @@
 
 .header__donate-btn,
 .header__appointment-btn {
-  width: 145px;
+  width: 140px;
   justify-content: center;
   padding: 10px 0;
   font-size: 0.85rem;
   border-radius: var(--radius-sm);
+  white-space: nowrap;
 }
 
 .header__donate-btn {

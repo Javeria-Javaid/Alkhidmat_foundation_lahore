@@ -43,20 +43,6 @@
   z-index: 1;
 }
 
-/* .programs-slider-sticky-container retained for potential future use but disabled 
-.programs-slider-sticky-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 30;
-  background: var(--off-white);
-}
-*/
-
 .hero-banner__inner {
   display: flex;
   align-items: center;
