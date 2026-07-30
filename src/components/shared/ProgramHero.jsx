@@ -66,7 +66,6 @@ function ProgramHero({
               </span>
               <div>
                 <h3>{widgetTitle}</h3>
-                <p>{widgetSubtitle}</p>
               </div>
             </div>
 
