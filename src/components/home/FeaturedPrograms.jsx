@@ -9,9 +9,6 @@ function FeaturedPrograms() {
       <div className="container">
         <div className="text-center mb-5">
           <h2 className="section-title">Our Specialized Programs</h2>
-          <p className="section-subtitle mx-auto">
-            Targeted, life-changing initiatives engineered for lasting socio-economic development across all provinces.
-          </p>
         </div>
 
         <div className="programs-grid">

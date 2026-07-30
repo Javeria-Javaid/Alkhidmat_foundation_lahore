@@ -7,11 +7,7 @@ function ImpactStatistics() {
     <section className="impact-statistics section">
       <div className="container">
         <div className="text-center mb-5">
-          <div className="section-tag">OUR OPERATIONAL FOOTPRINT</div>
           <h2 className="section-title">The Measurable Impact of Your Trust</h2>
-          <p className="section-subtitle">
-            Every contribution is systematically translated into direct humanitarian assistance and sustainable development across all provinces of Pakistan.
-          </p>
         </div>
         <div className="impact-image-wrapper">
           <img

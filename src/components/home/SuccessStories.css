@@ -2,13 +2,37 @@
   background-color: #f8fafc;
 }
 
-/* Volunteer Section */
 .volunteer-section {
-  background-color: #1a2235;
+  background-color: var(--primary-blue);
   color: var(--white);
   padding: 80px 0;
   border-radius: 20px;
   margin: 0 20px;
+}
+
+.volunteer-section .btn-primary {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  border: 2px solid var(--white);
+}
+
+.volunteer-section .btn-primary:hover {
+  background-color: var(--accent-yellow);
+  color: var(--primary-blue);
+  border-color: var(--accent-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.volunteer-section .btn-outline--white {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.volunteer-section .btn-outline--white:hover {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  transform: translateY(-2px);
 }
 
 .volunteer-section__inner {
@@ -64,8 +88,8 @@
 }
 
 .stat-icon.bg-blue {
-  background-color: rgba(37, 99, 235, 0.2);
-  color: #60a5fa;
+  background-color: rgba(2, 84, 164, 0.15);
+  color: var(--primary-blue);
 }
 
 .stat-item strong {
@@ -107,9 +131,9 @@
 }
 
 .section-tag--yellow {
-  background-color: #fef3c7;
-  color: #d97706;
-  border-color: transparent;
+  background-color: rgba(255, 193, 7, 0.15);
+  color: var(--accent-yellow);
+  border: 1.5px solid var(--accent-yellow);
 }
 
 .cause-intro__title {
@@ -182,13 +206,13 @@
   padding: 4px 12px;
   font-size: 0.7rem;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   margin-bottom: 12px;
 }
 
 .badge-yellow {
-  background: #fbbf24;
-  color: #78350f;
+  background: var(--accent-yellow);
+  color: var(--navy);
 }
 
 .cause-card h3 {

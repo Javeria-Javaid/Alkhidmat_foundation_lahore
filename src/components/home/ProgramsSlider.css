@@ -211,25 +211,25 @@
 }
 
 .slider-btn-primary {
-  background: var(--primary-dark);
+  background: var(--primary-blue);
   color: white;
 }
 
 .slider-btn-primary:hover {
-  background: var(--navy);
+  background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 48, 128, 0.2);
+  box-shadow: 0 4px 12px rgba(2, 84, 164, 0.2);
 }
 
 .slider-btn-secondary {
-  background: var(--green);
-  color: white;
+  background: var(--accent-yellow);
+  color: var(--navy);
 }
 
 .slider-btn-secondary:hover {
-  background: #0ea5e9;
+  background: #e0a800;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
 }
 
 .slider-trust {

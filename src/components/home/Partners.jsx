@@ -44,11 +44,7 @@ function Partners() {
   return (
     <section className="partners-section section">
       <div className="text-center mb-5">
-        <span className="section-tag">NATION BUILDING</span>
         <h2 className="section-title">Engineering Sustainable Infrastructure</h2>
-        <p className="section-subtitle mx-auto">
-          Building state-of-the-art facilities and essential infrastructure that uplift communities, restore dignity, and create lasting impact across Pakistan.
-        </p>
       </div>
 
       <div className="carousel-container">

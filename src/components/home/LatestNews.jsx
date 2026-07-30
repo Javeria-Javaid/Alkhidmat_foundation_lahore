@@ -7,11 +7,7 @@ function LatestNews() {
       <div className="container">
         <div className="latest-news__header">
           <div>
-            <span className="section-tag">NEWS, UPDATES & LIVE SOCIAL FEED</span>
             <h2 className="section-title">Stay Updated, Stay Connected</h2>
-            <p className="section-subtitle">
-              Explore our latest news, field stories, press releases, and moments of impact from across Pakistan and beyond.
-            </p>
           </div>
         </div>
 

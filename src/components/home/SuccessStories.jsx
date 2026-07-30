@@ -11,7 +11,6 @@ function SuccessStories() {
       <div className="volunteer-section" id="volunteer-section">
         <div className="container volunteer-section__inner">
           <div className="volunteer-section__content">
-            <span className="section-tag section-tag--white">MOBILIZING COMMUNITIES</span>
             <h2 className="volunteer-section__title">
               Be the Change: Join<br />
               80,000+ Global Volunteers
@@ -100,7 +99,7 @@ function SuccessStories() {
               <div className="cause-card__content">
                 <span className="badge badge-yellow">URGENT APPEAL</span>
                 <h3>Rebuild Gaza</h3>
-                <p>Help families rebuild their lives and restore hope for a better future.</p>
+                <p>Support emergency relief and rebuilding efforts.</p>
                 <a href="#" className="btn btn-white">
                   Donate Now
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--primary-blue)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
