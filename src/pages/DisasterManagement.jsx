@@ -26,7 +26,7 @@ function DisasterManagement() {
 
       {/* ── 1. MASTER HERO SECTION ── */}
       <ProgramHero
-        badge="DISASTER MANAGEMENT"
+        badge=""
         titleMain="Respond. Relieve."
         titleHighlight="Restore Lives."
         description="From the first moment of crisis to long-term recovery, Alkhidmat is on the ground—delivering emergency aid, shelter, medical care, and hope to communities when they need it most."

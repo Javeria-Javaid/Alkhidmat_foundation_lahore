@@ -13,7 +13,7 @@ function CleanWater() {
 
       {/* ── 1. MASTER HERO SECTION ── */}
       <ProgramHero
-        badge="CLEAN WATER PROGRAM"
+        badge=""
         titleMain="Pure Water."
         titleHighlight="Healthy Communities."
         description="Ensuring access to clean and safe drinking water for every community. We build sustainable water filtration plants, hand pumps, and solar wells that bring health, hope, and dignity to thousands."
@@ -72,7 +72,6 @@ function CleanWater() {
             <h2 id="services-heading">
               Our <span className="cw-services__accent">Water Services</span>
             </h2>
-            <p className="section-subtitle">Sustainable solutions for a healthier tomorrow</p>
           </div>
           <div className="cw-services__grid">
             {waterServices.map((service) => (
@@ -124,7 +123,6 @@ function CleanWater() {
             <h2 id="map-heading">
               Project <span className="cw-map__accent">Locations</span>
             </h2>
-            <p className="section-subtitle">Delivering clean water across Pakistan</p>
           </div>
           <div className="cw-map__inner">
             {/* Left: Location List */}

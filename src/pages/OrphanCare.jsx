@@ -56,7 +56,7 @@ function OrphanCare() {
     <main className="orphan-page">
       {/* ── 1. MASTER HERO SECTION ── */}
       <ProgramHero
-        badge="ORPHAN CARE PROGRAM"
+        badge=""
         titleMain="Protecting Future."
         titleHighlight="Transforming Young Lives."
         description="Alkhidmat Orphan Care Program provides holistic care, quality education, healthcare, and emotional nurture to orphaned children across Pakistan, empowering them to become confident leaders."
@@ -110,9 +110,6 @@ function OrphanCare() {
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="section-title">Pillars of Our Support</h2>
-            <p className="section-subtitle mx-auto">
-              Our 360-degree development framework covers every essential aspect of a child's growth.
-            </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>

@@ -30,7 +30,7 @@ function CommunityServices() {
 
       {/* ── 1. MASTER HERO SECTION ── */}
       <ProgramHero
-        badge="COMMUNITY SERVICES"
+        badge=""
         titleMain="Empowering Communities."
         titleHighlight="Rebuilding Lives."
         description="Building stronger communities through humanitarian support, healthcare, education and social welfare programs that improve lives across Pakistan."

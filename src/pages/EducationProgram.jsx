@@ -22,7 +22,7 @@ function EducationProgram() {
 
       {/* ── 1. MASTER HERO SECTION ── */}
       <ProgramHero
-        badge="EDUCATION PROGRAM"
+        badge=""
         titleMain="Illuminating Minds."
         titleHighlight="Breaking Poverty Cycles."
         description="We believe every child deserves quality education, skills, and opportunities to build a better future for themselves, their families, and their communities."

@@ -44,7 +44,7 @@ function Healthcare() {
 
       {/* ── 1. MASTER HERO SECTION ── */}
       <ProgramHero
-        badge="HEALTH SERVICES"
+        badge=""
         titleMain="Delivering Quality."
         titleHighlight="Healthcare with Compassion."
         description="Alkhidmat Foundation Pakistan is committed to providing accessible, high-quality, and compassionate healthcare services, diagnostic centers, and hospitals to millions across Pakistan."
@@ -102,7 +102,6 @@ function Healthcare() {
         <div className="container">
           <div className="hc-section-header">
             <h2 id="services-heading">Healthcare Services</h2>
-            <p className="section-subtitle">Providing comprehensive medical services to communities in need</p>
           </div>
           <div className="hc-services__grid">
             {healthcareServices.map((service) => (
@@ -203,7 +202,6 @@ function Healthcare() {
       <section className="hc-doctors section" aria-labelledby="doctors-heading">
         <div className="container text-center">
           <h2 id="doctors-heading" className="section-title">Volunteers</h2>
-          <p className="section-subtitle">Dedicated medical professionals serving humanity across Pakistan.</p>
 
           <div className="hc-doctors__grid">
             {healthcareDoctors.map((doc, i) => (
@@ -236,7 +234,6 @@ function Healthcare() {
       <section className="hc-transparency section" aria-labelledby="transparency-heading">
         <div className="container text-center">
           <h2 id="transparency-heading" className="section-title">Transparency</h2>
-          <p className="section-subtitle">Financial statement and reports audited by professionals.</p>
 
           <div className="hc-transparency__grid">
             {/* Chart 1 */}
