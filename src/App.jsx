@@ -14,6 +14,8 @@ import Healthcare from './pages/Healthcare';
 import Mawakhat from './pages/Mawakhat';
 import Donate from './pages/Donate';
 import Career from './pages/Career';
+import WaysToDonate from './pages/WaysToDonate';
+import Campaigns from './pages/Campaigns';
 import './App.css';
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
         <Route path="/programs/mawakhat" element={<Mawakhat />} />
         <Route path="/donate" element={<Donate />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/ways-to-donate" element={<WaysToDonate />} />
+        <Route path="/campaigns" element={<Campaigns />} />
       </Routes>
       <Footer />
     </div>

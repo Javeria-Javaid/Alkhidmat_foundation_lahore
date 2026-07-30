@@ -18,8 +18,8 @@ const navItems = [
     label: 'Get Involved',
     href: '#',
     children: [
-      { label: 'Campaigns', href: '#' },
-      { label: 'Ways to Donate', href: '#' },
+      { label: 'Campaigns', href: '/campaigns' },
+      { label: 'Ways to Donate', href: '/ways-to-donate' },
       { label: 'Careers', href: '/career' },
       { label: 'Events', href: '#' },
       { label: 'Donate Now', href: '/donate' },
