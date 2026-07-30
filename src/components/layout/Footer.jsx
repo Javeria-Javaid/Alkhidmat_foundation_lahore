@@ -114,7 +114,7 @@ function Footer() {
               <li><a href="#">Ways to Donate</a></li>
               <li><a href="#">Volunteer With Us</a></li>
               <li><Link to="/career">Careers</Link></li>
-              <li><a href="#">Events</a></li>
+              <li><Link to="/events-community-activities">Events</Link></li>
             </ul>
           </div>
 
