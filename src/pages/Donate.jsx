@@ -18,12 +18,9 @@ import {
   PhoneCall,
   ArrowRight,
   Sparkles,
-  Award,
-  Users,
   MapPin,
   HelpCircle,
   TrendingUp,
-  FileCheck2,
   DollarSign
 } from 'lucide-react';
 import {
@@ -146,143 +143,25 @@ function Donate() {
 
   return (
     <div className="donate-page">
-      {/* 1. HERO SECTION */}
       <section className="donate-hero">
         <div className="donate-hero__overlay"></div>
         <div className="container donate-hero__container">
-          <div className="donate-hero__badge">
-            <Sparkles className="badge-icon" size={16} />
-            <span>Official Alkhidmat Donation Portal</span>
-          </div>
-
           <h1 className="donate-hero__title">
             Donate Now<br/>
             <span className="donate-hero__highlight">Create Hope</span>
           </h1>
 
           <p className="donate-hero__subtitle">
-            Every donation brings clean water, life-saving surgery, emergency food, and orphan care to those in desperate need across Pakistan and disaster zones worldwide.
+            Your support delivers clean water, healthcare, food, and shelter to families in need across Pakistan and globally.
           </p>
 
           <div className="donate-hero__actions">
             <a href="#online-donation" className="btn btn-hero-primary">
-              <Heart size={18} fill="currentColor" /> Donate Online Now
+              Donate Online Now
             </a>
-            <a href="#quick-methods" className="btn btn-hero-secondary">
+            <a href="#choose-method" className="btn btn-hero-secondary">
               Explore Donation Methods
             </a>
-          </div>
-
-          {/* Floating Trust Badges */}
-          <div className="donate-hero__trust">
-            <div className="trust-pill">
-              <ShieldCheck size={18} className="trust-icon text-green" />
-              <div>
-                <strong>Secure SSL</strong>
-                <span>Bank-grade Encryption</span>
-              </div>
-            </div>
-
-            <div className="trust-pill">
-              <FileCheck2 size={18} className="trust-icon text-blue" />
-              <div>
-                <strong>Tax Exempt</strong>
-                <span>FBR 2(36)c • NTN C777982</span>
-              </div>
-            </div>
-
-            <div className="trust-pill">
-              <Award size={18} className="trust-icon text-gold" />
-              <div>
-                <strong>Trusted Since 1990</strong>
-                <span>34+ Years of Integrity</span>
-              </div>
-            </div>
-
-            <div className="trust-pill">
-              <Users size={18} className="trust-icon text-purple" />
-              <div>
-                <strong>25M+ Impacted</strong>
-                <span>Verified Beneficiaries</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. QUICK DONATION METHODS */}
-      <section className="donate-section quick-methods-section" id="quick-methods">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-subtitle">Ways to Give</span>
-            <h2 className="section-title">Quick Donation Methods</h2>
-            <p className="section-description">Choose how you want to contribute to Alkhidmat humanitarian relief operations.</p>
-          </div>
-
-          <div className="quick-methods-grid">
-            <div className="quick-card" onClick={() => { setActiveTab('online'); document.getElementById('online-donation')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <div className="quick-card__icon bg-blue-soft"><CreditCard size={28} /></div>
-              <h3>Donate Online</h3>
-              <p>Debit/Credit Cards, JazzCash, EasyPaisa, or Net Banking instantly.</p>
-              <span className="quick-card__link">Donate Online <ArrowRight size={14} /></span>
-            </div>
-
-            <div className="quick-card" onClick={() => { setActiveTab('bank'); document.getElementById('bank-transfer')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <div className="quick-card__icon bg-teal-soft"><Building2 size={28} /></div>
-              <h3>Bank Transfer</h3>
-              <p>Direct transfer via Meezan Bank, Allied Bank, UBL, or MCB.</p>
-              <span className="quick-card__link">View Accounts <ArrowRight size={14} /></span>
-            </div>
-
-            <div className="quick-card" onClick={() => { setActiveTab('home'); document.getElementById('home-collection')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <div className="quick-card__icon bg-orange-soft"><Truck size={28} /></div>
-              <h3>Doorstep Pick-Up</h3>
-              <p>Schedule a representative to collect cash/cheque with official receipt.</p>
-              <span className="quick-card__link">Schedule Collection <ArrowRight size={14} /></span>
-            </div>
-
-            <div className="quick-card" onClick={() => { setActiveTab('international'); document.getElementById('international-donations')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <div className="quick-card__icon bg-purple-soft"><Globe2 size={28} /></div>
-              <h3>International Donors</h3>
-              <p>US 501(c)(3), UK Barclays/Gift Aid, Canada CRA & Middle East accounts.</p>
-              <span className="quick-card__link">International Details <ArrowRight size={14} /></span>
-            </div>
-
-            <div className="quick-card" onClick={() => { setActiveTab('online'); document.getElementById('impact-calculator')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <div className="quick-card__icon bg-green-soft"><CalendarSync size={28} /></div>
-              <h3>Monthly Giving</h3>
-              <p>Sponsor a child, clean water project, or family ration month after month.</p>
-              <span className="quick-card__link">Sponsor Monthly <ArrowRight size={14} /></span>
-            </div>
-
-            <div className="quick-card" onClick={() => { setActiveTab('online'); document.getElementById('online-donation')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              <div className="quick-card__icon bg-indigo-soft"><Building size={28} /></div>
-              <h3>Corporate Giving / CSR</h3>
-              <p>Partner with Alkhidmat for CSR impact initiatives and high-scale projects.</p>
-              <span className="quick-card__link">Partner With Us <ArrowRight size={14} /></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. WHY DONATE WITH ALKHIDMAT (STATS SECTION) */}
-      <section className="donate-section stats-section">
-        <div className="container">
-          <div className="stats-box">
-            <div className="stats-header">
-              <span className="stats-badge">Transparency & Scale</span>
-              <h2>Why Your Donation Matters With Alkhidmat</h2>
-              <p>We combine 34 years of ground presence with strict Shariah compliance and audited financial integrity.</p>
-            </div>
-
-            <div className="stats-grid">
-              {statistics.map((stat, idx) => (
-                <div className="stat-card" key={idx}>
-                  <div className="stat-card__number">{stat.value}</div>
-                  <div className="stat-card__label">{stat.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -291,7 +170,6 @@ function Donate() {
       <section className="donate-section tabs-section" id="choose-method">
         <div className="container">
           <div className="section-header text-center">
-            <span className="section-subtitle">Select Channel</span>
             <h2 className="section-title">Choose Your Donation Method</h2>
             <p className="section-description">Select any tab below to inspect exact accounts, instructions, and interactive payment forms.</p>
           </div>
@@ -774,9 +652,12 @@ function Donate() {
               <div className="hotline-card">
                 <PhoneCall size={36} className="hotline-icon" />
                 <h3>Prefer Calling Us Directly?</h3>
-                <p>Call our dedicated toll-free helpline for instant pickup booking and donation support:</p>
-                <a href="tel:080044448" className="hotline-number">0800-44448</a>
-                <span className="hotline-hours">Toll-Free • Available 24/7 Nationwide</span>
+                <p>Call our dedicated helpline for instant pickup booking and donation support:</p>
+                <div className="hotline-numbers">
+                  <a href="tel:080044448" className="hotline-number">0800-44448</a>
+                  <a href="tel:04232300817" className="hotline-number-sec">(042) 32300817</a>
+                </div>
+                <span className="hotline-hours">Toll-Free & Landline • Available 24/7 Nationwide</span>
               </div>
             </div>
           </div>
@@ -1066,18 +947,6 @@ function Donate() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 13. FINAL CALL TO ACTION */}
-      <section className="donate-final-cta">
-        <div className="donate-final-cta__overlay"></div>
-        <div className="container donate-final-cta__container">
-          <h2>Every Single Rupee Creates Lasting Hope</h2>
-          <p>Don't wait for tomorrow. Your Zakat and Sadaqah today saves lives, educates youth, and quenches thirst.</p>
-          <a href="#online-donation" className="btn btn-cta-primary">
-            <Heart size={20} fill="currentColor" /> Donate Now
-          </a>
         </div>
       </section>
     </div>
