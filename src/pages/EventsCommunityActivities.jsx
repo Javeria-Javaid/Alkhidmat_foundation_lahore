@@ -215,7 +215,7 @@ function EventsCommunityActivities() {
               <a href="#ec-upcoming" className="btn btn-primary ec-hero__btn">
                 View Upcoming Events <ArrowRight />
               </a>
-              <Link to="/events-community-activities" className="btn ec-hero__btn ec-hero__btn--ghost">
+              <Link to="/alkhidmat-volunteer" className="btn ec-hero__btn ec-hero__btn--ghost">
                 Become a Volunteer <ArrowRight />
               </Link>
             </div>
@@ -504,7 +504,7 @@ function EventsCommunityActivities() {
                 can bring hope and change to thousands of lives.
               </p>
               <div className="ec-diff-banner__btns">
-                <Link to="/events-community-activities" className="btn btn-primary ec-diff-banner__btn">
+                <Link to="/alkhidmat-volunteer" className="btn btn-primary ec-diff-banner__btn">
                   Become a Volunteer
                 </Link>
                 <a href="#" className="btn ec-diff-banner__btn ec-diff-banner__btn--ghost">
@@ -643,7 +643,7 @@ function EventsCommunityActivities() {
             <Link to="/events-community-activities" className="btn btn-outline ec-bottom-cta__btn">
               View All Events <ArrowRight />
             </Link>
-            <Link to="/events-community-activities" className="btn ec-bottom-cta__btn ec-bottom-cta__btn--white">
+            <Link to="/alkhidmat-volunteer" className="btn ec-bottom-cta__btn ec-bottom-cta__btn--white">
               Become a Volunteer <ArrowRight />
             </Link>
           </div>
