@@ -30,7 +30,7 @@ function Footer() {
             <div className="footer__contact-content">
               <h4>Phone Support</h4>
               <a href="tel:+923000771601">+92 300 0771601</a>
-              <a href="tel:+924235441516">+92 42 35441516</a>
+              <a href="tel:+924232300817">(042)32300817</a>
             </div>
           </div>
 

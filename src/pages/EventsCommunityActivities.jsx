@@ -567,7 +567,7 @@ function EventsCommunityActivities() {
                   </svg>
                   <div>
                     <span>+92 300 0771601</span>
-                    <span>+92 42 35441516</span>
+                    <span>(042)32300817</span>
                   </div>
                 </div>
                 <div className="ec-contact__info-row">

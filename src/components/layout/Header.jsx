@@ -72,7 +72,7 @@ function Header() {
               +92 300 0771601
             </a>
             <span className="header__topbar-divider">|</span>
-            <a href="tel:+924235441516" className="header__topbar-item">+92 42 35441516</a>
+            <a href="tel:+924232300817" className="header__topbar-item">(042)32300817</a>
             <a href="mailto:info@alkhidmat.com.pk" className="header__topbar-item header__topbar-email">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               info@alkhidmat.com.pk
