@@ -14,6 +14,7 @@ import Healthcare from './pages/Healthcare';
 import Mawakhat from './pages/Mawakhat';
 import Career from './pages/Career';
 import EventsCommunityActivities from './pages/EventsCommunityActivities';
+import AlkhidmatVolunteer from './pages/AlkhidmatVolunteer';
 import './App.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/programs/mawakhat" element={<Mawakhat />} />
         <Route path="/career" element={<Career />} />
         <Route path="/events-community-activities" element={<EventsCommunityActivities />} />
+        <Route path="/alkhidmat-volunteer" element={<AlkhidmatVolunteer />} />
       </Routes>
       <Footer />
     </div>

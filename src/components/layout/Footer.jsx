@@ -112,7 +112,7 @@ function Footer() {
             <ul className="footer__links">
               <li><a href="#">Campaigns</a></li>
               <li><a href="#">Ways to Donate</a></li>
-              <li><a href="#">Volunteer With Us</a></li>
+              <li><Link to="/alkhidmat-volunteer">Volunteer With Us</Link></li>
               <li><Link to="/career">Careers</Link></li>
               <li><Link to="/events-community-activities">Events</Link></li>
             </ul>

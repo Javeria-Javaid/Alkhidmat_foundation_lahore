@@ -18,6 +18,7 @@ const navItems = [
     label: 'Get Involved',
     href: '#',
     children: [
+      { label: 'Alkhidmat Volunteer', href: '/alkhidmat-volunteer' },
       { label: 'Campaigns', href: '#' },
       { label: 'Ways to Donate', href: '#' },
       { label: 'Careers', href: '/career' },
