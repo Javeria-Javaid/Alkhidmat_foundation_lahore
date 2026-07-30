@@ -54,9 +54,7 @@ function ProgramHero({
             </div>
           </div>
 
-          <div className="mw-hero__visual" aria-hidden="true">
-            {heroImage && <img src={heroImage} alt="" className="mw-hero__man-img" />}
-          </div>
+
 
           {/* Right Floating Donation Widget */}
           <div className="mw-hero__widget">
