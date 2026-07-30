@@ -121,6 +121,7 @@
   width: 100%;
   max-width: 440px;
   flex-shrink: 0;
+  margin-right: -40px;
 }
 
 .mw-hero__widget-header {
@@ -327,6 +328,7 @@
 
   .mw-hero__widget {
     max-width: 440px;
+    margin-right: 0;
   }
 }
 
