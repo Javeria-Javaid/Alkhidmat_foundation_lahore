@@ -16,6 +16,8 @@ import Donate from './pages/Donate';
 import Career from './pages/Career';
 import EventsCommunityActivities from './pages/EventsCommunityActivities';
 import AlkhidmatVolunteer from './pages/AlkhidmatVolunteer';
+import WaysToDonate from './pages/WaysToDonate';
+import Campaigns from './pages/Campaigns';
 import './App.css';
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/events-community-activities" element={<EventsCommunityActivities />} />
         <Route path="/alkhidmat-volunteer" element={<AlkhidmatVolunteer />} />
+        <Route path="/ways-to-donate" element={<WaysToDonate />} />
+        <Route path="/campaigns" element={<Campaigns />} />
       </Routes>
       <Footer />
     </div>
