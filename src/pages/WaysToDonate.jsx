@@ -1,393 +1,578 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   CreditCard,
   Building2,
-  Smartphone,
-  Zap,
-  Globe2,
-  CalendarSync,
-  Building,
   Truck,
-  Moon,
-  AlertTriangle,
+  Globe2,
+  Building,
+  Calendar,
   ShieldCheck,
-  FileCheck2,
   Award,
   Users,
   Heart,
-  Search,
-  DollarSign,
-  CheckCircle2,
-  TrendingUp,
   ArrowRight,
   ChevronDown,
   ChevronUp,
-  Sparkles,
+  Phone,
+  Mail,
+  Copy,
+  Check,
   MapPin,
-  Play,
+  Clock,
+  Sparkles,
 } from 'lucide-react';
-import {
-  impactStats,
-  donationMethods,
-  donationProcess,
-  impactHighlights,
-  waysFaqItems,
-} from '../data/waysToDonateData';
-import globalReliefMap from '../assets/global-relief-map.png';
 import './WaysToDonate.css';
 
-// ---------- Icon map ----------
-const IconMap = {
-  CreditCard, Building2, Smartphone, Zap, Globe2, CalendarSync,
-  Building, Truck, Moon, AlertTriangle, ShieldCheck, FileCheck2,
-  Award, Users, Heart, Search, DollarSign, CheckCircle2, TrendingUp,
-};
-
-// ---------- Animated counter ----------
-function AnimatedCounter({ end, duration = 2000, suffix = '' }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const numericEnd = parseFloat(end.replace(/[^0-9.]/g, ''));
-          const prefix = end.replace(/[0-9.]+.*/, '');
-          const sfx = end.replace(/^[^0-9]*[0-9.]+/, '');
-          let start = 0;
-          const step = numericEnd / (duration / 16);
-          const timer = setInterval(() => {
-            start = Math.min(start + step, numericEnd);
-            setCount({ val: start, prefix, sfx });
-            if (start >= numericEnd) clearInterval(timer);
-          }, 16);
-        }
-      },
-      { threshold: 0.4 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [end, duration]);
-
-  const display = count
-    ? `${count.prefix}${Number.isInteger(parseFloat(count.val)) ? Math.floor(count.val) : count.val.toFixed(0)}${count.sfx}`
-    : '0';
-
-  return <span ref={ref}>{display}</span>;
-}
-
-// ---------- Progress bar ----------
-function ProgressBar({ raised, goal }) {
-  const pct = Math.min((raised / goal) * 100, 100).toFixed(1);
-  return (
-    <div className="prog-track">
-      <div className="prog-fill" style={{ width: `${pct}%` }} />
-    </div>
-  );
-}
-
-function formatPKR(n) {
-  if (n >= 10000000) return `₨${(n / 10000000).toFixed(1)}Cr`;
-  if (n >= 100000) return `₨${(n / 100000).toFixed(1)}L`;
-  if (n >= 1000) return `₨${(n / 1000).toFixed(0)}K`;
-  return `₨${n}`;
-}
-
-// =============================================
-// MAIN COMPONENT
-// =============================================
 export default function WaysToDonate() {
+  // States for interactive components
+  const [activeOnlineTab, setActiveOnlineTab] = useState('card');
+  const [copiedId, setCopiedId] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
-  const [activeMethod, setActiveMethod] = useState(null);
-  const [hoveredCard, setHoveredCard] = useState(null);
+
+  // Bank transfer info
+  const bankAccounts = [
+    {
+      id: 'meezan',
+      bankName: 'Meezan Bank Limited',
+      accountTitle: 'Alkhidmat Foundation Pakistan',
+      accountNo: '0201010238491',
+      iban: 'PK49MEZN000201010238491',
+      swift: 'MEZNPKKAXXX',
+    },
+    {
+      id: 'hbl',
+      bankName: 'Habib Bank Limited (HBL)',
+      accountTitle: 'Alkhidmat Foundation Pakistan',
+      accountNo: '00427991873903',
+      iban: 'PK12HABB0000427991873903',
+      swift: 'HABBPKKAXXX',
+    },
+    {
+      id: 'mcb',
+      bankName: 'MCB Bank Limited',
+      accountTitle: 'Alkhidmat Foundation Pakistan',
+      accountNo: '11223344556601',
+      iban: 'PK88MCIB0000112233445566',
+      swift: 'MCIBPKKAXXX',
+    },
+  ];
+
+  // FAQs
+  const faqItems = [
+    {
+      question: 'Is my donation secure?',
+      answer: 'Yes, your donation is 100% secure. We use industry-standard SSL encryption and partner with certified payment gateways (Visa, Mastercard, 3D Secure) to process your transactions safely.',
+    },
+    {
+      question: 'Is my donation tax deductible?',
+      answer: 'Yes, Alkhidmat Foundation is registered under Section 2(36) of the Income Tax Ordinance 2001, making all donations eligible for tax credit in Pakistan. Receipts are issued automatically for your tax records.',
+    },
+    {
+      question: 'Can I donate internationally?',
+      answer: 'Absolutely. Donors outside Pakistan can donate using international credit/debit cards or send wire transfers to our foreign currency accounts. We also have partner support offices in the UK, USA, Canada, and Australia.',
+    },
+    {
+      question: 'How do I receive a receipt?',
+      answer: 'For online donations, an email receipt is sent immediately. For bank transfers and home collection, receipts are issued once the payment is verified, usually within 24 to 48 hours.',
+    },
+    {
+      question: 'Is Zakat accepted?',
+      answer: 'Yes. Alkhidmat maintains separate accounts for Zakat funds. All Zakat donations are utilized in strict compliance with Shariah guidelines under the supervision of our Shariah Advisory Board.',
+    },
+  ];
+
+  const handleCopyText = (text, id) => {
+    navigator.clipboard.writeText(text);
+    setCopiedId(id);
+    setTimeout(() => {
+      setCopiedId(null);
+    }, 2000);
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
-    <div className="wtd-page">
+    <div className="ways-to-donate-container">
+      {/* 1. HERO SECTION */}
+      <section className="wtd-hero-section">
+        <div className="wtd-hero-overlay"></div>
+        <div className="container wtd-hero-inner">
+          <div className="wtd-breadcrumb">
+            <a href="/">Home</a> / <span className="active">Ways to Donate</span>
+          </div>
 
-      {/* ======== 1. HERO ======== */}
-      <section className="wtd-hero">
-        <div className="wtd-hero__bg-layers">
-          <div className="wtd-hero__photo" />
-          <div className="wtd-hero__gradient" />
-          <div className="wtd-hero__glow-tl" />
-          <div className="wtd-hero__glow-br" />
-          <div className="wtd-hero__grid-overlay" />
-        </div>
+          <span className="wtd-hero-badge">
+            <Sparkles size={14} className="badge-icon" /> Ways to Donate
+          </span>
 
-        <div className="container wtd-hero__inner">
-          <div className="wtd-hero__content">
-            <div className="wtd-hero__badge">
-              <Sparkles size={14} />
-              <span>10 Ways to Make a Difference</span>
+          <h1 className="wtd-hero-title">
+            Choose the Best Way to <br />Make an Impact
+          </h1>
+
+          <p className="wtd-hero-desc">
+            Your generosity powers life-changing humanitarian programs. Choose from our secure and convenient donation methods below to support those who need it most.
+          </p>
+
+          <div className="wtd-hero-ctas">
+            <a href="/donate" className="wtd-btn wtd-btn-yellow">Donate Now</a>
+            <button onClick={() => scrollToSection('quick-methods')} className="wtd-btn wtd-btn-outline-white">
+              Explore Donation Methods
+            </button>
+          </div>
+
+          <div className="wtd-trust-badges-grid">
+            <div className="wtd-trust-badge">
+              <ShieldCheck className="trust-icon" size={20} />
+              <div className="trust-text">
+                <h4>Secure Donations</h4>
+                <p>Fully encrypted gateways</p>
+              </div>
             </div>
-
-            <h1 className="wtd-hero__title">
-              Every Path Leads to<br />
-              <span className="wtd-hero__accent">One Purpose</span>
-            </h1>
-
-            <p className="wtd-hero__subtitle">
-              Whether you give online, bank-transfer, donate in Zakat, or send relief from abroad —
-              every contribution reaches the most vulnerable communities across Pakistan and beyond.
-            </p>
-
-            <div className="wtd-hero__actions">
-              <a href="/donate" className="btn wtd-btn-primary">
-                <Heart size={18} fill="currentColor" />
-                Donate Now
-              </a>
-              <a href="#ways-section" className="btn wtd-btn-secondary">
-                Explore Ways to Give <ArrowRight size={16} />
-              </a>
+            <div className="wtd-trust-badge">
+              <Award className="trust-icon" size={20} />
+              <div className="trust-text">
+                <h4>Trusted Since 1990</h4>
+                <p>35+ Years of transparency</p>
+              </div>
             </div>
-
-            <div className="wtd-hero__trust-row">
-              <div className="wtd-trust-chip">
-                <ShieldCheck size={15} className="chip-icon green" />
-                <span>Secure SSL</span>
+            <div className="wtd-trust-badge">
+              <Heart className="trust-icon" size={20} />
+              <div className="trust-text">
+                <h4>Zakat Eligible</h4>
+                <p>Shariah compliant distribution</p>
               </div>
-              <div className="wtd-trust-chip">
-                <Award size={15} className="chip-icon gold" />
-                <span>FBR Certified</span>
-              </div>
-              <div className="wtd-trust-chip">
-                <FileCheck2 size={15} className="chip-icon blue" />
-                <span>Annual Audit</span>
-              </div>
-              <div className="wtd-trust-chip">
-                <Users size={15} className="chip-icon purple" />
-                <span>25M+ Impacted</span>
+            </div>
+            <div className="wtd-trust-badge">
+              <Users className="trust-icon" size={20} />
+              <div className="trust-text">
+                <h4>Millions of Lives Impacted</h4>
+                <p>Across Pakistan & globally</p>
               </div>
             </div>
           </div>
-
-
         </div>
-
-        <a href="#impact-story" className="wtd-scroll-arrow">
-          <ChevronDown size={22} />
-        </a>
       </section>
 
-      {/* ======== 2. WHY YOUR DONATION MATTERS ======== */}
-      <section className="wtd-impact-story section" id="impact-story">
-        <div className="wtd-impact-story__bg-shape" />
-        <div className="container">
-          <div className="wtd-impact-story__header text-center">
-            <span className="section-tag">Why Give with Alkhidmat?</span>
-            <h2 className="section-title wtd-gradient-text">Your Donation Matters</h2>
+      {/* 2. QUICK DONATION METHODS */}
+      <section id="quick-methods" className="wtd-quick-methods-section section">
+        <div className="container text-center">
+          <span className="section-tag">Quick Access</span>
+          <h2 className="section-title">Quick Donation Methods</h2>
+          <p className="section-subtitle">
+            Click on any method below to view detailed transfer instructions and start making a difference immediately.
+          </p>
 
+          <div className="wtd-quick-grid">
+            <button onClick={() => scrollToSection('online-donation')} className="wtd-quick-card">
+              <div className="wtd-quick-icon-box">
+                <CreditCard size={32} />
+              </div>
+              <h3>Donate Online</h3>
+              <p>Debit/Credit Card, Mobile Wallets</p>
+              <span className="wtd-quick-link">View details <ArrowRight size={14} /></span>
+            </button>
+
+            <button onClick={() => scrollToSection('bank-transfer')} className="wtd-quick-card">
+              <div className="wtd-quick-icon-box">
+                <Building2 size={32} />
+              </div>
+              <h3>Bank Transfer</h3>
+              <p>Local Bank Accounts & IBANs</p>
+              <span className="wtd-quick-link">View details <ArrowRight size={14} /></span>
+            </button>
+
+            <button onClick={() => scrollToSection('home-collection')} className="wtd-quick-card">
+              <div className="wtd-quick-icon-box">
+                <Truck size={32} />
+              </div>
+              <h3>Home Collection</h3>
+              <p>Schedule a cash/cheque pickup</p>
+              <span className="wtd-quick-link">View details <ArrowRight size={14} /></span>
+            </button>
+
+            <button onClick={() => scrollToSection('international-donations')} className="wtd-quick-card">
+              <div className="wtd-quick-icon-box">
+                <Globe2 size={32} />
+              </div>
+              <h3>International Donations</h3>
+              <p>Global offices & wire transfers</p>
+              <span className="wtd-quick-link">View details <ArrowRight size={14} /></span>
+            </button>
+
+            <button onClick={() => scrollToSection('corporate-giving')} className="wtd-quick-card">
+              <div className="wtd-quick-icon-box">
+                <Building size={32} />
+              </div>
+              <h3>Corporate Giving</h3>
+              <p>CSR partnerships & business matching</p>
+              <span className="wtd-quick-link">View details <ArrowRight size={14} /></span>
+            </button>
+
+            <button onClick={() => scrollToSection('monthly-giving')} className="wtd-quick-card">
+              <div className="wtd-quick-icon-box">
+                <Calendar size={32} />
+              </div>
+              <h3>Monthly Giving</h3>
+              <p>Sustained support for orphan care & projects</p>
+              <span className="wtd-quick-link">View details <ArrowRight size={14} /></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. WHY DONATE WITH ALKHIDMAT */}
+      <section className="wtd-why-section section bg-light">
+        <div className="container text-center">
+          <span className="section-tag">Our Impact</span>
+          <h2 className="section-title">Why Donate With Alkhidmat</h2>
+          <p className="section-subtitle">
+            Alkhidmat Foundation Pakistan is one of the nation's leading, non-profit organizations dedicated to humanitarian services.
+          </p>
+
+          <div className="wtd-stats-grid">
+            <div className="wtd-stat-card">
+              <h3>35+ Years</h3>
+              <p>of Dedicated Service</p>
+            </div>
+            <div className="wtd-stat-card">
+              <h3>2M+ Lives</h3>
+              <p>Impacted Annually</p>
+            </div>
+            <div className="wtd-stat-card">
+              <h3>Nationwide</h3>
+              <p>Volunteers & Disaster Network</p>
+            </div>
+            <div className="wtd-stat-card">
+              <h3>Emergency</h3>
+              <p>First Responder Capabilities</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. FEATURED DONATION OPTIONS */}
+      <section id="featured-options" className="wtd-featured-section section">
+        <div className="container">
+          <div className="text-center">
+            <span className="section-tag">Featured Methods</span>
+            <h2 className="section-title">Featured Donation Options</h2>
+            <p className="section-subtitle">
+              Sponsor our core relief and development campaigns through these popular avenues.
+            </p>
           </div>
 
-          {/* Stats counters */}
-          <div className="wtd-stats-grid">
-            {impactStats.map((s, i) => (
-              <div className="wtd-stat-card" key={i} style={{ '--i': i }}>
-                <div className="wtd-stat-card__value">
-                  <AnimatedCounter end={s.value} />
+          <div className="wtd-featured-grid">
+            <div className="wtd-featured-card">
+              <div className="wtd-feat-img-container">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&auto=format&fit=crop&q=80" alt="Donate Online" />
+              </div>
+              <div className="wtd-feat-content">
+                <h3>Donate Online</h3>
+                <p>Instantly support any of our active programs via your credit/debit card or mobile wallets with complete security.</p>
+                <button onClick={() => scrollToSection('online-donation')} className="wtd-btn wtd-btn-blue wtd-btn-sm">Donate Online Now</button>
+              </div>
+            </div>
+
+            <div className="wtd-featured-card">
+              <div className="wtd-feat-img-container">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80" alt="Bank Transfer" />
+              </div>
+              <div className="wtd-feat-content">
+                <h3>Bank Transfer</h3>
+                <p>Transfer funds directly into our certified local or international bank accounts with zero processing fees.</p>
+                <button onClick={() => scrollToSection('bank-transfer')} className="wtd-btn wtd-btn-blue wtd-btn-sm">View Accounts</button>
+              </div>
+            </div>
+
+            <div className="wtd-featured-card">
+              <div className="wtd-feat-img-container">
+                <img src="https://images.unsplash.com/photo-1549194388-f61be84a6e9e?w=600&auto=format&fit=crop&q=80" alt="Home Collection" />
+              </div>
+              <div className="wtd-feat-content">
+                <h3>Home Collection</h3>
+                <p>Schedule a convenient donation collection from your home or office. Our representative will visit to collect cash or cheques.</p>
+                <button onClick={() => scrollToSection('home-collection')} className="wtd-btn wtd-btn-blue wtd-btn-sm">Request Pickup</button>
+              </div>
+            </div>
+
+            <div className="wtd-featured-card">
+              <div className="wtd-feat-img-container">
+                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80" alt="International Donations" />
+              </div>
+              <div className="wtd-feat-content">
+                <h3>International Donations</h3>
+                <p>Donors outside Pakistan can support us through our registered global offices and direct SWIFT transfers.</p>
+                <button onClick={() => scrollToSection('international-donations')} className="wtd-btn wtd-btn-blue wtd-btn-sm">International Options</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ONLINE DONATION METHODS */}
+      <section id="online-donation" className="wtd-online-section section bg-light">
+        <div className="container">
+          <div className="text-center">
+            <span className="section-tag">Instant Giving</span>
+            <h2 className="section-title">Online Donation Methods</h2>
+            <p className="section-subtitle">
+              Fast, simple, and secured with 256-bit SSL encryption.
+            </p>
+          </div>
+
+          <div className="wtd-tabs-container">
+            <div className="wtd-tabs-headers">
+              <button
+                className={`wtd-tab-btn ${activeOnlineTab === 'card' ? 'active' : ''}`}
+                onClick={() => setActiveOnlineTab('card')}
+              >
+                Credit/Debit Card
+              </button>
+              <button
+                className={`wtd-tab-btn ${activeOnlineTab === 'mobile' ? 'active' : ''}`}
+                onClick={() => setActiveOnlineTab('mobile')}
+              >
+                Mobile Wallet
+              </button>
+              <button
+                className={`wtd-tab-btn ${activeOnlineTab === 'intl' ? 'active' : ''}`}
+                onClick={() => setActiveOnlineTab('intl')}
+              >
+                International Wallets
+              </button>
+            </div>
+
+            <div className="wtd-tab-content">
+              {activeOnlineTab === 'card' && (
+                <div className="wtd-payment-brands">
+                  <div className="wtd-brand-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="brand-logo" />
+                    <h4>Visa Card</h4>
+                    <p>Secure global payments</p>
+                  </div>
+                  <div className="wtd-brand-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="brand-logo" />
+                    <h4>Mastercard</h4>
+                    <p>International card payments</p>
+                  </div>
+                  <div className="wtd-brand-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/UnionPay_logo.svg" alt="UnionPay" className="brand-logo_sm" />
+                    <h4>UnionPay</h4>
+                    <p>Local and global cards</p>
+                  </div>
                 </div>
-                <div className="wtd-stat-card__label">{s.label}</div>
+              )}
+
+              {activeOnlineTab === 'mobile' && (
+                <div className="wtd-payment-brands">
+                  <div className="wtd-brand-card">
+                    <div className="wallet-avatar easypaisa-bg">EP</div>
+                    <h4>Easypaisa</h4>
+                    <p>Pay via mobile account</p>
+                  </div>
+                  <div className="wtd-brand-card">
+                    <div className="wallet-avatar jazzcash-bg">JC</div>
+                    <h4>JazzCash</h4>
+                    <p>Instant mobile transfer</p>
+                  </div>
+                  <div className="wtd-brand-card">
+                    <div className="wallet-avatar raast-bg">R</div>
+                    <h4>Raast Pay</h4>
+                    <p>Instant state bank transfers</p>
+                  </div>
+                </div>
+              )}
+
+              {activeOnlineTab === 'intl' && (
+                <div className="wtd-payment-brands">
+                  <div className="wtd-brand-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" className="brand-logo" />
+                    <h4>Google Pay</h4>
+                    <p>Fast checkout on Android</p>
+                  </div>
+                  <div className="wtd-brand-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay" className="brand-logo" />
+                    <h4>Apple Pay</h4>
+                    <p>Secure checkout on iOS/Mac</p>
+                  </div>
+                  <div className="wtd-brand-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="brand-logo" />
+                    <h4>PayPal</h4>
+                    <p>Overseas wallet donations</p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="text-center mt-3">
+              <a href="/donate" className="wtd-btn wtd-btn-blue">Proceed to Donate Online</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. BANK TRANSFER */}
+      <section id="bank-transfer" className="wtd-bank-section section">
+        <div className="container">
+          <div className="text-center">
+            <span className="section-tag">Direct Transfer</span>
+            <h2 className="section-title">Bank Transfer</h2>
+            <p className="section-subtitle">
+              Make transfers directly into our bank accounts. Use the copy button next to numbers for quick clipboard copy.
+            </p>
+          </div>
+
+          <div className="wtd-bank-grid">
+            {bankAccounts.map((acc) => (
+              <div className="wtd-bank-card" key={acc.id}>
+                <h3>{acc.bankName}</h3>
+                <div className="bank-detail-item">
+                  <span className="lbl">Account Title:</span>
+                  <span className="val">{acc.accountTitle}</span>
+                </div>
+                <div className="bank-detail-item">
+                  <span className="lbl">Account Number:</span>
+                  <div className="val-copy-row">
+                    <span className="val">{acc.accountNo}</span>
+                    <button
+                      className="copy-btn"
+                      onClick={() => handleCopyText(acc.accountNo, `${acc.id}-no`)}
+                      title="Copy Account Number"
+                    >
+                      {copiedId === `${acc.id}-no` ? <Check size={16} className="text-success" /> : <Copy size={16} />}
+                    </button>
+                  </div>
+                </div>
+                <div className="bank-detail-item">
+                  <span className="lbl">IBAN:</span>
+                  <div className="val-copy-row">
+                    <span className="val code">{acc.iban}</span>
+                    <button
+                      className="copy-btn"
+                      onClick={() => handleCopyText(acc.iban, `${acc.id}-iban`)}
+                      title="Copy IBAN"
+                    >
+                      {copiedId === `${acc.id}-iban` ? <Check size={16} className="text-success" /> : <Copy size={16} />}
+                    </button>
+                  </div>
+                </div>
+                <div className="bank-detail-item">
+                  <span className="lbl">SWIFT Code:</span>
+                  <div className="val-copy-row">
+                    <span className="val code">{acc.swift}</span>
+                    <button
+                      className="copy-btn"
+                      onClick={() => handleCopyText(acc.swift, `${acc.id}-swift`)}
+                      title="Copy SWIFT Code"
+                    >
+                      {copiedId === `${acc.id}-swift` ? <Check size={16} className="text-success" /> : <Copy size={16} />}
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Editorial feature strip */}
-          <div className="wtd-story-strip">
-            <div className="story-strip__image-col">
-              <div className="story-strip__img-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80"
-                  alt="Alkhidmat humanitarian work"
-                  className="story-strip__img"
-                />
-                <div className="story-strip__img-badge">
-                  <Heart size={14} fill="currentColor" />
-                  <span>Est. 1990 — 34+ Years</span>
-                </div>
-              </div>
+      {/* 7. HOME COLLECTION */}
+      <section id="home-collection" className="wtd-collection-section section bg-light">
+        <div className="container">
+          <div className="wtd-collection-card">
+            <div className="collection-icon">
+              <Truck size={48} />
             </div>
-            <div className="story-strip__text-col">
-              <div className="story-strip__tag">Our Commitment</div>
-              <h3 className="story-strip__heading">
-                Every Rupee Reaches Those Who Need It Most
-              </h3>
-              <p className="story-strip__body">
-                With 600+ district offices and 50,000+ dedicated volunteers, Alkhidmat delivers
-                humanitarian aid at scale — from flood relief in Sindh to surgical camps in KPK
-                and orphan care across Punjab. Our audited financials prove what we promise:
-                98 paisas of every rupee you donate goes directly to beneficiaries.
+            <div className="collection-content">
+              <h2>Home Collection</h2>
+              <p>
+                Cannot make it online or to a bank? We can send a certified Alkhidmat Foundation representative to collect your donation (cash or cheque) right from your doorstep in all major cities of Pakistan. An official receipt will be provided on the spot.
               </p>
-              <div className="story-strip__highlights">
-                {[
-                  { icon: '✅', text: 'Audited by independent firms annually' },
-                  { icon: '✅', text: 'Shariah Board certified Zakat distribution' },
-                  { icon: '✅', text: 'UN ECOSOC & ICRC recognized' },
-                  { icon: '✅', text: 'Active in 60+ countries for international relief' },
-                ].map((h, i) => (
-                  <div key={i} className="story-highlight">
-                    <span className="story-highlight__icon">{h.icon}</span>
-                    <span>{h.text}</span>
-                  </div>
-                ))}
+              <div className="collection-info-box">
+                <div className="info-item">
+                  <Phone size={18} />
+                  <span>Call to schedule: <strong>0800-44448</strong></span>
+                </div>
+                <div className="info-item">
+                  <Mail size={18} />
+                  <span>Email: <strong>info@alkhidmat.org</strong></span>
+                </div>
               </div>
-              <a href="/donate" className="btn wtd-btn-primary mt-1">
-                Start Your Impact <ArrowRight size={16} />
-              </a>
+              <a href="/donate" className="wtd-btn wtd-btn-blue">Request Collection</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ======== 3. WAYS TO DONATE — MAIN SECTION ======== */}
-      <section className="wtd-methods-section section" id="ways-section">
-        <div className="wtd-methods-section__bg" />
+      {/* 8. INTERNATIONAL DONATIONS */}
+      <section id="international-donations" className="wtd-intl-section section">
         <div className="container">
-          <div className="wtd-methods-section__header text-center">
-            <span className="section-tag">Choose Your Channel</span>
-            <h2 className="section-title">10 Ways to Give</h2>
-
-          </div>
-
-          <div className="wtd-methods-masonry">
-            {donationMethods.map((method, idx) => {
-              const IconComp = IconMap[method.icon];
-              const isActive = activeMethod === method.id;
-              return (
-                <div
-                  key={method.id}
-                  className={`wtd-method-card ${isActive ? 'wtd-method-card--active' : ''} ${hoveredCard === method.id ? 'wtd-method-card--hovered' : ''}`}
-                  style={{ '--accent': method.accentColor, '--bg': method.bgAccent, '--delay': `${idx * 60}ms` }}
-                  onClick={() => setActiveMethod(isActive ? null : method.id)}
-                  onMouseEnter={() => setHoveredCard(method.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  <div className="method-card__glow" />
-                  <div className="method-card__top">
-                    <div className="method-card__icon-wrap">
-                      {IconComp && <IconComp size={26} />}
-                    </div>
-                    <span className={`method-card__badge method-card__badge--${method.badgeColor}`}>
-                      {method.badge}
-                    </span>
-                  </div>
-
-                  <div className="method-card__body">
-                    <div className="method-card__tagline">{method.tagline}</div>
-                    <h3 className="method-card__title">{method.title}</h3>
-                    <p className="method-card__desc">{method.description}</p>
-                  </div>
-
-                  <div className={`method-card__expanded ${isActive ? 'method-card__expanded--open' : ''}`}>
-                    <div className="method-card__highlights">
-                      {method.highlights.map((h, i) => (
-                        <span key={i} className="method-hl-chip">
-                          <CheckCircle2 size={12} />
-                          {h}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <a href={method.anchor} className="method-card__cta">
-                    {method.cta} <ArrowRight size={14} />
-                  </a>
-
-                  <div className="method-card__expand-hint">
-                    {isActive ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ======== 4. GLOBAL RELIEF NETWORK ======== */}
-      <section className="wtd-global-section section" id="global-network">
-        <div className="wtd-global-section__bg" />
-        <div className="container">
-          <div className="text-center" style={{ marginBottom: '48px' }}>
-            <span className="section-tag">Worldwide Reach</span>
+          <div className="text-center">
+            <span className="section-tag">Global Supporters</span>
             <h2 className="section-title">International Donations</h2>
+            <p className="section-subtitle">
+              Supporting Alkhidmat from outside Pakistan is simple and secure.
+            </p>
           </div>
 
-          <div className="wtd-global-map-wrapper">
-            <div className="wtd-global-map-container">
-              <img
-                src={globalReliefMap}
-                alt="International Donations - Global Relief Network"
-                className="wtd-global-map-img"
-              />
-              {/* Animated glowing pulse dots on key locations */}
-              <div className="wtd-map-pulse" style={{ top: '35%', left: '48%' }} /> {/* Pakistan */}
-              <div className="wtd-map-pulse wtd-map-pulse--delay1" style={{ top: '42%', left: '18%' }} />
-              <div className="wtd-map-pulse wtd-map-pulse--delay2" style={{ top: '30%', left: '52%' }} />
-              <div className="wtd-map-pulse wtd-map-pulse--delay3" style={{ top: '55%', left: '72%' }} />
-              <div className="wtd-map-pulse wtd-map-pulse--delay4" style={{ top: '28%', left: '78%' }} />
+          <div className="wtd-intl-grid">
+            <div className="wtd-intl-card">
+              <h3>International Bank Transfer</h3>
+              <p>Donors globally can transfer directly using wire transfer. Please use the SWIFT/BIC codes provided in the Bank Transfer section or contact our international desk.</p>
+              <div className="wtd-intl-contact">
+                <Mail size={16} />
+                <span>intl.relations@alkhidmat.org</span>
+              </div>
             </div>
 
-            <div className="wtd-global-stats-row">
-              <div className="wtd-global-stat">
-                <Globe2 size={20} className="wtd-global-stat__icon" />
-                <div className="wtd-global-stat__text">
-                  <strong>60+</strong>
-                  <span>Countries Reached</span>
-                </div>
-              </div>
-              <div className="wtd-global-stat">
-                <Users size={20} className="wtd-global-stat__icon" />
-                <div className="wtd-global-stat__text">
-                  <strong>25M+</strong>
-                  <span>Lives Impacted</span>
-                </div>
-              </div>
-              <div className="wtd-global-stat">
-                <Heart size={20} className="wtd-global-stat__icon" />
-                <div className="wtd-global-stat__text">
-                  <strong>600+</strong>
-                  <span>Districts Active</span>
-                </div>
-              </div>
-              <div className="wtd-global-stat">
-                <ShieldCheck size={20} className="wtd-global-stat__icon" />
-                <div className="wtd-global-stat__text">
-                  <strong>34+</strong>
-                  <span>Years of Trust</span>
-                </div>
+            <div className="wtd-intl-card">
+              <h3>Overseas Donation Offices</h3>
+              <p>Alkhidmat operates through registered partner organizations in the United Kingdom, United States, Canada, and Australia to ensure tax-efficient local donations (e.g. Gift Aid in the UK and 501(c)(3) status in the US).</p>
+              <div className="wtd-intl-contact">
+                <Phone size={16} />
+                <span>+92-42-3595 7260</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ======== 5. DONATION PROCESS ======== */}
-      <section className="wtd-process-section section">
-        <div className="wtd-process-section__bg" />
-        <div className="container">
-          <div className="text-center" style={{ marginBottom: '60px' }}>
-            <span className="section-tag">Simple Steps</span>
-            <h2 className="section-title">How Donation Works</h2>
+      {/* Corporate Giving & Monthly Giving Anchor Targets */}
+      <div id="corporate-giving"></div>
+      <div id="monthly-giving"></div>
 
+      {/* 9. DONATION FAQ */}
+      <section className="wtd-faq-section section bg-light">
+        <div className="container">
+          <div className="text-center">
+            <span className="section-tag">Common Inquiries</span>
+            <h2 className="section-title">Donation FAQ</h2>
+            <p className="section-subtitle">
+              Find answers to commonly asked questions about Alkhidmat donations.
+            </p>
           </div>
 
-          <div className="wtd-process-timeline">
-            {donationProcess.map((step, idx) => {
-              const Icon = IconMap[step.icon];
+          <div className="wtd-faq-list">
+            {faqItems.map((faq, index) => {
+              const isOpen = openFaq === index;
               return (
-                <div key={step.step} className="wtd-process-step" style={{ '--step-color': step.color, '--step-i': idx }}>
-                  <div className="process-step__connector" />
-                  <div className="process-step__node">
-                    <div className="process-step__circle">
-                      {Icon && <Icon size={24} />}
-                    </div>
-                    <div className="process-step__num">{step.step}</div>
-                  </div>
-                  <div className="process-step__content">
-                    <h4 className="process-step__title">{step.title}</h4>
-                    <p className="process-step__desc">{step.description}</p>
+                <div key={index} className={`wtd-faq-item ${isOpen ? 'open' : ''}`}>
+                  <button className="wtd-faq-header-btn" onClick={() => setOpenFaq(isOpen ? null : index)}>
+                    <span>{faq.question}</span>
+                    {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                  </button>
+                  <div className={`wtd-faq-body ${isOpen ? 'open' : ''}`}>
+                    <p>{faq.answer}</p>
                   </div>
                 </div>
               );
@@ -396,141 +581,19 @@ export default function WaysToDonate() {
         </div>
       </section>
 
-      {/* ======== 6. IMPACT SECTION ======== */}
-      <section className="wtd-impact-section section" id="impact">
-        <div className="wtd-impact-section__bg" />
-        <div className="container">
-          <div className="wtd-impact-section__inner">
-            <div className="wtd-impact-section__left">
-              <span className="section-tag section-tag--white">Real Impact</span>
-              <h2 className="wtd-impact-title">See What Your Donation Does</h2>
-              <p className="wtd-impact-subtitle">
-                No donation is too small. Every rupee is a step toward food, water, education, and dignity.
-              </p>
-
-              <div className="wtd-impact-cards">
-                {impactHighlights.map((item, i) => (
-                  <div key={i} className="wtd-impact-chip" style={{ '--chip-color': item.color, '--chip-i': i }}>
-                    <div className="impact-chip__emoji">{item.icon}</div>
-                    <div className="impact-chip__text">
-                      <strong className="impact-chip__amount">{item.amount}</strong>
-                      <span className="impact-chip__desc">{item.impact}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <a href="/donate" className="btn wtd-btn-white-outline mt-2">
-                Make Your Impact <ArrowRight size={16} />
-              </a>
-            </div>
-
-            <div className="wtd-impact-section__right">
-              <div className="wtd-impact-photo-stack">
-                <div className="impact-photo impact-photo--main">
-                  <img
-                    src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&auto=format&fit=crop&q=80"
-                    alt="Humanitarian impact"
-                  />
-                </div>
-                <div className="impact-photo impact-photo--secondary">
-                  <img
-                    src="https://images.unsplash.com/photo-1469571486292-b53601020a8a?w=400&auto=format&fit=crop&q=80"
-                    alt="Relief work"
-                  />
-                </div>
-                <div className="impact-stat-bubble">
-                  <div className="impact-bubble__value">25M+</div>
-                  <div className="impact-bubble__label">Lives Changed</div>
-                </div>
-                <div className="impact-year-badge">Since 1990</div>
-              </div>
-            </div>
+      {/* 10. FINAL CTA */}
+      <section className="wtd-final-cta-section">
+        <div className="container text-center">
+          <h2>Your Donation Can Change a Life Today</h2>
+          <p>
+            Millions of people depend on Alkhidmat Foundation's services every day. With your help, we can reach even more lives and give them hope for a brighter future.
+          </p>
+          <div className="wtd-cta-btns">
+            <a href="/donate" className="wtd-btn wtd-btn-yellow">Donate Now</a>
+            <a href="/contact" className="wtd-btn wtd-btn-outline-white">Contact Us</a>
           </div>
         </div>
       </section>
-
-
-
-      {/* ======== 8. FAQ ======== */}
-      <section className="wtd-faq-section section">
-        <div className="wtd-faq-section__bg" />
-        <div className="container">
-          <div className="wtd-faq-inner">
-            <div className="wtd-faq-header">
-              <span className="section-tag">Got Questions?</span>
-              <h2 className="section-title">Frequently Asked Questions</h2>
-              <p className="section-subtitle">
-                Everything you need to know about donating to Alkhidmat Foundation.
-              </p>
-              <a href="/contact" className="btn wtd-btn-primary" style={{ marginTop: '24px' }}>
-                Contact Support <ArrowRight size={16} />
-              </a>
-            </div>
-
-            <div className="wtd-faq-list">
-              {waysFaqItems.map((item, i) => {
-                const isOpen = openFaq === i;
-                return (
-                  <div
-                    key={i}
-                    className={`wtd-faq-item ${isOpen ? 'wtd-faq-item--open' : ''}`}
-                    onClick={() => setOpenFaq(isOpen ? null : i)}
-                  >
-                    <div className="faq-item__header">
-                      <span className="faq-item__q">{item.question}</span>
-                      <span className="faq-item__toggle">
-                        {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                      </span>
-                    </div>
-                    <div className={`faq-item__body ${isOpen ? 'faq-item__body--open' : ''}`}>
-                      <p>{item.answer}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ======== 9. FINAL CTA ======== */}
-      <section className="wtd-final-cta">
-        <div className="wtd-final-cta__bg-photo" />
-        <div className="wtd-final-cta__overlay" />
-        <div className="wtd-final-cta__glow" />
-        <div className="container wtd-final-cta__inner">
-          <div className="wtd-final-cta__content">
-            <div className="wtd-final-cta__badge">
-              <Heart size={14} fill="currentColor" />
-              <span>Your Generosity, Their Tomorrow</span>
-            </div>
-            <h2 className="wtd-final-cta__title">
-              Every Contribution<br />
-              <span className="wtd-final-cta__accent" style={{ background: 'none', WebkitBackgroundClip: 'unset', WebkitTextFillColor: '#ffffff', color: '#ffffff' }}>Creates Hope</span>
-            </h2>
-            <p className="wtd-final-cta__body">
-              Join over 4.8 million donors worldwide who trust Alkhidmat Foundation
-              to deliver compassion where it's needed most. Your gift today changes
-              a life forever.
-            </p>
-            <div className="wtd-final-cta__actions">
-              <a href="/donate" className="btn wtd-btn-cta-primary">
-                <Heart size={18} fill="currentColor" />
-                Donate Now
-              </a>
-              <a href="/contact" className="btn wtd-btn-cta-secondary">
-                Talk to Us <ArrowRight size={16} />
-              </a>
-            </div>
-            <div className="wtd-final-cta__micro">
-              <ShieldCheck size={14} className="micro-icon" />
-              <span>Secure · Transparent · 98% to Beneficiaries · FBR Certified</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 }
