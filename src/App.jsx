@@ -18,6 +18,7 @@ import EventsCommunityActivities from './pages/EventsCommunityActivities';
 import AlkhidmatVolunteer from './pages/AlkhidmatVolunteer';
 import WaysToDonate from './pages/WaysToDonate';
 import Campaigns from './pages/Campaigns';
+import NewsAndMedia from './pages/NewsAndMedia';
 import './App.css';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/alkhidmat-volunteer" element={<AlkhidmatVolunteer />} />
         <Route path="/ways-to-donate" element={<WaysToDonate />} />
         <Route path="/campaigns" element={<Campaigns />} />
+        <Route path="/news-media" element={<NewsAndMedia />} />
       </Routes>
       <Footer />
     </div>
@@ -48,3 +50,4 @@ function App() {
 }
 
 export default App;
+
