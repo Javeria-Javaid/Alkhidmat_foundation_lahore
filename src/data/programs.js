@@ -1,18 +1,20 @@
-import palestineImg from '../assets/rebuild_gaza.png';
-import banoqabilImg from '../assets/banoqabil_program.jpeg';
-import orphanImg from '../assets/Orphan_Care_program.png';
-import cleanWaterImg from '../assets/wash_program.png';
-import communityImg from '../assets/community_services_program.png';
-import disasterImg from '../assets/disaster_management_program.png';
-import healthImg from '../assets/health_services_program.png';
-import educationImg from '../assets/education_program.png';
-import mawakhatImg from '../assets/islamic_microfinance_program.png';
+import palestineImg from '../assets/program_images/palestine.jpeg';
+import banoqabilImg from '../assets/program_images/bano-qabil.jpeg';
+import orphanImg from '../assets/program_images/orphan_care.jpeg';
+import cleanWaterImg from '../assets/program_images/clean_water.jpeg';
+import communityImg from '../assets/program_images/community-service.jpeg';
+import disasterImg from '../assets/program_images/disaster_management.jpeg';
+import healthImg from '../assets/program_images/health.jpeg';
+import educationImg from '../assets/program_images/education.jpeg';
+import mawakhatImg from '../assets/program_images/muwakhat.jpeg';
+
 
 export const programs = [
   {
     label: 'Palestine Emergency Appeal',
     href: 'https://alkhidmat.com.pk/palestine-emergency-appeal/',
     image: palestineImg,
+    imagePosition: 'center 20%',
     description: 'Urgent humanitarian assistance for families affected by the crisis in Palestine.',
     isExternal: true,
     symbol: 'PS',
@@ -25,6 +27,7 @@ export const programs = [
     label: 'Bano Qabil',
     href: 'https://banoqabil.pk/',
     image: banoqabilImg,
+    imagePosition: 'center 80%',
     description: 'Skills and opportunities that help young people build independent futures.',
     isExternal: true,
     symbol: 'BQ',
@@ -37,6 +40,7 @@ export const programs = [
     label: 'Orphan Care',
     href: '/programs/orphan-care',
     image: orphanImg,
+    imagePosition: 'center 20%',
     description: 'Care, protection and support for children who have lost a parent.',
     symbol: 'OC',
     tag: 'Orphan Support',
@@ -48,6 +52,7 @@ export const programs = [
     label: 'Clean Water',
     href: '/programs/clean-water',
     image: cleanWaterImg,
+    imagePosition: 'center 85%',
     description: 'Safe water, sanitation and hygiene for healthier communities.',
     symbol: 'CW',
     tag: 'Clean Water',
@@ -59,6 +64,7 @@ export const programs = [
     label: 'Community Services',
     href: '/programs/community-services',
     image: communityImg,
+    imagePosition: 'center 25%',
     description: 'Local welfare initiatives that strengthen families and neighborhoods.',
     symbol: 'CS',
     tag: 'Welfare',
@@ -70,6 +76,7 @@ export const programs = [
     label: 'Disaster Management',
     href: '/programs/disaster-management',
     image: disasterImg,
+    imagePosition: 'center 70%',
     description: 'Rapid response, relief and recovery when emergencies strike.',
     symbol: 'DM',
     tag: 'Relief Appeal',
@@ -81,6 +88,7 @@ export const programs = [
     label: 'Health',
     href: '/programs/healthcare',
     image: healthImg,
+    imagePosition: 'center 80%',
     description: 'Accessible healthcare and medical support for communities in need.',
     symbol: 'HS',
     tag: 'Healthcare',
@@ -92,6 +100,7 @@ export const programs = [
     label: 'Education',
     href: '/programs/education',
     image: educationImg,
+    imagePosition: 'center 15%',
     description: 'Education and scholarships that open doors to a brighter future.',
     symbol: 'ED',
     tag: 'Education',
@@ -103,6 +112,7 @@ export const programs = [
     label: 'Mawakhat',
     href: '/programs/mawakhat',
     image: mawakhatImg,
+    imagePosition: 'center 60%',
     description: 'Interest-free financial support for families and small businesses.',
     symbol: 'MW',
     tag: 'Microfinance',

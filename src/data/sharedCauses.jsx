@@ -15,13 +15,14 @@ import heroBgRebuildGaza from '../assets/hero-bg-rebuild-gaza.png';
 import heroBgZakat from '../assets/hero-bg-zakat.png';
 import heroBgWash from '../assets/hero-bg-wash.png';
 import heroBgEmergency from '../assets/hero-bg-emergency-relief.png';
+import educationImg from '../assets/education_program.jpeg';
 
 // Program slider images
-import communityImg from '../assets/community_services.png';
-import cleanWaterImg from '../assets/clean_water.png';
-import disasterImg from '../assets/disaster_management.png';
-import orphanCareImg from '../assets/Orphan_Care.png';
-import educationImg from '../assets/education_program.jpeg';
+import overviewImage from '../assets/program_images/community-service.jpeg';
+import washImage from '../assets/program_images/clean_water.jpeg';
+import gazaAppealImage from '../assets/program_images/palestine.jpeg';
+import emergencyImage from '../assets/program_images/disaster_management.jpeg';
+import educationImage from '../assets/program_images/education.jpeg';
 
 export const sharedCauses = [
   {
@@ -46,7 +47,8 @@ export const sharedCauses = [
       topLabel: '',
       heading: 'Transforming Lives Through Every Program',
       description: 'Providing comprehensive humanitarian aid, emergency relief, and sustainable development programs across Pakistan and globally.',
-      previewImage: communityImg,
+      previewImage: overviewImage,
+      imagePosition: 'center 25%',
       glassLabel: 'Global Impact',
       stats: [
         { value: '2.5M+', label: 'Lives Impacted' },
@@ -79,7 +81,8 @@ export const sharedCauses = [
       topLabel: 'CLEAN WATER PROGRAM',
       heading: 'Safe Drinking Water For Vulnerable Communities',
       description: 'Installing solar-powered water filtration plants, hand pumps, and deep wells in remote areas facing severe water scarcity.',
-      previewImage: cleanWaterImg,
+      previewImage: washImage,
+      imagePosition: 'center 85%',
       glassLabel: 'WASH Initiative',
       stats: [
         { value: '15K+', label: 'Water Projects' },
@@ -91,7 +94,7 @@ export const sharedCauses = [
     }
   },
   {
-    id: 'gaza',
+    id: 'gaza-appeal',
     tabIcon: <HeartHandshake className="nav-tab-icon" />,
     tabLabel: 'Gaza Appeal',
     hero: {
@@ -112,7 +115,8 @@ export const sharedCauses = [
       topLabel: '',
       heading: 'Urgent Gaza Relief & Rebuilding Efforts',
       description: 'Providing immediate hot meals, medical supplies, clean drinking water, and winter clothing to displaced Palestinian families with transparent field tracking.',
-      previewImage: rebuildGazaImg,
+      previewImage: gazaAppealImage,
+      imagePosition: 'center 20%',
       glassLabel: 'Gaza Emergency Response',
       stats: [
         { value: '850K+', label: 'Meals Distributed' },
@@ -145,7 +149,8 @@ export const sharedCauses = [
       topLabel: '',
       heading: 'Rapid Response Medical & Rescue Network',
       description: 'Equipped with 300+ ambulances, flood response boats, and mobile medical units ready to reach disaster-struck regions across Pakistan within minutes.',
-      previewImage: disasterImg,
+      previewImage: emergencyImage,
+      imagePosition: 'center 70%',
       glassLabel: 'Disaster Emergency Fleet',
       stats: [
         { value: '300+', label: 'Ambulance Fleet' },
@@ -178,7 +183,8 @@ export const sharedCauses = [
       topLabel: '',
       heading: 'Orphan Care & Quality Education Access',
       description: 'Sponsoring orphan education, state-of-the-art schools, Aghosh orphan homes, and vocational training centers to build resilient futures for deserving youth.',
-      previewImage: orphanCareImg,
+      previewImage: educationImage,
+      imagePosition: 'center 15%',
       glassLabel: 'Aghosh Orphan Care',
       stats: [
         { value: '23,000+', label: 'Orphans Sponsored' },

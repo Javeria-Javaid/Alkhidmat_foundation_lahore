@@ -28,7 +28,15 @@ function FeaturedPrograms() {
                 </div>
 
                 <div className="program-card__image-container">
-                  <img src={program.image} alt={program.label} className="program-card__img" />
+                  <img 
+                    src={program.image} 
+                    alt={program.label} 
+                    className="program-card__img" 
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: program.imagePosition || 'center'
+                    }}
+                  />
                   {program.badgeText && <span className="program-card__badge">{program.badgeText}</span>}
                 </div>
 

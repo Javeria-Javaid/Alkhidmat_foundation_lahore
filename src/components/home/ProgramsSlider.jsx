@@ -9,18 +9,26 @@ import './ProgramsSlider.css';
 function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
   // Tab Refs for auto-scroll
   const tabsRef = useRef([]);
+  const tabsContainerRef = useRef(null);
   
   // Touch Swipe Refs
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Scroll active tab into view
+  // Scroll active tab into view (horizontal only, prevents vertical page jump)
   useEffect(() => {
-    if (tabsRef.current[currentIndex]) {
-      tabsRef.current[currentIndex].scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
+    const activeTab = tabsRef.current[currentIndex];
+    const container = tabsContainerRef.current;
+    if (activeTab && container) {
+      const containerWidth = container.offsetWidth;
+      const tabOffsetLeft = activeTab.offsetLeft;
+      const tabWidth = activeTab.offsetWidth;
+      
+      const scrollPosition = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+      
+      container.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
       });
     }
   }, [currentIndex]);
@@ -86,7 +94,15 @@ function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
               <div className="slider-content-row">
                 {/* Left: Image Preview */}
                 <div className="slider-left">
-                  <img src={activeSlide.program.previewImage} alt={activeSlide.tabLabel} className="slider-left-img" />
+                   <img 
+                     src={activeSlide.program.previewImage} 
+                     alt={activeSlide.tabLabel} 
+                     className="slider-left-img" 
+                     style={{
+                       objectFit: 'cover',
+                       objectPosition: activeSlide.program.imagePosition || 'center'
+                     }}
+                   />
                 </div>
 
                 {/* Center: Content */}
@@ -131,7 +147,7 @@ function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
 
           {/* Bottom Navigation */}
           <div className="slider-bottom-nav">
-            <div className="nav-tabs">
+            <div className="nav-tabs" ref={tabsContainerRef}>
               {sharedCauses.map((slide, index) => (
                 <button 
                   key={slide.id}
