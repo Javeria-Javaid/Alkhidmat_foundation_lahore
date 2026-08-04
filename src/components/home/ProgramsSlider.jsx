@@ -13,16 +13,26 @@ import {
 } from 'lucide-react';
 import './ProgramsSlider.css';
 
+// Import local images
+import communityImg from '../../assets/community_services.png';
+import healthImg from '../../assets/health_page_1.jpeg';
+import cleanWaterImg from '../../assets/clean_water.png';
+import washImg from '../../assets/wash_img.png';
+import rebuildGazaImg from '../../assets/rebuild_gaza.png';
+import disasterImg from '../../assets/disaster_management.png';
+import orphanCareImg from '../../assets/Orphan_Care.png';
+import educationImg from '../../assets/education_program.jpeg';
+
 const slideData = [
   {
     id: 'overview',
     tabIcon: <HeartHandshake className="nav-tab-icon" />,
     tabLabel: 'Overview',
-    topLabel: 'ALKHIDMAT FOUNDATION',
+    topLabel: '',
     heading: 'Transforming Lives Through Every Program',
     description: 'Providing comprehensive humanitarian aid, emergency relief, and sustainable development programs across Pakistan and globally.',
-    imageBg: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop',
-    imageFg: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?q=80&w=2070&auto=format&fit=crop',
+    imageBg: communityImg,
+    imageFg: healthImg,
     glassLabel: 'Global Impact',
     stats: [
       { value: '2.5M+', label: 'Lives Impacted' },
@@ -39,8 +49,8 @@ const slideData = [
     topLabel: 'CLEAN WATER PROGRAM',
     heading: 'Safe Drinking Water For Vulnerable Communities',
     description: 'Installing solar-powered water filtration plants, hand pumps, and deep wells in remote areas facing severe water scarcity.',
-    imageBg: 'https://images.unsplash.com/photo-1541888046425-d81bb192a014?q=80&w=2070&auto=format&fit=crop',
-    imageFg: 'https://images.unsplash.com/photo-1504814532849-cff240bbc503?q=80&w=2070&auto=format&fit=crop',
+    imageBg: cleanWaterImg,
+    imageFg: washImg,
     glassLabel: 'WASH Initiative',
     stats: [
       { value: '15K+', label: 'Water Projects' },
@@ -57,8 +67,8 @@ const slideData = [
     topLabel: '',
     heading: 'Urgent Gaza Relief & Rebuilding Efforts',
     description: 'Providing immediate hot meals, medical supplies, clean drinking water, and winter clothing to displaced Palestinian families with transparent field tracking.',
-    imageBg: 'https://images.unsplash.com/photo-1599708153386-62bf3f0340d0?q=80&w=2070&auto=format&fit=crop',
-    imageFg: 'https://images.unsplash.com/photo-1616680214084-22670de1bc82?q=80&w=2070&auto=format&fit=crop',
+    imageBg: rebuildGazaImg,
+    imageFg: communityImg,
     glassLabel: 'Gaza Emergency Response',
     stats: [
       { value: '850K+', label: 'Meals Distributed' },
@@ -75,8 +85,8 @@ const slideData = [
     topLabel: '',
     heading: 'Rapid Response Medical & Rescue Network',
     description: 'Equipped with 300+ ambulances, flood response boats, and mobile medical units ready to reach disaster-struck regions across Pakistan within minutes.',
-    imageBg: 'https://images.unsplash.com/photo-1588666352934-2e9b1bb92301?q=80&w=2070&auto=format&fit=crop',
-    imageFg: 'https://images.unsplash.com/photo-1599708153386-62bf3f0340d0?q=80&w=2070&auto=format&fit=crop',
+    imageBg: disasterImg,
+    imageFg: healthImg,
     glassLabel: 'Disaster Emergency Fleet',
     stats: [
       { value: '300+', label: 'Ambulance Fleet' },
@@ -90,11 +100,11 @@ const slideData = [
     id: 'education',
     tabIcon: <GraduationCap className="nav-tab-icon" />,
     tabLabel: 'Education',
-    topLabel: 'FUTURE LEADERS PROGRAM',
+    topLabel: '',
     heading: 'Orphan Care & Quality Education Access',
     description: 'Sponsoring orphan education, state-of-the-art schools, Aghosh orphan homes, and vocational training centers to build resilient futures for deserving youth.',
-    imageBg: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop',
-    imageFg: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2069&auto=format&fit=crop',
+    imageBg: orphanCareImg,
+    imageFg: educationImg,
     glassLabel: 'Aghosh Orphan Care',
     stats: [
       { value: '23,000+', label: 'Orphans Sponsored' },

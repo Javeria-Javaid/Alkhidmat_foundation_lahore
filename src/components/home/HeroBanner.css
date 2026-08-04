@@ -5,7 +5,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: 85vh;
+  height: 550px;
 }
 
 /* Full-width cause backgrounds with crossfade */
@@ -19,7 +19,7 @@
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 650ms ease-in-out;
