@@ -29,7 +29,7 @@ function FeaturedPrograms() {
 
                 <div className="program-card__image-container">
                   <img src={program.image} alt={program.label} className="program-card__img" />
-                  <span className="program-card__badge">{program.badgeText || 'ALKHIDMAT HUMANITARIAN AID'}</span>
+                  {program.badgeText && <span className="program-card__badge">{program.badgeText}</span>}
                 </div>
 
                 <div className="program-card__body">

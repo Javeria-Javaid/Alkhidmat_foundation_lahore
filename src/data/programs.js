@@ -17,7 +17,7 @@ export const programs = [
     isExternal: true,
     symbol: 'PS',
     tag: 'Gaza Appeal',
-    badgeText: 'ALKHIDMAT HUMANITARIAN AID',
+    badgeText: 'GAZA EMERGENCY',
     statValue: '850K+',
     statLabel: 'Meals Distributed',
   },

@@ -54,7 +54,7 @@ const slideData = [
     id: 'gaza',
     tabIcon: <HeartHandshake className="nav-tab-icon" />,
     tabLabel: 'Gaza Appeal',
-    topLabel: 'ALKHIDMAT HUMANITARIAN AID',
+    topLabel: '',
     heading: 'Urgent Gaza Relief & Rebuilding Efforts',
     description: 'Providing immediate hot meals, medical supplies, clean drinking water, and winter clothing to displaced Palestinian families with transparent field tracking.',
     imageBg: 'https://images.unsplash.com/photo-1599708153386-62bf3f0340d0?q=80&w=2070&auto=format&fit=crop',
@@ -72,7 +72,7 @@ const slideData = [
     id: 'emergency',
     tabIcon: <Ambulance className="nav-tab-icon" />,
     tabLabel: 'Emergency',
-    topLabel: 'DISASTER MANAGEMENT',
+    topLabel: '',
     heading: 'Rapid Response Medical & Rescue Network',
     description: 'Equipped with 300+ ambulances, flood response boats, and mobile medical units ready to reach disaster-struck regions across Pakistan within minutes.',
     imageBg: 'https://images.unsplash.com/photo-1588666352934-2e9b1bb92301?q=80&w=2070&auto=format&fit=crop',
@@ -173,22 +173,16 @@ function ProgramsSlider() {
                   <img src={activeSlide.imageBg} alt="" className="slider-left-bg" />
                   <div className="slider-left-overlay"></div>
                   <img src={activeSlide.imageFg} alt="" className="slider-left-fg" />
-                  
-                  <div className="slider-glass-label-top">
-                    <span style={{color: '#ffc107'}}>✨</span> Humanitarian Collage
-                  </div>
-                  
-                  <div className="slider-glass-label">
-                    <span style={{color: '#fff', fontSize: '10px', opacity: 0.8}}>PS</span> {activeSlide.glassLabel}
-                  </div>
                 </div>
 
                 {/* Center: Content */}
                 <div className="slider-center">
-                  <div className="slider-top-label">
-                    <span style={{width: 6, height: 6, borderRadius: '50%', background: 'var(--primary-blue)', display: 'inline-block'}}></span>
-                    {activeSlide.topLabel}
-                  </div>
+                  {activeSlide.topLabel && (
+                    <div className="slider-top-label">
+                      <span style={{width: 6, height: 6, borderRadius: '50%', background: 'var(--primary-blue)', display: 'inline-block'}}></span>
+                      {activeSlide.topLabel}
+                    </div>
+                  )}
                   <h3 className="slider-heading">{activeSlide.heading}</h3>
                   <p className="slider-desc">{activeSlide.description}</p>
                   
@@ -206,26 +200,11 @@ function ProgramsSlider() {
                 <div className="slider-right">
                   <div className="slider-cta">
                     <button className="slider-btn slider-btn-primary">
-                      {activeSlide.btnPrimary} <ArrowRight size={16} />
+                      {activeSlide.btnPrimary}
                     </button>
                     <button className="slider-btn slider-btn-secondary">
-                      <HeartHandshake size={16} /> {activeSlide.btnSecondary}
+                      {activeSlide.btnSecondary}
                     </button>
-                  </div>
-                  
-                  <div className="slider-trust">
-                    <div className="trust-badge">
-                      <CheckCircle2 size={16} className="trust-icon" />
-                      <span className="trust-label">Transparent</span>
-                    </div>
-                    <div className="trust-badge">
-                      <CheckCircle2 size={16} className="trust-icon" />
-                      <span className="trust-label">Direct Aid</span>
-                    </div>
-                    <div className="trust-badge">
-                      <CheckCircle2 size={16} className="trust-icon" />
-                      <span className="trust-label">Tax Deductible</span>
-                    </div>
                   </div>
                 </div>
               </div>
