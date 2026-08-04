@@ -1,48 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import HeroBanner from './HeroBanner';
-import { campaigns } from '../../data/campaigns';
-import './CampaignHeroSection.css';
 
-function CampaignHeroSection() {
-  const [activeCampaignIndex, setActiveCampaignIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
+function CampaignHeroSection({ currentIndex, setCurrentIndex, sharedCauses }) {
   useEffect(() => {
-    campaigns.forEach((campaign) => {
-      const img = new Image();
-      img.src = campaign.backgroundImage;
+    // Preload background and content images
+    sharedCauses.forEach((cause) => {
+      const imgBg = new Image();
+      imgBg.src = cause.hero.backgroundImage;
+      const imgFg = new Image();
+      imgFg.src = cause.hero.image;
     });
-    campaigns.forEach((campaign) => {
-      const img = new Image();
-      img.src = campaign.image;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-
-    const interval = setInterval(() => {
-      setActiveCampaignIndex((prevIndex) => (prevIndex + 1) % campaigns.length);
-    }, 7000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [sharedCauses]);
 
   const handleCampaignChange = (campaignId) => {
-    const newIndex = campaigns.findIndex(c => c.id === campaignId);
+    const newIndex = sharedCauses.findIndex(c => c.hero.id === campaignId);
     if (newIndex !== -1) {
-      setActiveCampaignIndex(newIndex);
-      setIsAutoPlaying(false);
+      setCurrentIndex(newIndex);
     }
   };
 
-  const activeCampaign = campaigns[activeCampaignIndex];
+  const activeCampaign = sharedCauses[currentIndex].hero;
+  const campaignsList = sharedCauses.map(c => c.hero);
 
   return (
     <div className="campaign-hero-section" id="donate-section">
       <HeroBanner
         campaign={activeCampaign}
-        campaigns={campaigns}
+        campaigns={campaignsList}
         onCampaignChange={handleCampaignChange}
       />
     </div>

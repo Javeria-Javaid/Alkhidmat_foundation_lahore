@@ -1,157 +1,62 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  CheckCircle2, 
-  Droplets, 
-  HeartHandshake, 
-  Ambulance, 
-  GraduationCap, 
-  Coins, 
   ChevronLeft, 
-  ChevronRight,
-  ArrowRight
+  ChevronRight
 } from 'lucide-react';
 import './ProgramsSlider.css';
 
-// Import local images
-import communityImg from '../../assets/community_services.png';
-import healthImg from '../../assets/health_page_1.jpeg';
-import cleanWaterImg from '../../assets/clean_water.png';
-import washImg from '../../assets/wash_img.png';
-import rebuildGazaImg from '../../assets/rebuild_gaza.png';
-import disasterImg from '../../assets/disaster_management.png';
-import orphanCareImg from '../../assets/Orphan_Care.png';
-import educationImg from '../../assets/education_program.jpeg';
+function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
+  // Tab Refs for auto-scroll
+  const tabsRef = useRef([]);
+  
+  // Touch Swipe Refs
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
-const slideData = [
-  {
-    id: 'overview',
-    tabIcon: <HeartHandshake className="nav-tab-icon" />,
-    tabLabel: 'Overview',
-    topLabel: '',
-    heading: 'Transforming Lives Through Every Program',
-    description: 'Providing comprehensive humanitarian aid, emergency relief, and sustainable development programs across Pakistan and globally.',
-    imageBg: communityImg,
-    imageFg: healthImg,
-    glassLabel: 'Global Impact',
-    stats: [
-      { value: '2.5M+', label: 'Lives Impacted' },
-      { value: '150+', label: 'Cities Served' },
-      { value: '25+', label: 'Years of Service' }
-    ],
-    btnPrimary: 'Explore Programs',
-    btnSecondary: 'Donate Now'
-  },
-  {
-    id: 'wash',
-    tabIcon: <Droplets className="nav-tab-icon" />,
-    tabLabel: 'WASH',
-    topLabel: 'CLEAN WATER PROGRAM',
-    heading: 'Safe Drinking Water For Vulnerable Communities',
-    description: 'Installing solar-powered water filtration plants, hand pumps, and deep wells in remote areas facing severe water scarcity.',
-    imageBg: cleanWaterImg,
-    imageFg: washImg,
-    glassLabel: 'WASH Initiative',
-    stats: [
-      { value: '15K+', label: 'Water Projects' },
-      { value: '3M+', label: 'Daily Beneficiaries' },
-      { value: '100%', label: 'Tested Safe' }
-    ],
-    btnPrimary: 'Learn More',
-    btnSecondary: 'Donate to WASH'
-  },
-  {
-    id: 'gaza',
-    tabIcon: <HeartHandshake className="nav-tab-icon" />,
-    tabLabel: 'Gaza Appeal',
-    topLabel: '',
-    heading: 'Urgent Gaza Relief & Rebuilding Efforts',
-    description: 'Providing immediate hot meals, medical supplies, clean drinking water, and winter clothing to displaced Palestinian families with transparent field tracking.',
-    imageBg: rebuildGazaImg,
-    imageFg: communityImg,
-    glassLabel: 'Gaza Emergency Response',
-    stats: [
-      { value: '850K+', label: 'Meals Distributed' },
-      { value: '120+', label: 'Relief Convoys' },
-      { value: '100%', label: 'Direct Delivery' }
-    ],
-    btnPrimary: 'Support Gaza Appeal',
-    btnSecondary: 'Donate Relief'
-  },
-  {
-    id: 'emergency',
-    tabIcon: <Ambulance className="nav-tab-icon" />,
-    tabLabel: 'Emergency',
-    topLabel: '',
-    heading: 'Rapid Response Medical & Rescue Network',
-    description: 'Equipped with 300+ ambulances, flood response boats, and mobile medical units ready to reach disaster-struck regions across Pakistan within minutes.',
-    imageBg: disasterImg,
-    imageFg: healthImg,
-    glassLabel: 'Disaster Emergency Fleet',
-    stats: [
-      { value: '300+', label: 'Ambulance Fleet' },
-      { value: '24/7', label: 'Emergency Hotline' },
-      { value: '500K+', label: 'Rescue Missions' }
-    ],
-    btnPrimary: 'Emergency Network',
-    btnSecondary: 'Support Rescue'
-  },
-  {
-    id: 'education',
-    tabIcon: <GraduationCap className="nav-tab-icon" />,
-    tabLabel: 'Education',
-    topLabel: '',
-    heading: 'Orphan Care & Quality Education Access',
-    description: 'Sponsoring orphan education, state-of-the-art schools, Aghosh orphan homes, and vocational training centers to build resilient futures for deserving youth.',
-    imageBg: orphanCareImg,
-    imageFg: educationImg,
-    glassLabel: 'Aghosh Orphan Care',
-    stats: [
-      { value: '23,000+', label: 'Orphans Sponsored' },
-      { value: '18', label: 'Aghosh Homes' },
-      { value: '98%', label: 'School Retention' }
-    ],
-    btnPrimary: 'Sponsor an Orphan',
-    btnSecondary: 'Donate Education'
-  }
-];
-
-function ProgramsSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const timerRef = useRef(null);
-
-  const startTimer = () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slideData.length);
-    }, 6000);
-  };
-
+  // Scroll active tab into view
   useEffect(() => {
-    if (!isHovered) {
-      startTimer();
-    } else {
-      if (timerRef.current) clearInterval(timerRef.current);
+    if (tabsRef.current[currentIndex]) {
+      tabsRef.current[currentIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
     }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [isHovered, currentIndex]);
+  }, [currentIndex]);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % slideData.length);
+    setCurrentIndex((prev) => (prev + 1) % sharedCauses.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? slideData.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? sharedCauses.length - 1 : prev - 1));
   };
 
   const handleDotClick = (index) => {
     setCurrentIndex(index);
   };
 
-  const activeSlide = slideData[currentIndex];
+  // Touch Swipe Handlers
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const threshold = 50;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > threshold) {
+      handleNext();
+    } else if (distance < -threshold) {
+      handlePrev();
+    }
+  };
+
+  const activeSlide = sharedCauses[currentIndex];
 
   const slideVariants = {
     initial: { opacity: 0, x: 20 },
@@ -164,8 +69,9 @@ function ProgramsSlider() {
       <div className="programs-slider-sticky-container">
         <div 
           className="programs-slider"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <AnimatePresence mode="wait">
             <motion.div 
@@ -178,26 +84,28 @@ function ProgramsSlider() {
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <div className="slider-content-row">
-                {/* Left: Image Collage */}
+                {/* Left: Image Preview */}
                 <div className="slider-left">
-                  <img src={activeSlide.imageBg} alt="" className="slider-left-bg" />
-                  <div className="slider-left-overlay"></div>
-                  <img src={activeSlide.imageFg} alt="" className="slider-left-fg" />
+                  <img src={activeSlide.program.previewImage} alt={activeSlide.tabLabel} className="slider-left-img" />
                 </div>
 
                 {/* Center: Content */}
                 <div className="slider-center">
-                  {activeSlide.topLabel && (
-                    <div className="slider-top-label">
-                      <span style={{width: 6, height: 6, borderRadius: '50%', background: 'var(--primary-blue)', display: 'inline-block'}}></span>
-                      {activeSlide.topLabel}
-                    </div>
-                  )}
-                  <h3 className="slider-heading">{activeSlide.heading}</h3>
-                  <p className="slider-desc">{activeSlide.description}</p>
+                  <div className="slider-top-label">
+                    {activeSlide.program.topLabel ? (
+                      <>
+                        <span style={{width: 6, height: 6, borderRadius: '50%', background: 'var(--primary-blue)', display: 'inline-block'}}></span>
+                        {activeSlide.program.topLabel}
+                      </>
+                    ) : (
+                      <span style={{visibility: 'hidden'}}>&nbsp;</span>
+                    )}
+                  </div>
+                  <h3 className="slider-heading">{activeSlide.program.heading}</h3>
+                  <p className="slider-desc">{activeSlide.program.description}</p>
                   
                   <div className="slider-stats">
-                    {activeSlide.stats.map((stat, idx) => (
+                    {activeSlide.program.stats.map((stat, idx) => (
                       <div className="stat-card" key={idx}>
                         <div className="stat-value">{stat.value}</div>
                         <div className="stat-label">{stat.label}</div>
@@ -210,10 +118,10 @@ function ProgramsSlider() {
                 <div className="slider-right">
                   <div className="slider-cta">
                     <button className="slider-btn slider-btn-primary">
-                      {activeSlide.btnPrimary}
+                      {activeSlide.program.btnPrimary}
                     </button>
                     <button className="slider-btn slider-btn-secondary">
-                      {activeSlide.btnSecondary}
+                      {activeSlide.program.btnSecondary}
                     </button>
                   </div>
                 </div>
@@ -224,9 +132,10 @@ function ProgramsSlider() {
           {/* Bottom Navigation */}
           <div className="slider-bottom-nav">
             <div className="nav-tabs">
-              {slideData.map((slide, index) => (
+              {sharedCauses.map((slide, index) => (
                 <button 
                   key={slide.id}
+                  ref={el => tabsRef.current[index] = el}
                   className={`nav-tab ${index === currentIndex ? 'active' : ''}`}
                   onClick={() => handleDotClick(index)}
                 >
@@ -246,7 +155,7 @@ function ProgramsSlider() {
                 </button>
               </div>
               <div className="nav-dots">
-                {slideData.map((_, index) => (
+                {sharedCauses.map((_, index) => (
                   <button 
                     key={index}
                     className={`nav-dot ${index === currentIndex ? 'active' : ''}`}
