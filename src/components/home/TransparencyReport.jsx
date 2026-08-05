@@ -1,5 +1,32 @@
 import React from 'react';
 import './TransparencyReport.css';
+import rebuildGazaImg from '../../assets/donations_section/rebuild_gaza.png';
+import waterSadqahImg from '../../assets/donations_section/water_sadqah.png';
+import zakatImg from '../../assets/donations_section/zakat.png';
+
+const donationItems = [
+  {
+    id: 'rebuild-gaza',
+    title: 'Rebuild Gaza',
+    desc: 'Support emergency relief and rebuilding efforts.',
+    img: rebuildGazaImg,
+    objectPosition: 'center 20%'
+  },
+  {
+    id: 'water-sadaqah',
+    title: 'Water Sadaqah',
+    desc: 'Provide clean water access to communities in need.',
+    img: waterSadqahImg,
+    objectPosition: 'center 30%'
+  },
+  {
+    id: 'zakat',
+    title: 'Give Zakat',
+    desc: 'Purify what you own and support families who depend on it.',
+    img: zakatImg,
+    objectPosition: 'center 15%'
+  }
+];
 
 function TransparencyReport() {
   return (
@@ -11,32 +38,21 @@ function TransparencyReport() {
           </div>
 
           <div className="donations-grid">
-            <div className="donation-card">
-              <div className="donation-card__img bg-gaza-card"></div>
-              <div className="donation-card__content">
-                <h3>Rebuild Gaza</h3>
-                <p>Support emergency relief and rebuilding efforts.</p>
-                <a href="#" className="btn btn-dark btn-full">Donate Now</a>
+            {donationItems.map((item) => (
+              <div key={item.id} className="donation-card">
+                <img 
+                  src={item.img} 
+                  alt={item.title} 
+                  className="donation-card__img"
+                  style={{ objectPosition: item.objectPosition }}
+                />
+                <div className="donation-card__content">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                  <a href="#" className="btn btn-dark btn-full">Donate Now</a>
+                </div>
               </div>
-            </div>
-
-            <div className="donation-card">
-              <div className="donation-card__img bg-water-card"></div>
-              <div className="donation-card__content">
-                <h3>Water Sadaqah</h3>
-                <p>Provide clean water access to communities in need.</p>
-                <a href="#" className="btn btn-dark btn-full">Donate Now</a>
-              </div>
-            </div>
-
-            <div className="donation-card">
-              <div className="donation-card__img bg-zakat-card"></div>
-              <div className="donation-card__content">
-                <h3>Give Zakat</h3>
-                <p>Purify what you own and support families who depend on it.</p>
-                <a href="#" className="btn btn-dark btn-full">Donate Now</a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

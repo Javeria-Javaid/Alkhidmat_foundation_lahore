@@ -76,12 +76,14 @@
 }
 
 .news-badge {
-  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
   padding: 4px 10px;
   font-size: 0.65rem;
   font-weight: 700;
   border-radius: 4px;
-  margin-bottom: 12px;
 }
 
 .badge-blue { background: var(--primary-blue); color: var(--white); }

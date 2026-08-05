@@ -2,6 +2,89 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './SuccessStories.css';
 
+import palestineImg from '../../assets/featured_causes_section(Home_Page)/palestine_.jpeg';
+import healthImg from '../../assets/featured_causes_section(Home_Page)/health_services.jpeg';
+import waterImg from '../../assets/featured_causes_section(Home_Page)/clean_water.jpeg';
+import orphanImg from '../../assets/featured_causes_section(Home_Page)/orphan_sponsorship.jpeg';
+import educationImg from '../../assets/featured_causes_section(Home_Page)/education_support.jpeg';
+
+const featuredCauses = [
+  {
+    id: 'gaza',
+    title: 'Rebuild Gaza',
+    desc: 'Support emergency relief and rebuilding efforts.',
+    image: palestineImg,
+    badge: 'URGENT APPEAL',
+    type: 'large',
+    link: '#',
+    objectPosition: 'center',
+  },
+  {
+    id: 'health',
+    title: 'Health Services',
+    desc: 'Providing quality healthcare services to underserved communities.',
+    image: healthImg,
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+      </svg>
+    ),
+    iconClass: 'icon-blue',
+    type: 'wide',
+    link: '#',
+    objectPosition: 'center',
+  },
+  {
+    id: 'water',
+    title: 'Clean Water Projects',
+    desc: 'Delivering clean water and sanitation facilities to communities in need.',
+    image: waterImg,
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+      </svg>
+    ),
+    iconClass: 'icon-cyan',
+    type: 'normal',
+    link: '#',
+    objectPosition: 'center',
+  },
+  {
+    id: 'orphan',
+    title: 'Orphan Sponsorship',
+    desc: 'Supporting orphaned children with education, care, and a brighter future.',
+    image: orphanImg,
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </svg>
+    ),
+    iconClass: 'icon-green',
+    type: 'normal',
+    link: '#',
+    objectPosition: 'center',
+  },
+  {
+    id: 'education',
+    title: 'Education Support',
+    desc: 'Providing quality education and resources to underprivileged children.',
+    image: educationImg,
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+    ),
+    iconClass: 'icon-yellow',
+    type: 'normal',
+    link: '#',
+    objectPosition: 'center',
+  },
+];
+
 function SuccessStories() {
 
   return (
@@ -93,57 +176,41 @@ function SuccessStories() {
               <a href="#" className="btn-link">Explore All Programs &rarr;</a>
             </div>
             
-            <div className="cause-card cause-card--large cause-card--dark">
-              <div className="cause-card__bg bg-gaza"></div>
-              <div className="cause-card__content">
-                <span className="badge badge-yellow">URGENT APPEAL</span>
-                <h3>Rebuild Gaza</h3>
-                <p>Support emergency relief and rebuilding efforts.</p>
-                <a href="#" className="btn btn-white">
-                  Donate Now
-                </a>
-              </div>
-            </div>
-            
-            <div className="cause-card cause-card--wide cause-card--dark">
-               <div className="cause-card__bg bg-health"></div>
-               <div className="cause-card__content">
-                  <div className="cause-icon icon-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
-                  <h3>Health Services</h3>
-                  <p>Providing quality healthcare services to underserved communities.</p>
-                  <a href="#" className="link-arrow">Donate Now &rarr;</a>
-               </div>
-            </div>
-            
-            <div className="cause-card cause-card--dark">
-               <div className="cause-card__bg bg-water"></div>
-               <div className="cause-card__content">
-                  <div className="cause-icon icon-cyan"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div>
-                  <h3>Clean Water Projects</h3>
-                  <p>Delivering clean water and sanitation facilities to communities in need.</p>
-                  <a href="#" className="link-arrow">Donate Now &rarr;</a>
-               </div>
-            </div>
-            
-            <div className="cause-card cause-card--dark">
-               <div className="cause-card__bg bg-orphan"></div>
-               <div className="cause-card__content">
-                  <div className="cause-icon icon-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-                  <h3>Orphan Sponsorship</h3>
-                  <p>Supporting orphaned children with education, care, and a brighter future.</p>
-                  <a href="#" className="link-arrow">Donate Now &rarr;</a>
-               </div>
-            </div>
+            {featuredCauses.map((cause) => {
+              const cardClass = `cause-card cause-card--dark ${
+                cause.type === 'large' ? 'cause-card--large' : cause.type === 'wide' ? 'cause-card--wide' : ''
+              }`;
 
-            <div className="cause-card cause-card--dark">
-               <div className="cause-card__bg bg-education"></div>
-               <div className="cause-card__content">
-                  <div className="cause-icon icon-yellow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
-                  <h3>Education Support</h3>
-                  <p>Providing quality education and resources to underprivileged children.</p>
-                  <a href="#" className="link-arrow">Donate Now &rarr;</a>
-               </div>
-            </div>
+              return (
+                <div key={cause.id} className={cardClass}>
+                  <div className="cause-card__bg">
+                    <img 
+                      src={cause.image} 
+                      alt={cause.title} 
+                      style={{ 
+                        objectPosition: cause.objectPosition,
+                        filter: 'brightness(1.02) contrast(1.05) saturate(1.04)'
+                      }} 
+                    />
+                  </div>
+                  <div className="cause-card__content">
+                    {cause.badge && <span className="badge badge-yellow">{cause.badge}</span>}
+                    {cause.icon && <div className={`cause-icon ${cause.iconClass}`}>{cause.icon}</div>}
+                    <h3>{cause.title}</h3>
+                    <p>{cause.desc}</p>
+                    {cause.type === 'large' ? (
+                      <a href={cause.link} className="btn btn-white">
+                        Donate Now
+                      </a>
+                    ) : (
+                      <a href={cause.link} className="link-arrow">
+                        Donate Now &rarr;
+                      </a>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
             
           </div>
         </div>

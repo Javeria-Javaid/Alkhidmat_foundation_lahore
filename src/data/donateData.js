@@ -15,7 +15,7 @@ export const donationCauses = [
   },
   {
     id: 'gaza-relief',
-    category: 'Gaza Emergency Appeal & Rebuild Gaza 2026',
+    category: 'Gaza Emergency Appeal',
     description: 'Urgent humanitarian aid including food, medical supplies, clean water, and emergency shelters for Gaza families.',
     badge: 'Urgent Appeal',
     items: [

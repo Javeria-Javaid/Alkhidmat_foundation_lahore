@@ -1,8 +1,8 @@
 import React from 'react';
 import './OrphanCare.css';
 import ProgramHero from '../components/shared/ProgramHero';
-import orphanHeroImg from '../assets/Orphan_Care_program.png';
-import orphanCareBgImg from '../assets/serve_humanity.png';
+import orphanHeroImg from '../assets/orphan_care_page/orphan_main-img.jpeg';
+import orphanCareBgImg from '../assets/orphan_care_page/orphan_care.jpeg';
 import story1Img from '../assets/akfl-1.jpeg';
 import story2Img from '../assets/akfl-2.jpeg';
 import story3Img from '../assets/akfl-3.jpeg';

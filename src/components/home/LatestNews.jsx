@@ -1,5 +1,10 @@
 import React from 'react';
 import './LatestNews.css';
+import newsFlood1 from '../../assets/news_and_media/news_and_media_flood1.png';
+import newsDoctor from '../../assets/news_and_media/news_and_media_doctor.png';
+import newsSchool from '../../assets/news_and_media/news_and_media_New School.png';
+import newsCleanWater from '../../assets/news_and_media/news_and_media_clean_water.png';
+import newsFoodDistribution from '../../assets/news_and_media/news_and_media_food_distribution.png';
 
 function LatestNews() {
   return (
@@ -16,9 +21,9 @@ function LatestNews() {
           <div className="news-grid">
             {/* Tall Card */}
             <div className="news-card news-card--tall">
-              <div className="news-card__bg bg-flood"></div>
+              <div className="news-card__bg bg-flood" style={{ backgroundImage: `url(${newsFlood1})` }}></div>
+              <span className="news-badge badge-blue">FIELD UPDATE</span>
               <div className="news-card__content">
-                <span className="news-badge badge-blue">FIELD UPDATE</span>
                 <h3>Alkhidmat Team Provides Relief in Flood-Hit Areas of Sindh</h3>
                 <span className="news-date">May 28, 2025</span>
               </div>
@@ -27,36 +32,36 @@ function LatestNews() {
             {/* 4 Small Cards */}
             <div className="news-subgrid">
               <div className="news-card news-card--small">
-                <div className="news-card__bg bg-health"></div>
+                <div className="news-card__bg bg-health" style={{ backgroundImage: `url(${newsDoctor})` }}></div>
+                <span className="news-badge badge-cyan">HEALTH</span>
                 <div className="news-card__content">
-                  <span className="news-badge badge-cyan">HEALTH</span>
                   <h4>Free Medical Camp Serves Hundreds in Remote Villages</h4>
                   <span className="news-date">May 26, 2025</span>
                 </div>
               </div>
               
               <div className="news-card news-card--small">
-                <div className="news-card__bg bg-edu"></div>
+                <div className="news-card__bg bg-edu" style={{ backgroundImage: `url(${newsSchool})` }}></div>
+                <span className="news-badge badge-blue">EDUCATION</span>
                 <div className="news-card__content">
-                  <span className="news-badge badge-blue">EDUCATION</span>
                   <h4>New School Facility Inaugurated in South Punjab</h4>
                   <span className="news-date">May 24, 2025</span>
                 </div>
               </div>
               
               <div className="news-card news-card--small">
-                <div className="news-card__bg bg-water"></div>
+                <div className="news-card__bg bg-water" style={{ backgroundImage: `url(${newsCleanWater})` }}></div>
+                <span className="news-badge badge-cyan">WASH</span>
                 <div className="news-card__content">
-                  <span className="news-badge badge-cyan">WASH</span>
                   <h4>Clean Water Projects Bring Hope to Thar Communities</h4>
                   <span className="news-date">May 22, 2025</span>
                 </div>
               </div>
               
               <div className="news-card news-card--small">
-                <div className="news-card__bg bg-relief"></div>
+                <div className="news-card__bg bg-relief" style={{ backgroundImage: `url(${newsFoodDistribution})` }}></div>
+                <span className="news-badge badge-gold">RELIEF</span>
                 <div className="news-card__content">
-                  <span className="news-badge badge-gold">RELIEF</span>
                   <h4>Food Packages Distributed to Needy Families in Lahore</h4>
                   <span className="news-date">May 20, 2025</span>
                 </div>

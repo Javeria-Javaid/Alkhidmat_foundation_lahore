@@ -184,7 +184,7 @@ export const sharedCauses = [
       heading: 'Orphan Care & Quality Education Access',
       description: 'Sponsoring orphan education, state-of-the-art schools, Aghosh orphan homes, and vocational training centers to build resilient futures for deserving youth.',
       previewImage: educationImage,
-      imagePosition: 'center 15%',
+      imagePosition: '30% 15%',
       glassLabel: 'Aghosh Orphan Care',
       stats: [
         { value: '23,000+', label: 'Orphans Sponsored' },

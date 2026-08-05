@@ -35,18 +35,15 @@
 }
 
 .donation-card__img {
+  width: 100%;
+  display: block;
   height: 220px;
   border-radius: 50% 50% 0 0 / 40% 40% 0 0;
   background-color: var(--gray-200);
   margin-bottom: 24px;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   border-bottom: 4px solid var(--white);
 }
-
-.bg-gaza-card { background-color: #94a3b8; }
-.bg-water-card { background-color: #64748b; }
-.bg-zakat-card { background-color: #475569; }
 
 .donation-card__content h3 {
   font-size: 1.5rem;
