@@ -186,21 +186,23 @@ function Header() {
           <ul className="header__mobile-menu">
             {navItems.map((item, index) => (
               <li key={item.label} className="header__mobile-item">
-                <button
-                  className="header__mobile-link"
-                  onClick={() => {
-                    if (item.children) {
-                      toggleDropdown(activeDropdown === index ? null : index);
-                    } else {
-                      setMobileMenuOpen(false);
-                    }
-                  }}
-                >
-                  {item.label}
-                  {item.children && (
+                {item.children ? (
+                  <button
+                    className="header__mobile-link"
+                    onClick={() => toggleDropdown(activeDropdown === index ? null : index)}
+                  >
+                    {item.label}
                     <svg className={`header__mobile-chevron ${activeDropdown === index ? 'rotated' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className="header__mobile-link"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
                 {item.children && activeDropdown === index && (
                   <ul className="header__mobile-submenu">
                     {item.children.map((child) => (
@@ -219,7 +221,7 @@ function Header() {
             <Link to="/donate" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setMobileMenuOpen(false)}>
               Donate Now
             </Link>
-            <Link to="/contact" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
+            <Link to="/contact" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setMobileMenuOpen(false)}>
               Appointment
             </Link>
           </div>

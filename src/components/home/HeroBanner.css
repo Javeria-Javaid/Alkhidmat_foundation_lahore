@@ -35,9 +35,9 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(2, 84, 164, 0.08) 0%,
-    rgba(2, 84, 164, 0.02) 45%,
-    transparent 70%
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -146,7 +146,7 @@
   gap: 12px;
 }
 
-.hero-banner__right .hero-donation-widget__trust-item {
+.hero-donation-widget__trust-item {
   font-size: 0.65rem;
 }
 
@@ -159,7 +159,7 @@
 .hero-banner__title {
   font-size: 2.8rem;
   font-weight: 800;
-  color: var(--white);
+  color: var(--navy);
   margin: 0 0 24px;
   line-height: 1.2;
 }
@@ -168,13 +168,13 @@
 .hero-banner__title-mobile { display: none; }
 
 .hero-banner .text-primary {
-  color: var(--accent-yellow);
+  color: var(--primary-blue);
 }
 
 .hero-banner__desc {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--gray-600);
   margin-bottom: 32px;
   max-width: 680px;
   animation: fadeUp 0.6s ease-out 0.1s forwards;
@@ -190,27 +190,27 @@
 }
 
 .hero-banner .btn-primary {
-  background-color: var(--white);
-  color: var(--primary-blue);
-  border: 2px solid var(--white);
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: 2px solid var(--primary-blue);
 }
 
 .hero-banner .btn-primary:hover {
-  background-color: var(--accent-yellow);
-  color: var(--primary-blue);
-  border-color: var(--accent-yellow);
+  background-color: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hero-banner .btn-outline {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.75);
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
 }
 
 .hero-banner .btn-outline:hover {
-  background: var(--white);
-  color: var(--primary-blue);
+  background: var(--primary-blue);
+  color: var(--white);
   transform: translateY(-2px);
 }
 
@@ -237,7 +237,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 2px solid var(--white);
+  border: 2px solid var(--off-white);
   background-color: var(--gray-200);
   margin-left: -12px;
 }
@@ -254,21 +254,21 @@
 .hero-banner__stat-info h3 {
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--white);
+  color: var(--navy);
   margin: 0;
   line-height: 1;
 }
 
 .hero-banner__stat-info p {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--gray-500);
   margin: 4px 0 0;
 }
 
 .hero-banner__stat-divider {
   width: 1px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: var(--gray-200);
 }
 
 /* ANIMATIONS */

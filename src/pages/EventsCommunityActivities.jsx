@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom';
 import './EventsCommunityActivities.css';
 
 /* ── assets ─────────────────────────────────────────────────────── */
-import heroMainImg    from '../assets/community_services_program.png';
-import heroImg2       from '../assets/health_services_program.png';
-import heroImg3       from '../assets/akfl-1-new.png';
-import heroImg4       from '../assets/education_program.png';
-import heroImg5       from '../assets/akfl-2-new.png';
+import heroMainImg    from '../assets/events/volunteer-1.png';
+import heroImg2       from '../assets/events/ramzan.png';
+import heroImg3       from '../assets/events/flood_relief.png';
+import heroImg4       from '../assets/events/plantation.png';
+import heroImg5       from '../assets/events/medical.png';
 
-import ev1Img         from '../assets/akfl-1.jpeg';
-import ev2Img         from '../assets/banoqabil_program.jpeg';
-import ev3Img         from '../assets/akfl-2.jpeg';
+import ev1Img         from '../assets/events/mera_brand_pakistan.png';
+import ev2Img         from '../assets/events/graduation_ceremony_banoqabil.png';
+import ev3Img         from '../assets/events/banoqabil.png';
 
-import featuredImg    from '../assets/community_services_program.png';
+import featuredImg    from '../assets/events/volunteer_conference.png';
 
-import act1Img        from '../assets/disaster_management_program.png';
-import act2Img        from '../assets/hero-bg-emergency-relief.png';
-import act3Img        from '../assets/health_services_program.png';
-import act4Img        from '../assets/education_program.png';
-import act5Img        from '../assets/akfl-2-new.png';
+import act1Img        from '../assets/events/ramzan.png';
+import act2Img        from '../assets/events/flood_relief.png';
+import act3Img        from '../assets/events/medical.png';
+import act4Img        from '../assets/events/plantation.png';
+import act5Img        from '../assets/events/orphan.png';
 
 import ctaBgImg       from '../assets/akfl-1-new.png';
 
@@ -27,14 +27,15 @@ import ctaBgImg       from '../assets/akfl-1-new.png';
 const upcomingEvents = [
   {
     id: 1,
-    dates: ['14 Aug', '15 Aug', '16 Aug'],
-    showDate: true,
+    dates: [],
+    showDate: false,
     title: 'Mera Brand Pakistan',
-    location: 'Alkhidmat Headquarters, Lahore',
+    location: 'Expo Center Lahore',
     time: '9:00 AM – 5:00 PM',
     description:
       'A national celebration promoting Pakistani brands, businesses and entrepreneurship through community engagement and awareness activities.',
     img: ev1Img,
+    imgPos: 'left center',
   },
   {
     id: 2,
@@ -63,33 +64,33 @@ const upcomingEvents = [
 const categories = [
   {
     id: 1,
-    color: 'red',
+    colorHex: '#FF6B6B',
     title: 'Blood Donation',
     description: 'Save lives through blood donation drives',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
       </svg>
     ),
   },
   {
     id: 2,
-    color: 'green',
+    colorHex: '#FFB74D',
     title: 'Food Distribution',
     description: 'Ration & food packages for needy families',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 11l19-9-9 19-2-8-8-2z"/>
       </svg>
     ),
   },
   {
     id: 3,
-    color: 'blue',
+    colorHex: '#6C63FF',
     title: 'Education',
     description: 'Seminars, workshops & awareness sessions',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
       </svg>
@@ -97,22 +98,22 @@ const categories = [
   },
   {
     id: 4,
-    color: 'cyan',
+    colorHex: '#26C6DA',
     title: 'Medical Camps',
     description: 'Free medical checkups and health services',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
       </svg>
     ),
   },
   {
     id: 5,
-    color: 'green',
+    colorHex: '#66BB6A',
     title: 'Environment',
     description: 'Tree plantations and environmental drives',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 8C8 10 5.9 16.17 3.82 19.18L5 21l4-1 2 3c2-2 4.5-5.5 7-8"/>
         <path d="M17 8l2-7-7 2"/>
       </svg>
@@ -120,11 +121,11 @@ const categories = [
   },
   {
     id: 6,
-    color: 'blue',
+    colorHex: '#1976D2',
     title: 'Volunteer Programs',
     description: 'Volunteer training and community organising',
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
         <circle cx="9" cy="7" r="4"/>
         <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
@@ -224,13 +225,26 @@ function EventsCommunityActivities() {
           {/* right – collage */}
           <div className="ec-hero__collage" aria-hidden="true">
             <div className="ec-hero__col-main">
-              <img src={heroMainImg} alt="" />
+              <img src={heroMainImg} alt="Volunteer Activity" />
+              <div className="ec-hero__tag">Volunteer Programs</div>
             </div>
             <div className="ec-hero__col-grid">
-              <div className="ec-hero__col-cell"><img src={heroImg2} alt="" /></div>
-              <div className="ec-hero__col-cell"><img src={heroImg3} alt="" /></div>
-              <div className="ec-hero__col-cell"><img src={heroImg4} alt="" /></div>
-              <div className="ec-hero__col-cell"><img src={heroImg5} alt="" /></div>
+              <div className="ec-hero__col-cell">
+                <img src={heroImg2} alt="Ramzan Food Drive" style={{ objectPosition: 'top' }} />
+                <div className="ec-hero__tag ec-hero__tag--small">Ramzan Drive</div>
+              </div>
+              <div className="ec-hero__col-cell">
+                <img src={heroImg3} alt="Flood Relief" style={{ objectPosition: 'top' }} />
+                <div className="ec-hero__tag ec-hero__tag--small">Flood Relief</div>
+              </div>
+              <div className="ec-hero__col-cell">
+                <img src={heroImg4} alt="Plantation" style={{ objectPosition: 'top' }} />
+                <div className="ec-hero__tag ec-hero__tag--small">Plantation</div>
+              </div>
+              <div className="ec-hero__col-cell">
+                <img src={heroImg5} alt="Medical Camp" style={{ objectPosition: 'top' }} />
+                <div className="ec-hero__tag ec-hero__tag--small">Medical Camp</div>
+              </div>
             </div>
           </div>
         </div>
@@ -295,7 +309,6 @@ function EventsCommunityActivities() {
 
           <div className="ec-section-hdr">
             <div>
-              <span className="section-tag">UPCOMING EVENTS</span>
               <h2 id="ec-upcoming-h2" className="section-title">Upcoming Events</h2>
             </div>
             <Link to="/events-community-activities" className="ec-view-all">
@@ -307,7 +320,7 @@ function EventsCommunityActivities() {
             {upcomingEvents.map((ev) => (
               <article key={ev.id} className="ec-event-card">
                 <div className="ec-event-card__img">
-                  <img src={ev.img} alt={ev.title} loading="lazy" />
+                  <img src={ev.img} alt={ev.title} loading="lazy" style={ev.imgPos ? { objectPosition: ev.imgPos } : {}} />
                   {ev.showDate && (
                     <div className="ec-event-card__badge">
                       {ev.dates.map((d) => (
@@ -438,16 +451,24 @@ function EventsCommunityActivities() {
       ════════════════════════════════════════ */}
       <section className="ec-cats section bg-light" aria-labelledby="ec-cats-h2">
         <div className="container text-center">
-          <span className="section-tag">EVENT CATEGORIES</span>
           <h2 id="ec-cats-h2" className="section-title">Types of Events We Organise</h2>
-          <div className="ec-cats__grid">
-            {categories.map((c) => (
-              <div key={c.id} className={`ec-cat-card ec-cat-card--${c.color}`}>
-                <div className="ec-cat-card__icon">{c.icon}</div>
-                <h3 className="ec-cat-card__title">{c.title}</h3>
-                <p className="ec-cat-card__desc">{c.description}</p>
-              </div>
-            ))}
+          <div className="ec-timeline">
+            {categories.map((c, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div key={c.id} className={`ec-timeline-row ${isEven ? 'ec-timeline-row--left' : 'ec-timeline-row--right'}`} style={{ '--item-color': c.colorHex }}>
+                  <div className="ec-cat-pill">
+                    <div className="ec-cat-icon">
+                      {c.icon}
+                    </div>
+                    <div className="ec-cat-content">
+                      <h3 className="ec-cat-title">{c.title}</h3>
+                      <p className="ec-cat-desc">{c.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -459,7 +480,6 @@ function EventsCommunityActivities() {
         <div className="container">
           <div className="ec-section-hdr">
             <div>
-              <span className="section-tag">HIGHLIGHTS FROM PREVIOUS EVENTS</span>
               <h2 id="ec-recent-h2" className="section-title">Our Recent Activities</h2>
             </div>
             <a href="#" className="ec-view-all">

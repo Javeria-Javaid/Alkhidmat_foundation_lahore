@@ -17,6 +17,12 @@ import heroBgWash from '../assets/hero-bg-wash.png';
 import heroBgEmergency from '../assets/hero-bg-emergency-relief.png';
 import educationImg from '../assets/education_program.jpeg';
 
+// New Hero images
+import newHeroEducation from '../assets/home_page/new-hero-education.png';
+import newHeroEmergency from '../assets/home_page/new-hero-emergency.png';
+import newHeroGaza from '../assets/home_page/new-hero-gaza.png';
+import newHeroWash from '../assets/home_page/new-hero-wash.png';
+
 // Program slider images
 import overviewImage from '../assets/program_images/community-service.jpeg';
 import washImage from '../assets/program_images/clean_water.jpeg';
@@ -25,40 +31,6 @@ import emergencyImage from '../assets/program_images/disaster_management.jpeg';
 import educationImage from '../assets/program_images/education.jpeg';
 
 export const sharedCauses = [
-  {
-    id: 'overview',
-    tabIcon: <HeartHandshake className="nav-tab-icon" />,
-    tabLabel: 'Overview',
-    hero: {
-      id: 'zakat',
-      category: 'ZAKAT APPEAL',
-      heroHeadingPrefix: 'YOUR ZAKAT\nCAN RESTORE\n',
-      heroHighlight: 'HOPE',
-      heroHeadingSuffix: ' & DIGNITY',
-      heroDescription: 'Fulfill your Zakat obligation and help provide sustainable support, healthcare, education, and essential assistance to deserving families.',
-      image: zakatImg,
-      backgroundImage: heroBgZakat,
-      donationTitle: 'Zakat',
-      donationDescription: 'Empowering deserving families through your Zakat.',
-      formCause: 'Zakat',
-      badges: ['Zakat Eligible', 'Shariah Compliant', 'Secure Donation']
-    },
-    program: {
-      topLabel: '',
-      heading: 'Transforming Lives Through Every Program',
-      description: 'Providing comprehensive humanitarian aid, emergency relief, and sustainable development programs across Pakistan and globally.',
-      previewImage: overviewImage,
-      imagePosition: 'center 25%',
-      glassLabel: 'Global Impact',
-      stats: [
-        { value: '2.5M+', label: 'Lives Impacted' },
-        { value: '150+', label: 'Cities Served' },
-        { value: '25+', label: 'Years of Service' }
-      ],
-      btnPrimary: 'Explore Programs',
-      btnSecondary: 'Donate Now'
-    }
-  },
   {
     id: 'wash',
     tabIcon: <Droplets className="nav-tab-icon" />,
@@ -70,15 +42,15 @@ export const sharedCauses = [
       heroHighlight: 'HEALTHIER',
       heroHeadingSuffix: ' FUTURES',
       heroDescription: 'Help communities gain access to safe drinking water, sanitation, and sustainable hygiene solutions.',
-      image: washImg,
-      backgroundImage: heroBgWash,
+      image: newHeroWash,
+      backgroundImage: newHeroWash,
       donationTitle: 'WASH',
       donationDescription: 'Providing clean water and promoting hygiene for healthier communities.',
       formCause: 'WASH',
       badges: ['Sustainable Impact', 'Verified Projects', 'Secure Donation']
     },
     program: {
-      topLabel: 'CLEAN WATER PROGRAM',
+      topLabel: '',
       heading: 'Safe Drinking Water For Vulnerable Communities',
       description: 'Installing solar-powered water filtration plants, hand pumps, and deep wells in remote areas facing severe water scarcity.',
       previewImage: washImage,
@@ -104,8 +76,8 @@ export const sharedCauses = [
       heroHighlight: 'BETTER',
       heroHeadingSuffix: ' TOMORROW',
       heroDescription: 'Support vulnerable families affected by the Gaza crisis through food, shelter, healthcare, and emergency humanitarian assistance.',
-      image: rebuildGazaImg,
-      backgroundImage: heroBgRebuildGaza,
+      image: newHeroGaza,
+      backgroundImage: newHeroGaza,
       donationTitle: 'Rebuild Gaza',
       donationDescription: 'Supporting families with food, shelter and medical aid.',
       formCause: 'Gaza Emergency',
@@ -138,8 +110,8 @@ export const sharedCauses = [
       heroHighlight: 'HUMANITY',
       heroHeadingSuffix: '',
       heroDescription: 'Support rapid humanitarian response for families affected by disasters, displacement, and unexpected emergencies.',
-      image: emergencyImg,
-      backgroundImage: heroBgEmergency,
+      image: newHeroEmergency,
+      backgroundImage: newHeroEmergency,
       donationTitle: 'Emergency Relief',
       donationDescription: 'Responding quickly to save lives and support families in times of crisis.',
       formCause: 'Emergency Relief',
@@ -172,8 +144,8 @@ export const sharedCauses = [
       heroHighlight: 'EDUCATION',
       heroHeadingSuffix: ' ACCESS',
       heroDescription: 'Sponsoring orphan education, state-of-the-art schools, Aghosh orphan homes, and vocational training centers to build resilient futures for deserving youth.',
-      image: educationImg,
-      backgroundImage: heroBgZakat,
+      image: newHeroEducation,
+      backgroundImage: newHeroEducation,
       donationTitle: 'Education',
       donationDescription: 'Supporting education and orphan care programs.',
       formCause: 'Education',

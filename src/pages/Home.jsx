@@ -67,9 +67,9 @@ function Home() {
           sharedCauses={sharedCauses}
         />
       </div>
-      <ImpactStatistics />
-      <SuccessStories />
       <FeaturedPrograms />
+      <SuccessStories />
+      <ImpactStatistics />
       <LatestNews />
       <TransparencyReport />
       <Partners />

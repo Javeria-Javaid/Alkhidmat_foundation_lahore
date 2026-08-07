@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { HeartHandshake, Heart, GraduationCap, ShieldAlert, Medal, Network } from 'lucide-react';
 import './AlkhidmatVolunteer.css';
 
 /* ── Asset Imports ── */
@@ -10,12 +12,15 @@ import driveFoodImg from '../assets/volunteer/drive_food.jpg';
 import driveMedicalImg from '../assets/volunteer/drive_medical.jpg';
 import ayeshaImg from '../assets/volunteer/ayesha.jpg';
 
-import gal1 from '../assets/akfl-1.jpeg';
-import gal2 from '../assets/akfl-2.jpeg';
-import gal3 from '../assets/akfl-3.jpeg';
+import gal1 from '../assets/events/flood_relief.png';
+import gal2 from '../assets/events/volunteer-1.png';
+import gal3 from '../assets/events/volunteer_conference.png';
 import gal4 from '../assets/volunteer/drive_food.jpg';
 import gal5 from '../assets/volunteer/drive_tree.jpg';
 import gal6 from '../assets/volunteer/drive_medical.jpg';
+import gal7 from '../assets/events/ramzan.png';
+import gal8 from '../assets/events/plantation.png';
+import gal9 from '../assets/events/medical.png';
 
 const serviceAreas = [
   {
@@ -123,6 +128,95 @@ const testimonials = [
     avatar: ayeshaImg,
   },
 ];
+
+const HexagonImpactWheel = () => {
+  const nodes = [
+    { title: 'Certificates & Recognition', desc: 'Earn volunteer certificates for your contributions.', colorClass: 'vol-hex__text--amber', position: 'top', tooltipPos: 'top' },
+    { title: 'Leadership', desc: 'Develop teamwork and leadership abilities.', colorClass: 'vol-hex__text--sky', position: 'top-right', tooltipPos: 'right' },
+    { title: 'Disaster Relief', desc: 'Become part of emergency rescue missions.', colorClass: 'vol-hex__text--red', position: 'bottom-right', tooltipPos: 'right' },
+    { title: 'Professional Training', desc: 'Receive structured volunteer orientation.', colorClass: 'vol-hex__text--gray', position: 'bottom', tooltipPos: 'bottom' },
+    { title: 'Serve Humanity', desc: 'Make a meaningful impact on communities.', colorClass: 'vol-hex__text--blue', position: 'bottom-left', tooltipPos: 'left' },
+    { title: 'Networking', desc: 'Work alongside community leaders.', colorClass: 'vol-hex__text--teal', position: 'top-left', tooltipPos: 'left' },
+  ];
+
+  return (
+    <section className="vol-hex-section">
+      <div className="container">
+        <div className="vol-hex-mobile-header">
+          <h2 className="section-title text-center">Why Volunteer With Alkhidmat?</h2>
+        </div>
+        <div className="vol-hex-grid">
+          {/* Left Column Image */}
+          <motion.div 
+            className="vol-hex-image-col"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="vol-hex-image-wrapper">
+              <img src={whyJoinImg} alt="Why Join Alkhidmat" className="vol-hex-hero-img" />
+            </div>
+          </motion.div>
+
+          {/* Right Column Honeycomb */}
+          <div className="vol-hex-radial-wrapper">
+            {/* Animated SVG Connectors */}
+            <svg className="vol-hex-connectors" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+              <motion.line x1="500" y1="500" x2="500" y2="150" stroke="rgba(2, 84, 164, 0.25)" strokeWidth="3" strokeDasharray="8 8" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.2 }} viewport={{ once: true }} />
+              <motion.line x1="500" y1="500" x2="800" y2="325" stroke="rgba(2, 84, 164, 0.25)" strokeWidth="3" strokeDasharray="8 8" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.2 }} viewport={{ once: true }} />
+              <motion.line x1="500" y1="500" x2="800" y2="675" stroke="rgba(2, 84, 164, 0.25)" strokeWidth="3" strokeDasharray="8 8" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.2 }} viewport={{ once: true }} />
+              <motion.line x1="500" y1="500" x2="500" y2="850" stroke="rgba(2, 84, 164, 0.25)" strokeWidth="3" strokeDasharray="8 8" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.2 }} viewport={{ once: true }} />
+              <motion.line x1="500" y1="500" x2="200" y2="675" stroke="rgba(2, 84, 164, 0.25)" strokeWidth="3" strokeDasharray="8 8" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.2 }} viewport={{ once: true }} />
+              <motion.line x1="500" y1="500" x2="200" y2="325" stroke="rgba(2, 84, 164, 0.25)" strokeWidth="3" strokeDasharray="8 8" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.2 }} viewport={{ once: true }} />
+            </svg>
+
+            {/* Center Hexagon */}
+            <motion.div 
+              className="vol-hex-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="vol-hex-drop-shadow vol-hex-drop-shadow--center">
+                <div className="vol-hex-shape vol-hex-shape--large">
+                  <div className="vol-hex-shape__inner vol-hex-shape__inner--center">
+                    <h3>WHY JOIN</h3>
+                    <h2>ALKHIDMAT?</h2>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Satellite Hexagons */}
+            {nodes.map((node, i) => (
+              <motion.div 
+                key={i} 
+                className={`vol-hex-satellite vol-hex-satellite--${node.position}`}
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + (i * 0.1), type: 'spring', stiffness: 100 }}
+              >
+                <div className="vol-hex-drop-shadow">
+                  <div className="vol-hex-shape vol-hex-shape--small">
+                    <div className="vol-hex-shape__inner vol-hex-shape__inner--small">
+                      <h4 className={`vol-hex-title ${node.colorClass}`}>{node.title}</h4>
+                    </div>
+                  </div>
+                </div>
+                <div className={`vol-hex-desc-tooltip vol-hex-desc-tooltip--${node.tooltipPos}`}>
+                  <p className="vol-hex-desc">{node.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 function AlkhidmatVolunteer() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -253,80 +347,8 @@ function AlkhidmatVolunteer() {
         </div>
       </section>
 
-      {/* ── 2. WHY VOLUNTEER WITH US ── */}
-      <section className="section vol-why">
-        <div className="container">
-          <div className="vol-why__wrapper">
-            <div className="vol-why__image-col">
-              <div className="vol-why__img-card">
-                <img src={whyJoinImg} alt="Alkhidmat Volunteers Working Together" loading="lazy" />
-                <div className="vol-why__dots-pattern"></div>
-              </div>
-            </div>
-
-            <div className="vol-why__content-col">
-              <span className="section-tag">WHY VOLUNTEER WITH US?</span>
-              <h2 className="section-title">Why Join Alkhidmat?</h2>
-
-              <div className="vol-why__grid">
-                <div className="vol-why__card">
-                  <div className="vol-why__card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                    </svg>
-                  </div>
-                  <div className="vol-why__card-text">
-                    <h3>Make a Real Difference</h3>
-                    <p>Support communities in need and bring positive change.</p>
-                  </div>
-                </div>
-
-                <div className="vol-why__card">
-                  <div className="vol-why__card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                  </div>
-                  <div className="vol-why__card-text">
-                    <h3>Build Leadership Skills</h3>
-                    <p>Gain teamwork and management experience.</p>
-                  </div>
-                </div>
-
-                <div className="vol-why__card">
-                  <div className="vol-why__card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <line x1="2" y1="12" x2="22" y2="12" />
-                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                    </svg>
-                  </div>
-                  <div className="vol-why__card-text">
-                    <h3>Serve Your Community</h3>
-                    <p>Participate in impactful social initiatives.</p>
-                  </div>
-                </div>
-
-                <div className="vol-why__card">
-                  <div className="vol-why__card-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                      <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                    </svg>
-                  </div>
-                  <div className="vol-why__card-text">
-                    <h3>Learn Through Experience</h3>
-                    <p>Develop communication and problem-solving skills.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── 2. WHY VOLUNTEER WITH US (HEXAGON WHEEL) ── */}
+      <HexagonImpactWheel />
 
       {/* ── 3. CHOOSE YOUR AREA OF SERVICE ── */}
       <section className="section vol-services" id="services-section">
@@ -390,7 +412,7 @@ function AlkhidmatVolunteer() {
         <div className="container vol-jd__container">
           {/* Left Column: Volunteer Journey */}
           <div className="vol-journey">
-            <span className="section-tag">HOW IT WORKS</span>
+
             <h2 className="section-title">Start Your Volunteer Journey</h2>
 
             <div className="vol-journey__timeline">
@@ -451,7 +473,7 @@ function AlkhidmatVolunteer() {
           <div className="vol-drives">
             <div className="vol-drives__header">
               <div>
-                <span className="section-tag">UPCOMING VOLUNTEER DRIVES</span>
+
                 <h2 className="section-title">Join Our Next Volunteer Drive</h2>
               </div>
               <Link to="/events-community-activities" className="vol-drives__link">
@@ -550,7 +572,7 @@ function AlkhidmatVolunteer() {
         <div className="container">
           <div className="vol-impact__banner">
             <div className="vol-impact__header">
-              <span className="section-tag">OUR IMPACT</span>
+
               <h2 className="section-title">Your Time Creates a Lasting Impact</h2>
             </div>
 
@@ -620,7 +642,7 @@ function AlkhidmatVolunteer() {
           <div className="vol-stories">
             <div className="vol-stories__header">
               <div>
-                <span className="section-tag">VOLUNTEER STORIES</span>
+
                 <h2 className="section-title">Voices of Our Volunteers</h2>
               </div>
               <a href="#testimonial" className="vol-stories__link">View All Stories &rarr;</a>
@@ -681,7 +703,7 @@ function AlkhidmatVolunteer() {
           <div className="vol-gallery">
             <div className="vol-gallery__header">
               <div>
-                <span className="section-tag">EVENT GALLERY</span>
+
                 <h2 className="section-title">Moments of Service</h2>
               </div>
               <Link to="/events-community-activities" className="vol-gallery__link">View Full Gallery &rarr;</Link>
@@ -705,6 +727,15 @@ function AlkhidmatVolunteer() {
               </div>
               <div className="vol-gallery__item">
                 <img src={gal6} alt="Volunteer activity 6" loading="lazy" />
+              </div>
+              <div className="vol-gallery__item">
+                <img src={gal7} alt="Ramzan Food Distribution" loading="lazy" />
+              </div>
+              <div className="vol-gallery__item">
+                <img src={gal8} alt="Tree Plantation" loading="lazy" />
+              </div>
+              <div className="vol-gallery__item">
+                <img src={gal9} alt="Medical Camp" loading="lazy" />
               </div>
             </div>
           </div>
