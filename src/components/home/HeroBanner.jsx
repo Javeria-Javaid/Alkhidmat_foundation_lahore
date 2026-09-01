@@ -40,6 +40,18 @@ function HeroBanner() {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  const renderText2 = () => {
+    if (typedText2.startsWith("Building a ")) {
+      const rest = typedText2.substring(11);
+      return (
+        <>
+          Building a <span className="text-primary">{rest}</span>
+        </>
+      );
+    }
+    return typedText2;
+  };
+
   return (
     <section className="hero-banner">
       <div className="hero-banner__backgrounds" aria-hidden="true">
@@ -55,7 +67,7 @@ function HeroBanner() {
           <div className="hero-banner__content">
             <h1 className="hero-banner__title" style={{ color: 'var(--primary-blue)' }}>
               <div className="typewriter-line">{typedText1}</div>
-              <div className="typewriter-line">{typedText2}</div>
+              <div className="typewriter-line">{renderText2()}</div>
             </h1>
             
             <div className="hero-banner__actions">
