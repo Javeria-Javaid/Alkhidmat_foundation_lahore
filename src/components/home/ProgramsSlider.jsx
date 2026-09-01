@@ -91,9 +91,18 @@ function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
               exit="exit"
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <div className="slider-content-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '30px 20px' }}>
-                <div className="slider-center" style={{ textAlign: 'center' }}>
-                  <h3 className="slider-heading" style={{ fontSize: '1.35rem', color: 'var(--navy)', margin: 0, fontWeight: 700 }}>{activeSlide.program.heading}</h3>
+              <div className="slider-content-row" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', gap: '16px' }}>
+                <div className="slider-center" style={{ textAlign: 'center', width: '100%', borderBottom: '2px solid var(--gray-200)', paddingBottom: '12px', marginBottom: '4px' }}>
+                  <h3 className="slider-heading" style={{ fontSize: '1.25rem', color: '#0254a4', margin: 0, fontWeight: 700 }}>{activeSlide.program.heading}</h3>
+                </div>
+                
+                <div className="slider-cta" style={{ display: 'flex', gap: '8px', width: '100%', justifyContent: 'center', flexDirection: 'row', alignItems: 'center' }}>
+                  <button className="slider-btn slider-btn-primary" style={{ flex: '1', maxWidth: '140px', height: '38px', fontSize: '0.8rem' }}>
+                    {activeSlide.program.btnPrimary}
+                  </button>
+                  <button className="slider-btn slider-btn-secondary" style={{ flex: '1', maxWidth: '140px', height: '38px', fontSize: '0.8rem' }}>
+                    {activeSlide.program.btnSecondary}
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -109,7 +118,6 @@ function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
                   className={`nav-tab ${index === currentIndex ? 'active' : ''}`}
                   onClick={() => handleDotClick(index)}
                 >
-                  {slide.tabIcon}
                   {slide.tabLabel}
                 </button>
               ))}
