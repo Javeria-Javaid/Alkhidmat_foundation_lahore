@@ -91,55 +91,9 @@ function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
               exit="exit"
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <div className="slider-content-row">
-                {/* Left: Image Preview */}
-                <div className="slider-left">
-                   <img 
-                     src={activeSlide.program.previewImage} 
-                     alt={activeSlide.tabLabel} 
-                     className="slider-left-img" 
-                     style={{
-                       objectFit: 'cover',
-                       objectPosition: activeSlide.program.imagePosition || 'center'
-                     }}
-                   />
-                </div>
-
-                {/* Center: Content */}
-                <div className="slider-center">
-                  <div className="slider-top-label">
-                    {activeSlide.program.topLabel ? (
-                      <>
-                        <span style={{width: 6, height: 6, borderRadius: '50%', background: 'var(--primary-blue)', display: 'inline-block'}}></span>
-                        {activeSlide.program.topLabel}
-                      </>
-                    ) : (
-                      <span style={{visibility: 'hidden'}}>&nbsp;</span>
-                    )}
-                  </div>
-                  <h3 className="slider-heading">{activeSlide.program.heading}</h3>
-                  <p className="slider-desc">{activeSlide.program.description}</p>
-                  
-                  <div className="slider-stats">
-                    {activeSlide.program.stats.map((stat, idx) => (
-                      <div className="stat-card" key={idx}>
-                        <div className="stat-value">{stat.value}</div>
-                        <div className="stat-label">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right: CTAs and Trust */}
-                <div className="slider-right">
-                  <div className="slider-cta">
-                    <button className="slider-btn slider-btn-primary">
-                      {activeSlide.program.btnPrimary}
-                    </button>
-                    <button className="slider-btn slider-btn-secondary">
-                      {activeSlide.program.btnSecondary}
-                    </button>
-                  </div>
+              <div className="slider-content-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '30px 20px' }}>
+                <div className="slider-center" style={{ textAlign: 'center' }}>
+                  <h3 className="slider-heading" style={{ fontSize: '1.35rem', color: 'var(--navy)', margin: 0, fontWeight: 700 }}>{activeSlide.program.heading}</h3>
                 </div>
               </div>
             </motion.div>

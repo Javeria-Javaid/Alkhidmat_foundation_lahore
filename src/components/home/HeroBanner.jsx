@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HeroBanner.css';
 import heroBg from '../../assets/home_page/hero_banner.png';
 
-function HeroBanner() {
+function HeroBanner({ children }) {
   const [typedText1, setTypedText1] = useState('');
   const [typedText2, setTypedText2] = useState('');
   
@@ -57,14 +57,18 @@ function HeroBanner() {
       <div className="hero-banner__backgrounds" aria-hidden="true">
         <div
           className="hero-banner__bg-layer hero-banner__bg-layer--active"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          style={{ 
+            backgroundImage: `url(${heroBg})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center 20%'
+          }}
         />
       </div>
       
       <div className="container hero-banner__inner">
         <div className="hero-banner__top">
           {/* LEFT COLUMN: Content */}
-          <div className="hero-banner__content">
+          <div className="hero-banner__content hero-banner__left">
             <h1 className="hero-banner__title" style={{ color: 'var(--primary-blue)' }}>
               <div className="typewriter-line">{typedText1}</div>
               <div className="typewriter-line">{renderText2()}</div>
@@ -80,6 +84,11 @@ function HeroBanner() {
               </a>
             </div>
             
+          </div>
+          
+          {/* RIGHT COLUMN: Programs Slider */}
+          <div className="hero-banner__right-content">
+            {children}
           </div>
         </div>
       </div>

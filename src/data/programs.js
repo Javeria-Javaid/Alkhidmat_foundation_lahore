@@ -1,12 +1,12 @@
-import palestineImg from '../assets/program_images/palestine.jpeg';
-import banoqabilImg from '../assets/program_images/bano-qabil.jpeg';
-import orphanImg from '../assets/program_images/orphan_care.jpeg';
-import cleanWaterImg from '../assets/program_images/clean_water.jpeg';
-import communityImg from '../assets/program_images/community-service.jpeg';
-import disasterImg from '../assets/program_images/disaster_management.jpeg';
-import healthImg from '../assets/program_images/health.jpeg';
-import educationImg from '../assets/program_images/education.jpeg';
-import mawakhatImg from '../assets/program_images/muwakhat.jpeg';
+import palestineImg from '../assets/program_images/palestine_emergency_relief_program.jpg';
+import banoqabilImg from '../assets/extra/bano-qabil.jpeg';
+import orphanImg from '../assets/extra/orphan_care.jpeg';
+import cleanWaterImg from '../assets/extra/clean_water.jpeg';
+import communityImg from '../assets/extra/community-service.jpeg';
+import disasterImg from '../assets/extra/disaster_management.jpeg';
+import healthImg from '../assets/extra/health.jpeg';
+import educationImg from '../assets/extra/education.jpeg';
+import mawakhatImg from '../assets/extra/muwakhat.jpeg';
 
 
 export const programs = [

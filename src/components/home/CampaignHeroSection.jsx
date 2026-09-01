@@ -1,10 +1,12 @@
 import React from 'react';
 import HeroBanner from './HeroBanner';
 
-function CampaignHeroSection() {
+function CampaignHeroSection({ children }) {
   return (
     <div className="campaign-hero-section" id="donate-section">
-      <HeroBanner />
+      <HeroBanner>
+        {children}
+      </HeroBanner>
     </div>
   );
 }
