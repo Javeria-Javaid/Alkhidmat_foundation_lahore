@@ -68,29 +68,6 @@ function HeroBanner() {
               </a>
             </div>
             
-            <div className="hero-banner__stats">
-              <div className="hero-banner__stat-item">
-                <div className="hero-banner__avatars">
-                  <div className="avatar avatar-1"></div>
-                  <div className="avatar avatar-2"></div>
-                  <div className="avatar avatar-3"></div>
-                  <div className="avatar avatar-4"></div>
-                </div>
-                <div className="hero-banner__stat-info">
-                  <h3>2M+</h3>
-                  <p>Lives Impacted</p>
-                </div>
-              </div>
-              
-              <div className="hero-banner__stat-divider"></div>
-              
-              <div className="hero-banner__stat-item">
-                <div className="hero-banner__stat-info">
-                  <h3>35+</h3>
-                  <p>Years of Service</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
