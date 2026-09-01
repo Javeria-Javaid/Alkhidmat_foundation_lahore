@@ -5,7 +5,6 @@ import ImpactStatistics from '../components/home/ImpactStatistics';
 import FeaturedPrograms from '../components/home/FeaturedPrograms';
 import SuccessStories from '../components/home/SuccessStories';
 import LatestNews from '../components/home/LatestNews';
-import TransparencyReport from '../components/home/TransparencyReport';
 import Partners from '../components/home/Partners';
 import { sharedCauses } from '../data/sharedCauses';
 import './Home.css';
@@ -67,7 +66,6 @@ function Home() {
       <SuccessStories />
       <ImpactStatistics />
       <LatestNews />
-      <TransparencyReport />
       <Partners />
     </main>
   );
