@@ -11,7 +11,6 @@ function HeroBanner() {
           style={{ backgroundImage: `url(${heroBg})` }}
         />
       </div>
-      <div className="hero-banner__bg-overlay"></div>
       
       <div className="container hero-banner__inner">
         <div className="hero-banner__top">
