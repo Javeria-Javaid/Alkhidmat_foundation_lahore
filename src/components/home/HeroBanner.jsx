@@ -1,19 +1,15 @@
 import React from 'react';
 import './HeroBanner.css';
+import heroBg from '../../assets/home_page/hero_banner.png';
 
-function HeroBanner({ campaign, campaigns, onCampaignChange }) {
-  if (!campaign) return null;
-
+function HeroBanner() {
   return (
     <section className="hero-banner">
       <div className="hero-banner__backgrounds" aria-hidden="true">
-        {campaigns.map((item) => (
-          <div
-            key={item.id}
-            className={`hero-banner__bg-layer${item.id === campaign.id ? ' hero-banner__bg-layer--active' : ''}`}
-            style={{ backgroundImage: `url(${item.backgroundImage})` }}
-          />
-        ))}
+        <div
+          className="hero-banner__bg-layer hero-banner__bg-layer--active"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
       </div>
       <div className="hero-banner__bg-overlay"></div>
       
@@ -21,22 +17,9 @@ function HeroBanner({ campaign, campaigns, onCampaignChange }) {
         <div className="hero-banner__top">
           {/* LEFT COLUMN: Content */}
           <div className="hero-banner__content">
-            <h1 className="hero-banner__title" key={`title-${campaign.id}`}>
-              <span className="hero-banner__title-desktop">
-                {campaign.heroHeadingPrefix.replace('\n', ' ')}
-                <span className="text-primary">{campaign.heroHighlight}</span>
-                {campaign.heroHeadingSuffix}
-              </span>
-              <span className="hero-banner__title-mobile">
-                {campaign.heroHeadingPrefix}
-                <span className="text-primary">{campaign.heroHighlight}</span>
-                {campaign.heroHeadingSuffix}
-              </span>
+            <h1 className="hero-banner__title" style={{ color: 'var(--primary-blue)' }}>
+              Serving Humanity. Building a Better Future.
             </h1>
-            
-            <p className="hero-banner__desc" key={`desc-${campaign.id}`}>
-              {campaign.heroDescription}
-            </p>
             
             <div className="hero-banner__actions">
               <a href="#donate-section" className="btn btn-primary">

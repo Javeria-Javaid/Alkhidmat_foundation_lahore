@@ -56,11 +56,7 @@ function Home() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <CampaignHeroSection 
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
-          sharedCauses={sharedCauses}
-        />
+        <CampaignHeroSection />
         <ProgramsSlider 
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
