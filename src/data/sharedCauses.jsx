@@ -18,17 +18,17 @@ import heroBgEmergency from '../assets/hero-bg-emergency-relief.png';
 import educationImg from '../assets/education_program.jpeg';
 
 // New Hero images
-import newHeroEducation from '../assets/home_page/new-hero-education.png';
-import newHeroEmergency from '../assets/home_page/new-hero-emergency.png';
-import newHeroGaza from '../assets/home_page/new-hero-gaza.png';
-import newHeroWash from '../assets/home_page/new-hero-wash.png';
+import newHeroEducation from '../assets/new-hero-education.png';
+import newHeroEmergency from '../assets/new-hero-emergency.png';
+import newHeroGaza from '../assets/new-hero-gaza.png';
+import newHeroWash from '../assets/new-hero-wash.png';
 
 // Program slider images
-import overviewImage from '../assets/program_images/community-service.jpeg';
-import washImage from '../assets/program_images/clean_water.jpeg';
-import gazaAppealImage from '../assets/program_images/palestine.jpeg';
-import emergencyImage from '../assets/program_images/disaster_management.jpeg';
-import educationImage from '../assets/program_images/education.jpeg';
+import overviewImage from '../assets/extra/community-service.jpeg';
+import washImage from '../assets/extra/clean_water.jpeg';
+import gazaAppealImage from '../assets/program_images/palestine_emergency_relief_program.jpg';
+import emergencyImage from '../assets/extra/disaster_management.jpeg';
+import educationImage from '../assets/extra/education.jpeg';
 
 export const sharedCauses = [
   {
@@ -38,10 +38,10 @@ export const sharedCauses = [
     hero: {
       id: 'wash',
       category: 'CLEAN WATER APPEAL',
-      heroHeadingPrefix: 'CLEAN WATER\nCAN BUILD\n',
-      heroHighlight: 'HEALTHIER',
-      heroHeadingSuffix: ' FUTURES',
-      heroDescription: 'Help communities gain access to safe drinking water, sanitation, and sustainable hygiene solutions.',
+      heroHeadingPrefix: 'CLEAN WATER.\n',
+      heroHighlight: 'HEALTHIER FUTURES.',
+      heroHeadingSuffix: '',
+      heroDescription: 'Safe water. Stronger communities.',
       image: newHeroWash,
       backgroundImage: newHeroWash,
       donationTitle: 'WASH',
