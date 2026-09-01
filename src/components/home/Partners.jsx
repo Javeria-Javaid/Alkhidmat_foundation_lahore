@@ -29,7 +29,7 @@ function Partners() {
   return (
     <section className="partners-section section">
       <div className="text-center mb-5">
-        <h2 className="section-title">Engineering Sustainable Infrastructure</h2>
+        <h2 className="section-title">Our Core Centers in Lahore</h2>
       </div>
 
       <div className="carousel-container" style={{ justifyContent: 'center' }}>
