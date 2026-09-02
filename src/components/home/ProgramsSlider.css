@@ -14,7 +14,7 @@
 
 .programs-slider {
   width: 100%;
-  max-width: 500px;
+  max-width: 360px;
   background: linear-gradient(to bottom right, #ffffff, #fcfcfc);
   border-radius: var(--radius-xl);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -205,14 +205,14 @@
 }
 
 .slider-btn-secondary {
-  background: var(--accent-yellow);
-  color: var(--navy);
+  background: #e11d48;
+  color: white;
 }
 
 .slider-btn-secondary:hover {
-  background: #e0a800;
+  background: #be123c;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
 }
 
 .slider-trust {
@@ -242,32 +242,44 @@
 
 /* Bottom Navigation */
 .slider-bottom-nav {
-  height: 48px;
+  height: auto;
+  min-height: 48px;
   border-top: 1px solid var(--gray-100);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 10px 12px;
   background: #fafafa;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .nav-tabs {
-  display: flex;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.nav-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-tab {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 4px;
+  border-radius: 8px;
+  font-size: 0.62rem;
+  font-weight: 700;
   color: var(--gray-500);
   background: transparent;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 1px solid var(--gray-200);
+  flex-shrink: 0;
+  text-align: center;
 }
 
 .nav-tab:hover {
@@ -290,6 +302,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 }
 
 .nav-arrows {

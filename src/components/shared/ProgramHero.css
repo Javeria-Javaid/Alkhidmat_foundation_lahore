@@ -259,37 +259,40 @@
 
 /* ── Floating Stats Bar ── */
 .mw-stats {
-  background: white;
-  padding: 0;
+  background: #0254a4;
+  padding: 40px 0;
   position: relative;
   z-index: 2;
-  margin-top: -20px;
+  width: 100%;
 }
 
 .mw-stats__card {
-  background: white;
-  box-shadow: 0 4px 32px rgba(2, 84, 164, 0.1);
-  border-radius: 16px;
-  padding: 28px 32px;
-  border: 1px solid #e8f0fb;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  border: none;
 }
 
 .mw-stats__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  overflow-x: auto;
 }
 
 .mw-stats__item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  flex: 1;
 }
 
 .mw-stats__icon {
   width: 36px;
   height: 36px;
-  color: #0254a4;
+  color: white;
   flex-shrink: 0;
 }
 
@@ -299,14 +302,14 @@
   display: block;
   font-size: 1.25rem;
   font-weight: 800;
-  color: #0f172a;
+  color: white;
   line-height: 1.1;
 }
 
 .mw-stats__label {
   display: block;
   font-size: 0.75rem;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.8);
   margin-top: 2px;
 }
 

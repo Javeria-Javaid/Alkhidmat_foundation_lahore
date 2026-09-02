@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px 14px;
+  padding: 24px 24px 16px;
 }
 
 .program-card__header-left {
@@ -67,10 +67,14 @@
   align-items: center;
   justify-content: center;
   color: #555;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: all 0.3s ease;
 }
 
 .program-card:hover .program-card__arrow-btn {
+  opacity: 1;
+  transform: translate(0, 0);
   background-color: #e8e9ec;
   color: var(--primary-blue);
 }
@@ -78,7 +82,7 @@
 /* Image Container */
 .program-card__image-container {
   height: 190px;
-  margin: 0 16px;
+  margin: 0 24px;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -96,23 +100,9 @@
   transform: scale(1.03);
 }
 
-.program-card__badge {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background-color: rgba(0, 0, 0, 0.75);
-  color: var(--white);
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-}
-
 /* Card Body */
 .program-card__body {
-  padding: 20px;
+  padding: 20px 24px 16px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -128,8 +118,8 @@
 
 .program-card__desc {
   font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  color: #4b5563;
+  line-height: 1.6;
   margin-bottom: 0;
 }
 
@@ -138,7 +128,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px 20px;
+  padding: 16px 24px 24px;
   border-top: 1px solid var(--gray-100);
 }
 
@@ -168,6 +158,9 @@
   border-radius: var(--radius-full);
   text-decoration: none;
   transition: background-color var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .program-card__donate-btn:hover {

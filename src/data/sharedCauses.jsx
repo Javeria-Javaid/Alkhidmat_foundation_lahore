@@ -51,7 +51,7 @@ export const sharedCauses = [
     },
     program: {
       topLabel: '',
-      heading: 'Safe Drinking Water For Vulnerable Communities',
+      heading: 'Clean Water Program',
       description: 'Installing solar-powered water filtration plants, hand pumps, and deep wells in remote areas facing severe water scarcity.',
       previewImage: washImage,
       imagePosition: 'center 85%',
@@ -62,7 +62,7 @@ export const sharedCauses = [
         { value: '100%', label: 'Tested Safe' }
       ],
       btnPrimary: 'Learn More',
-      btnSecondary: 'Donate to WASH'
+      btnSecondary: 'Donate Now'
     }
   },
   {
@@ -85,7 +85,7 @@ export const sharedCauses = [
     },
     program: {
       topLabel: '',
-      heading: 'Urgent Gaza Relief & Rebuilding Efforts',
+      heading: 'Gaza Relief',
       description: 'Providing immediate hot meals, medical supplies, clean drinking water, and winter clothing to displaced Palestinian families with transparent field tracking.',
       previewImage: gazaAppealImage,
       imagePosition: 'center 20%',
@@ -95,8 +95,8 @@ export const sharedCauses = [
         { value: '120+', label: 'Relief Convoys' },
         { value: '100%', label: 'Direct Delivery' }
       ],
-      btnPrimary: 'Support Gaza Appeal',
-      btnSecondary: 'Donate Relief'
+      btnPrimary: 'Learn More',
+      btnSecondary: 'Donate Now'
     }
   },
   {
@@ -119,7 +119,7 @@ export const sharedCauses = [
     },
     program: {
       topLabel: '',
-      heading: 'Rapid Response Medical & Rescue Network',
+      heading: 'Emergency Response',
       description: 'Equipped with 300+ ambulances, flood response boats, and mobile medical units ready to reach disaster-struck regions across Pakistan within minutes.',
       previewImage: emergencyImage,
       imagePosition: 'center 70%',
@@ -129,8 +129,8 @@ export const sharedCauses = [
         { value: '24/7', label: 'Emergency Hotline' },
         { value: '500K+', label: 'Rescue Missions' }
       ],
-      btnPrimary: 'Emergency Network',
-      btnSecondary: 'Support Rescue'
+      btnPrimary: 'Learn More',
+      btnSecondary: 'Donate Now'
     }
   },
   {
@@ -153,7 +153,7 @@ export const sharedCauses = [
     },
     program: {
       topLabel: '',
-      heading: 'Orphan Care & Quality Education Access',
+      heading: 'Education & Orphan Care',
       description: 'Sponsoring orphan education, state-of-the-art schools, Aghosh orphan homes, and vocational training centers to build resilient futures for deserving youth.',
       previewImage: educationImage,
       imagePosition: '30% 15%',
@@ -163,8 +163,8 @@ export const sharedCauses = [
         { value: '18', label: 'Aghosh Homes' },
         { value: '98%', label: 'School Retention' }
       ],
-      btnPrimary: 'Sponsor an Orphan',
-      btnSecondary: 'Donate Education'
+      btnPrimary: 'Learn More',
+      btnSecondary: 'Donate Now'
     }
   }
 ];

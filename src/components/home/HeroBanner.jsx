@@ -60,7 +60,7 @@ function HeroBanner({ children }) {
           style={{ 
             backgroundImage: `url(${heroBg})`, 
             backgroundSize: 'cover', 
-            backgroundPosition: 'center 20%'
+            backgroundPosition: 'center bottom'
           }}
         />
       </div>
@@ -75,10 +75,7 @@ function HeroBanner({ children }) {
             </h1>
             
             <div className="hero-banner__actions">
-              <a href="#donate-section" className="btn btn-primary">
-                DONATE NOW
-              </a>
-              <a href="#programs-section" className="btn btn-outline">
+              <a href="#programs-section" className="btn btn-yellow" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 EXPLORE PROGRAMS
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>

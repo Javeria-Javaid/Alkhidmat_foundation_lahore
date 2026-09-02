@@ -5,24 +5,14 @@ import ProgramHero from '../components/shared/ProgramHero';
 import {
   communityHeroStats,
   communityServicesList,
-  communityImpactStats,
   communityFaqs,
 } from '../data/communityServicesData';
 import heroImg from '../assets/community_services_program.png';
-import aboutImg from '../assets/akfl-2-new.png';
-import videoThumb from '../assets/akfl-3.jpeg';
 
 function CommunityServices() {
   const [openFaq, setOpenFaq] = useState(null);
-  const [submitted, setSubmitted] = useState(false);
-
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
   };
 
   return (
@@ -35,9 +25,9 @@ function CommunityServices() {
         titleHighlight="Rebuilding Lives."
         description="Building stronger communities through humanitarian support, healthcare, education and social welfare programs that improve lives across Pakistan."
         primaryCtaText="Donate for Community Services"
-        secondaryCtaText="Apply for Assistance"
         primaryCtaHref="#donate-section"
-        secondaryCtaHref="#assistance-form"
+        secondaryCtaText="Our Programs"
+        secondaryCtaHref="#programs-heading"
         heroImage={heroImg}
         widgetTitle="Support Community Welfare"
         widgetSubtitle="Your donation supports winter relief packages, masjid construction, wedding support boxes, and wheelchairs."
@@ -55,7 +45,7 @@ function CommunityServices() {
         <div className="container cs-about__inner">
           <div className="cs-about__visual">
             <div className="cs-about__img-wrap">
-              <img src={aboutImg} alt="Alkhidmat workers in community" />
+              <img src={heroImg} alt="Alkhidmat workers in community" />
             </div>
           </div>
           <div className="cs-about__content">
@@ -67,32 +57,6 @@ function CommunityServices() {
             <p>
               Alkhidmat Community Services works to improve lives through sustainable welfare programs, empowering vulnerable families and promoting long-term community development.
             </p>
-            <ul className="cs-about__grid-list">
-              <li>
-                <span className="cs-about__check">✓</span>
-                <span>Community Welfare</span>
-              </li>
-              <li>
-                <span className="cs-about__check">✓</span>
-                <span>Social Development</span>
-              </li>
-              <li>
-                <span className="cs-about__check">✓</span>
-                <span>Health Support</span>
-              </li>
-              <li>
-                <span className="cs-about__check">✓</span>
-                <span>Emergency Relief</span>
-              </li>
-              <li>
-                <span className="cs-about__check">✓</span>
-                <span>Educational Assistance</span>
-              </li>
-              <li>
-                <span className="cs-about__check">✓</span>
-                <span>Sustainable Impact</span>
-              </li>
-            </ul>
           </div>
         </div>
       </section>
@@ -122,144 +86,6 @@ function CommunityServices() {
         </div>
       </section>
 
-      {/* ── 5. IMPACT SECTION ── */}
-      <section className="cs-impact" aria-label="Community Impact">
-        <div className="container">
-          <div className="cs-impact__card">
-            <p className="cs-impact__tag">OUR IMPACT</p>
-            <div className="cs-impact__grid">
-              {communityImpactStats.map((stat) => (
-                <div className="cs-impact__item" key={stat.label}>
-                  <strong className="cs-impact__value">{stat.value}</strong>
-                  <span className="cs-impact__label">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. TRANSFORMATION STORY ── */}
-      <section className="cs-story section" aria-labelledby="story-heading">
-        <div className="container cs-story__inner">
-          <div className="cs-story__video">
-            <div className="cs-story__img-wrap">
-              <img src={videoThumb} alt="Community transformation story video thumbnail" />
-              <button className="cs-story__play" aria-label="Play community story video">
-                <svg viewBox="0 0 24 24" fill="white" width="24" height="24">
-                  <polygon points="5,3 19,12 5,21" />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div className="cs-story__content">
-            <p className="cs-story__tag">COMMUNITY TRANSFORMATION STORIES</p>
-            <h2 id="story-heading">See the Change We Create Together</h2>
-            <p>
-              Every act of kindness creates a ripple of change. Watch how our programs are transforming lives and bringing hope to communities across Pakistan.
-            </p>
-            <a href="#video" className="btn cs-story__btn">
-              Watch Video
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 7. ASSISTANCE FORM ── */}
-      <section className="cs-form-section section" id="assistance-form" aria-labelledby="form-heading">
-        <div className="container cs-form__inner">
-          {/* Left panel */}
-          <div className="cs-form__info">
-            <p className="cs-form__tag">APPLY FOR COMMUNITY ASSISTANCE</p>
-            <h2 id="form-heading">Need Community Support?</h2>
-            <p>
-              If you or someone you know needs assistance through our Community Services Program, please fill out the form and our team will get in touch with you shortly.
-            </p>
-            <ul className="cs-form__checks">
-              <li><span className="cs-form__check">✓</span> Easy & Simple Application</li>
-              <li><span className="cs-form__check">✓</span> Secure & Confidential Information</li>
-              <li><span className="cs-form__check">✓</span> Quick Response</li>
-              <li><span className="cs-form__check">✓</span> Dedicated Support Team</li>
-            </ul>
-          </div>
-
-          {/* Right panel form */}
-          <div className="cs-form__card">
-            {submitted ? (
-              <div className="cs-form__success">
-                <h3>Application Submitted!</h3>
-                <p>Thank you. Our team will verify your information and contact you shortly.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="cs-form">
-                <div className="cs-form__row">
-                  <div className="cs-form__group">
-                    <label>Full Name *</label>
-                    <input type="text" required placeholder="Enter your full name" />
-                  </div>
-                  <div className="cs-form__group">
-                    <label>Phone Number *</label>
-                    <input type="tel" required placeholder="03XX XXXXXXX" />
-                  </div>
-                </div>
-
-                <div className="cs-form__row">
-                  <div className="cs-form__group">
-                    <label>Email Address *</label>
-                    <input type="email" required placeholder="Enter your email" />
-                  </div>
-                  <div className="cs-form__group">
-                    <label>City *</label>
-                    <select required>
-                      <option value="">Select your city</option>
-                      <option value="Lahore">Lahore</option>
-                      <option value="Karachi">Karachi</option>
-                      <option value="Islamabad">Islamabad</option>
-                      <option value="Rawalpindi">Rawalpindi</option>
-                      <option value="Multan">Multan</option>
-                      <option value="Faisalabad">Faisalabad</option>
-                      <option value="Peshawar">Peshawar</option>
-                      <option value="Quetta">Quetta</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="cs-form__row">
-                  <div className="cs-form__group">
-                    <label>Service Required *</label>
-                    <select required>
-                      <option value="">Select a service</option>
-                      <option value="Community Welfare">Community Welfare</option>
-                      <option value="Community Iftar">Community Iftar</option>
-                      <option value="Winter Packages">Winter Packages</option>
-                      <option value="Shadi Box">Shadi Box</option>
-                      <option value="Wheelchair Support">Wheelchair Support</option>
-                      <option value="Masjid Construction">Masjid Construction</option>
-                    </select>
-                  </div>
-                  <div className="cs-form__group">
-                    <label>CNIC (Optional)</label>
-                    <input type="text" placeholder="Enter CNIC number" />
-                  </div>
-                </div>
-
-                <div className="cs-form__group">
-                  <label>Message</label>
-                  <textarea rows="3" placeholder="Describe your request..."></textarea>
-                </div>
-
-                <button type="submit" className="cs-form__submit-btn">
-                  Apply Now ✈
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* ── 8. FAQ ACCORDION ── */}
       <section className="cs-faq section" aria-labelledby="faq-heading">
@@ -298,38 +124,7 @@ function CommunityServices() {
         </div>
       </section>
 
-      {/* ── 9. FINAL CTA ── */}
-      <section className="cs-cta" aria-label="Community Services CTA">
-        <div className="container cs-cta__inner">
-          <div className="cs-cta__left">
-            <div className="cs-cta__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="white" width="36" height="36">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-              </svg>
-            </div>
-            <div>
-              <h2>Together We Can Build Better Communities</h2>
-              <p>Join us in making a meaningful difference through compassion, service and community support.</p>
-            </div>
-          </div>
-          <div className="cs-cta__actions">
-            <a href="#assistance-form" className="btn cs-cta__btn-primary">
-              Apply Now
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-            <a href="#donate" className="btn cs-cta__btn-green">
-              Donate Now
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
+
 
     </main>
   );

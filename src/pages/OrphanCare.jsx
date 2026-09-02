@@ -59,7 +59,7 @@ function OrphanCare() {
         badge=""
         titleMain="Protecting Future."
         titleHighlight="Transforming Young Lives."
-        description="Alkhidmat Orphan Care Program provides holistic care, quality education, healthcare, and emotional nurture to orphaned children across Pakistan, empowering them to become confident leaders."
+        description=""
         primaryCtaText="Sponsor an Orphan"
         secondaryCtaText="Learn About Aghosh Homes"
         primaryCtaHref="#donate-section"
@@ -77,13 +77,10 @@ function OrphanCare() {
       />
 
       {/* ── 2. ABOUT ORPHAN CARE ── */}
-      <section id="about-orphan-care" className="section" style={{ background: '#f8fafc', padding: '80px 0' }}>
+      <section id="about-orphan-care" className="section" style={{ padding: '80px 0' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
             <div>
-              <span className="section-tag" style={{ color: '#0254a4', fontWeight: 700, letterSpacing: '2px', fontSize: '0.8rem' }}>
-                COMPREHENSIVE CHILD CARE
-              </span>
               <h2 className="section-title" style={{ marginTop: '12px', fontSize: '2.2rem', color: '#0a2a5e' }}>
                 Nurturing Hope for Fatherless Children
               </h2>
@@ -94,11 +91,11 @@ function OrphanCare() {
                 We ensure that lack of resources never stops a child from achieving their dreams. From primary schooling to university scholarships, we walk alongside them every step of the way.
               </p>
             </div>
-            <div>
+            <div style={{ textAlign: 'center' }}>
               <img
                 src={orphanCareBgImg}
                 alt="Alkhidmat Orphan Care"
-                style={{ width: '100%', borderRadius: '20px', boxShadow: '0 12px 32px rgba(2,84,164,0.12)' }}
+                style={{ width: '80%', maxHeight: '400px', objectFit: 'cover', borderRadius: '20px', boxShadow: '0 12px 32px rgba(2,84,164,0.12)' }}
               />
             </div>
           </div>
