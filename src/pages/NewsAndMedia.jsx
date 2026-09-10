@@ -261,33 +261,7 @@ function NewsAndMedia() {
         </div>
       </section>
 
-      {/* ── 8. PRESS RELEASES TIMELINE ── */}
-      <section className="nm-press-section">
-        <div className="container">
-          <div className="nm-section-header">
-            <h2 className="nm-section-title">Press Releases</h2>
-            <Link to="#" className="nm-section-link">
-              View All Releases
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </Link>
-          </div>
-          <div className="nm-press-timeline">
-            {pressReleases.map(release => (
-              <div key={release.id} className="nm-press-item">
-                <div className="nm-press-marker" />
-                <div className="nm-press-date">{release.date}</div>
-                <div className="nm-press-content">
-                  <h3 className="nm-press-title">{release.title}</h3>
-                  <p className="nm-press-summary">{release.summary}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
     </div>
   );
