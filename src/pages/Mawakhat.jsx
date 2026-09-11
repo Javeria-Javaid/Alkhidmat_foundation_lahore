@@ -155,46 +155,7 @@ function Mawakhat() {
         </div>
       </section>
 
-      {/* ── 6. STORIES OF CHANGE ── */}
-      <section className="mw-stories section" aria-labelledby="stories-heading">
-        <div className="container">
-          <div className="mw-stories__header">
-            <div>
-              <p className="mw-stories__tag">MAWAKHAT STORIES</p>
-              <h2 id="stories-heading">Stories of Change</h2>
-            </div>
-            <a href="#more-stories" className="btn mw-stories__btn-link">
-              View More Stories
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-
-          <div className="mw-stories__grid">
-            {mawakhatStories.map((story, i) => (
-              <article className="mw-stories__card" key={story.id}>
-                <div className="mw-stories__img-wrap">
-                  <img src={storyImages[i]} alt={story.title} />
-                  <div className="mw-stories__overlay">
-                    <span className="mw-stories__badge">{story.tag}</span>
-                    <h3>{story.title}</h3>
-                    <p>{story.desc}</p>
-                    <a href="#read" className="mw-stories__read-link">
-                      Read Story
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14" aria-hidden="true">
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                        <polyline points="12 5 19 12 12 19"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* ── 7. DONATION BANNER ── */}
       <section id="donate-panel" className="mw-donate-panel" aria-label="Mawakhat Donation Panel">
