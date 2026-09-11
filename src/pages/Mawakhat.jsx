@@ -89,71 +89,7 @@ function Mawakhat() {
         </div>
       </section>
 
-      {/* ── 5. NATIONWIDE NETWORK (MAP & CENTRES) ── */}
-      <section className="mw-map-section section" aria-labelledby="map-heading">
-        <div className="container mw-map__inner">
-          <div className="mw-map__content">
-            <p className="mw-map__tag">OUR MAWAKHAT CENTRES</p>
-            <h2 id="map-heading">
-              A Nationwide Network<br />of Compassion
-            </h2>
-            <p>
-              From major cities to small towns, Alkhidmat Mawakhat centers are a source of warmth, care, and dignity for thousands.
-            </p>
-            <a href="#all-centres" className="btn mw-map__btn">
-              View All Centres
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-
-          <div className="mw-map__card">
-            <div className="mw-map__card-header">
-              <h3>Pakistan Coverage</h3>
-            </div>
-            <div className="mw-map__card-body">
-              <div className="mw-map__svg-wrap">
-                <svg viewBox="0 0 350 320" className="mw-map__svg" aria-hidden="true">
-                  <path
-                    d="M120,30 L160,20 L210,35 L250,25 L280,55 L300,90 L310,130
-                       L330,150 L340,190 L330,220 L320,250 L300,270 L270,300
-                       L240,310 L190,300 L160,280 L130,250 L100,210 L80,180
-                       L70,140 L90,80 Z"
-                    fill="rgba(255,255,255,0.08)"
-                    stroke="rgba(255,255,255,0.25)"
-                    strokeWidth="1.5"
-                  />
-                  {[
-                    { x: 210, y: 70 },
-                    { x: 160, y: 120 },
-                    { x: 250, y: 160 },
-                    { x: 140, y: 220 },
-                    { x: 270, y: 240 },
-                    { x: 285, y: 120 },
-                    { x: 190, y: 140 },
-                  ].map((pin, i) => (
-                    <circle key={i} cx={pin.x} cy={pin.y} r="5" fill="#22c55e" className="mw-ping-dot" />
-                  ))}
-                </svg>
-              </div>
-
-              <div className="mw-map__province-list">
-                {mawakhatProvinces.map((prov) => (
-                  <div className="mw-map__province-item" key={prov.name}>
-                    <span className="mw-province__pin" aria-hidden="true">📍</span>
-                    <div>
-                      <strong>{prov.name}</strong>
-                      <span>{prov.count}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       
 
