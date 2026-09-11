@@ -9,7 +9,7 @@ import {
   mawakhatDonationAmounts,
 } from '../data/mawakhatData';
 import heroManImg from '../assets/serve_humanity.png';
-import centerImg from '../assets/mawakhat.png';
+import centerImg from '../assets/islamic_microfinance_program.png';
 import story1Img from '../assets/akfl-1.jpeg';
 import story2Img from '../assets/akfl-2.jpeg';
 import story3Img from '../assets/akfl-3.jpeg';
