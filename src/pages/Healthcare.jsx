@@ -62,33 +62,14 @@ function Healthcare() {
         </div>
       </section>
 
-      {/* ── 5. SUCCESS STORIES ── */}
-      <section className="hc-stories" aria-label="Patient Success Stories">
-        <div className="container">
-          <div className="hc-stories__card">
-            <div className="hc-stories__bg-img">
-              <img src={storyChildImg} alt="Child smiling after healthcare treatment" />
-            </div>
-            <div className="hc-stories__content">
-              <span className="hc-stories__quote-icon">“</span>
-              <blockquote>
-                "Alkhidmat's medical camp provided my son with immediate treatment when we had no access to healthcare."
-              </blockquote>
-              <div className="hc-stories__author">
-                <strong>Simran Riaz</strong>
-                <span>Alkhidmat Beneficiary</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* ── 10. JOIN OUR MEDICAL MISSION CTA ── */}
       <section className="hc-mission-cta" aria-label="Join Medical Mission">
         <div className="container text-center">
           <h2>Join Our Medical Mission</h2>
           <p>Alkhidmat Foundation Pakistan is a humanitarian organization dedicated to providing healthcare services.</p>
-          <a href="#contact" className="btn hc-mission-cta__btn">Join Now</a>
+          <Link to="/donate" className="btn hc-mission-cta__btn">Join Now</Link>
         </div>
       </section>
 
