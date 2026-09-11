@@ -90,12 +90,6 @@ function DisasterManagement() {
                 <div className="dm-services__card-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <button className="dm-services__card-arrow" aria-label={`Learn more about ${service.title}`}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16">
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                    <polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                </button>
               </div>
             ))}
           </div>

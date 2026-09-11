@@ -74,12 +74,6 @@ function CommunityServices() {
                 <div className="cs-programs__icon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <button className="cs-programs__arrow" aria-label={`More about ${service.title}`}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="14" height="14">
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                    <polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                </button>
               </div>
             ))}
           </div>
