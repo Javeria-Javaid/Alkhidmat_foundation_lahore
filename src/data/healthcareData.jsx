@@ -64,7 +64,7 @@ export const healthcareServices = [
   {
     id: 1,
     title: 'Emergency Care',
-    description: '24/7 emergency response and life-saving medical care.',
+    description: '24/7 rapid emergency response, life-saving trauma care, and critical medical assistance when every second counts.',
     color: '#dbeafe',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#0254a4" strokeWidth="2">
@@ -75,7 +75,7 @@ export const healthcareServices = [
   {
     id: 2,
     title: 'Mother & Child Care',
-    description: 'Maternal health, safe deliveries, and neonatal care.',
+    description: 'Comprehensive maternal health programs, safe delivery services, and specialized neonatal care to protect mothers and babies.',
     color: '#ffedd5',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" strokeWidth="2">
@@ -86,7 +86,7 @@ export const healthcareServices = [
   {
     id: 3,
     title: 'Diagnostic Services',
-    description: 'Advanced lab testing and modern diagnostic imaging.',
+    description: 'State-of-the-art laboratory testing, advanced radiology, and accurate diagnostic imaging for precise and timely medical treatments.',
     color: '#d1fae5',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2">
@@ -97,7 +97,7 @@ export const healthcareServices = [
   {
     id: 4,
     title: 'Blood Bank',
-    description: 'Safe blood collection, storage, and transfusion services.',
+    description: 'Rigorous and safe blood collection, secure storage, and life-saving transfusion services connecting donors with patients in urgent need.',
     color: '#fce7f3',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#db2777" strokeWidth="2">
@@ -108,7 +108,7 @@ export const healthcareServices = [
   {
     id: 5,
     title: 'Ambulance Services',
-    description: 'Nationwide emergency ambulance fleet for rapid response.',
+    description: 'A widespread, 24/7 nationwide emergency ambulance fleet ensuring rapid and safe transport for critical patients to healthcare facilities.',
     color: '#fee2e2',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2">
@@ -122,7 +122,7 @@ export const healthcareServices = [
   {
     id: 6,
     title: 'Telemedicine',
-    description: 'Remote consultations connecting patients with doctors.',
+    description: 'Innovative remote health consultations bridging the gap between specialist doctors and patients in remote or underserved communities.',
     color: '#e0f2fe',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2">
@@ -135,7 +135,7 @@ export const healthcareServices = [
   {
     id: 7,
     title: 'Medical Clinics',
-    description: 'Outpatient clinics providing affordable healthcare.',
+    description: 'Easily accessible outpatient clinics providing highly affordable, routine healthcare consultations and essential medications.',
     color: '#dcfce7',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2">
@@ -147,7 +147,7 @@ export const healthcareServices = [
   {
     id: 8,
     title: 'Community Clinics',
-    description: 'Local clinics bringing healthcare to underserved areas.',
+    description: 'Dedicated local outreach clinics bringing preventative care and vital medical treatments directly to underserved and marginalized neighborhoods.',
     color: '#fef3c7',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="2">
@@ -157,7 +157,7 @@ export const healthcareServices = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
-  },
+  }
 ];
 
 export const healthcareFacilities = [
