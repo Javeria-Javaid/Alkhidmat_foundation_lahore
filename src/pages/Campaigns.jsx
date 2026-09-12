@@ -304,7 +304,7 @@ export default function Campaigns() {
           </div>
           <div className="camp-hero__visual">
             <div className="camp-hero__photo-main">
-              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&q=80" alt="Alkhidmat Campaign" />
+              <img src={appealsImg} alt="Alkhidmat Campaign" />
               <div className="camp-hero__photo-overlay" />
             </div>
             
