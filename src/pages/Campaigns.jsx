@@ -280,7 +280,7 @@ export default function Campaigns() {
 
         <div className="container camp-hero__inner">
           <div className="camp-hero__content">
-            <div className="section-tag section-tag--white">Get Involved · Campaigns 2024</div>
+            
             <h1 className="camp-hero__title">
               Campaigns That<br />
               <span className="camp-hero__accent">Change Lives Forever</span>
@@ -299,25 +299,15 @@ export default function Campaigns() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
-            <div className="camp-hero__badge">
-              <div className="camp-hero__badge-ring" />
-              <span>2M+ Lives Impacted</span>
-            </div>
-          </div>
+            
 
           <div className="camp-hero__visual">
             <div className="camp-hero__photo-main">
               <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&q=80" alt="Alkhidmat Campaign" />
               <div className="camp-hero__photo-overlay" />
             </div>
-            <div className="camp-hero__photo-thumb camp-hero__photo-thumb--1">
-              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&q=80" alt="Medical Camp" />
-              <span>Medical Camp</span>
-            </div>
-            <div className="camp-hero__photo-thumb camp-hero__photo-thumb--2">
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=300&q=80" alt="Food Drive" />
-              <span>Food Drive</span>
-            </div>
+            
+            
           </div>
         </div>
 
@@ -326,120 +316,13 @@ export default function Campaigns() {
         </svg>
       </section>
 
-      {/* 2. IMPACT OVERVIEW */}
-      <section className="camp-impact section" ref={impactRef}>
-        <div className="container">
-          <div className="camp-section-header text-center">
-            <div className="section-tag">Impact Dashboard</div>
-            <h2 className="section-title">Our Campaigns By Numbers</h2>
-          </div>
-          <div className="camp-stats-grid">
-            {impactStats.map((s, i) => <StatCard key={i} stat={s} started={impactInView} />)}
-          </div>
-        </div>
-      </section>
+      
 
-      {/* 3. ABOUT CAMPAIGNS */}
-      <section className="camp-about section">
-        <div className="container camp-about__inner">
-          <div className="camp-about__visual">
-            <div className="camp-about__photo-frame">
-              <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=700&q=80" alt="About Campaigns" />
-            </div>
-            <div className="camp-about__tag-float">34+ Years of Service</div>
-          </div>
-          <div className="camp-about__content">
-            <div className="section-tag section-tag--green">About Our Campaigns</div>
-            <h2 className="section-title">More Than Campaigns,<br /><em>They Bring Hope</em></h2>
-            <p className="camp-about__desc">
-              Our campaigns are driven by compassion and commitment to uplift communities in need. From emergency relief to
-              education, healthcare and clean-water projects, we work tirelessly to build a better Pakistan.
-            </p>
-            <div className="camp-about__pillars">
-              {['Emergency Relief', 'Clean Water Projects', 'Healthcare Services', 'Seasonal Campaigns', 'Education Support', 'Sustainable Development'].map(p => (
-                <div className="camp-about__pillar" key={p}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  {p}
-                </div>
-              ))}
-            </div>
-            <Link to="/about" className="camp-btn camp-btn--primary" style={{ marginTop: '8px' }}>
-              Explore Our Mission
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+      
 
-      {/* 4. FEATURED CAMPAIGNS */}
-      <section className="camp-featured section">
-        <div className="container">
-          <div className="camp-section-header text-center">
-            <div className="section-tag">Featured Campaigns</div>
-            <h2 className="section-title">Our Major Campaigns</h2>
-          </div>
-          <div className="camp-featured__layout">
-            <div className="camp-featured__nav">
-              {featuredCampaigns.map((c, i) => (
-                <button key={c.id} className={`camp-feat-nav-btn ${activeFeat === i ? 'active' : ''}`}
-                  onClick={() => setActiveFeat(i)} style={{ '--fc': c.color }}>
-                  <span className="camp-feat-nav-btn__cat">{c.category}</span>
-                  <span className="camp-feat-nav-btn__title">{c.title}</span>
-                  <div className="camp-feat-nav-btn__bar" />
-                </button>
-              ))}
-            </div>
-            {featuredCampaigns.map((c, i) => (
-              <div key={c.id} className={`camp-feat-card ${activeFeat === i ? 'active' : ''}`} style={{ '--fc': c.color }}>
-                <div className="camp-feat-card__img-wrap">
-                  <img src={c.image} alt={c.title} className="camp-feat-card__img" />
-                  <div className="camp-feat-card__img-overlay" />
-                  <span className={`camp-feat-card__badge camp-feat-badge--${c.urgency}`}>{c.tag}</span>
-                </div>
-                <div className="camp-feat-card__body">
-                  <div className="camp-feat-card__cat">{c.category}</div>
-                  <h3 className="camp-feat-card__title">{c.title}</h3>
-                  <p className="camp-feat-card__desc">{c.description}</p>
-                  <ProgressBar raised={c.raised} goal={c.goal} color={c.color} />
-                  <div className="camp-feat-card__footer">
-                    <div className="camp-feat-card__donors">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                      {c.donors.toLocaleString()} Donors
-                    </div>
-                    <Link to="/donate" className="camp-btn camp-btn--primary camp-btn--sm">
-                      Support Campaign
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
-      {/* 5. CATEGORIES */}
-      <section className="camp-categories section">
-        <div className="camp-categories__bg" />
-        <div className="container">
-          <div className="camp-section-header text-center">
-            <div className="section-tag">Browse By Category</div>
-            <h2 className="section-title">Campaign Categories</h2>
-          </div>
-          <div className="camp-cat-grid">
-            {categories.map((c, i) => (
-              <a href="#active" key={i} className="camp-cat-card" style={{ '--cat-color': c.color }}>
-                <div className="camp-cat-card__icon">{c.icon}</div>
-                <div className="camp-cat-card__label">{c.label}</div>
-                <div className="camp-cat-card__count">{c.count} Campaigns</div>
-                <div className="camp-cat-card__arrow">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* 6. ACTIVE CAMPAIGNS */}
       <section className="camp-active section" id="active">
@@ -468,49 +351,9 @@ export default function Campaigns() {
         </div>
       </section>
 
-      {/* 7. IMPACT NUMBERS */}
-      <section className="camp-bigstats section" ref={bigStatRef}>
-        <div className="camp-bigstats__bg" />
-        <div className="container">
-          <div className="camp-section-header text-center">
-            <div className="section-tag section-tag--white">Impact Numbers</div>
-            <h2 className="section-title camp-bigstats__title">The Scale of Our Work</h2>
-          </div>
-          <div className="camp-bigstats-grid">
-            {bigStats.map((s, i) => <BigStat key={i} stat={s} started={bigStatInView} />)}
-          </div>
-        </div>
-      </section>
+      
 
-      {/* 8. SUCCESS STORIES */}
-      <section className="camp-stories section">
-        <div className="container">
-          <div className="camp-section-header text-center">
-            <div className="section-tag">Voices of Our Supporters</div>
-            <h2 className="section-title">Success Stories</h2>
-          </div>
-          <div className="camp-stories-grid">
-            {testimonials.map((t, i) => (
-              <div key={i} className="camp-story-card" style={{ '--sc': t.color }}>
-                <div className="camp-story-card__quote-mark">"</div>
-                <p className="camp-story-card__text">{t.quote}</p>
-                <div className="camp-story-card__stars">
-                  {Array.from({ length: t.stars }).map((_, si) => (
-                    <svg key={si} width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  ))}
-                </div>
-                <div className="camp-story-card__author">
-                  <div className="camp-story-card__avatar" style={{ background: t.color }}>{t.avatar}</div>
-                  <div>
-                    <div className="camp-story-card__name">{t.name}</div>
-                    <div className="camp-story-card__role">{t.role} · {t.location}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* 9. GALLERY */}
       <section className="camp-gallery section">
@@ -531,43 +374,9 @@ export default function Campaigns() {
         </div>
       </section>
 
-      {/* 10. WAYS TO HELP */}
-      <section className="camp-ways section">
-        <div className="container">
-          <div className="camp-section-header text-center">
-            <div className="section-tag">Take Action</div>
-            <h2 className="section-title">How You Can Help</h2>
-          </div>
-          <div className="camp-ways-grid">
-            {wayToHelp.map((w, i) => (
-              <a key={i} href={w.href} className="camp-way-card" style={{ '--wc': w.color }}>
-                <div className="camp-way-card__icon">{w.icon}</div>
-                <h3 className="camp-way-card__title">{w.title}</h3>
-                <p className="camp-way-card__desc">{w.desc}</p>
-                <div className="camp-way-card__cta">
-                  {w.cta}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
-      {/* 11. FAQ */}
-      <section className="camp-faq section">
-        <div className="camp-faq__bg" />
-        <div className="container camp-faq__inner">
-          <div className="camp-faq__header">
-            <div className="section-tag">Got Questions?</div>
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="section-subtitle">Everything you need to know about participating in Alkhidmat campaigns.</p>
-          </div>
-          <div className="camp-faq__list">
-            {faqs.map((f, i) => <FaqItem key={i} q={f.q} a={f.a} index={i} />)}
-          </div>
-        </div>
-      </section>
+      
 
       {/* 12. FINAL CTA */}
       <section className="camp-cta">
@@ -576,7 +385,7 @@ export default function Campaigns() {
         <div className="camp-cta__orb camp-cta__orb--1" />
         <div className="camp-cta__orb camp-cta__orb--2" />
         <div className="container camp-cta__inner">
-          <div className="section-tag section-tag--white">Become Part of the Change</div>
+          
           <h2 className="camp-cta__title">
             Together We Can<br />
             <span className="camp-cta__accent">Reach More Lives</span>
@@ -594,11 +403,7 @@ export default function Campaigns() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
           </div>
-          <div className="camp-cta__trust">
-            <span>✓ 96% funds reach beneficiaries</span>
-            <span>✓ Transparent reporting</span>
-            <span>✓ Tax deductible donations</span>
-          </div>
+          
         </div>
       </section>
 
