@@ -329,7 +329,7 @@ export default function Campaigns() {
       <section className="camp-active section" id="active">
         <div className="container">
           <div className="camp-section-header text-center">
-            <div className="section-tag section-tag--green">Currently Running</div>
+            
             <h2 className="section-title">Active Campaigns</h2>
           </div>
           <div className="camp-active-grid">
