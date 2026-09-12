@@ -343,7 +343,7 @@ export default function Campaigns() {
                 <div className="camp-active-card__body">
                   <h4 className="camp-active-card__title">{c.title}</h4>
                   <p className="camp-active-card__desc">{c.desc}</p>
-                  <ProgressBar raised={c.raised} goal={c.goal} color={c.color} />
+                  
                   <Link to="/donate" className="camp-btn camp-btn--primary camp-btn--sm camp-btn--full">Support Campaign →</Link>
                 </div>
               </div>
