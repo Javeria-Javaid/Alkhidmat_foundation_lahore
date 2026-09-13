@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import appealsImg from '../assets/appeals.jpg';
 import './Campaigns.css';
 
 /* ─── ANIMATED COUNTER HOOK ─────────────────────────── */
