@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import appealsImg from '../assets/appeals.jpg';
+import plantationDriveImg from '../assets/plantation_drive.jpeg';
+import gazaAppealImg from '../assets/gaza_emergency_appeal.jpeg';
+import akflSchoolsImg from '../assets/akfl_schools.jpg';
 import './Campaigns.css';
 
 /* ─── ANIMATED COUNTER HOOK ─────────────────────────── */
@@ -56,7 +59,7 @@ const featuredCampaigns = [
     raised: 6575,
     goal: 1000000,
     donors: 14,
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80',
+    image: plantationDriveImg,
     tag: 'Active',
     urgency: 'active',
   },
@@ -69,7 +72,7 @@ const featuredCampaigns = [
     raised: 177010,
     goal: 1000000,
     donors: 186,
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80',
+    image: gazaAppealImg,
     tag: 'Urgent',
     urgency: 'critical',
   },
@@ -82,7 +85,7 @@ const featuredCampaigns = [
     raised: 285060,
     goal: 1100000,
     donors: 310,
-    image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80',
+    image: gazaAppealImg,
     tag: 'Active',
     urgency: 'high',
   },
@@ -106,7 +109,7 @@ const activeCampaigns = [
     goal: 1000000,
     color: '#10b981',
     tag: 'Active',
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&q=80',
+    image: plantationDriveImg,
   },
   {
     id: 2,
@@ -116,7 +119,7 @@ const activeCampaigns = [
     goal: 1000000,
     color: '#ef4444',
     tag: 'Critical',
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80',
+    image: gazaAppealImg,
   },
   {
     id: 3,
@@ -126,7 +129,7 @@ const activeCampaigns = [
     goal: 1320000,
     color: '#f59e0b',
     tag: 'Active',
-    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80',
+    image: akflSchoolsImg,
   },
 ];
 
