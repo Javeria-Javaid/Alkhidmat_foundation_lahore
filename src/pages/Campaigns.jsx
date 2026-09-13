@@ -4,6 +4,14 @@ import appealsImg from '../assets/appeals.jpg';
 import plantationDriveImg from '../assets/plantation_drive.jpeg';
 import gazaAppealImg from '../assets/gaza_emergency_appeal.jpeg';
 import akflSchoolsImg from '../assets/akfl_schools.jpg';
+
+// Authentic Alkhidmat Campaign Gallery Images
+import akFoodDistImg from '../assets/news_and_media/news_and_media_food_distribution.png';
+import akMedicalImg from '../assets/events/medical.png';
+import akWaterImg from '../assets/news_and_media/news_and_media_clean_water.png';
+import akFloodReliefImg from '../assets/events/flood_relief.png';
+import akBanoQabilImg from '../assets/events/graduation_ceremony_banoqabil.png';
+import akPlantationImg from '../assets/events/plantation.png';
 import './Campaigns.css';
 
 /* ─── ANIMATED COUNTER HOOK ─────────────────────────── */
@@ -171,12 +179,12 @@ const testimonials = [
 ];
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80', span: 'tall',   label: 'Food Drive' },
-  { src: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80', span: 'normal', label: 'Medical Camp' },
-  { src: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80', span: 'normal', label: 'Education' },
-  { src: 'https://images.unsplash.com/photo-1550159930-40066082a4fc?w=600&q=80',    span: 'wide',   label: 'Community' },
-  { src: 'https://images.unsplash.com/photo-1536856136534-bb679c52a9aa?w=600&q=80', span: 'normal', label: 'Clean Water' },
-  { src: 'https://images.unsplash.com/photo-1498771790868-5a6cfcd77e51?w=600&q=80', span: 'tall',   label: 'Winter Relief' },
+  { src: akFoodDistImg,   span: 'tall',   label: 'Alkhidmat Food & Ration Distribution' },
+  { src: akMedicalImg,    span: 'normal', label: 'Free Medical Camps & Diagnostics' },
+  { src: akWaterImg,      span: 'normal', label: 'Clean Water Filtration Plants' },
+  { src: akPlantationImg, span: 'wide',   label: 'Mega Plantation & Tree Drive' },
+  { src: akBanoQabilImg,  span: 'normal', label: 'Bano Qabil Youth Education' },
+  { src: akFloodReliefImg, span: 'tall',  label: 'Emergency Flood Relief Operation' },
 ];
 
 const wayToHelp = [
