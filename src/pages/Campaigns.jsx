@@ -385,39 +385,6 @@ export default function Campaigns() {
         </div>
       </section>
 
-      
-
-      
-
-      {/* 12. FINAL CTA */}
-      <section className="camp-cta">
-        <div className="camp-cta__bg" />
-        <div className="camp-cta__overlay" />
-        <div className="camp-cta__orb camp-cta__orb--1" />
-        <div className="camp-cta__orb camp-cta__orb--2" />
-        <div className="container camp-cta__inner">
-          
-          <h2 className="camp-cta__title">
-            Together We Can<br />
-            <span className="camp-cta__accent">Reach More Lives</span>
-          </h2>
-          <p className="camp-cta__desc">
-            Your support can help us continue our mission of serving humanity with compassion and dedication.
-          </p>
-          <div className="camp-cta__btns">
-            <Link to="/donate" className="camp-btn camp-btn--white">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              Donate Now
-            </Link>
-            <a href="#" className="camp-btn camp-btn--outline-white">
-              Become a Volunteer
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-          </div>
-          
-        </div>
-      </section>
-
     </main>
   );
 }
