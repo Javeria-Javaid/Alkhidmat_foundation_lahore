@@ -75,90 +75,209 @@
 .mb-4 { margin-bottom: 30px; }
 .w-100 { width: 100%; justify-content: center; }
 
-/* Vision & Mission */
-.vision-mission {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: -40px;
+/* ============================================================
+   Vision & Mission Section (Redesigned Compact Composition)
+   ============================================================ */
+.vm-section {
+  padding: 65px 0 55px;
+  background-color: var(--white);
   position: relative;
-  z-index: 10;
+  overflow: hidden;
 }
 
-.vm-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-md);
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  border-left: 4px solid var(--primary-blue);
+.vm-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.vm-card.border-green {
-  border-left-color: #10b981;
+.vm-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
 }
 
-.vm-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.vm-icon.bg-blue { background: rgba(37,99,235,0.1); color: var(--primary-blue); }
-.vm-icon.bg-green { background: rgba(16,185,129,0.1); color: #10b981; }
-
-.vm-text h3 {
-  font-size: 1.5rem;
-  color: var(--navy);
+.vm-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1e293b;
   margin-bottom: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-.vm-text p {
-  color: var(--text-body);
-  line-height: 1.6;
+.vm-subtitle {
+  font-size: 0.98rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0 auto;
 }
 
-/* Core Values */
-.core-values {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding: 60px 0;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.value-item {
-  display: flex;
-  gap: 16px;
-}
-
-.value-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #f1f5f9;
-  color: var(--primary-blue);
+/* Three-Part Desktop Composition */
+.vm-composition {
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+/* Asymmetric Dark Navy Cards */
+.vm-box {
+  background: #252a34;
+  color: #ffffff;
+  width: 350px;
+  min-height: 245px;
+  padding: 34px 32px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 16px 36px rgba(10, 22, 40, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 42px rgba(10, 22, 40, 0.18);
+}
+
+/* Vision Card: curved top-right, soft rounded other corners */
+.vm-box--vision {
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 120px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-right: -45px;
+}
+
+/* Mission Card: curved top-left, soft rounded other corners */
+.vm-box--mission {
+  border-top-left-radius: 120px;
+  border-bottom-left-radius: 120px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-left: -45px;
+}
+
+.vm-box__icon {
+  background: #ea580c;
+  color: #ffffff;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.38);
+  flex-shrink: 0;
+}
+
+.vm-box__title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.vm-box__text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+  max-width: 280px;
+}
+
+/* Center Beneficiary Image */
+.vm-center {
+  position: relative;
+  z-index: 2;
+  width: 250px;
+  height: 260px;
+  display: flex;
+  align-items: flex-end;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.value-item h4 {
-  font-size: 1.1rem;
-  color: var(--navy);
-  margin-bottom: 8px;
+/* Subtle brand backing shape to anchor the cutout beneficiary image */
+.vm-center__backdrop {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(2, 84, 164, 0.08) 0%, rgba(2, 84, 164, 0.02) 65%, transparent 75%);
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
 }
 
-.value-item p {
-  font-size: 0.9rem;
-  color: var(--text-body);
+.vm-center__img {
+  width: auto;
+  max-width: 100%;
+  height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .vm-composition {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .vm-box--vision,
+  .vm-box--mission {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    border-radius: 24px;
+    padding: 28px 24px;
+  }
+
+  .vm-center {
+    order: 2;
+    height: 220px;
+    width: 220px;
+  }
+
+  .vm-center__img {
+    height: 210px;
+  }
+
+  .vm-box--vision {
+    order: 1;
+  }
+
+  .vm-box--mission {
+    order: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .vm-section {
+    padding: 50px 0 40px;
+  }
+
+  .vm-title {
+    font-size: 1.85rem;
+  }
+
+  .vm-box {
+    padding: 24px 18px;
+  }
 }
 
 /* Timeline */

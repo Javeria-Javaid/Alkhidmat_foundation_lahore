@@ -27,115 +27,61 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <section className="vision-mission-new container" style={{ padding: '120px 0 80px', textAlign: 'center', overflow: 'hidden' }}>
-        <h2 style={{ fontSize: '2.5rem', color: '#1e293b', marginBottom: '16px', fontWeight: 'bold' }}>Our mission and vision statement</h2>
-        <p style={{ color: '#64748b', marginBottom: '80px', maxWidth: '700px', margin: '0 auto 80px' }}>
-          This section describes the desired future position of Alkhidmat Foundation by defining our purpose, goals, and unwavering commitment to humanity.
-        </p>
-
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0', position: 'relative', flexWrap: 'wrap' }}>
-          {/* Left Box (Vision) */}
-          <div style={{ 
-            background: '#2c303a', 
-            color: 'white', 
-            padding: '50px 60px 50px 40px', 
-            borderTopRightRadius: '150px', 
-            borderBottomRightRadius: '150px', 
-            borderTopLeftRadius: '20px',
-            borderBottomLeftRadius: '20px',
-            flex: 1, 
-            maxWidth: '450px',
-            textAlign: 'center',
-            transform: 'translateY(-60px)',
-            position: 'relative',
-            zIndex: 1,
-            marginRight: '-40px'
-          }}>
-            <div style={{ background: '#ea580c', width: '70px', height: '70px', borderRadius: '50%', margin: '0 auto 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 14px rgba(234, 88, 12, 0.4)' }}>
-               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            </div>
-            <h3 style={{ fontSize: '1.75rem', marginBottom: '16px', fontWeight: 'bold', color: 'white' }}>Vision</h3>
-            <p style={{ fontSize: '1rem', lineHeight: '1.6', color: 'white' }}>
-              To foster a self-reliant and compassionate society where everyone has the opportunity to live with dignity and hope.
+      {/* Vision & Mission Section */}
+      <section className="vm-section">
+        <div className="vm-container">
+          <div className="vm-header">
+            <h2 className="vm-title">Our mission and vision statement</h2>
+            <p className="vm-subtitle">
+              This section describes the desired future position of Alkhidmat Foundation by defining our purpose, goals, and unwavering commitment to humanity.
             </p>
           </div>
 
-          {/* Center Image */}
-          <div style={{ 
-            flexShrink: 0, 
-            width: '550px', 
-            height: '800px', 
-            borderRadius: '160px', 
-            backgroundImage: `url(${img2})`, 
-            backgroundSize: 'contain', 
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center bottom',
-            position: 'relative',
-            zIndex: 2,
-            overflow: 'hidden'
-          }}>
-          </div>
-
-          {/* Right Box (Mission) */}
-          <div style={{ 
-            background: '#2c303a', 
-            color: 'white', 
-            padding: '50px 40px 50px 60px', 
-            borderTopLeftRadius: '150px', 
-            borderBottomLeftRadius: '150px', 
-            borderTopRightRadius: '20px',
-            borderBottomRightRadius: '20px',
-            flex: 1, 
-            maxWidth: '450px',
-            textAlign: 'center',
-            transform: 'translateY(60px)',
-            position: 'relative',
-            zIndex: 1,
-            marginLeft: '-40px'
-          }}>
-            <div style={{ background: '#ea580c', width: '70px', height: '70px', borderRadius: '50%', margin: '0 auto 24px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 14px rgba(234, 88, 12, 0.4)' }}>
-               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          <div className="vm-composition">
+            {/* Left Card: Vision */}
+            <div className="vm-box vm-box--vision">
+              <div className="vm-box__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3.5"></circle>
+                </svg>
+              </div>
+              <h3 className="vm-box__title">Vision</h3>
+              <p className="vm-box__text">
+                To foster a self-reliant and compassionate society where everyone has the opportunity to live with dignity and hope.
+              </p>
             </div>
-            <h3 style={{ fontSize: '1.75rem', marginBottom: '16px', fontWeight: 'bold', color: 'white' }}>Mission</h3>
-            <p style={{ fontSize: '1rem', lineHeight: '1.6', color: 'white' }}>
-              To serve humanity unconditionally through sustainable and impactful programs in education, healthcare, and social welfare.
-            </p>
+
+            {/* Center Beneficiary Image with subtle brand backing */}
+            <div className="vm-center">
+              <div className="vm-center__backdrop" />
+              <img 
+                src={img2} 
+                alt="Alkhidmat beneficiary child drinking clean water" 
+                className="vm-center__img" 
+                loading="lazy" 
+              />
+            </div>
+
+            {/* Right Card: Mission */}
+            <div className="vm-box vm-box--mission">
+              <div className="vm-box__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </div>
+              <h3 className="vm-box__title">Mission</h3>
+              <p className="vm-box__text">
+                To serve humanity unconditionally through sustainable and impactful programs in education, healthcare, and social welfare.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="core-values container">
-        <div className="value-item">
-          <div className="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg></div>
-          <div>
-            <h4>Transparency</h4>
-            <p>We operate with honesty and accountability in every step we take.</p>
-          </div>
-        </div>
-        <div className="value-item">
-          <div className="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-          <div>
-            <h4>Inclusivity</h4>
-            <p>We believe in equal opportunity and respect for all individuals.</p>
-          </div>
-        </div>
-        <div className="value-item">
-          <div className="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
-          <div>
-            <h4>Rapid Response</h4>
-            <p>We act swiftly in times of crisis to deliver immediate relief.</p>
-          </div>
-        </div>
-        <div className="value-item">
-          <div className="value-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
-          <div>
-            <h4>Dignity</h4>
-            <p>We uphold the dignity of every individual we serve.</p>
-          </div>
-        </div>
-      </section>
+
 
 
 
