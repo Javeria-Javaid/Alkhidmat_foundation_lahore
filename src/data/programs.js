@@ -1,5 +1,5 @@
-import palestineImg from '../assets/program_images/palestine_emergency_relief_program.jpg';
-import banoqabilImg from '../assets/extra/bano-qabil.jpeg';
+import palestineImg from '../assets/extra/palestine.jpeg';
+import banoqabilImg from '../assets/extra/bq-program.png';
 import orphanImg from '../assets/extra/orphan_care.jpeg';
 import cleanWaterImg from '../assets/extra/clean_water.jpeg';
 import communityImg from '../assets/extra/community-service.jpeg';
@@ -14,8 +14,8 @@ export const programs = [
     label: 'Palestine Emergency Appeal',
     href: 'https://alkhidmat.com.pk/palestine-emergency-appeal/',
     image: palestineImg,
-    imagePosition: 'center 28%',
-    collapsedPosition: 'center 20%',
+    imagePosition: 'center 40%',
+    collapsedPosition: 'center 35%',
     description: 'Urgent humanitarian assistance for families affected by the crisis in Palestine.',
     isExternal: true,
     symbol: 'PS',
@@ -28,8 +28,8 @@ export const programs = [
     label: 'Bano Qabil',
     href: 'https://banoqabil.pk/',
     image: banoqabilImg,
-    imagePosition: 'center 65%',
-    collapsedPosition: 'center 60%',
+    imagePosition: 'center 35%',
+    collapsedPosition: 'center 30%',
     description: 'Skills and opportunities that help young people build independent futures.',
     isExternal: true,
     symbol: 'BQ',
