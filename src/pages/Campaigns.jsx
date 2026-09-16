@@ -179,9 +179,9 @@ const testimonials = [
 ];
 
 const galleryImages = [
-  { src: akFoodDistImg,   span: 'tall',   label: 'Alkhidmat Food & Ration Distribution' },
+  { src: akFoodDistImg,   span: 'tall',   label: 'Alkhidmat Food & Ration Distribution', borderColor: '#f97316' },
   { src: akMedicalImg,    span: 'normal', label: 'Free Medical Camps & Diagnostics' },
-  { src: akWaterImg,      span: 'normal', label: 'Clean Water Filtration Plants' },
+  { src: akWaterImg,      span: 'normal', label: 'Clean Water Filtration Plants', borderColor: '#06b6d4' },
   { src: akPlantationImg, span: 'wide',   label: 'Mega Plantation & Tree Drive' },
   { src: akBanoQabilImg,  span: 'normal', label: 'Bano Qabil Youth Education' },
   { src: akFloodReliefImg, span: 'tall',  label: 'Emergency Flood Relief Operation' },
@@ -376,7 +376,11 @@ export default function Campaigns() {
           </div>
           <div className="camp-gallery-grid">
             {galleryImages.map((img, i) => (
-              <div key={i} className={`camp-gallery-item camp-gallery-item--${img.span}`}>
+              <div 
+                key={i} 
+                className={`camp-gallery-item camp-gallery-item--${img.span} ${img.borderColor ? 'camp-gallery-item--bordered' : ''}`}
+                style={img.borderColor ? { '--item-border-color': img.borderColor } : undefined}
+              >
                 <img src={img.src} alt={img.label} loading="lazy" />
                 <div className="camp-gallery-item__overlay"><span>{img.label}</span></div>
               </div>
