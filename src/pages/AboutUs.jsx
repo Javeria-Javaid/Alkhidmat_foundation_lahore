@@ -29,7 +29,7 @@ function AboutUs() {
 
       {/* Vision & Mission Section */}
       <section className="vm-section">
-        <div className="vm-container">
+        <div className="container vm-container">
           <div className="vm-header">
             <h2 className="vm-title">Our mission and vision statement</h2>
             <p className="vm-subtitle">
