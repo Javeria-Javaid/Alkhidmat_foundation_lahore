@@ -10,7 +10,7 @@ import akFoodDistImg from '../assets/news_and_media/news_and_media_food_distribu
 import akMedicalImg from '../assets/events/medical.png';
 import akWaterImg from '../assets/news_and_media/news_and_media_clean_water.png';
 import akFloodReliefImg from '../assets/events/flood_relief.png';
-import akBanoQabilImg from '../assets/events/graduation_ceremony_banoqabil.png';
+import akBanoQabilImg from '../assets/events/banoqabil.png';
 import akPlantationImg from '../assets/events/plantation.png';
 import './Campaigns.css';
 
