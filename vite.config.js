@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     watch: {
-      ignored: ['**/UI_Design/**', '**/.git/**', '**/dist/**', '**/Users/**']
+      ignored: ['**/UI_Design/**', '**/.git/**', '**/dist/**']
     }
   }
 })
+

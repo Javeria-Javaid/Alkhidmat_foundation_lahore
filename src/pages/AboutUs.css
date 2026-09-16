@@ -115,9 +115,10 @@
 .vm-composition {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
-  max-width: 1060px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -125,9 +126,10 @@
 .vm-box {
   background: #252a34;
   color: #ffffff;
-  width: 350px;
-  min-height: 245px;
-  padding: 34px 32px 30px;
+  flex: 1 1 0%;
+  max-width: 510px;
+  min-height: 250px;
+  padding: 38px 44px 34px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -145,27 +147,27 @@
 
 /* Vision Card: curved top-right, soft rounded other corners */
 .vm-box--vision {
-  border-top-right-radius: 120px;
-  border-bottom-right-radius: 120px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  margin-right: -45px;
+  border-top-right-radius: 130px;
+  border-bottom-right-radius: 130px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  margin-right: 0;
 }
 
 /* Mission Card: curved top-left, soft rounded other corners */
 .vm-box--mission {
-  border-top-left-radius: 120px;
-  border-bottom-left-radius: 120px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  margin-left: -45px;
+  border-top-left-radius: 130px;
+  border-bottom-left-radius: 130px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  margin-left: 0;
 }
 
 .vm-box__icon {
   background: #ea580c;
   color: #ffffff;
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -176,7 +178,7 @@
 }
 
 .vm-box__title {
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 10px;
@@ -184,19 +186,19 @@
 }
 
 .vm-box__text {
-  font-size: 0.92rem;
-  line-height: 1.55;
+  font-size: 0.98rem;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.92);
   margin: 0;
-  max-width: 280px;
+  max-width: 380px;
 }
 
 /* Center Beneficiary Image */
 .vm-center {
   position: relative;
   z-index: 2;
-  width: 250px;
-  height: 260px;
+  width: 470px;
+  height: 390px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -206,11 +208,11 @@
 /* Subtle brand backing shape to anchor the cutout beneficiary image */
 .vm-center__backdrop {
   position: absolute;
-  width: 210px;
-  height: 210px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(2, 84, 164, 0.08) 0%, rgba(2, 84, 164, 0.02) 65%, transparent 75%);
-  bottom: 10px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
@@ -220,7 +222,7 @@
 .vm-center__img {
   width: auto;
   max-width: 100%;
-  height: 250px;
+  height: 380px;
   object-fit: contain;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
   user-select: none;

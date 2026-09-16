@@ -11,7 +11,6 @@ function AboutUs() {
       <section className="about-hero">
         <div className="container about-hero__inner">
           <div className="about-hero__content">
-            <span className="badge badge-blue">ABOUT ALKHIDMAT</span>
             <h1 className="about-hero__title">Empowering Communities, Restoring Dignity.</h1>
             <p className="about-hero__desc">
               For over three decades, Alkhidmat Foundation Pakistan has been working relentlessly to uplift lives and build stronger, more resilient communities across Pakistan.
@@ -87,7 +86,6 @@ function AboutUs() {
 
       {/* Leadership */}
       <section className="leadership-section container">
-        <span className="badge badge-blue">LEADERSHIP</span>
         <h2>Guided by Compassion. Driven by Integrity.</h2>
         
         <div className="president-quote">
