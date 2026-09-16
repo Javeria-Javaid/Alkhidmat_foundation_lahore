@@ -103,7 +103,10 @@ function FeaturedPrograms() {
                     alt={program.label}
                     className="fp-panel__bg"
                     style={{
-                      objectPosition: (isExpanded ? program.imagePosition : (program.collapsedPosition || program.imagePosition)) || 'center'
+                      '--program-image-position': isExpanded 
+                        ? (program.objectPositionExpanded || program.imagePosition || 'center') 
+                        : (program.objectPositionCollapsed || program.collapsedPosition || program.imagePosition || 'center'),
+                      objectPosition: 'var(--program-image-position)'
                     }}
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
