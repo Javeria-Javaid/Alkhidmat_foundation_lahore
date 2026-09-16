@@ -857,6 +857,12 @@
 .camp-gallery-item--wide { grid-column: span 2; }
 .camp-gallery-item--normal { }
 
+/* Custom bordered items */
+.camp-gallery-item--bordered {
+  border: 4px solid var(--item-border-color, #f97316);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
 /* ============================================================
    10. WAYS TO HELP
    ============================================================ */
