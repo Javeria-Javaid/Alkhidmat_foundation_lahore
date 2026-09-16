@@ -14,13 +14,10 @@ import ayeshaImg from '../assets/volunteer/ayesha.jpg';
 
 import gal1 from '../assets/events/flood_relief.png';
 import gal2 from '../assets/events/volunteer-1.png';
-import gal3 from '../assets/events/volunteer_conference.png';
-import gal4 from '../assets/volunteer/drive_food.jpg';
-import gal5 from '../assets/volunteer/drive_tree.jpg';
-import gal6 from '../assets/volunteer/drive_medical.jpg';
-import gal7 from '../assets/events/ramzan.png';
-import gal8 from '../assets/events/plantation.png';
-import gal9 from '../assets/events/medical.png';
+import gal3 from '../assets/events/orphan.png';
+import gal4 from '../assets/events/ramzan.png';
+import gal5 from '../assets/events/plantation.png';
+import gal6 from '../assets/events/medical.png';
 
 const serviceAreas = [
   {
@@ -644,31 +641,22 @@ function AlkhidmatVolunteer() {
 
             <div className="vol-gallery__grid">
               <div className="vol-gallery__item">
-                <img src={gal1} alt="Volunteer activity 1" loading="lazy" />
+                <img src={gal1} alt="Flood relief efforts" loading="lazy" />
               </div>
               <div className="vol-gallery__item">
-                <img src={gal2} alt="Volunteer activity 2" loading="lazy" />
+                <img src={gal2} alt="Volunteer team in action" loading="lazy" />
               </div>
               <div className="vol-gallery__item">
-                <img src={gal3} alt="Volunteer activity 3" loading="lazy" />
+                <img src={gal3} alt="Orphan Care support activity" loading="lazy" />
               </div>
               <div className="vol-gallery__item">
-                <img src={gal4} alt="Volunteer activity 4" loading="lazy" />
+                <img src={gal4} alt="Ramzan Food Distribution" loading="lazy" />
               </div>
               <div className="vol-gallery__item">
-                <img src={gal5} alt="Volunteer activity 5" loading="lazy" />
+                <img src={gal5} alt="Tree Plantation drive" loading="lazy" />
               </div>
               <div className="vol-gallery__item">
-                <img src={gal6} alt="Volunteer activity 6" loading="lazy" />
-              </div>
-              <div className="vol-gallery__item">
-                <img src={gal7} alt="Ramzan Food Distribution" loading="lazy" />
-              </div>
-              <div className="vol-gallery__item">
-                <img src={gal8} alt="Tree Plantation" loading="lazy" />
-              </div>
-              <div className="vol-gallery__item">
-                <img src={gal9} alt="Medical Camp" loading="lazy" />
+                <img src={gal6} alt="Medical Camp volunteers" loading="lazy" />
               </div>
             </div>
           </div>

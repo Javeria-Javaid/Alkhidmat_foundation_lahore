@@ -17,7 +17,7 @@ function AboutUs() {
             </p>
             <div className="about-hero__actions">
               <a href="#journey" className="btn btn-primary">Explore Our Journey &rarr;</a>
-              <a href="/contact" className="btn btn-outline btn-outline--white">Support Our Mission <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a>
+              <a href="/contact" className="btn btn-outline btn-outline--white">Support Our Mission</a>
             </div>
           </div>
           <div className="about-hero__single-image" style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
@@ -30,9 +30,9 @@ function AboutUs() {
       <section className="vm-section">
         <div className="container vm-container">
           <div className="vm-header">
-            <h2 className="vm-title">Our mission and vision statement</h2>
+            <h2 className="vm-title">Our Mission & Vision</h2>
             <p className="vm-subtitle">
-              This section describes the desired future position of Alkhidmat Foundation by defining our purpose, goals, and unwavering commitment to humanity.
+              Guided by compassion, dignity, and service, our mission and vision reflect our commitment to empowering communities and building a more self-reliant society.
             </p>
           </div>
 
