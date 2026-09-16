@@ -9,8 +9,8 @@ import akflSchoolsImg from '../assets/akfl_schools.jpg';
 import akFoodDistImg from '../assets/news_and_media/news_and_media_food_distribution.png';
 import akMedicalImg from '../assets/events/medical.png';
 import akWaterImg from '../assets/news_and_media/news_and_media_clean_water.png';
-import akFloodReliefImg from '../assets/events/flood_relief.png';
-import akBanoQabilImg from '../assets/events/banoqabil.png';
+import akRamzanImg from '../assets/events/ramzan.png';
+import akOrphanImg from '../assets/events/orphan.png';
 import akPlantationImg from '../assets/events/plantation.png';
 import './Campaigns.css';
 
@@ -183,8 +183,8 @@ const galleryImages = [
   { src: akMedicalImg,    span: 'normal', label: 'Free Medical Camps & Diagnostics' },
   { src: akWaterImg,      span: 'normal', label: 'Clean Water Filtration Plants', borderColor: '#06b6d4' },
   { src: akPlantationImg, span: 'wide',   label: 'Mega Plantation & Tree Drive' },
-  { src: akBanoQabilImg,  span: 'normal', label: 'Bano Qabil Youth Education' },
-  { src: akFloodReliefImg, span: 'tall',  label: 'Emergency Flood Relief Operation' },
+  { src: akOrphanImg,     span: 'normal', label: 'Orphan Care & Education Support' },
+  { src: akRamzanImg,     span: 'tall',   label: 'Ramadan Food Package Drive' },
 ];
 
 const wayToHelp = [
