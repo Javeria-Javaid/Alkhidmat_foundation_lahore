@@ -67,7 +67,7 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 
 .vol-hero__btn {
