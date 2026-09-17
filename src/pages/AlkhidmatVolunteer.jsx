@@ -474,7 +474,7 @@ function AlkhidmatVolunteer() {
       </section>
 
       {/* ── 2. WHY VOLUNTEER WITH US (HEXAGON WHEEL) ── */}
-      <HexagonImpactWheel />
+      <HexagonImpactWheel onRegister={() => setShowModal(true)} />
 
       {/* ── 3. CHOOSE YOUR AREA OF SERVICE ── */}
       <section className="section vol-services" id="services-section">
