@@ -26,7 +26,6 @@ const navItems = [
       { label: 'Donate Now', href: '/donate' },
     ],
   },
-  { label: 'News & Media', href: '/news-media' },
   { label: 'Contact Us', href: '/contact' },
 ];
 

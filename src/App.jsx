@@ -20,7 +20,6 @@ const EventsCommunityActivities = lazy(() => import('./pages/EventsCommunityActi
 const AlkhidmatVolunteer = lazy(() => import('./pages/AlkhidmatVolunteer'));
 const WaysToDonate = lazy(() => import('./pages/WaysToDonate'));
 const Campaigns = lazy(() => import('./pages/Campaigns'));
-const NewsAndMedia = lazy(() => import('./pages/NewsAndMedia'));
 
 // A simple loading fallback
 const PageLoader = () => (
@@ -51,7 +50,6 @@ function App() {
           <Route path="/alkhidmat-volunteer" element={<AlkhidmatVolunteer />} />
           <Route path="/ways-to-donate" element={<WaysToDonate />} />
           <Route path="/campaigns" element={<Campaigns />} />
-          <Route path="/news-media" element={<NewsAndMedia />} />
         </Routes>
       </Suspense>
       <Footer />

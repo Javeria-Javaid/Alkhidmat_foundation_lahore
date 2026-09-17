@@ -108,14 +108,6 @@ export default function WaysToDonate() {
       <section className="wtd-hero-section">
         <div className="wtd-hero-overlay"></div>
         <div className="container wtd-hero-inner">
-          <div className="wtd-breadcrumb">
-            <a href="/">Home</a> / <span className="active">Ways to Donate</span>
-          </div>
-
-          <span className="wtd-hero-badge">
-            <Sparkles size={14} className="badge-icon" /> Ways to Donate
-          </span>
-
           <h1 className="wtd-hero-title">
             Choose the Best Way to <br />Make an Impact
           </h1>
@@ -130,44 +122,12 @@ export default function WaysToDonate() {
               Explore Donation Methods
             </button>
           </div>
-
-          <div className="wtd-trust-badges-grid">
-            <div className="wtd-trust-badge">
-              <ShieldCheck className="trust-icon" size={20} />
-              <div className="trust-text">
-                <h4>Secure Donations</h4>
-                <p>Fully encrypted gateways</p>
-              </div>
-            </div>
-            <div className="wtd-trust-badge">
-              <Award className="trust-icon" size={20} />
-              <div className="trust-text">
-                <h4>Trusted Since 1990</h4>
-                <p>35+ Years of transparency</p>
-              </div>
-            </div>
-            <div className="wtd-trust-badge">
-              <Heart className="trust-icon" size={20} />
-              <div className="trust-text">
-                <h4>Zakat Eligible</h4>
-                <p>Shariah compliant distribution</p>
-              </div>
-            </div>
-            <div className="wtd-trust-badge">
-              <Users className="trust-icon" size={20} />
-              <div className="trust-text">
-                <h4>Millions of Lives Impacted</h4>
-                <p>Across Pakistan & globally</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* 2. QUICK DONATION METHODS */}
       <section id="quick-methods" className="wtd-quick-methods-section section">
         <div className="container text-center">
-          <span className="section-tag">Quick Access</span>
           <h2 className="section-title">Quick Donation Methods</h2>
           <p className="section-subtitle">
             Click on any method below to view detailed transfer instructions and start making a difference immediately.
@@ -231,41 +191,10 @@ export default function WaysToDonate() {
         </div>
       </section>
 
-      {/* 3. WHY DONATE WITH ALKHIDMAT */}
-      <section className="wtd-why-section section bg-light">
-        <div className="container text-center">
-          <span className="section-tag">Our Impact</span>
-          <h2 className="section-title">Why Donate With Alkhidmat</h2>
-          <p className="section-subtitle">
-            Alkhidmat Foundation Pakistan is one of the nation's leading, non-profit organizations dedicated to humanitarian services.
-          </p>
-
-          <div className="wtd-stats-grid">
-            <div className="wtd-stat-card">
-              <h3>35+ Years</h3>
-              <p>of Dedicated Service</p>
-            </div>
-            <div className="wtd-stat-card">
-              <h3>2M+ Lives</h3>
-              <p>Impacted Annually</p>
-            </div>
-            <div className="wtd-stat-card">
-              <h3>Nationwide</h3>
-              <p>Volunteers & Disaster Network</p>
-            </div>
-            <div className="wtd-stat-card">
-              <h3>Emergency</h3>
-              <p>First Responder Capabilities</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 4. FEATURED DONATION OPTIONS */}
       <section id="featured-options" className="wtd-featured-section section">
         <div className="container">
           <div className="text-center">
-            <span className="section-tag">Featured Methods</span>
             <h2 className="section-title">Featured Donation Options</h2>
             <p className="section-subtitle">
               Sponsor our core relief and development campaigns through these popular avenues.
@@ -324,7 +253,6 @@ export default function WaysToDonate() {
       <section id="online-donation" className="wtd-online-section section bg-light">
         <div className="container">
           <div className="text-center">
-            <span className="section-tag">Instant Giving</span>
             <h2 className="section-title">Online Donation Methods</h2>
             <p className="section-subtitle">
               Fast, simple, and secured with 256-bit SSL encryption.
@@ -426,7 +354,6 @@ export default function WaysToDonate() {
       <section id="bank-transfer" className="wtd-bank-section section">
         <div className="container">
           <div className="text-center">
-            <span className="section-tag">Direct Transfer</span>
             <h2 className="section-title">Bank Transfer</h2>
             <p className="section-subtitle">
               Make transfers directly into our bank accounts. Use the copy button next to numbers for quick clipboard copy.

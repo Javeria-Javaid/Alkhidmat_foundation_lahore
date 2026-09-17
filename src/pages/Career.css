@@ -427,14 +427,52 @@
    5. Open Positions
    ========================================================================== */
 .career-jobs {
-  padding: 6rem 0;
+  padding: 5rem 0;
+  background-color: #f8fafc;
 }
 
 .career-jobs h2 {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-blue, #1e3a8a);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.career-empty-state {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  padding: 3.5rem 2rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.career-empty-state__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: var(--primary-blue, #1e3a8a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.career-empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue, #1e3a8a);
+  margin-bottom: 0.75rem;
+}
+
+.career-empty-state p {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 .career-jobs__table-wrap {
