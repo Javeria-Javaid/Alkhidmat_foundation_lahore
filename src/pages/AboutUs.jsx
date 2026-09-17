@@ -98,7 +98,6 @@ function AboutUs() {
                 <strong>Dr. Hafiz Muhammad Saad</strong>
                 <span>President, Alkhidmat Foundation Pakistan</span>
               </div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Signature_placeholder.svg" alt="Signature" style={{height: '40px', opacity: 0.5}} />
             </div>
           </div>
         </div>
