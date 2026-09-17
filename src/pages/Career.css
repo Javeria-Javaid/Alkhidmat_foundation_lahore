@@ -67,7 +67,7 @@
 }
 
 .career-hero__content {
-  max-width: 600px;
+  max-width: 680px;
 }
 
 .career-hero__content h1 {
@@ -564,16 +564,34 @@
   align-items: center;
   gap: 2rem;
   z-index: 2;
+  flex: 1;
+  min-width: 0;
 }
 
 .career-cta__icon {
-  background: rgba(255, 255, 255, 0.1);
-  width: 80px;
-  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  width: 76px;
+  height: 76px;
+  min-width: 76px;
+  min-height: 76px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: #ffffff;
+}
+
+.career-cta__icon svg {
+  flex-shrink: 0;
+}
+
+.career-cta__text {
+  flex: 1;
+  min-width: 0;
 }
 
 .career-cta__text h2 {
@@ -583,15 +601,17 @@
 }
 
 .career-cta__text p {
-  font-size: 1.125rem;
-  opacity: 0.9;
+  font-size: 1.05rem;
+  opacity: 0.92;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .career-cta__right {
   z-index: 2;
   position: relative;
+  flex-shrink: 0;
+  margin-left: 2rem;
 }
 
 .career-cta__btn {
@@ -608,6 +628,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
 }
 .career-cta__btn:hover {
   transform: translateY(-2px);
