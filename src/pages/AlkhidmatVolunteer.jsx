@@ -20,34 +20,56 @@ const serviceAreas = [
   {
     id: 1,
     title: 'Healthcare Camps',
+    desc: 'Support medical camps through patient guidance, registration, awareness activities, and on-ground coordination.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
+    contributions: [
+      'Patient registration, reception, and queue guidance',
+      'Assisting doctors and medical teams with on-site logistics',
+      'Distributing basic health, hygiene, and wellness awareness brochures',
+      'Providing dedicated assistance to elderly and differently-abled attendees',
+    ],
   },
   {
     id: 2,
     title: 'Education Programs',
+    desc: 'Help students learn and grow through teaching support, mentoring, educational activities, and community outreach.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
       </svg>
     ),
+    contributions: [
+      'Tutoring, mentoring, and academic support for deserving students',
+      'Conducting creative learning sessions and skill workshops',
+      'Organizing co-curricular activities and educational events',
+      'Assisting in community outreach and school enrollment campaigns',
+    ],
   },
   {
     id: 3,
     title: 'Food Distribution',
+    desc: 'Assist teams in preparing, organizing, and distributing food packages to families and communities in need.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
     ),
+    contributions: [
+      'Assembling, packaging, and sorting ration packages and meal boxes',
+      'Managing distribution counters and ensuring smooth on-site coordination',
+      'Verifying beneficiary tokens with dignity and transparency',
+      'Delivering essential nutrition packs directly to deserving households',
+    ],
   },
   {
     id: 4,
     title: 'Plantation Drives',
+    desc: 'Take part in plantation campaigns, environmental awareness activities, and community-led sustainability initiatives.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22v-9" />
@@ -55,19 +77,33 @@ const serviceAreas = [
         <path d="M12 13a7 7 0 0 1 7-7c0 4-3 7-7 7z" />
       </svg>
     ),
+    contributions: [
+      'Planting saplings and trees across parks, institutions, and green belts',
+      'Spreading awareness about urban forestry and environmental conservation',
+      'Distributing plants to schools, colleges, and local residents',
+      'Assisting in initial watering and maintenance of newly planted areas',
+    ],
   },
   {
     id: 5,
     title: 'Emergency Relief',
+    desc: 'Support humanitarian response through relief packing, distribution, field coordination, and community assistance.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
       </svg>
     ),
+    contributions: [
+      'Sorting and packing emergency food hampers, hygiene kits, and blankets',
+      'Assisting emergency operations centers and on-ground logistics teams',
+      'Helping coordinate rapid aid dispatch to disaster-affected zones',
+      'Providing direct support and comfort to displaced community members',
+    ],
   },
   {
     id: 6,
     title: 'Community Welfare',
+    desc: 'Contribute to community initiatives, outreach activities, welfare campaigns, and support for vulnerable families.',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -76,6 +112,12 @@ const serviceAreas = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
+    contributions: [
+      'Supporting seasonal charity, winter relief, and welfare drives',
+      'Visiting orphan homes, senior centers, and community facilities',
+      'Conducting field visits and assisting in identifying grassroots needs',
+      'Facilitating local self-help and community engagement workshops',
+    ],
   },
 ];
 
@@ -348,6 +390,7 @@ function AlkhidmatVolunteer() {
   const [openFaq, setOpenFaq] = useState(null);
   const [activeStory, setActiveStory] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -370,6 +413,25 @@ function AlkhidmatVolunteer() {
       servicesRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
+
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setShowModal(false);
+        setSelectedService(null);
+      }
+    };
+    if (showModal || selectedService) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [showModal, selectedService]);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -464,22 +526,30 @@ function AlkhidmatVolunteer() {
 
             <div className="vol-services__grid" ref={servicesRef}>
               {serviceAreas.map((area) => (
-                <div key={area.id} className="vol-service-card">
+                <div
+                  key={area.id}
+                  className="vol-service-card"
+                  onClick={() => setSelectedService(area)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setSelectedService(area);
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Explore ${area.title}`}
+                >
                   <div className="vol-service-card__icon">{area.icon}</div>
                   <h3 className="vol-service-card__title">{area.title}</h3>
-                  <button
-                    className="vol-service-card__btn"
-                    onClick={() => {
-                      setFormData((prev) => ({ ...prev, serviceArea: area.title }));
-                      setShowModal(true);
-                    }}
-                    aria-label={`Register for ${area.title}`}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <p className="vol-service-card__desc">{area.desc}</p>
+                  <div className="vol-service-card__cta">
+                    <span>Explore Opportunity</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12" />
                       <polyline points="12 5 19 12 12 19" />
                     </svg>
-                  </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -744,6 +814,76 @@ function AlkhidmatVolunteer() {
                 </form>
               </>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* ── 12. SERVICE AREA DETAIL MODAL ── */}
+      {selectedService && (
+        <div className="vol-modal-overlay" onClick={() => setSelectedService(null)}>
+          <div
+            className="vol-modal vol-service-modal"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="vol-service-modal-title"
+          >
+            <button
+              type="button"
+              className="vol-modal__close"
+              onClick={() => setSelectedService(null)}
+              aria-label="Close dialog"
+            >
+              &times;
+            </button>
+
+            <div className="vol-service-modal__header">
+              <div className="vol-service-modal__icon">
+                {selectedService.icon}
+              </div>
+              <div>
+                <span className="vol-service-modal__badge">Area of Service</span>
+                <h3 id="vol-service-modal-title" className="vol-service-modal__title">
+                  {selectedService.title}
+                </h3>
+              </div>
+            </div>
+
+            <div className="vol-service-modal__body">
+              <p className="vol-service-modal__intro">
+                {selectedService.desc}
+              </p>
+
+              <div className="vol-service-modal__section">
+                <h4 className="vol-service-modal__subtitle">How You Can Contribute</h4>
+                <ul className="vol-service-modal__list">
+                  {selectedService.contributions.map((activity, idx) => (
+                    <li key={idx}>
+                      <span className="vol-service-modal__check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      <span>{activity}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="vol-service-modal__footer">
+              <button
+                type="button"
+                className="btn btn-primary vol-service-modal__apply-btn"
+                onClick={() => {
+                  setFormData((prev) => ({ ...prev, serviceArea: selectedService.title }));
+                  setSelectedService(null);
+                  setShowModal(true);
+                }}
+              >
+                Apply as a Volunteer for {selectedService.title} &rarr;
+              </button>
+            </div>
           </div>
         </div>
       )}
