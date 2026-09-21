@@ -336,38 +336,6 @@
   transform: translateX(4px);
 }
 
-/* Subtle Trust Row Underneath */
-.wtd-trust-row {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  padding: 10px 22px;
-  background: #f8fafc;
-  border-radius: 999px;
-  border: 1px solid #e2e8f0;
-  margin-top: 8px;
-}
-
-.wtd-trust-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #475569;
-}
-
-.wtd-trust-item svg {
-  color: var(--wtd-blue);
-}
-
-.wtd-trust-separator {
-  color: #cbd5e1;
-  font-size: 0.85rem;
-  user-select: none;
-}
-
 /* Ways to Donate Detail Modal */
 .wtd-modal-overlay {
   position: fixed;
@@ -1189,16 +1157,6 @@
   .wtd-quick-card {
     padding: 22px 18px;
     min-height: auto;
-  }
-  .wtd-trust-row {
-    flex-direction: column;
-    gap: 8px;
-    border-radius: 14px;
-    padding: 12px 16px;
-    width: 100%;
-  }
-  .wtd-trust-separator {
-    display: none;
   }
   .wtd-modal {
     padding: 24px 18px;

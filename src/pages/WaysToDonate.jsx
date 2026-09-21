@@ -236,24 +236,6 @@ export default function WaysToDonate() {
               );
             })}
           </div>
-
-          {/* Subtle Trust Row */}
-          <div className="wtd-trust-row" aria-label="Donation commitments">
-            <div className="wtd-trust-item">
-              <ShieldCheck size={18} strokeWidth={2} />
-              <span>Secure Giving</span>
-            </div>
-            <span className="wtd-trust-separator" aria-hidden="true">•</span>
-            <div className="wtd-trust-item">
-              <Award size={18} strokeWidth={2} />
-              <span>Transparent Giving</span>
-            </div>
-            <span className="wtd-trust-separator" aria-hidden="true">•</span>
-            <div className="wtd-trust-item">
-              <Users size={18} strokeWidth={2} />
-              <span>Supporting Communities</span>
-            </div>
-          </div>
         </div>
       </section>
 
