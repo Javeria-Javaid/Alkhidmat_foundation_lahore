@@ -11,6 +11,9 @@ dist/
 .env
 .env.local
 .env.*.local
+server/.env
+server/.env.*
+server/dist/
 
 # UI design references (local only, not for repo)
 ui_design/
