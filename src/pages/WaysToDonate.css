@@ -652,73 +652,6 @@
   font-weight: 500;
 }
 
-/* 4. FEATURED DONATION OPTIONS */
-.wtd-featured-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-top: 48px;
-}
-
-.wtd-featured-card {
-  background: var(--white);
-  border-radius: var(--wtd-radius-card);
-  overflow: hidden;
-  box-shadow: var(--wtd-shadow-sm);
-  display: flex;
-  flex-direction: column;
-  transition: var(--wtd-transition);
-  border: 1px solid var(--gray-100);
-}
-
-.wtd-featured-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--wtd-shadow-lg);
-  border-color: rgba(2, 84, 164, 0.1);
-}
-
-.wtd-feat-img-container {
-  height: 240px;
-  overflow: hidden;
-}
-
-.wtd-feat-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--wtd-transition);
-}
-
-.wtd-featured-card:hover .wtd-feat-img-container img {
-  transform: scale(1.05);
-}
-
-.wtd-feat-content {
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.wtd-feat-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--text-dark);
-}
-
-.wtd-feat-content p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-  flex-grow: 1;
-  line-height: 1.6;
-}
-
-.wtd-feat-content .wtd-btn {
-  align-self: flex-start;
-}
-
 /* 5. ONLINE DONATION METHODS */
 .wtd-tabs-container {
   max-width: 800px;
@@ -1125,9 +1058,6 @@
   .wtd-trust-badges-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-  .wtd-featured-grid {
-    grid-template-columns: 1fr;
   }
   .wtd-payment-brands {
     grid-template-columns: repeat(2, 1fr);

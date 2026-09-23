@@ -238,65 +238,6 @@ export default function WaysToDonate() {
           </div>
         </div>
       </section>
-
-      {/* 4. FEATURED DONATION OPTIONS */}
-      <section id="featured-options" className="wtd-featured-section section">
-        <div className="container">
-          <div className="text-center">
-            <h2 className="section-title">Featured Donation Options</h2>
-            <p className="section-subtitle">
-              Sponsor our core relief and development campaigns through these popular avenues.
-            </p>
-          </div>
-
-          <div className="wtd-featured-grid">
-            <div className="wtd-featured-card">
-              <div className="wtd-feat-img-container">
-                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&auto=format&fit=crop&q=80" alt="Donate Online" />
-              </div>
-              <div className="wtd-feat-content">
-                <h3>Donate Online</h3>
-                <p>Instantly support any of our active programs via your credit/debit card or mobile wallets with complete security.</p>
-                <button onClick={() => scrollToSection('online-donation')} className="wtd-btn wtd-btn-blue wtd-btn-sm">Donate Online Now</button>
-              </div>
-            </div>
-
-            <div className="wtd-featured-card">
-              <div className="wtd-feat-img-container">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80" alt="Bank Transfer" />
-              </div>
-              <div className="wtd-feat-content">
-                <h3>Bank Transfer</h3>
-                <p>Transfer funds directly into our certified local or international bank accounts with zero processing fees.</p>
-                <button onClick={() => scrollToSection('bank-transfer')} className="wtd-btn wtd-btn-blue wtd-btn-sm">View Accounts</button>
-              </div>
-            </div>
-
-            <div className="wtd-featured-card">
-              <div className="wtd-feat-img-container">
-                <img src="https://images.unsplash.com/photo-1549194388-f61be84a6e9e?w=600&auto=format&fit=crop&q=80" alt="Home Collection" />
-              </div>
-              <div className="wtd-feat-content">
-                <h3>Home Collection</h3>
-                <p>Schedule a convenient donation collection from your home or office. Our representative will visit to collect cash or cheques.</p>
-                <button onClick={() => scrollToSection('home-collection')} className="wtd-btn wtd-btn-blue wtd-btn-sm">Request Pickup</button>
-              </div>
-            </div>
-
-            <div className="wtd-featured-card">
-              <div className="wtd-feat-img-container">
-                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80" alt="International Donations" />
-              </div>
-              <div className="wtd-feat-content">
-                <h3>International Donations</h3>
-                <p>Donors outside Pakistan can support us through our registered global offices and direct SWIFT transfers.</p>
-                <button onClick={() => scrollToSection('international-donations')} className="wtd-btn wtd-btn-blue wtd-btn-sm">International Options</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 5. ONLINE DONATION METHODS */}
       <section id="online-donation" className="wtd-online-section section bg-light">
         <div className="container">
@@ -333,17 +274,17 @@ export default function WaysToDonate() {
               {activeOnlineTab === 'card' && (
                 <div className="wtd-payment-brands">
                   <div className="wtd-brand-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="brand-logo" />
+                    <img src="/assets/payment/visa.svg" alt="Visa" className="brand-logo" />
                     <h4>Visa Card</h4>
                     <p>Secure global payments</p>
                   </div>
                   <div className="wtd-brand-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="brand-logo" />
+                    <img src="/assets/payment/mastercard.svg" alt="Mastercard" className="brand-logo" />
                     <h4>Mastercard</h4>
                     <p>International card payments</p>
                   </div>
                   <div className="wtd-brand-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/UnionPay_logo.svg" alt="UnionPay" className="brand-logo_sm" />
+                    <img src="/assets/payment/unionpay.svg" alt="UnionPay" className="brand-logo_sm" />
                     <h4>UnionPay</h4>
                     <p>Local and global cards</p>
                   </div>
@@ -373,17 +314,17 @@ export default function WaysToDonate() {
               {activeOnlineTab === 'intl' && (
                 <div className="wtd-payment-brands">
                   <div className="wtd-brand-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay" className="brand-logo" />
+                    <img src="/assets/payment/googlepay.svg" alt="Google Pay" className="brand-logo" />
                     <h4>Google Pay</h4>
                     <p>Fast checkout on Android</p>
                   </div>
                   <div className="wtd-brand-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay" className="brand-logo" />
+                    <img src="/assets/payment/applepay.svg" alt="Apple Pay" className="brand-logo" />
                     <h4>Apple Pay</h4>
                     <p>Secure checkout on iOS/Mac</p>
                   </div>
                   <div className="wtd-brand-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="brand-logo" />
+                    <img src="/assets/payment/paypal.svg" alt="PayPal" className="brand-logo" />
                     <h4>PayPal</h4>
                     <p>Overseas wallet donations</p>
                   </div>
