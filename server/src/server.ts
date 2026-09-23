@@ -14,8 +14,12 @@ let server: Server;
 
 const startServer = async () => {
   try {
-    // Attempt database connection on startup
-    await connectDatabase();
+    if (env.DATABASE_URL) {
+      await connectDatabase();
+    } else {
+      logger.info('💡 Running in Database-Free Dispatcher Mode (Option 1: Lean NGO Architecture)');
+      logger.info(`📧 Notification Dispatch Mode: ${env.DISPATCH_MODE}`);
+    }
 
     server = app.listen(env.PORT, () => {
       logger.info(`🚀 Alkhidmat Lahore Backend API running on port ${env.PORT} [${env.NODE_ENV}]`);
@@ -33,7 +37,9 @@ const handleShutdown = async (signal: string) => {
   if (server) {
     server.close(async () => {
       logger.info('HTTP server closed.');
-      await disconnectDatabase();
+      if (env.DATABASE_URL) {
+        await disconnectDatabase();
+      }
       process.exit(0);
     });
 
@@ -43,7 +49,6 @@ const handleShutdown = async (signal: string) => {
       process.exit(1);
     }, 10000);
   } else {
-    await disconnectDatabase();
     process.exit(0);
   }
 };

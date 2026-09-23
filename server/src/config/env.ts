@@ -17,9 +17,28 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   PORT: z.coerce.number().int().positive().default(5000),
   FRONTEND_URL: z.string().url().default('http://localhost:5173'),
-  DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
-  JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters long').default('temporary_dev_secret_key_at_least_32_characters_long_12345'),
-  JWT_EXPIRES_IN: z.string().default('7d'),
+  
+  // Optional Database URL (in case an external database is connected in future)
+  DATABASE_URL: z.string().optional(),
+
+  // Dispatcher & Notification Mode
+  DISPATCH_MODE: z.enum(['console', 'smtp', 'resend']).default('console'),
+  NOTIFICATION_EMAIL_CONTACT: z.string().email().default('info@alkhidmat.com.pk'),
+  NOTIFICATION_EMAIL_VOLUNTEER: z.string().email().default('volunteer@alkhidmat.com.pk'),
+  NOTIFICATION_EMAIL_COLLECTION: z.string().email().default('collections@alkhidmat.com.pk'),
+  NOTIFICATION_EMAIL_HR: z.string().email().default('hr@alkhidmat.com.pk'),
+
+  // Optional SMTP Settings (when DISPATCH_MODE=smtp)
+  SMTP_HOST: z.string().optional(),
+  SMTP_PORT: z.coerce.number().optional(),
+  SMTP_USER: z.string().optional(),
+  SMTP_PASS: z.string().optional(),
+  SMTP_FROM: z.string().optional(),
+
+  // Optional Resend API Key (when DISPATCH_MODE=resend)
+  RESEND_API_KEY: z.string().optional(),
+
+  // Rate Limiting
   RATE_LIMIT_WINDOW_MS: z.coerce.number().default(15 * 60 * 1000),
   RATE_LIMIT_MAX: z.coerce.number().default(100),
 });

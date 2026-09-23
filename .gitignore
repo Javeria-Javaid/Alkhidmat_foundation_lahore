@@ -13,7 +13,11 @@ dist/
 .env.*.local
 server/.env
 server/.env.*
+!server/.env.example
 server/dist/
+
+# Scratch scripts
+*.py
 
 # UI design references (local only, not for repo)
 ui_design/

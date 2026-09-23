@@ -2,17 +2,16 @@
 // ALKHIDMAT FOUNDATION LAHORE - HEALTH MONITORING SERVICE
 // ==============================================================================
 
-import { prisma } from '../config/database.js';
+import { env } from '../config/env.js';
 
 export interface HealthCheckResult {
   status: 'healthy' | 'degraded';
   timestamp: string;
   uptimeSeconds: number;
   environment: string;
-  database: {
-    status: 'connected' | 'disconnected';
-    latencyMs?: number;
-    error?: string;
+  architecture: {
+    mode: 'database-free-dispatcher' | 'database-connected';
+    dispatcherMode: string;
   };
   system: {
     memoryUsageMB: number;
@@ -22,33 +21,17 @@ export interface HealthCheckResult {
 
 export class HealthService {
   public async checkHealth(): Promise<HealthCheckResult> {
-    const startTime = Date.now();
-    let dbStatus: 'connected' | 'disconnected' = 'disconnected';
-    let dbLatency: number | undefined;
-    let dbError: string | undefined;
-
-    try {
-      // Lightweight query to verify database liveness
-      await prisma.$queryRaw`SELECT 1`;
-      dbLatency = Date.now() - startTime;
-      dbStatus = 'connected';
-    } catch (err: unknown) {
-      dbStatus = 'disconnected';
-      dbError = err instanceof Error ? err.message : 'Database ping failed';
-    }
-
     const memoryUsage = process.memoryUsage();
     const memoryUsageMB = Math.round((memoryUsage.heapUsed / 1024 / 1024) * 100) / 100;
 
     return {
-      status: dbStatus === 'connected' ? 'healthy' : 'degraded',
+      status: 'healthy',
       timestamp: new Date().toISOString(),
       uptimeSeconds: Math.floor(process.uptime()),
-      environment: process.env.NODE_ENV || 'development',
-      database: {
-        status: dbStatus,
-        latencyMs: dbLatency,
-        error: dbError,
+      environment: env.NODE_ENV,
+      architecture: {
+        mode: env.DATABASE_URL ? 'database-connected' : 'database-free-dispatcher',
+        dispatcherMode: env.DISPATCH_MODE,
       },
       system: {
         memoryUsageMB,
