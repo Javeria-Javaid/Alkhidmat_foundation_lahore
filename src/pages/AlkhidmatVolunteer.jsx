@@ -124,7 +124,7 @@ const serviceAreas = [
 const faqData = [
   {
     q: 'How can I become a volunteer?',
-    a: 'You can register online by clicking the "Register as Volunteer" button, filling out the simple application form, and attending our orientation session.',
+    a: 'You can register online directly through the official Alkhidmat Volunteer Management System (volunteer.alkhidmat.org), complete your profile, and join local initiatives and orientations.',
   },
   {
     q: 'Is volunteering free?',
@@ -367,9 +367,10 @@ const HexagonImpactWheel = ({ onRegister }) => {
             {/* 8. CTA underneath right-side diagram */}
             <div className="vol-hex-cta">
               <p className="vol-hex-cta__text">Ready to make a difference?</p>
-              <button 
-                type="button" 
-                onClick={onRegister} 
+              <a 
+                href="https://volunteer.alkhidmat.org/public/volunteer-v2" 
+                target="_blank" 
+                rel="noopener noreferrer" 
                 className="btn btn-primary vol-hex-cta__btn"
               >
                 Become a Volunteer
@@ -377,7 +378,7 @@ const HexagonImpactWheel = ({ onRegister }) => {
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -469,13 +470,18 @@ function AlkhidmatVolunteer() {
               Join thousands of volunteers working together to serve humanity through compassion, relief, education, healthcare, and community development.
             </p>
             <div className="vol-hero__actions">
-              <button onClick={() => setShowModal(true)} className="btn btn-primary vol-hero__btn">
+              <a 
+                href="https://volunteer.alkhidmat.org/public/volunteer-v2" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary vol-hero__btn"
+              >
                 Become a Volunteer
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </button>
+              </a>
               <a href="#services-section" className="btn btn-outline btn-outline--white vol-hero__btn">
                 Explore Opportunities
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -701,9 +707,14 @@ function AlkhidmatVolunteer() {
             </div>
 
             <div className="vol-bottom-cta__right">
-              <button onClick={() => setShowModal(true)} className="btn btn-white vol-bottom-cta__btn">
-                Register as Volunteer &rarr;
-              </button>
+              <a 
+                href="https://volunteer.alkhidmat.org/public/volunteer-v2" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-white vol-bottom-cta__btn"
+              >
+                Register on Volunteer Portal &rarr;
+              </a>
               <Link to="/contact" className="btn btn-outline-white vol-bottom-cta__btn">
                 Contact Us &rarr;
               </Link>
@@ -872,17 +883,15 @@ function AlkhidmatVolunteer() {
             </div>
 
             <div className="vol-service-modal__footer">
-              <button
-                type="button"
+              <a
+                href="https://volunteer.alkhidmat.org/public/volunteer-v2"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary vol-service-modal__apply-btn"
-                onClick={() => {
-                  setFormData((prev) => ({ ...prev, serviceArea: selectedService.title }));
-                  setSelectedService(null);
-                  setShowModal(true);
-                }}
+                style={{ textAlign: 'center', textDecoration: 'none' }}
               >
-                Apply as a Volunteer for {selectedService.title} &rarr;
-              </button>
+                Register on Volunteer Portal &rarr;
+              </a>
             </div>
           </div>
         </div>

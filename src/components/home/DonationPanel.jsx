@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './DonationPanel.css';
 
 function DonationPanel({ activeCampaign, campaigns, onCampaignChange }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const [formError, setFormError] = useState('');
   const [formSuccess, setFormSuccess] = useState('');
@@ -56,8 +58,11 @@ function DonationPanel({ activeCampaign, campaigns, onCampaignChange }) {
       return;
     }
 
-    setFormSuccess('Thank you for your generous donation. Redirecting to secure payment gateway...');
+    setFormSuccess('Thank you for choosing to support Alkhidmat! Redirecting to official donation accounts and instructions...');
     setFormData({ name: '', email: '', phone: '' });
+    setTimeout(() => {
+      navigate('/ways-to-donate');
+    }, 1500);
   };
 
   return (

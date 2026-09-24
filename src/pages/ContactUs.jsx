@@ -11,37 +11,79 @@ function ContactUs() {
     message: ''
   });
   const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [serverError, setServerError] = useState('');
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.name.trim() || formData.name.length < 3) {
-      newErrors.name = 'Name must be at least 3 characters.';
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters.';
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!emailRegex.test(formData.email.trim())) {
       newErrors.email = 'Please enter a valid email address.';
     }
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required.';
+    if (!formData.subject.trim() || formData.subject.trim().length < 3) {
+      newErrors.subject = 'Subject must be at least 3 characters.';
     }
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required.';
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters.';
     }
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setServerError('');
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setSubmitted(false);
-    } else {
-      setErrors({});
+      return;
+    }
+
+    setErrors({});
+    setSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          company: formData.company.trim() || undefined,
+          phone: formData.phone.trim() || undefined,
+          email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Unable to submit your message. Please try again.');
+      }
+
       setSubmitted(true);
-      // In a real scenario, this would post to an API
-      setTimeout(() => setSubmitted(false), 5000);
+      setFormData({
+        name: '',
+        company: '',
+        phone: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      setTimeout(() => setSubmitted(false), 8000);
+    } catch (err) {
+      setServerError(
+        err.message || 'Failed to send inquiry. Please check your connection or contact our Lahore office directly.'
+      );
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -50,6 +92,9 @@ function ContactUs() {
       ...formData,
       [e.target.name]: e.target.value
     });
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: '' });
+    }
   };
 
   return (
@@ -74,7 +119,7 @@ function ContactUs() {
               <div className="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
               <div>
                 <strong>Head Office</strong>
-                <p>A-207, Block 7 & 8, North Nazimabad,<br/>Karachi, Pakistan.<br/>Postal Code: 74700</p>
+                <p>Alkhidmat Markaz, 106/M Block Gulberg<br/>III Lahore, Punjab, Pakistan.</p>
               </div>
             </div>
             
@@ -82,7 +127,7 @@ function ContactUs() {
               <div className="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
               <div>
                 <strong>Email Us</strong>
-                <p><a href="mailto:info@alkhidmat.org">info@alkhidmat.org</a><br/><a href="mailto:donor.support@alkhidmat.org">donor.support@alkhidmat.org</a></p>
+                <p><a href="mailto:info@alkhidmat.com.pk">info@alkhidmat.com.pk</a><br/><a href="mailto:admin@alkhidmat.com.pk">admin@alkhidmat.com.pk</a></p>
               </div>
             </div>
             
@@ -90,7 +135,7 @@ function ContactUs() {
               <div className="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
               <div>
                 <strong>Call Us</strong>
-                <p><a href="tel:+9221111422244">+92 21 111 4 222 44</a><br/>Fax: +92 21 3660 2013</p>
+                <p><a href="tel:+923000771601">+92 300 0771601</a><br/><a href="tel:+924232300817">(042) 32300817</a></p>
               </div>
             </div>
 
@@ -109,31 +154,36 @@ function ContactUs() {
           <div className="contact-form">
             <h2>Send us a message</h2>
             {submitted && (
-              <div className="form-alert--success" style={{padding: '12px', background: '#d1fae5', color: '#065f46', borderRadius: '8px', marginBottom: '20px'}}>
-                Thank you! Your message has been sent successfully.
+              <div className="form-alert--success" style={{padding: '12px', background: '#d1fae5', color: '#065f46', borderRadius: '8px', marginBottom: '20px', fontWeight: '500'}}>
+                ✓ Thank you! Your message has been received. Our team will contact you shortly.
+              </div>
+            )}
+            {serverError && (
+              <div className="form-alert--error" style={{padding: '12px', background: '#fee2e2', color: '#991b1b', borderRadius: '8px', marginBottom: '20px', fontWeight: '500'}}>
+                ⚠ {serverError}
               </div>
             )}
             <form onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label>Name</label>
-                  <input type="text" name="name" placeholder="Your full name" value={formData.name} onChange={handleChange} />
+                  <input type="text" name="name" placeholder="Your full name" value={formData.name} onChange={handleChange} required />
                   {errors.name && <span className="error-text">{errors.name}</span>}
                 </div>
                 <div className="form-group">
-                  <label>Company</label>
-                  <input type="text" name="company" placeholder="Your company" value={formData.company} onChange={handleChange} />
+                  <label>Company / Organization</label>
+                  <input type="text" name="company" placeholder="Your company or organization" value={formData.company} onChange={handleChange} />
                 </div>
               </div>
               
               <div className="form-row">
                 <div className="form-group">
                   <label>Phone</label>
-                  <input type="tel" name="phone" placeholder="Your phone number" value={formData.phone} onChange={handleChange} />
+                  <input type="tel" name="phone" placeholder="e.g. 03001234567" value={formData.phone} onChange={handleChange} />
                 </div>
                 <div className="form-group">
                   <label>Email</label>
-                  <input type="email" name="email" placeholder="Your email address" value={formData.email} onChange={handleChange} />
+                  <input type="email" name="email" placeholder="Your email address" value={formData.email} onChange={handleChange} required />
                   {errors.email && <span className="error-text">{errors.email}</span>}
                 </div>
               </div>
@@ -150,8 +200,8 @@ function ContactUs() {
                 {errors.message && <span className="error-text">{errors.message}</span>}
               </div>
               
-              <button type="submit" className="btn btn-primary btn-submit">
-                Send Message <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              <button type="submit" className="btn btn-primary btn-submit" disabled={submitting}>
+                {submitting ? 'Sending...' : 'Send Message'} {!submitting && <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>}
               </button>
             </form>
           </div>
