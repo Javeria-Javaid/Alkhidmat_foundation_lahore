@@ -126,9 +126,6 @@ export default function WaysToDonate() {
         <div className="container">
           <div className="text-center">
             <h2 className="section-title">Online Donation Methods</h2>
-            <p className="section-subtitle">
-              Fast, simple, and secured with 256-bit SSL encryption.
-            </p>
           </div>
 
           <div className="wtd-tabs-container">
@@ -229,9 +226,6 @@ export default function WaysToDonate() {
         <div className="container">
           <div className="text-center">
             <h2 className="section-title">Bank Transfer</h2>
-            <p className="section-subtitle">
-              Make transfers directly into our bank accounts. Use the copy button next to numbers for quick clipboard copy.
-            </p>
           </div>
 
           <div className="wtd-bank-grid">
@@ -309,7 +303,7 @@ export default function WaysToDonate() {
                   <span>Email: <strong>info@alkhidmat.org</strong></span>
                 </div>
               </div>
-              <a href="/donate" className="wtd-btn wtd-btn-blue">Request Collection</a>
+              <a href="/contact" className="wtd-btn wtd-btn-blue">Request Collection</a>
             </div>
           </div>
         </div>
@@ -319,11 +313,7 @@ export default function WaysToDonate() {
       <section id="international-donations" className="wtd-intl-section section">
         <div className="container">
           <div className="text-center">
-            <span className="section-tag">Global Supporters</span>
             <h2 className="section-title">International Donations</h2>
-            <p className="section-subtitle">
-              Supporting Alkhidmat from outside Pakistan is simple and secure.
-            </p>
           </div>
 
           <div className="wtd-intl-grid">
@@ -356,11 +346,7 @@ export default function WaysToDonate() {
       <section className="wtd-faq-section section bg-light">
         <div className="container">
           <div className="text-center">
-            <span className="section-tag">Common Inquiries</span>
             <h2 className="section-title">Donation FAQ</h2>
-            <p className="section-subtitle">
-              Find answers to commonly asked questions about Alkhidmat donations.
-            </p>
           </div>
 
           <div className="wtd-faq-list">
