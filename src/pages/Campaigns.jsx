@@ -188,7 +188,7 @@ const galleryImages = [
 ];
 
 const wayToHelp = [
-  { icon: '💙', title: 'Donate',           desc: 'Every rupee funds critical programs that reach the most vulnerable.',   cta: 'Donate Now',  href: '/donate', color: '#0254a4' },
+  { icon: '💙', title: 'Donate',           desc: 'Every rupee funds critical programs that reach the most vulnerable.',   cta: 'Donate Now',  href: '/ways-to-donate', color: '#0254a4' },
   { icon: '🙌', title: 'Volunteer',        desc: 'Give your time and skills to make a difference on the ground.',         cta: 'Join Us',     href: '#',       color: '#10b981' },
   { icon: '🤝', title: 'Partner With Us',  desc: 'Collaborate to scale impact through corporate partnerships.',           cta: 'Partner Now', href: '#',       color: '#f59e0b' },
   { icon: '📢', title: 'Spread the Word',  desc: 'Share campaigns on social media and help us reach more people.',        cta: 'Share Now',   href: '#',       color: '#8b5cf6' },

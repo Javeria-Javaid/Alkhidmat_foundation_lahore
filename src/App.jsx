@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import './App.css';
@@ -14,7 +14,6 @@ const EducationProgram = lazy(() => import('./pages/EducationProgram'));
 const CommunityServices = lazy(() => import('./pages/CommunityServices'));
 const Healthcare = lazy(() => import('./pages/Healthcare'));
 const Mawakhat = lazy(() => import('./pages/Mawakhat'));
-const Donate = lazy(() => import('./pages/Donate'));
 const Career = lazy(() => import('./pages/Career'));
 const EventsCommunityActivities = lazy(() => import('./pages/EventsCommunityActivities'));
 const AlkhidmatVolunteer = lazy(() => import('./pages/AlkhidmatVolunteer'));
@@ -44,7 +43,7 @@ function App() {
           <Route path="/programs/community-services" element={<CommunityServices />} />
           <Route path="/programs/healthcare" element={<Healthcare />} />
           <Route path="/programs/mawakhat" element={<Mawakhat />} />
-          <Route path="/donate" element={<Donate />} />
+          <Route path="/donate" element={<Navigate to="/ways-to-donate" replace />} />
           <Route path="/career" element={<Career />} />
           <Route path="/events-community-activities" element={<EventsCommunityActivities />} />
           <Route path="/alkhidmat-volunteer" element={<AlkhidmatVolunteer />} />

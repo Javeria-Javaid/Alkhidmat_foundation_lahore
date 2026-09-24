@@ -23,7 +23,6 @@ const navItems = [
       { label: 'Ways to Donate', href: '/ways-to-donate' },
       { label: 'Careers', href: '/career' },
       { label: 'Events & Community Activities', href: '/events-community-activities' },
-      { label: 'Donate Now', href: '/donate' },
     ],
   },
   { label: 'Contact Us', href: '/contact' },
@@ -156,7 +155,7 @@ function Header() {
           </ul>
 
           <div className="header__actions">
-            <Link to="/donate" className="btn btn-primary header__donate-btn">
+            <Link to="/ways-to-donate" className="btn btn-primary header__donate-btn">
               Donate Now
             </Link>
             <Link to="/contact" className="btn btn-outline header__appointment-btn">
@@ -217,7 +216,7 @@ function Header() {
             ))}
           </ul>
           <div className="header__mobile-actions">
-            <Link to="/donate" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setMobileMenuOpen(false)}>
+            <Link to="/ways-to-donate" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setMobileMenuOpen(false)}>
               Donate Now
             </Link>
             <Link to="/contact" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setMobileMenuOpen(false)}>

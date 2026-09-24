@@ -111,9 +111,11 @@ export default function WaysToDonate() {
           </p>
 
           <div className="wtd-hero-ctas">
-            <a href="/donate" className="wtd-btn wtd-btn-yellow">Donate Now</a>
-            <button onClick={() => scrollToSection('online-donation')} className="wtd-btn wtd-btn-outline-white">
-              Explore Donation Methods
+            <button onClick={() => scrollToSection('online-donation')} className="wtd-btn wtd-btn-yellow">
+              Donate Now
+            </button>
+            <button onClick={() => scrollToSection('bank-transfer')} className="wtd-btn wtd-btn-outline-white">
+              Bank Transfers
             </button>
           </div>
         </div>
@@ -214,7 +216,9 @@ export default function WaysToDonate() {
             </div>
 
             <div className="text-center mt-3">
-              <a href="/donate" className="wtd-btn wtd-btn-blue">Proceed to Donate Online</a>
+              <button onClick={() => scrollToSection('bank-transfer')} className="wtd-btn wtd-btn-blue">
+                View Bank Transfer Accounts &rarr;
+              </button>
             </div>
           </div>
         </div>
@@ -386,7 +390,9 @@ export default function WaysToDonate() {
             Millions of people depend on Alkhidmat Foundation's services every day. With your help, we can reach even more lives and give them hope for a brighter future.
           </p>
           <div className="wtd-cta-btns">
-            <a href="/donate" className="wtd-btn wtd-btn-yellow">Donate Now</a>
+            <button onClick={() => scrollToSection('online-donation')} className="wtd-btn wtd-btn-yellow">
+              Donate Now
+            </button>
             <a href="/contact" className="wtd-btn wtd-btn-outline-white">Contact Us</a>
           </div>
         </div>
