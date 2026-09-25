@@ -302,7 +302,7 @@ export default function Campaigns() {
               and empowerment to communities across Pakistan. Join hands with us to make a lasting impact.
             </p>
             <div className="camp-hero__ctas">
-              <Link to="/donate" className="camp-btn camp-btn--primary">
+              <Link to="/ways-to-donate" className="camp-btn camp-btn--primary">
                 Donate Now
               </Link>
               <a href="#active" className="camp-btn camp-btn--outline-white">
@@ -355,7 +355,7 @@ export default function Campaigns() {
                   <h4 className="camp-active-card__title">{c.title}</h4>
                   <p className="camp-active-card__desc">{c.desc}</p>
                   
-                  <Link to="/donate" className="camp-btn camp-btn--primary camp-btn--sm camp-btn--full">Support Campaign →</Link>
+                  <Link to="/ways-to-donate" className="camp-btn camp-btn--primary camp-btn--sm camp-btn--full">Support Campaign →</Link>
                 </div>
               </div>
             ))}

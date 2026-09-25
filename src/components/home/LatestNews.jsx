@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './LatestNews.css';
 import newsFlood1 from '../../assets/news_and_media/news_and_media_flood1.png';
 import newsDoctor from '../../assets/news_and_media/news_and_media_doctor.png';
@@ -125,10 +126,10 @@ function LatestNews() {
               </div>
             </div>
             
-            <a href="#" className="btn btn-outline btn-full">
+            <Link to="/events-community-activities" className="btn btn-outline btn-full">
               View All Updates
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

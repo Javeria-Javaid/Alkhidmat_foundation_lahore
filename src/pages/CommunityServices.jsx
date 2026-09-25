@@ -25,7 +25,7 @@ function CommunityServices() {
         titleHighlight="Rebuilding Lives."
         description="Building stronger communities through humanitarian support, healthcare, education and social welfare programs that improve lives across Pakistan."
         primaryCtaText="Donate for Community Services"
-        primaryCtaHref="#donate-section"
+        primaryCtaHref="/ways-to-donate"
         secondaryCtaText="Our Programs"
         secondaryCtaHref="#programs-heading"
         heroImage={heroImg}

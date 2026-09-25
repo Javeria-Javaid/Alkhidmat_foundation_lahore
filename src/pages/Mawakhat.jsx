@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import './Mawakhat.css';
 import ProgramHero from '../components/shared/ProgramHero';
@@ -123,9 +124,9 @@ function Mawakhat() {
                 ))}
               </div>
 
-              <button type="button" className="mw-donate-panel__submit-btn">
+              <Link to="/ways-to-donate" className="mw-donate-panel__submit-btn" style={{ display: "inline-block", textAlign: "center", textDecoration: "none" }}>
                 Donate Now for Mawakhat
-              </button>
+              </Link>
             </div>
           </div>
         </div>

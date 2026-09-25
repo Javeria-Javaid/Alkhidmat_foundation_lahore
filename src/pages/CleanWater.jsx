@@ -19,7 +19,7 @@ function CleanWater() {
         description="Ensuring access to clean and safe drinking water for every community. We build sustainable water filtration plants, hand pumps, and solar wells that bring health, hope, and dignity to thousands."
         primaryCtaText="Donate for Clean Water"
         secondaryCtaText="Our Water Projects"
-        primaryCtaHref="#donate-section"
+        primaryCtaHref="/ways-to-donate"
         secondaryCtaHref="#about-clean-water"
         heroImage={waterImg}
         widgetTitle="Provide Clean Water"
@@ -33,7 +33,7 @@ function CleanWater() {
         stats={cleanWaterStats.slice(0, 5).map(s => ({ icon: s.icon, value: s.value, label: s.label }))}
       />
       {/* ── 3. ABOUT SECTION ── */}
-      <section className="cw-about section" aria-labelledby="about-heading">
+      <section id="about-clean-water" className="cw-about section" aria-labelledby="about-heading">
         <div className="container cw-about__inner">
           <div className="cw-about__content">
             <h2 id="about-heading">

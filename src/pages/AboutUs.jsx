@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './AboutUs.css';
 
@@ -16,8 +17,8 @@ function AboutUs() {
               For over three decades, Alkhidmat Foundation Pakistan has been working relentlessly to uplift lives and build stronger, more resilient communities across Pakistan.
             </p>
             <div className="about-hero__actions">
-              <a href="#journey" className="btn btn-primary">Explore Our Journey &rarr;</a>
-              <a href="/contact" className="btn btn-outline btn-outline--white">Support Our Mission</a>
+              <a href="#mission-vision" className="btn btn-primary">Our Mission & Vision &rarr;</a>
+              <Link to="/contact" className="btn btn-outline btn-outline--white">Support Our Mission</Link>
             </div>
           </div>
           <div className="about-hero__single-image" style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
@@ -27,7 +28,7 @@ function AboutUs() {
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="vm-section">
+      <section id="mission-vision" className="vm-section">
         <div className="container vm-container">
           <div className="vm-header">
             <h2 className="vm-title">Our Mission & Vision</h2>

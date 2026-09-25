@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ProgramHero.css';
 
 function ProgramHero({
@@ -8,7 +9,7 @@ function ProgramHero({
   description,
   primaryCtaText,
   secondaryCtaText = 'How You Can Help',
-  primaryCtaHref = '#donate-section',
+  primaryCtaHref = '/ways-to-donate',
   secondaryCtaHref = '#about',
   heroImage,
   widgetTitle = 'Support Our Cause',
@@ -19,6 +20,44 @@ function ProgramHero({
   const [selectedWidgetAmount, setSelectedWidgetAmount] = useState('PKR 1,000');
 
   const defaultPrimaryCtaText = primaryCtaText || `Donate for ${badge || 'Program'}`;
+
+  const renderPrimaryBtn = (className) => {
+    if (primaryCtaHref && primaryCtaHref.startsWith('#')) {
+      return (
+        <a href={primaryCtaHref} className={className}>
+          {defaultPrimaryCtaText}
+        </a>
+      );
+    }
+    return (
+      <Link to={primaryCtaHref || '/ways-to-donate'} className={className}>
+        {defaultPrimaryCtaText}
+      </Link>
+    );
+  };
+
+  const renderSecondaryBtn = () => {
+    if (secondaryCtaHref && secondaryCtaHref.startsWith('#')) {
+      return (
+        <a href={secondaryCtaHref} className="btn mw-hero__btn-outline">
+          {secondaryCtaText}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      );
+    }
+    return (
+      <Link to={secondaryCtaHref || '#about'} className="btn mw-hero__btn-outline">
+        {secondaryCtaText}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -38,16 +77,8 @@ function ProgramHero({
             </h1>
             <p className="mw-hero__desc">{description}</p>
             <div className="mw-hero__actions">
-              <a href={primaryCtaHref} className="btn mw-hero__btn-primary">
-                {defaultPrimaryCtaText}
-              </a>
-              <a href={secondaryCtaHref} className="btn mw-hero__btn-outline">
-                {secondaryCtaText}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
+              {renderPrimaryBtn('btn mw-hero__btn-primary')}
+              {renderSecondaryBtn()}
             </div>
           </div>
 
@@ -97,9 +128,9 @@ function ProgramHero({
               <input type="text" placeholder="Other Amount" aria-label="Other donation amount" />
             </div>
 
-            <a href={primaryCtaHref} className="mw-hero__widget-btn">
+            <Link to="/ways-to-donate" className="mw-hero__widget-btn">
               Donate Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>

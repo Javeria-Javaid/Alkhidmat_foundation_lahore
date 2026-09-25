@@ -62,7 +62,8 @@ export const sharedCauses = [
         { value: '100%', label: 'Tested Safe' }
       ],
       btnPrimary: 'Learn More',
-      btnSecondary: 'Donate Now'
+      btnSecondary: 'Donate Now',
+      url: '/programs/clean-water',
     }
   },
   {
@@ -96,7 +97,8 @@ export const sharedCauses = [
         { value: '100%', label: 'Direct Delivery' }
       ],
       btnPrimary: 'Learn More',
-      btnSecondary: 'Donate Now'
+      btnSecondary: 'Donate Now',
+      url: '/campaigns',
     }
   },
   {
@@ -130,7 +132,8 @@ export const sharedCauses = [
         { value: '500K+', label: 'Rescue Missions' }
       ],
       btnPrimary: 'Learn More',
-      btnSecondary: 'Donate Now'
+      btnSecondary: 'Donate Now',
+      url: '/programs/disaster-management',
     }
   },
   {
@@ -164,7 +167,8 @@ export const sharedCauses = [
         { value: '98%', label: 'School Retention' }
       ],
       btnPrimary: 'Learn More',
-      btnSecondary: 'Donate Now'
+      btnSecondary: 'Donate Now',
+      url: '/programs/education',
     }
   }
 ];

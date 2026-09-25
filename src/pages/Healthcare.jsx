@@ -29,9 +29,9 @@ function Healthcare() {
         titleHighlight="Healthcare with Compassion."
         description="Alkhidmat Foundation Pakistan is committed to providing accessible, high-quality, and compassionate healthcare services, diagnostic centers, and hospitals to millions across Pakistan."
         primaryCtaText="Support Healthcare"
-        secondaryCtaText="Watch Our Impact"
-        primaryCtaHref="#donate-banner"
-        secondaryCtaHref="#video-highlights"
+        secondaryCtaText="Our Medical Services"
+        primaryCtaHref="/ways-to-donate"
+        secondaryCtaHref="#services-heading"
         heroImage={heroDoctorImg}
         widgetTitle="Support Medical Care"
         widgetSubtitle="Your donation sponsors medical expenses, hospital operations, free clinics, and medicine."
@@ -69,7 +69,7 @@ function Healthcare() {
         <div className="container text-center">
           <h2>Join Our Medical Mission</h2>
           <p>Alkhidmat Foundation Pakistan is a humanitarian organization dedicated to providing healthcare services.</p>
-          <Link to="/donate" className="btn hc-mission-cta__btn">Join Now</Link>
+          <Link to="/ways-to-donate" className="btn hc-mission-cta__btn">Support Medical Care</Link>
         </div>
       </section>
 

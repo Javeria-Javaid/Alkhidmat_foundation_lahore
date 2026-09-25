@@ -62,7 +62,7 @@ function OrphanCare() {
         description=""
         primaryCtaText="Sponsor an Orphan"
         secondaryCtaText="Learn About Aghosh Homes"
-        primaryCtaHref="#donate-section"
+        primaryCtaHref="/ways-to-donate"
         secondaryCtaHref="#about-orphan-care"
         heroImage={orphanHeroImg}
         widgetTitle="Sponsor an Orphan"

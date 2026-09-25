@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './TransparencyReport.css';
 import rebuildGazaImg from '../../assets/donations_section/rebuild_gaza.png';
 import waterSadqahImg from '../../assets/donations_section/water_sadqah.png';
@@ -49,7 +50,7 @@ function TransparencyReport() {
                 <div className="donation-card__content">
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
-                  <a href="#" className="btn btn-dark btn-full">Donate Now</a>
+                  <Link to="/ways-to-donate" className="btn btn-dark btn-full">Donate Now</Link>
                 </div>
               </div>
             ))}

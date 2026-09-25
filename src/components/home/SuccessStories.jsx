@@ -199,13 +199,13 @@ function SuccessStories() {
                     <h3>{cause.title}</h3>
                     <p>{cause.desc}</p>
                     {cause.type === 'large' ? (
-                      <a href={cause.link} className="btn btn-white">
+                      <Link to="/ways-to-donate" className="btn btn-white">
                         Donate Now
-                      </a>
+                      </Link>
                     ) : (
-                      <a href={cause.link} className="link-arrow">
+                      <Link to="/ways-to-donate" className="link-arrow">
                         Donate Now &rarr;
-                      </a>
+                      </Link>
                     )}
                   </div>
                 </div>

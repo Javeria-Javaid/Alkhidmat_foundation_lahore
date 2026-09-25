@@ -576,7 +576,7 @@ function EventsCommunityActivities() {
             </div>
 
             {/* Contact form */}
-            <div className="ec-contact">
+            <div className="ec-contact" id="ec-inquiry">
               <span className="section-tag">NEED MORE INFORMATION</span>
               <h3 className="ec-contact__title">Get In Touch With Us</h3>
 
@@ -604,6 +604,16 @@ function EventsCommunityActivities() {
                 </div>
               </div>
 
+              {submitted && (
+                <div style={{ padding: '12px', background: '#d1fae5', color: '#065f46', borderRadius: '8px', marginBottom: '16px', fontWeight: '500' }}>
+                  ✓ Thank you! Your event inquiry has been submitted. Our team will contact you shortly.
+                </div>
+              )}
+              {serverError && (
+                <div style={{ padding: '12px', background: '#fee2e2', color: '#991b1b', borderRadius: '8px', marginBottom: '16px', fontWeight: '500' }}>
+                  ⚠ {serverError}
+                </div>
+              )}
               <form className="ec-contact__form" onSubmit={handleSubmit} noValidate aria-label="Event inquiry form">
                 <div className="ec-contact__row">
                   <div className="ec-contact__field">

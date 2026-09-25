@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronLeft, 
@@ -97,12 +98,20 @@ function ProgramsSlider({ currentIndex, setCurrentIndex, sharedCauses }) {
                 </div>
                 
                 <div className="slider-cta" style={{ display: 'flex', gap: '8px', width: '100%', justifyContent: 'center', flexDirection: 'row', alignItems: 'center' }}>
-                  <button className="slider-btn slider-btn-primary" style={{ flex: '1', maxWidth: '140px', height: '38px', fontSize: '0.8rem' }}>
+                  <Link
+                    to={activeSlide.program.url || '/programs/clean-water'}
+                    className="slider-btn slider-btn-primary"
+                    style={{ flex: '1', maxWidth: '140px', height: '38px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
+                  >
                     {activeSlide.program.btnPrimary}
-                  </button>
-                  <button className="slider-btn slider-btn-secondary" style={{ flex: '1', maxWidth: '140px', height: '38px', fontSize: '0.8rem' }}>
+                  </Link>
+                  <Link
+                    to="/ways-to-donate"
+                    className="slider-btn slider-btn-secondary"
+                    style={{ flex: '1', maxWidth: '140px', height: '38px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
+                  >
                     {activeSlide.program.btnSecondary}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
