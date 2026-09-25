@@ -102,7 +102,6 @@ function ContactUs() {
       {/* Hero */}
       <section className="contact-hero">
         <div className="container text-center">
-          <span className="contact-hero__tag">CONTACT US</span>
           <h1>Connect With Us</h1>
           <p>We're here to listen, support, and collaborate.<br/>Reach out to us anytime.</p>
         </div>
