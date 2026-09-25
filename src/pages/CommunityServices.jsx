@@ -65,15 +65,34 @@ function CommunityServices() {
       <section className="cs-programs section" aria-labelledby="programs-heading">
         <div className="container">
           <div className="cs-section-header text-center">
-            <p className="cs-programs__tag">OUR PROGRAMS</p>
+            <span className="cs-programs__tag">OUR PROGRAMS</span>
             <h2 id="programs-heading">Our Community Services</h2>
+            <p className="cs-programs__subtitle">
+              Comprehensive social welfare initiatives designed to uplift marginalized families, provide emergency relief, and foster dignity across Lahore.
+            </p>
           </div>
           <div className="cs-programs__grid">
             {communityServicesList.map((service) => (
               <div className="cs-programs__card" key={service.id}>
-                <div className="cs-programs__icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
+                <div 
+                  className="cs-programs__icon" 
+                  style={{ backgroundColor: service.badgeBg, color: service.badgeColor }}
+                >
+                  {service.icon}
+                </div>
+                <div className="cs-programs__card-body">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+                <div className="cs-programs__card-footer">
+                  <Link to="/ways-to-donate" className="cs-programs__cta-link">
+                    <span>Donate to Cause</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

@@ -289,80 +289,159 @@
 }
 
 /* ── Programs Grid ── */
-.cs-programs { background: #f8fafc; }
+.cs-programs {
+  background: #f8fafc;
+  padding: 85px 0;
+  position: relative;
+}
+
+.cs-programs .cs-section-header {
+  margin-bottom: 48px;
+}
 
 .cs-programs__tag {
-  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: #eff6ff;
+  color: #0254a4;
+  border: 1px solid rgba(2, 84, 164, 0.15);
+  border-radius: 9999px;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #0254a4;
-  margin-bottom: 8px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.cs-programs .cs-section-header h2 {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.cs-programs__subtitle {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.65;
 }
 
 .cs-programs__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 28px;
 }
 
 .cs-programs__card {
-  background: white;
-  border-radius: 16px;
-  padding: 28px 18px;
-  text-align: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 34px 28px 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-programs__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: transparent;
+  transition: background 0.35s ease;
 }
 
 .cs-programs__card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(2,84,164,0.12);
+  transform: translateY(-8px);
+  border-color: rgba(2, 84, 164, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(2, 84, 164, 0.14), 0 0 0 1px rgba(2, 84, 164, 0.06);
+}
+
+.cs-programs__card:hover::before {
+  background: linear-gradient(90deg, #0254a4 0%, #00875a 100%);
 }
 
 .cs-programs__icon {
-  width: 48px;
-  height: 48px;
-  color: #0254a4;
-  margin-bottom: 14px;
-}
-
-.cs-programs__icon svg { width: 100%; height: 100%; }
-
-.cs-programs__card h3 {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 8px;
-}
-
-.cs-programs__card p {
-  font-size: 0.78rem;
-  color: #64748b;
-  line-height: 1.55;
-  flex: 1;
-  margin-bottom: 16px;
-}
-
-.cs-programs__arrow {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #f0f5ff;
-  border: 1px solid #e8f0fb;
-  color: #0254a4;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  margin-bottom: 22px;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs-programs__card:hover .cs-programs__icon {
+  transform: scale(1.08);
+}
+
+.cs-programs__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.cs-programs__card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-programs__card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.cs-programs__card p {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.cs-programs__card-footer {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.cs-programs__cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0254a4;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
   transition: all 0.25s ease;
 }
 
-.cs-programs__arrow:hover {
-  background: #0254a4;
-  color: white;
+.cs-programs__cta-link svg {
+  transition: transform 0.25s ease;
+}
+
+.cs-programs__card:hover .cs-programs__cta-link {
+  color: #003080;
+}
+
+.cs-programs__card:hover .cs-programs__cta-link svg {
+  transform: translateX(4px);
 }
 
 /* ── Impact Section ── */
