@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import {
-  ShieldCheck,
-  Award,
-  Users,
-  Heart,
   ChevronDown,
   ChevronUp,
   Phone,
   Mail,
   Copy,
   Check,
-  MapPin,
-  Clock,
-  Sparkles,
+  Truck,
 } from 'lucide-react';
 import './WaysToDonate.css';
 
