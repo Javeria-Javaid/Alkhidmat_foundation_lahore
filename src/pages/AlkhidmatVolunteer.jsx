@@ -504,7 +504,6 @@ function AlkhidmatVolunteer() {
           <div className="vol-services__banner">
             <div className="vol-services__header">
               <div>
-                <span className="vol-services__tag">VOLUNTEER OPPORTUNITIES</span>
                 <h2 className="vol-services__title">Choose Your Area of Service</h2>
               </div>
 

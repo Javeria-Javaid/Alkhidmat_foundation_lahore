@@ -49,7 +49,6 @@ function CommunityServices() {
             </div>
           </div>
           <div className="cs-about__content">
-            <p className="cs-about__tag">ABOUT COMMUNITY SERVICES</p>
             <h2 id="about-heading">Building Better Communities</h2>
             <p>
               Pakistan faces numerous social challenges, including poverty, limited access to healthcare, education, and essential community services.
@@ -65,40 +64,178 @@ function CommunityServices() {
       <section className="cs-programs section" aria-labelledby="programs-heading">
         <div className="container">
           <div className="cs-section-header text-center">
-            <span className="cs-programs__tag">OUR PROGRAMS</span>
             <h2 id="programs-heading">Our Community Services</h2>
             <p className="cs-programs__subtitle">
-              Comprehensive social welfare initiatives designed to uplift marginalized families, provide emergency relief, and foster dignity across Lahore.
+              Supporting families and communities across Lahore through welfare assistance, seasonal relief and initiatives that help people live with dignity.
             </p>
           </div>
-          <div className="cs-programs__grid">
-            {communityServicesList.map((service) => (
-              <div className="cs-programs__card" key={service.id}>
-                <div 
-                  className="cs-programs__icon" 
-                  style={{ backgroundColor: service.badgeBg, color: service.badgeColor }}
-                >
-                  {service.icon}
+
+          <div className="cs-editorial-grid">
+            {/* 1. FEATURED CARD: Community Welfare (Spans 2 cols on Desktop) */}
+            {(() => {
+              const featured = communityServicesList.find(s => s.featured) || communityServicesList[0];
+              if (!featured) return null;
+              return (
+                <article className="cs-editorial-card cs-editorial-card--featured" key={featured.id}>
+                  <div className="cs-editorial-card__img-wrap">
+                    <img 
+                      src={featured.image} 
+                      alt={featured.imageAlt} 
+                      className="cs-editorial-card__img"
+                      style={{ objectPosition: featured.imgPos }}
+                      loading="lazy"
+                    />
+                    <div className="cs-editorial-card__img-overlay" />
+                    <span className="cs-editorial-card__featured-badge">Featured Initiative</span>
+                  </div>
+                  <div className="cs-editorial-card__body">
+                    <div className="cs-editorial-card__header">
+                      <span className="cs-editorial-card__tagline">{featured.tagline}</span>
+                      <h3 className="cs-editorial-card__title">{featured.title}</h3>
+                    </div>
+                    <p className="cs-editorial-card__desc">{featured.description}</p>
+                    <div className="cs-editorial-card__footer">
+                      <Link to={featured.route} className="cs-editorial-card__link">
+                        <span>{featured.ctaText}</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })()}
+
+            {/* 2. SUPPORTING CARDS: Community Iftar */}
+            {(() => {
+              const iftar = communityServicesList.find(s => s.id === 2);
+              if (!iftar) return null;
+              return (
+                <article className="cs-editorial-card cs-editorial-card--supporting" key={iftar.id}>
+                  <div className="cs-editorial-card__img-wrap">
+                    <img 
+                      src={iftar.image} 
+                      alt={iftar.imageAlt} 
+                      className="cs-editorial-card__img"
+                      style={{ objectPosition: iftar.imgPos }}
+                      loading="lazy"
+                    />
+                    <div className="cs-editorial-card__img-overlay" />
+                  </div>
+                  <div className="cs-editorial-card__body">
+                    <div className="cs-editorial-card__header">
+                      <span className="cs-editorial-card__tagline">{iftar.tagline}</span>
+                      <h3 className="cs-editorial-card__title">{iftar.title}</h3>
+                    </div>
+                    <p className="cs-editorial-card__desc">{iftar.description}</p>
+                    <div className="cs-editorial-card__footer">
+                      <Link to={iftar.route} className="cs-editorial-card__link">
+                        <span>{iftar.ctaText}</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })()}
+
+            {/* 3, 4, 5. SUPPORTING CARDS: Winter Packages, Shadi Box, Wheelchair Support */}
+            {communityServicesList.filter(s => [3, 4, 5].includes(s.id)).map(service => (
+              <article className="cs-editorial-card cs-editorial-card--supporting" key={service.id}>
+                <div className="cs-editorial-card__img-wrap">
+                  <img 
+                    src={service.image} 
+                    alt={service.imageAlt} 
+                    className="cs-editorial-card__img"
+                    style={{ objectPosition: service.imgPos }}
+                    loading="lazy"
+                  />
+                  <div className="cs-editorial-card__img-overlay" />
                 </div>
-                <div className="cs-programs__card-body">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                <div className="cs-editorial-card__body">
+                  <div className="cs-editorial-card__header">
+                    <span className="cs-editorial-card__tagline">{service.tagline}</span>
+                    <h3 className="cs-editorial-card__title">{service.title}</h3>
+                  </div>
+                  <p className="cs-editorial-card__desc">{service.description}</p>
+                  <div className="cs-editorial-card__footer">
+                    <Link to={service.route} className="cs-editorial-card__link">
+                      <span>{service.ctaText}</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
-                <div className="cs-programs__card-footer">
-                  <Link to="/ways-to-donate" className="cs-programs__cta-link">
-                    <span>Donate to Cause</span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
+              </article>
+            ))}
+
+            {/* 6. SUPPORTING CARD: Masjid Construction */}
+            {(() => {
+              const masjid = communityServicesList.find(s => s.id === 6);
+              if (!masjid) return null;
+              return (
+                <article className="cs-editorial-card cs-editorial-card--supporting cs-editorial-card--masjid" key={masjid.id}>
+                  <div className="cs-editorial-card__img-wrap">
+                    <img 
+                      src={masjid.image} 
+                      alt={masjid.imageAlt} 
+                      className="cs-editorial-card__img"
+                      style={{ objectPosition: masjid.imgPos }}
+                      loading="lazy"
+                    />
+                    <div className="cs-editorial-card__img-overlay" />
+                  </div>
+                  <div className="cs-editorial-card__body">
+                    <div className="cs-editorial-card__header">
+                      <span className="cs-editorial-card__tagline">{masjid.tagline}</span>
+                      <h3 className="cs-editorial-card__title">{masjid.title}</h3>
+                    </div>
+                    <p className="cs-editorial-card__desc">{masjid.description}</p>
+                    <div className="cs-editorial-card__footer">
+                      <Link to={masjid.route} className="cs-editorial-card__link">
+                        <span>{masjid.ctaText}</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                          <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              );
+            })()}
+
+            {/* 7. HIGH-IMPACT SECTION DONATION BANNER (Spans 2 cols on Desktop) */}
+            <aside className="cs-editorial-banner" aria-label="Support Community Services Appeal">
+              <div className="cs-editorial-banner__content">
+                <span className="cs-editorial-banner__tag">COMMUNITY SUPPORT APPEAL</span>
+                <h3 className="cs-editorial-banner__title">
+                  Help Uplift Lahore's Vulnerable Families
+                </h3>
+                <p className="cs-editorial-banner__desc">
+                  Your general donations, Sadaqah, and Zakat provide direct sustenance, winter protection, marriage assistance, and wheelchairs to those who need it most.
+                </p>
+                <div className="cs-editorial-banner__action">
+                  <Link to="/ways-to-donate" className="cs-editorial-banner__btn">
+                    <span>Donate to Community Services</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
                     </svg>
                   </Link>
                 </div>
               </div>
-            ))}
+            </aside>
           </div>
         </div>
       </section>
-
 
       {/* ── 8. FAQ ACCORDION ── */}
       <section className="cs-faq section" aria-labelledby="faq-heading">

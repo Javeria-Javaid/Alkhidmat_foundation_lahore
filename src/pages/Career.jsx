@@ -41,7 +41,6 @@ function Career() {
             </div>
           </div>
           <div className="career-about__content">
-            <p className="section-tag">ABOUT US</p>
             <h2>More Than a Job,<br />It's a Mission</h2>
             <p>At Alkhidmat Foundation Lahore, we believe in serving humanity with compassion, transparency, and dedication. Our team works together to deliver sustainable solutions in education, healthcare, disaster relief, community services, and more.</p>
             <p>When you join us, you don't just build a career — you become part of a family committed to making Pakistan a better place for all.</p>

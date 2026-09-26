@@ -224,7 +224,6 @@ function ContactUs() {
       {/* Department Directory */}
       <section className="directory-section container">
         <div className="text-center mb-5">
-          <span className="contact-hero__tag" style={{color: 'var(--primary-blue)'}}>DEPARTMENT DIRECTORY</span>
           <h2>Connect with the Right Team</h2>
           <p>Our dedicated departments are here to assist you with your specific needs.</p>
         </div>

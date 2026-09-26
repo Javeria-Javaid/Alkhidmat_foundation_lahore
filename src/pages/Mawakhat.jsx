@@ -59,7 +59,6 @@ function Mawakhat() {
             </div>
           </div>
           <div className="mw-about__content">
-            <p className="mw-about__tag">ABOUT MAWAKHAT</p>
             <h2 id="about-heading">
               A Shelter of Hope<br />for the Hopeless
             </h2>
@@ -104,7 +103,6 @@ function Mawakhat() {
                   <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
                 </svg>
               </div>
-              <p className="mw-donate-panel__tag">YOU CAN MAKE A DIFFERENCE</p>
               <h2>Your Support Can Change Lives</h2>
               <p>A small act of kindness can bring warmth, food, and hope to someone in need.</p>
             </div>

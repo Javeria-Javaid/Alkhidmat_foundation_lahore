@@ -1,3 +1,10 @@
+import welfareImg from '../assets/extra/community-service.jpeg';
+import iftarImg from '../assets/events/ramzan.png';
+import winterImg from '../assets/events/flood_relief.png';
+import shadiImg from '../assets/extra/muwakhat.jpeg';
+import wheelchairImg from '../assets/events/medical.png';
+import masjidImg from '../assets/events/volunteer-1.png';
+
 export const communityHeroStats = [
   { id: 1, value: '148', label: 'Study Centers', icon: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -54,103 +61,74 @@ export const communityServicesList = [
   {
     id: 1,
     title: 'Community Welfare',
-    description: 'Helping deserving families through structured financial aid, livelihood support, and social empowerment assistance.',
-    badgeBg: 'rgba(2, 84, 164, 0.08)',
-    badgeColor: '#0254a4',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 10.5 12 3l9 7.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        <path d="M12 11a2.2 2.2 0 0 0-2.2 2.2c0 1.5 2.2 3.3 2.2 3.3s2.2-1.8 2.2-3.3A2.2 2.2 0 0 0 12 11z"/>
-      </svg>
-    ),
+    tagline: 'Family Assistance & Social Relief',
+    description: 'Providing vulnerable families and low-income households across Lahore with essential financial aid, livelihood support, and social empowerment programs that foster lasting self-reliance.',
+    image: welfareImg,
+    imageAlt: 'Alkhidmat community welfare team distributing aid to families in Lahore',
+    imgPos: 'center 35%',
+    featured: true,
+    route: '/campaigns',
+    ctaText: 'Explore Program',
   },
   {
     id: 2,
     title: 'Community Iftar',
-    description: 'Providing hot, nutritious iftar meals and suhoor packages to thousands of deserving fasting people across Ramadan.',
-    badgeBg: 'rgba(217, 119, 6, 0.09)',
-    badgeColor: '#d97706',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 21a8 8 0 0 0 8-8H4a8 8 0 0 0 8 8Z"/>
-        <path d="M9 7c0-1.5 1-2.5 1-4"/>
-        <path d="M14 7c0-1.5 1-2.5 1-4"/>
-        <path d="M19.5 7A5.5 5.5 0 0 0 14 2a5.5 5.5 0 0 1 5.5 5Z"/>
-      </svg>
-    ),
+    tagline: 'Ramadan Nourishment & Dastarkhwan',
+    description: 'Serving hot, nutritious iftar meals and distributing comprehensive ration parcels to thousands of fasting people during the holy month of Ramadan.',
+    image: iftarImg,
+    imageAlt: 'Alkhidmat volunteers packaging food and community iftar rations',
+    imgPos: 'center 25%',
+    featured: false,
+    route: '/campaigns',
+    ctaText: 'Explore Program',
   },
   {
     id: 3,
     title: 'Winter Packages',
-    description: 'Distributing warm blankets, thermal wear, and winter emergency survival kits to vulnerable families in harsh cold.',
-    badgeBg: 'rgba(14, 165, 233, 0.09)',
-    badgeColor: '#0284c7',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="m10 20-1.25-2.5L6 18"/>
-        <path d="M10 4 8.75 6.5 6 6"/>
-        <path d="m14 20 1.25-2.5L18 18"/>
-        <path d="m14 4 1.25 2.5L18 6"/>
-        <path d="m17 21-3-6h-4l-3 6"/>
-        <path d="m17 3-3 6h-4L7 3"/>
-        <path d="M2 12h20"/>
-        <path d="m20 10-2.5 1.25L18 14"/>
-        <path d="m4 10 2.5 1.25L6 14"/>
-        <path d="m20 14-2.5-1.25L18 10"/>
-        <path d="m4 14 2.5-1.25L6 10"/>
-      </svg>
-    ),
+    tagline: 'Seasonal Warmth & Cold Relief',
+    description: 'Distributing warm quilts, blankets, thermal clothing, and emergency survival kits to vulnerable communities facing harsh winter conditions.',
+    image: winterImg,
+    imageAlt: 'Alkhidmat winter relief package distribution to needy households',
+    imgPos: 'center 35%',
+    featured: false,
+    route: '/campaigns',
+    ctaText: 'Explore Program',
   },
   {
     id: 4,
     title: 'Shadi Box',
-    description: 'Supporting deserving families with complete wedding starter packages and household essentials for daughters marriages.',
-    badgeBg: 'rgba(236, 72, 153, 0.09)',
-    badgeColor: '#db2777',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="8" width="18" height="4" rx="1"/>
-        <path d="M12 8v13"/>
-        <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/>
-        <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 4.8 0 0 1 12 8a4.8 4.8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>
-      </svg>
-    ),
+    tagline: 'Dignified Marriage Support',
+    description: 'Assisting deserving families with essential bridal packages and home necessities to support daughters marriages with dignity and care.',
+    image: shadiImg,
+    imageAlt: 'Support packages provided to deserving families for marriage assistance',
+    imgPos: 'center 35%',
+    featured: false,
+    route: '/campaigns',
+    ctaText: 'Explore Program',
   },
   {
     id: 5,
     title: 'Wheelchair Support',
-    description: 'Delivering specially designed wheelchairs and customized mobility aids to restore dignity, mobility, and independence.',
-    badgeBg: 'rgba(16, 185, 129, 0.09)',
-    badgeColor: '#059669',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="4" r="2.2"/>
-        <path d="M12 6.5v6.5l4.5 2"/>
-        <path d="M7 11h5"/>
-        <path d="M13 20a5 5 0 1 1-5-5"/>
-        <path d="m14 14 3-2"/>
-      </svg>
-    ),
+    tagline: 'Mobility, Dignity & Inclusion',
+    description: 'Delivering specially designed wheelchairs and customized mobility aids to special individuals, restoring independence and active participation.',
+    image: wheelchairImg,
+    imageAlt: 'Specialized wheelchairs provided to individuals with mobility challenges',
+    imgPos: 'center 20%',
+    featured: false,
+    route: '/campaigns',
+    ctaText: 'Explore Program',
   },
   {
     id: 6,
     title: 'Masjid Construction',
-    description: 'Building, renovating, and maintaining community mosques and prayer facilities equipped with clean water and solar power.',
-    badgeBg: 'rgba(99, 102, 241, 0.09)',
-    badgeColor: '#4f46e5',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 3c-3 3-5 5.5-5 9h10c0-3.5-2-6-5-9z"/>
-        <path d="M12 2v1"/>
-        <path d="M3 12h18"/>
-        <path d="M5 12v9"/>
-        <path d="M19 12v9"/>
-        <path d="M10 21v-5a2 2 0 0 1 4 0v5"/>
-        <path d="M3 21h18"/>
-        <path d="M4 7.5V12"/>
-        <path d="M20 7.5V12"/>
-      </svg>
-    ),
+    tagline: 'Community Centers & Clean Water',
+    description: 'Building, renovating, and maintaining community mosques and prayer facilities equipped with clean ablution water and sustainable solar power.',
+    image: masjidImg,
+    imageAlt: 'Alkhidmat community infrastructure and mosque construction initiative',
+    imgPos: 'center 30%',
+    featured: false,
+    route: '/campaigns',
+    ctaText: 'Explore Program',
   },
 ];
 

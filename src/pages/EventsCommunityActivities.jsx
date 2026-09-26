@@ -577,7 +577,6 @@ function EventsCommunityActivities() {
 
             {/* Contact form */}
             <div className="ec-contact" id="ec-inquiry">
-              <span className="section-tag">NEED MORE INFORMATION</span>
               <h3 className="ec-contact__title">Get In Touch With Us</h3>
 
               <div className="ec-contact__info">

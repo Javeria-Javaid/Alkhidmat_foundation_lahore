@@ -35,7 +35,6 @@ function DisasterManagement() {
       <section className="dm-mission section" aria-labelledby="mission-heading">
         <div className="container dm-mission__inner">
           <div className="dm-mission__content">
-            <p className="dm-mission__tag">ABOUT OUR MISSION</p>
             <h2 id="mission-heading">
               Standing with Communities<br />in Their Toughest Times
             </h2>
@@ -81,7 +80,6 @@ function DisasterManagement() {
       <section id="services" className="dm-services section" aria-labelledby="services-heading">
         <div className="container">
           <div className="dm-services__header text-center">
-            <p className="dm-services__tag">● WHAT WE DO</p>
             <h2 id="services-heading">Our Disaster Management Services</h2>
           </div>
           <div className="dm-services__grid">
