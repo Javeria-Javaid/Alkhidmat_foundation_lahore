@@ -41,7 +41,7 @@ function AboutUs() {
             {/* Left Card: Vision */}
             <div className="vm-box vm-box--vision">
               <div className="vm-box__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3.5"></circle>
                 </svg>
@@ -66,7 +66,7 @@ function AboutUs() {
             {/* Right Card: Mission */}
             <div className="vm-box vm-box--mission">
               <div className="vm-box__icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"></circle>
                   <circle cx="12" cy="12" r="6"></circle>
                   <circle cx="12" cy="12" r="2"></circle>
@@ -81,48 +81,270 @@ function AboutUs() {
         </div>
       </section>
 
-
-
-
-
-      {/* Leadership */}
-      <section className="leadership-section container">
-        <h2>Guided by Compassion. Driven by Integrity.</h2>
-        
-        <div className="president-quote">
-          <div className="president-img" style={{background: '#64748b'}}></div>
-          <div className="quote-content">
-            <svg className="quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <blockquote>Our purpose is simple yet profound — to serve humanity with sincerity and to build a society where everyone has the opportunity to live with dignity and hope.</blockquote>
-            <div className="president-signature">
+      {/* President's Executive Statement */}
+      <section className="about-president-section container">
+        <div className="president-card">
+          <div className="president-card__badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>President's Statement</span>
+          </div>
+          <div className="president-card__body">
+            <svg className="president-card__quote-icon" width="44" height="44" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <blockquote className="president-card__quote">
+              "Our purpose is simple yet profound — to serve humanity with unconditional sincerity and to build a society where every individual has the opportunity to live with dignity, self-reliance, and hope."
+            </blockquote>
+            <div className="president-card__author">
+              <div className="president-card__avatar-badge" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
               <div>
-                <strong>Dr. Hafiz Muhammad Saad</strong>
-                <span>President, Alkhidmat Foundation Pakistan</span>
+                <strong className="president-card__name">Dr. Hafiz Muhammad Saad</strong>
+                <span className="president-card__role">President, Alkhidmat Foundation Pakistan</span>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <h3 className="mt-5 mb-4">Executive Team & Board Members</h3>
-        <div className="team-grid">
-          {[
-            {name: 'Engr. Muhammad Aamir Iqbal', role: 'Vice President'},
-            {name: 'Dr. Farhat Abbas', role: 'Secretary General'},
-            {name: 'Mr. Waseem Ahmed', role: 'Treasurer'},
-            {name: 'Mr. Muhammad Zubair', role: 'General Manager'},
-            {name: 'Mrs. Samina Zafar', role: 'Director Programs'}
-          ].map(member => (
-            <div className="team-card" key={member.name}>
-              <div className="team-avatar" style={{background: '#e2e8f0'}}></div>
-              <h4>{member.name}</h4>
-              <p>{member.role}</p>
-              <a href="#" className="linkedin-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+      {/* Core Guiding Principles */}
+      <section className="about-values-section">
+        <div className="container">
+          <div className="about-section-header text-center">
+            <span className="about-section-badge">ETHICAL FOUNDATION</span>
+            <h2 className="about-section-title">Our Core Guiding Principles</h2>
+            <p className="about-section-subtitle">
+              Every initiative, relief drive, and humanitarian program at Alkhidmat is anchored in deeply rooted values that prioritize service, compassion, and accountability.
+            </p>
+          </div>
+
+          <div className="values-grid">
+            <div className="value-card">
+              <div className="value-card__icon-wrap value-card__icon--blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <div className="value-card__content">
+                <div className="value-card__header">
+                  <h3 className="value-card__title">Sincerity of Purpose</h3>
+                  <span className="value-card__tag">Ikhlas</span>
+                </div>
+                <p className="value-card__desc">
+                  Serving humanity selflessly with pure intention, seeking only the pleasure of the Almighty and the genuine uplift of vulnerable families.
+                </p>
+              </div>
             </div>
-          ))}
+
+            <div className="value-card">
+              <div className="value-card__icon-wrap value-card__icon--amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <div className="value-card__content">
+                <div className="value-card__header">
+                  <h3 className="value-card__title">Trust & Stewardship</h3>
+                  <span className="value-card__tag">Amanat & Diyanat</span>
+                </div>
+                <p className="value-card__desc">
+                  Honoring public donations as a sacred trust, maintained through meticulous financial discipline, transparency, and strict accountability.
+                </p>
+              </div>
+            </div>
+
+            <div className="value-card">
+              <div className="value-card__icon-wrap value-card__icon--emerald">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div className="value-card__content">
+                <div className="value-card__header">
+                  <h3 className="value-card__title">Human Dignity</h3>
+                  <span className="value-card__tag">Hurmat-e-Insaniyat</span>
+                </div>
+                <p className="value-card__desc">
+                  Delivering assistance with profound empathy and respect, ensuring that every beneficiary receives support without compromising their self-esteem.
+                </p>
+              </div>
+            </div>
+
+            <div className="value-card">
+              <div className="value-card__icon-wrap value-card__icon--purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div className="value-card__content">
+                <div className="value-card__header">
+                  <h3 className="value-card__title">Universal Inclusivity</h3>
+                  <span className="value-card__tag">Khidmat Bila Tafreeq</span>
+                </div>
+                <p className="value-card__desc">
+                  Extending open humanitarian care to every individual in distress across Pakistan, free from discrimination of ethnicity, religion, or background.
+                </p>
+              </div>
+            </div>
+
+            <div className="value-card">
+              <div className="value-card__icon-wrap value-card__icon--rose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <div className="value-card__content">
+                <div className="value-card__header">
+                  <h3 className="value-card__title">Excellence in Action</h3>
+                  <span className="value-card__tag">Ihsan</span>
+                </div>
+                <p className="value-card__desc">
+                  Continuously raising our benchmarks in emergency rescue, modern health facilities, and professional education programs like Bano Qabil.
+                </p>
+              </div>
+            </div>
+
+            <div className="value-card">
+              <div className="value-card__icon-wrap value-card__icon--cyan">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div className="value-card__content">
+                <div className="value-card__header">
+                  <h3 className="value-card__title">Sustainable Empowerment</h3>
+                  <span className="value-card__tag">Kafalat</span>
+                </div>
+                <p className="value-card__desc">
+                  Fostering genuine economic independence rather than perpetual reliance through interest-free microfinance, skill centers, and clean water.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* Governance & Institutional Transparency */}
+      <section className="about-governance-section">
+        <div className="container">
+          <div className="about-section-header text-center">
+            <span className="about-section-badge">GOVERNANCE & TRUST</span>
+            <h2 className="about-section-title">Accountability You Can Trust</h2>
+            <p className="about-section-subtitle">
+              We operate under an institutional framework designed to ensure that every rupee entrusted to us creates measurable, verified impact for those who need it most.
+            </p>
+          </div>
 
+          <div className="gov-grid-modern">
+            <div className="gov-card-modern">
+              <div className="gov-card-modern__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>Independent Board Oversight</h3>
+              <p>
+                Guided by a non-remunerated Board of Trustees comprising seasoned academics, doctors, and civic leaders who maintain strict strategic and ethical supervision.
+              </p>
+              <ul className="gov-card-modern__list">
+                <li>Voluntary, non-partisan leadership</li>
+                <li>Quarterly strategic reviews</li>
+                <li>Policy compliance monitoring</li>
+              </ul>
+            </div>
+
+            <div className="gov-card-modern gov-card-modern--highlight">
+              <div className="gov-card-modern__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <h3>Annual External Audits</h3>
+              <p>
+                All financial accounts undergo annual independent audits by certified top-tier chartered accounting firms following International Financial Reporting Standards (IFRS).
+              </p>
+              <ul className="gov-card-modern__list">
+                <li>Independent chartered auditors</li>
+                <li>Public annual financial reports</li>
+                <li>Documented fund allocations</li>
+              </ul>
+            </div>
+
+            <div className="gov-card-modern">
+              <div className="gov-card-modern__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <h3>100% Shariah Compliance</h3>
+              <p>
+                A dedicated Shariah advisory committee verifies that Zakat, Sadaqah, Fitrana, and Waqf funds are strictly segregated and disbursed exclusively to eligible beneficiaries.
+              </p>
+              <ul className="gov-card-modern__list">
+                <li>Strict Zakat segregation</li>
+                <li>Certified religious advisory board</li>
+                <li>Zero administrative deduction on Zakat</li>
+              </ul>
+            </div>
+
+            <div className="gov-card-modern">
+              <div className="gov-card-modern__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <h3>Field Verification & M&E</h3>
+              <p>
+                Our on-ground Monitoring & Evaluation (M&E) teams carry out physical house visits and digital CNIC verifications before any aid package is released to ensure zero leakage.
+              </p>
+              <ul className="gov-card-modern__list">
+                <li>Physical household assessment</li>
+                <li>Digital beneficiary tracking</li>
+                <li>Real-time disaster relief logs</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Call to action trust banner */}
+          <div className="about-trust-banner">
+            <div className="about-trust-banner__content">
+              <h3>Join Us in Building a Resilient Pakistan</h3>
+              <p>
+                Whether through your Zakat, voluntary service, or ongoing partnership, your contribution empowers real lives across Lahore and beyond.
+              </p>
+            </div>
+            <div className="about-trust-banner__actions">
+              <Link to="/ways-to-donate" className="btn btn-primary">
+                Donate Now
+              </Link>
+              <Link to="/contact" className="btn btn-outline">
+                Contact Our Team
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
