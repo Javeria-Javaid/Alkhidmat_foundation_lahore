@@ -1,7 +1,7 @@
 import welfareImg from '../assets/extra/community-service.jpeg';
 import iftarImg from '../assets/events/ramzan.png';
 import winterImg from '../assets/events/flood_relief.png';
-import shadiImg from '../assets/extra/muwakhat.jpeg';
+import shadiImg from '../assets/events/shadi-box.png';
 import wheelchairImg from '../assets/events/medical.png';
 import masjidImg from '../assets/events/volunteer-1.png';
 
