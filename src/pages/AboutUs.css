@@ -337,22 +337,30 @@
 }
 
 .president-card__quote {
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: #ffffff;
-  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.94);
+  font-weight: 400;
   margin: 0 0 32px 0;
-  max-width: 950px;
+  max-width: 980px;
   font-style: normal;
-  letter-spacing: -0.01em;
+  letter-spacing: normal;
 }
 
 .president-card__author {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.president-card__author-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .president-card__avatar-badge {
@@ -380,6 +388,28 @@
   display: block;
   color: #94a3b8;
   font-size: 0.9rem;
+}
+
+.president-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #93c5fd;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.president-card__link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* ============================================================
@@ -423,10 +453,9 @@
    Core Guiding Principles (Values Grid)
    ============================================================ */
 .about-values-section {
-  padding: 70px 0;
+  padding: 70px 0 90px;
   background: #f8fafc;
   border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
 }
 
 .values-grid {
@@ -526,149 +555,6 @@
 }
 
 /* ============================================================
-   Governance & Accountability Section
-   ============================================================ */
-.about-governance-section {
-  padding: 80px 0;
-  background: #ffffff;
-}
-
-.gov-grid-modern {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 60px;
-}
-
-.gov-card-modern {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 32px 24px;
-  box-shadow: 0 4px 16px rgba(10, 22, 40, 0.04);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.gov-card-modern:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(10, 22, 40, 0.08);
-}
-
-.gov-card-modern--highlight {
-  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
-  border-color: #86efac;
-}
-
-.gov-card-modern__icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  background: #e8f0fb;
-  color: #0254a4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.gov-card-modern--highlight .gov-card-modern__icon {
-  background: #dcfce7;
-  color: #15803d;
-}
-
-.gov-card-modern h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0a1628;
-  margin: 0 0 12px;
-}
-
-.gov-card-modern p {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: #475569;
-  margin: 0 0 20px;
-}
-
-.gov-card-modern__list {
-  list-style: none;
-  padding: 0;
-  margin: auto 0 0 0;
-  border-top: 1px solid #f1f5f9;
-  padding-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.gov-card-modern__list li {
-  font-size: 0.82rem;
-  color: #334155;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 500;
-}
-
-.gov-card-modern__list li::before {
-  content: '✓';
-  color: #059669;
-  font-weight: 800;
-  font-size: 0.85rem;
-}
-
-/* ============================================================
-   Trust CTA Banner
-   ============================================================ */
-.about-trust-banner {
-  background: linear-gradient(135deg, #0254a4 0%, #003080 100%);
-  border-radius: 20px;
-  padding: 44px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  box-shadow: 0 16px 36px rgba(2, 84, 164, 0.25);
-  color: #ffffff;
-}
-
-.about-trust-banner__content h3 {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 8px;
-  letter-spacing: -0.01em;
-}
-
-.about-trust-banner__content p {
-  font-size: 0.98rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.88);
-  margin: 0;
-  max-width: 620px;
-}
-
-.about-trust-banner__actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
-
-.about-trust-banner__actions .btn-outline {
-  border-color: rgba(255, 255, 255, 0.7);
-  color: #ffffff;
-  background: transparent;
-}
-
-.about-trust-banner__actions .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #ffffff;
-}
-
-/* ============================================================
    Responsive Adaptations
    ============================================================ */
 @media (max-width: 1024px) {
@@ -677,17 +563,6 @@
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .gov-grid-modern {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .about-trust-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 36px 28px;
-  }
-  .about-trust-banner__actions {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 768px) {
@@ -695,20 +570,14 @@
     padding: 32px 24px;
   }
   .president-card__quote {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
+    line-height: 1.68;
+  }
+  .president-card__author {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .values-grid {
     grid-template-columns: 1fr;
-  }
-  .gov-grid-modern {
-    grid-template-columns: 1fr;
-  }
-  .about-trust-banner__actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  .about-trust-banner__actions .btn {
-    width: 100%;
-    justify-content: center;
   }
 }

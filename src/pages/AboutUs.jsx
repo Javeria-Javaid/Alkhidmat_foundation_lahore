@@ -88,26 +88,41 @@ function AboutUs() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
-            <span>President's Statement</span>
+            <span>President's Message</span>
           </div>
           <div className="president-card__body">
             <svg className="president-card__quote-icon" width="44" height="44" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
             </svg>
             <blockquote className="president-card__quote">
-              "Our purpose is simple yet profound — to serve humanity with unconditional sincerity and to build a society where every individual has the opportunity to live with dignity, self-reliance, and hope."
+              "The year 2025 was another impactful year for Alkhidmat Foundation Pakistan. Guided by compassion, we served millions through health, education, orphan care, WASH, microfinance, and the Bano Qabil program. Flood-affected families received emergency relief and rehabilitation, while climate initiatives included large-scale tree plantations. The nationwide expansion of Bano Qabil further empowered youth with skills for dignified livelihoods. Globally, Alkhidmat Foundation delivered relief aid worth over Rs 9 billion in Gaza and launched a Rs 15 billion ’Rebuild Gaza’ campaign, also supporting affected and oppressed communities in Sudan, Bangladesh, and Sri Lanka."
             </blockquote>
             <div className="president-card__author">
-              <div className="president-card__avatar-badge" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
+              <div className="president-card__author-info">
+                <div className="president-card__avatar-badge" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <strong className="president-card__name">Prof. Dr. Hafeez ur Rahman</strong>
+                  <span className="president-card__role">President, Alkhidmat Foundation Pakistan</span>
+                </div>
+              </div>
+              <a 
+                href="https://alkhidmat.org/about-us/introduction/president-message" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="president-card__link"
+              >
+                <span>Read Official Message</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-              </div>
-              <div>
-                <strong className="president-card__name">Dr. Hafiz Muhammad Saad</strong>
-                <span className="president-card__role">President, Alkhidmat Foundation Pakistan</span>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -231,116 +246,6 @@ function AboutUs() {
                   Fostering genuine economic independence rather than perpetual reliance through interest-free microfinance, skill centers, and clean water.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Governance & Institutional Transparency */}
-      <section className="about-governance-section">
-        <div className="container">
-          <div className="about-section-header text-center">
-            <span className="about-section-badge">GOVERNANCE & TRUST</span>
-            <h2 className="about-section-title">Accountability You Can Trust</h2>
-            <p className="about-section-subtitle">
-              We operate under an institutional framework designed to ensure that every rupee entrusted to us creates measurable, verified impact for those who need it most.
-            </p>
-          </div>
-
-          <div className="gov-grid-modern">
-            <div className="gov-card-modern">
-              <div className="gov-card-modern__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <h3>Independent Board Oversight</h3>
-              <p>
-                Guided by a non-remunerated Board of Trustees comprising seasoned academics, doctors, and civic leaders who maintain strict strategic and ethical supervision.
-              </p>
-              <ul className="gov-card-modern__list">
-                <li>Voluntary, non-partisan leadership</li>
-                <li>Quarterly strategic reviews</li>
-                <li>Policy compliance monitoring</li>
-              </ul>
-            </div>
-
-            <div className="gov-card-modern gov-card-modern--highlight">
-              <div className="gov-card-modern__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-              </div>
-              <h3>Annual External Audits</h3>
-              <p>
-                All financial accounts undergo annual independent audits by certified top-tier chartered accounting firms following International Financial Reporting Standards (IFRS).
-              </p>
-              <ul className="gov-card-modern__list">
-                <li>Independent chartered auditors</li>
-                <li>Public annual financial reports</li>
-                <li>Documented fund allocations</li>
-              </ul>
-            </div>
-
-            <div className="gov-card-modern">
-              <div className="gov-card-modern__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="m9 12 2 2 4-4"></path>
-                </svg>
-              </div>
-              <h3>100% Shariah Compliance</h3>
-              <p>
-                A dedicated Shariah advisory committee verifies that Zakat, Sadaqah, Fitrana, and Waqf funds are strictly segregated and disbursed exclusively to eligible beneficiaries.
-              </p>
-              <ul className="gov-card-modern__list">
-                <li>Strict Zakat segregation</li>
-                <li>Certified religious advisory board</li>
-                <li>Zero administrative deduction on Zakat</li>
-              </ul>
-            </div>
-
-            <div className="gov-card-modern">
-              <div className="gov-card-modern__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </div>
-              <h3>Field Verification & M&E</h3>
-              <p>
-                Our on-ground Monitoring & Evaluation (M&E) teams carry out physical house visits and digital CNIC verifications before any aid package is released to ensure zero leakage.
-              </p>
-              <ul className="gov-card-modern__list">
-                <li>Physical household assessment</li>
-                <li>Digital beneficiary tracking</li>
-                <li>Real-time disaster relief logs</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Call to action trust banner */}
-          <div className="about-trust-banner">
-            <div className="about-trust-banner__content">
-              <h3>Join Us in Building a Resilient Pakistan</h3>
-              <p>
-                Whether through your Zakat, voluntary service, or ongoing partnership, your contribution empowers real lives across Lahore and beyond.
-              </p>
-            </div>
-            <div className="about-trust-banner__actions">
-              <Link to="/ways-to-donate" className="btn btn-primary">
-                Donate Now
-              </Link>
-              <Link to="/contact" className="btn btn-outline">
-                Contact Our Team
-              </Link>
             </div>
           </div>
         </div>
