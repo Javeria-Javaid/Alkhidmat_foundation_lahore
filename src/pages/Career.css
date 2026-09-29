@@ -659,4 +659,7 @@
     flex-direction: column;
     gap: 1.5rem;
   }
+  .career-cta__right {
+    margin-left: 0;
+  }
 }

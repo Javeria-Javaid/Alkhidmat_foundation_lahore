@@ -230,7 +230,7 @@
 }
 
 /* Responsive Breakpoints for Vision/Mission */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .vm-composition {
     flex-direction: column;
     gap: 20px;
@@ -241,7 +241,7 @@
     margin-left: 0;
     margin-right: 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     min-height: auto;
     border-radius: 24px;
     padding: 28px 24px;
@@ -251,6 +251,7 @@
     order: 2;
     height: 220px;
     width: 220px;
+    max-width: 100%;
   }
 
   .vm-center__img {
@@ -309,20 +310,13 @@
   pointer-events: none;
 }
 
-.president-card__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(2, 84, 164, 0.35);
-  border: 1px solid rgba(147, 197, 253, 0.35);
-  color: #93c5fd;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  font-size: 0.8rem;
+.president-card__title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
 }
 
 .president-card__body {
@@ -359,21 +353,8 @@
 
 .president-card__author-info {
   display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.president-card__avatar-badge {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0254a4, #ea580c);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  flex-shrink: 0;
-  box-shadow: 0 8px 18px rgba(2, 84, 164, 0.35);
+  flex-direction: column;
+  gap: 4px;
 }
 
 .president-card__name {
@@ -559,6 +540,10 @@
 @media (max-width: 768px) {
   .president-card {
     padding: 32px 24px;
+  }
+  .president-card__title {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
   }
   .president-card__quote {
     font-size: 1.05rem;

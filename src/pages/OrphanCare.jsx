@@ -77,25 +77,25 @@ function OrphanCare() {
       />
 
       {/* ── 2. ABOUT ORPHAN CARE ── */}
-      <section id="about-orphan-care" className="section" style={{ padding: '80px 0' }}>
+      <section id="about-orphan-care" className="section orphan-about-section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
-            <div>
-              <h2 className="section-title" style={{ marginTop: '12px', fontSize: '2.2rem', color: '#0a2a5e' }}>
+          <div className="orphan-about__grid">
+            <div className="orphan-about__content">
+              <h2 className="section-title orphan-about__title">
                 Nurturing Hope for Fatherless Children
               </h2>
-              <p style={{ color: '#64748b', lineHeight: 1.7, marginTop: '16px' }}>
+              <p className="orphan-about__desc">
                 Alkhidmat Orphan Care Program operates two key models: Family-Based Orphan Care (supporting orphans within their own homes with their mothers) and Aghosh Homes (state-of-the-art boarding schools providing world-class facilities).
               </p>
-              <p style={{ color: '#64748b', lineHeight: 1.7, marginTop: '12px' }}>
+              <p className="orphan-about__desc">
                 We ensure that lack of resources never stops a child from achieving their dreams. From primary schooling to university scholarships, we walk alongside them every step of the way.
               </p>
             </div>
-            <div style={{ textAlign: 'center' }}>
+            <div className="orphan-about__media">
               <img
                 src={orphanCareBgImg}
                 alt="Alkhidmat Orphan Care"
-                style={{ width: '80%', maxHeight: '400px', objectFit: 'cover', borderRadius: '20px', boxShadow: '0 12px 32px rgba(2,84,164,0.12)' }}
+                className="orphan-about__img"
               />
             </div>
           </div>
@@ -103,13 +103,13 @@ function OrphanCare() {
       </section>
 
       {/* ── 3. KEY PILLARS ── */}
-      <section className="section" style={{ padding: '80px 0', background: 'white' }}>
+      <section className="section orphan-pillars-section">
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="section-title">Pillars of Our Support</h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+          <div className="orphan-pillars__grid">
             {[
               {
                 title: 'Education & Learning',
