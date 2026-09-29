@@ -69,7 +69,7 @@ function AboutUs() {
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"></circle>
                   <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="12" cy="2"></circle>
                 </svg>
               </div>
               <h3 className="vm-box__title">Mission</h3>
@@ -128,125 +128,76 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Core Guiding Principles */}
-      <section className="about-values-section">
+      {/* Core Guiding Principles (Editorial Layout) */}
+      <section className="about-principles-section" aria-labelledby="principles-heading">
         <div className="container">
-          <div className="about-section-header text-center">
-            <span className="about-section-badge">ETHICAL FOUNDATION</span>
-            <h2 className="about-section-title">Our Core Guiding Principles</h2>
-            <p className="about-section-subtitle">
+          <div className="principles-header">
+            <h2 id="principles-heading" className="principles-title">Our Core Guiding Principles</h2>
+            <p className="principles-intro">
               Every initiative, relief drive, and humanitarian program at Alkhidmat is anchored in deeply rooted values that prioritize service, compassion, and accountability.
             </p>
           </div>
 
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-card__icon-wrap value-card__icon--blue">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-              </div>
-              <div className="value-card__content">
-                <div className="value-card__header">
-                  <h3 className="value-card__title">Sincerity of Purpose</h3>
-                  <span className="value-card__tag">Ikhlas</span>
-                </div>
-                <p className="value-card__desc">
-                  Serving humanity selflessly with pure intention, seeking only the pleasure of the Almighty and the genuine uplift of vulnerable families.
-                </p>
-              </div>
-            </div>
+          <div className="principles-grid">
+            <article className="principle-item" tabIndex="0">
+              <span className="principle-num" aria-hidden="true">01</span>
+              <h3 className="principle-title">Sincerity of Purpose</h3>
+              <span className="principle-term">Ikhlas</span>
+              <div className="principle-rule" aria-hidden="true" />
+              <p className="principle-desc">
+                Serving humanity selflessly with pure intention, seeking only the pleasure of the Almighty and the genuine uplift of vulnerable families.
+              </p>
+            </article>
 
-            <div className="value-card">
-              <div className="value-card__icon-wrap value-card__icon--amber">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-              </div>
-              <div className="value-card__content">
-                <div className="value-card__header">
-                  <h3 className="value-card__title">Trust & Stewardship</h3>
-                  <span className="value-card__tag">Amanat & Diyanat</span>
-                </div>
-                <p className="value-card__desc">
-                  Honoring public donations as a sacred trust, maintained through meticulous financial discipline, transparency, and strict accountability.
-                </p>
-              </div>
-            </div>
+            <article className="principle-item" tabIndex="0">
+              <span className="principle-num" aria-hidden="true">02</span>
+              <h3 className="principle-title">Trust & Stewardship</h3>
+              <span className="principle-term">Amanat & Diyanat</span>
+              <div className="principle-rule" aria-hidden="true" />
+              <p className="principle-desc">
+                Honoring public donations as a sacred trust, maintained through meticulous financial discipline, transparency, and strict accountability.
+              </p>
+            </article>
 
-            <div className="value-card">
-              <div className="value-card__icon-wrap value-card__icon--emerald">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  <path d="m9 12 2 2 4-4"></path>
-                </svg>
-              </div>
-              <div className="value-card__content">
-                <div className="value-card__header">
-                  <h3 className="value-card__title">Human Dignity</h3>
-                  <span className="value-card__tag">Hurmat-e-Insaniyat</span>
-                </div>
-                <p className="value-card__desc">
-                  Delivering assistance with profound empathy and respect, ensuring that every beneficiary receives support without compromising their self-esteem.
-                </p>
-              </div>
-            </div>
+            <article className="principle-item" tabIndex="0">
+              <span className="principle-num" aria-hidden="true">03</span>
+              <h3 className="principle-title">Human Dignity</h3>
+              <span className="principle-term">Hurmat-e-Insaniyat</span>
+              <div className="principle-rule" aria-hidden="true" />
+              <p className="principle-desc">
+                Delivering assistance with profound empathy and respect, ensuring that every beneficiary receives support without compromising their self-esteem.
+              </p>
+            </article>
 
-            <div className="value-card">
-              <div className="value-card__icon-wrap value-card__icon--purple">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <div className="value-card__content">
-                <div className="value-card__header">
-                  <h3 className="value-card__title">Universal Inclusivity</h3>
-                  <span className="value-card__tag">Khidmat Bila Tafreeq</span>
-                </div>
-                <p className="value-card__desc">
-                  Extending open humanitarian care to every individual in distress across Pakistan, free from discrimination of ethnicity, religion, or background.
-                </p>
-              </div>
-            </div>
+            <article className="principle-item" tabIndex="0">
+              <span className="principle-num" aria-hidden="true">04</span>
+              <h3 className="principle-title">Universal Inclusivity</h3>
+              <span className="principle-term">Khidmat Bila Tafreeq</span>
+              <div className="principle-rule" aria-hidden="true" />
+              <p className="principle-desc">
+                Extending open humanitarian care to every individual in distress across Pakistan, free from discrimination of ethnicity, religion, or background.
+              </p>
+            </article>
 
-            <div className="value-card">
-              <div className="value-card__icon-wrap value-card__icon--rose">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </div>
-              <div className="value-card__content">
-                <div className="value-card__header">
-                  <h3 className="value-card__title">Excellence in Action</h3>
-                  <span className="value-card__tag">Ihsan</span>
-                </div>
-                <p className="value-card__desc">
-                  Continuously raising our benchmarks in emergency rescue, modern health facilities, and professional education programs like Bano Qabil.
-                </p>
-              </div>
-            </div>
+            <article className="principle-item" tabIndex="0">
+              <span className="principle-num" aria-hidden="true">05</span>
+              <h3 className="principle-title">Excellence in Action</h3>
+              <span className="principle-term">Ihsan</span>
+              <div className="principle-rule" aria-hidden="true" />
+              <p className="principle-desc">
+                Continuously raising our benchmarks in emergency rescue, modern health facilities, and professional education programs like Bano Qabil.
+              </p>
+            </article>
 
-            <div className="value-card">
-              <div className="value-card__icon-wrap value-card__icon--cyan">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <line x1="12" y1="1" x2="12" y2="23"></line>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                </svg>
-              </div>
-              <div className="value-card__content">
-                <div className="value-card__header">
-                  <h3 className="value-card__title">Sustainable Empowerment</h3>
-                  <span className="value-card__tag">Kafalat</span>
-                </div>
-                <p className="value-card__desc">
-                  Fostering genuine economic independence rather than perpetual reliance through interest-free microfinance, skill centers, and clean water.
-                </p>
-              </div>
-            </div>
+            <article className="principle-item" tabIndex="0">
+              <span className="principle-num" aria-hidden="true">06</span>
+              <h3 className="principle-title">Sustainable Empowerment</h3>
+              <span className="principle-term">Kafalat</span>
+              <div className="principle-rule" aria-hidden="true" />
+              <p className="principle-desc">
+                Fostering genuine economic independence rather than perpetual reliance through interest-free microfinance, skill centers, and clean water.
+              </p>
+            </article>
           </div>
         </div>
       </section>
