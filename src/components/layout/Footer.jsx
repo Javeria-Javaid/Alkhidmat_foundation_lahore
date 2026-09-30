@@ -153,6 +153,18 @@ function Footer() {
             <span className="divider">|</span>
             <a href="#">Whistleblower Policy</a>
           </div>
+          <div className="footer__credits">
+            <span>Developed by </span>
+            <a 
+              href="https://javeria-javaid.github.io/portfolio/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="footer__credits-link"
+              title="Visit Javeria Javaid's Portfolio"
+            >
+              Javeria Javaid
+            </a>
+          </div>
         </div>
       </div>
     </footer>
